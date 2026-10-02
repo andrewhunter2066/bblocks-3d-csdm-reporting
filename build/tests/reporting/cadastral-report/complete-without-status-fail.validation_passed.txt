@@ -1,0 +1,60 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.385969+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using complete-without-status-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD complete-without-status-fail.jsonld created
+Output Turtle complete-without-status-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'status' is a required property
+
+Failed validating 'required' in schema['allOf'][0]['then']:
+    {'required': ['status', 'checks']}
+
+On instance:
+    {'checks': [{'category': 'generation',
+                 'definedBy': 'example.adapter',
+                 'id': 'subject-identified',
+                 'message': 'ok',
+                 'outcome': 'pass',
+                 'severity': 'error'}],
+     'content': {},
+     'reportType': 'example.report-type',
+     'sources': [{'id': 'example-dataset'}],
+     'stage': 'complete',
+     'subject': {'kind': 'parcel',
+                 'ref': {'dataset': 'example-dataset',
+                         'pointer': '/parcels/0/features/0'}}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: *none*
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1b225be4dcdf4c4aad104a2cc3095a6d
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N60d78a82a220466dbd4cf2b12a491500
+ - Shape cr:SourceReferenceShape: _:Ne1bf3846928040e794c9f3ee83e531a5
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N1b225be4dcdf4c4aad104a2cc3095a6d
+
+=== End SHACL ===
+

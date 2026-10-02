@@ -1,0 +1,53 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.803206+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using no-sources-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD no-sources-fail.jsonld created
+Output Turtle no-sources-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: [] is too short
+
+Failed validating 'minItems' in schema['properties']['sources']:
+    {'description': 'Source datasets the report was generated from.',
+     'items': {'$ref': '#/$defs/SourceDataset'},
+     'minItems': 1,
+     'type': 'array',
+     'x-jsonld-container': '@set',
+     'x-jsonld-id': 'http://purl.org/dc/terms/source'}
+
+On instance['sources']:
+    []
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:Ncfa5357d7dcb4140a1840532872ddbf8
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Ncfa5357d7dcb4140a1840532872ddbf8
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: *none*
+ - Shape cr:SourceReferenceShape: _:Ncbdaf65c13e846008c08057c77073a07
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:Ncfa5357d7dcb4140a1840532872ddbf8
+
+=== End SHACL ===
+

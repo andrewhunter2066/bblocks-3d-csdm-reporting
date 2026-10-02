@@ -1,0 +1,62 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.684363+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using invalid-pointer-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD invalid-pointer-fail.jsonld created
+Output Turtle invalid-pointer-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'parcels/0' does not match '^(/([^/~]|~[01])*)*$'
+
+Failed validating 'pattern' in schema['properties']['subject']['properties']['ref']['properties']['pointer']:
+    {'description': 'JSON Pointer (RFC 6901) to the object within the '
+                    'source dataset.',
+     'pattern': '^(/([^/~]|~[01])*)*$',
+     'type': 'string',
+     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/jsonPointer'}
+
+On instance['subject']['ref']['pointer']:
+    'parcels/0'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N883b5f2cce964229a499ec96479dd20f
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N883b5f2cce964229a499ec96479dd20f
+
+
+** Validation error **
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:datatype xsd:string ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path cr:jsonPointer ; sh:pattern Literal("^(/([^/~]|~[01])*)*$") ]
+  	Focus Node: [ cr:jsonPointer Literal("parcels/0") ; cr:sourceDataset Literal("example-dataset") ]
+  	Value Node: Literal("parcels/0")
+  	Result Path: cr:jsonPointer
+  	Message: Value does not match pattern '^(/([^/~]|~[01])*)*$'
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: *none*
+ - Shape cr:SourceReferenceShape: _:N1f08df91d1784a7b966e87033c744ad0
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N883b5f2cce964229a499ec96479dd20f
+
+=== End SHACL ===
+

@@ -1,0 +1,179 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:46.618860+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using missing-scheme-number-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD missing-scheme-number-fail.jsonld created
+Output Turtle missing-scheme-number-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'schemeNumber' is a required property
+
+Failed validating 'required' in schema['allOf'][1]['properties']['content']['properties']['scheme']:
+    {'properties': {'address': {'description': 'Address of the scheme.',
+                                'properties': {'formatted': {'$ref': '#/$defs/TextValue',
+                                                             'description': 'Single-line '
+                                                                            'address, '
+                                                                            'derived '
+                                                                            'from '
+                                                                            'the '
+                                                                            'parts '
+                                                                            '(e.g. '
+                                                                            '"281 '
+                                                                            'Belmont '
+                                                                            'Avenue, '
+                                                                            'Cloverdale").',
+                                                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/formattedAddress'},
+                                               'parts': {'description': 'The '
+                                                                        'address '
+                                                                        'parts '
+                                                                        'as '
+                                                                        'supplied, '
+                                                                        'in '
+                                                                        'order, '
+                                                                        'with '
+                                                                        'a '
+                                                                        'label '
+                                                                        'where '
+                                                                        'one '
+                                                                        'is '
+                                                                        'needed.',
+                                                         'items': {'properties': {'label': {'$ref': '#/$defs/TextValue',
+                                                                                            'description': 'Human-readable '
+                                                                                                           'label '
+                                                                                                           'of '
+                                                                                                           'a '
+                                                                                                           'coded '
+                                                                                                           'value '
+                                                                                                           '(road '
+                                                                                                           'name, '
+                                                                                                           'locality '
+                                                                                                           'name).',
+                                                                                            'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPartLabel'},
+                                                                                  'partType': {'description': 'Address '
+                                                                                                              'part '
+                                                                                                              'type '
+                                                                                                              '(an '
+                                                                                                              'IRI '
+                                                                                                              'or '
+                                                                                                              'CURIE, '
+                                                                                                              'e.g. '
+                                                                                                              '`apt:road`).',
+                                                                                               'type': 'string',
+                                                                                               'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPartType',
+                                                                                               'x-jsonld-type': '@vocab'},
+                                                                                  'value': {'description': 'The '
+                                                                                                           "part's "
+                                                                                                           'value '
+                                                                                                           'as '
+                                                                                                           'supplied '
+                                                                                                           '(a '
+                                                                                                           'literal, '
+                                                                                                           'a '
+                                                                                                           'code '
+                                                                                                           'or '
+                                                                                                           'an '
+                                                                                                           '`@id` '
+                                                                                                           'object).',
+                                                                                            'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPartValue',
+                                                                                            'x-jsonld-type': '@json'}},
+                                                                   'required': ['partType'],
+                                                                   'type': 'object'},
+                                                         'type': 'array',
+                                                         'x-jsonld-container': '@list',
+                                                         'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPart'}},
+                                'type': 'object',
+                                'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/address'},
+                    'ref': {'$ref': 'https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef',
+                            'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'},
+                    'schemeName': {'$ref': '#/$defs/TextValue',
+                                   'description': 'Name of the scheme.',
+                                   'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/schemeName'},
+                    'schemeNumber': {'allOf': [{'$ref': 'https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue'},
+                                               {'properties': {'value': {'minLength': 1,
+                                                                         'type': ['string',
+                                                                                  'null'],
+                                                                         'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}}}],
+                                     'description': 'Scheme (plan) number, '
+                                                    'e.g. SP83687.',
+                                     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/schemeNumber'}},
+     'required': ['schemeNumber'],
+     'type': 'object',
+     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/scheme'}
+
+On instance['content']['scheme']:
+    {'address': {'formatted': {'derivation': {'inputs': ['/content/scheme/address/parts/0/value',
+                                                         '/content/scheme/address/parts/1/label',
+                                                         '/content/scheme/address/parts/2/label'],
+                                              'method': 'format-address'},
+                               'status': 'derived',
+                               'value': '281 Belmont Avenue, Cloverdale'},
+                 'parts': [{'partType': 'apt:addressNumberFirst',
+                            'value': 281},
+                           {'label': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                      'pointer': '/parcels/0/features/1/properties/schemeAddress/hasPart/1/value/label'}],
+                                      'status': 'reported',
+                                      'value': 'Belmont Avenue'},
+                            'partType': 'apt:road',
+                            'value': {'@id': 'https://example.com/road/belmont-avenue',
+                                      'label': 'Belmont Avenue'}},
+                           {'label': {'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-locality',
+                                                      'id': 'https://linked.data.gov.au/def/csdm/wa-locality/cloverdale',
+                                                      'pointer': ''}],
+                                      'status': 'reported',
+                                      'value': 'Cloverdale'},
+                            'partType': 'apt:locality',
+                            'value': 'wa-locality:cloverdale'},
+                           {'partType': 'apt:stateOrTerritory',
+                            'value': {'@id': 'https://linked.data.gov.au/dataset/asgsed3/STE/5'}},
+                           {'partType': 'apt:postcode', 'value': 6105},
+                           {'partType': 'apt:country',
+                            'value': {'@id': 'https://linked.data.gov.au/dataset/asgsed3/AUS/AUS'}}]},
+     'ref': {'dataset': 'SP-83687-1-1-0.00',
+             'id': 'uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e',
+             'pointer': '/parcels/0/features/1'},
+     'schemeName': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                    'pointer': '/parcels/0/features/1/properties/schemeName'}],
+                    'status': 'reported',
+                    'value': '281 Belmont Avenue, Cloverdale'}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:N37e34849cd3f4e3392f965a756e1877a
+ - Shape se:LotCountIsTheNumberOfLots: _:N37e34849cd3f4e3392f965a756e1877a
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N2f714e6fc72c4157a8d25475ac4cf9d4
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N2f714e6fc72c4157a8d25475ac4cf9d4
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:Ndddbc8c2edff4ee4842ff71dddcdbc9b,_:Na474579e56cf41feadff4a5100104822,_:Nb37cc0c4a75f41208d7fcc9a648fe418,_:N7efcb57afc1b43ac8397a22105cfa2b1,_:Nc2af3ddc4a594ced973e12185bb1bffb,_:N03e36bf279eb435395bd8202982b0341,_:N5dd5a81b17224f16859ff3bba3747027,_:N37055b79ed2d4b48af50e95d909a7992,_:N59705716ac114fa19cae71f687caaa87,_:N6acf5c0270254a838ea00712531a466b,_:N0d8428f42cbd4eaf9b933c607c25584f,_:N93bdf1395ac14cfabf1abb1fd969f951,_:Nab1b498a2b774989bc66dd05c4a4c5dd,_:Na914c43e17ed4e98ad98de9da5449d88,_:N3e6cee9ddb1d472cbe2778eafcb3f8aa,_:N66fc6324681c496798e74c952b19a087,_:N47066144cf6447d2a6596787f9f61339,_:N8c0470e49107457ea8b164d45556e283
+ - Shape cr:SourceReferenceShape: _:Nc5f15bff459a4307b5fa42dd2aec29de,_:Nb1e60e4166ff4c70bedddbc68644d1be,_:N27e3032962f04557a4221979c87b6b59,_:N96f68671a03f4d2aa0b5164b08a559f0,_:Nf26cf548e3074cd993fa18cc78da604c,_:N05799bd308a64e419bbcb2afc98a3d26,_:N54216d7d442049b49fec974972a76a2e,_:N8f40c8ae9ffb4c5b8d3c2d8269c046ab,_:N8523428e9f1a49a7879137a078d6452d,_:N7665462dd67840aba62131c252dffa39,_:N3e37da2eafed4de499821fc6f7f214b9,_:Nb6fffe9806914bfd98816569b883d02b,_:Nb4e2df671f5e49e3b731b8b974a7f9d0,_:N721be43b1fab4095b3327f0bf9cde265,_:N8db575ecf70e4ce8bef77dc5ddefbc79,_:N80584f80c6734e67be5295e94796245d,_:Nde77470c606741b5a78cb5b9b8cf4879,_:Nd9aa76ca300b4e6b94d7a6617ad371da,_:N49fcef42cdbe4fd8b89a15908b7195ba,_:N8662bab968464e32836fbd9e46c712a3,_:N51ffd17cc0a7437f90e48f52c9c6d525,_:Nf123a26dccc44d65ab092c77b9b179f7,_:N37fa9226e4644182b3d3f25d1d4f8a7a,_:N509dd84e4cbf49499520f46c174e1de3,_:N831f3dea7b1d40139d7d11071f1d5edd,_:Nc6255c1fbe0e4faca969ac11aa279970,_:N3a761d89249c49fa9d31e2bffb83097c,_:N0b81923183044088b8d2aff772afedfd,_:N23825a6f69e74e6b87f986f15b6df24b,_:N4d1cbe8ace944b038dd5ceaa5af1df76,_:N718ef641e27c475ab30d8d3c3ee16e83,_:N14f02658cb744c91bbd4e8b49fdfbd7e,_:N8b8c2e3687c5464ba4dc99988e8a3791,_:Na66d18a84afc47929473b789903b8501,_:N37815fa240e34cb0960abdefc0735f25,_:N8cbb197df5164d27b1c3cd7b3a94b353,_:N65bef10ae6d8495e8aa827c5dc860bfa,_:N6695d95ed35f4cb590b0dae23e1cccec,_:Naf6a9e21a6f4424ba2f76a90eaa86de4,_:N8405305ea2e74b1ba0ba97229340da9d,_:Na40e2922b2f543d4993bf1360b0dd303,_:N2736ddfd4fad47b498a569e71afffcbe,_:N730602441d0144cd8f0927369b6d52d9
+ - Shape cr:ReportValueShape: _:N5dbaadc827cb4595ae25688ec0ff829d,_:Nf2dac52e378344e5b3c50a3a5b340ce5,_:Ndad864d465114ff08e6a1e8b458c649a,_:N51d06dcbc8b1402e83d14b9d5baeb608,_:Nd5b4566839df4168ae834731621fc266,_:N67f2db4e427a4a86b956504681d7039b,_:N867d010a9e844805a68c131c942d4f67,_:N5599444a91a34db9b9cc5f3af925701a,_:Nbd561e4bd9d74dd790e6c7e15a94fd8e,_:N40f25e1075bb43aba41e02017be0284c,_:N053a342c051947aea6a4d5bf671dcf1a,_:N3572fecf3ccc408ba0d14ec8672d3c0d,_:N915b77516c5f4d32a688b266b15e7d58,_:N80157b74b702497785c3a75f16536f92,_:N49c1d1ab6fc34196b0bce43e319669a9,_:N029351564d874445bb549f5e2ac1a80a,_:N4d7b1d4dfa2a4f89896f34478598d125,_:N4d8ee639866b40f38c5e2083e428b8b5,_:N77da440270514eeab5e2f9b9bc6b2ecb,_:N8727868a765e46539ca3b9453f3e6b29,_:N855b8c9b727648d2806f9c1728e1ab48,_:N8875aa0ea2024121b1e24d5341a59baf,_:N23ad2341164a44ecadfb0a14a75669b2,_:N9ffa819867894d4aa5e55533e70bc036,_:N273d34f6e46e4b30997f3d28015cefea,_:Nfac61155a806476a9dbd70220d33fc82,_:Na291df79efe34257954ed4b391452b1d,_:Nd9fbb740c8cf4732aabf79e8d1df0308,_:N6a9c64d0984043e6925a1be887dd8578,_:N229089909af34ec392063ef52d0a1a08,_:Ned217776fe8e41c280d81f4abdb1cd32,_:N5402d22d573e40a69b39ee6a9b3649f6,_:Nb35a3b5fab574dc0bc830fa342431fa0
+ - Shape cr:ReportShape: _:N2f714e6fc72c4157a8d25475ac4cf9d4
+
+=== End SHACL ===
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Unit Entitlement Report: SP83687</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; color: #222; max-width: 60rem; }
+    table { border-collapse: collapse; min-width: 18rem; }
+    th, td { border: 1px solid #999; padding: 0.3rem 0.8rem; }
+    th { background: #eee; text-align: left; }
+    td.num, tfoot td { text-align: right; }
+    .missing { color: #a00; font-style: italic; }
+    .meta { color: #555; }
+    sup.status { font-size: 0.65em; margin-left: 0.2em; padding: 0 0.25em; border-radius: 0.3em;
+                 background: #e6e6e6; color: #333; cursor: help; }
+    sup.status-derived { background: #dbe9ff; }
+    sup.status-not-supplied, sup.status-unresolved, sup.status-invalid, sup.status-conflicting {
+      background: #ffd9d9; color: #800; }
+    ul.legend { list-style: none; padding: 0; color: #555; font-size: 0.9em; }
+    dl.details { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1rem; }
+    dl.details dt { font-weight: bold; }
+    dl.details dd { margin: 0; }
+    .report-status { padding: 0.4rem 0.8rem; border-radius: 0.3rem; background: #eee; display: inline-block; }
+    .report-status.status-complete { background: #dff3df; }
+    .report-status.status-incomplete { background: #fff1cc; }
+    .report-status.status-invalid { background: #ffd9d9; }
+    table#checks { margin-top: 0.5rem; font-size: 0.9em; }
+    tr.outcome-fail td:first-child { color: #a00; font-weight: bold; }
+    tr.outcome-not-evaluated td:first-child { color: #8a6d00; }
+  </style>
+</head>
+<body>
+  <h1>Unit Entitlement Report</h1>
+  <p id="report-status" class="report-status status-invalid">Report status: <strong>invalid</strong> (18 checks: 1 failed errors, 0 failed warnings, 0 unevaluated errors)</p>
+  <p class="meta" id="sources">Source: SP83687; vocabularies: <a href="https://linked.data.gov.au/def/csdm/wa-approved-form">wa-approved-form</a>, <a href="https://linked.data.gov.au/def/csdm/wa-locality">WA Localities</a></p>
+
+  <p><strong>Scheme number:</strong> <span id="scheme-number"><span class="rv" data-status="reported">SP83687<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/1/properties/schemeNumber">R</sup></span></span></p>
+  <dl class="details" id="scheme">
+    <dt>Scheme name</dt><dd id="scheme-name"><span class="rv" data-status="reported">281 Belmont Avenue, Cloverdale<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/1/properties/schemeName">R</sup></span></dd>
+    <dt>Scheme address</dt><dd id="scheme-address"><span class="rv" data-status="derived">281 Belmont Avenue, Cloverdale<sup class="status status-derived" title="Derived by the report; format-address of 3 value(s)">D</sup></span></dd>
+</dl>
+  <h2>Unit entitlements</h2>
+  <table id="lots">
+    <thead>
+      <tr><th>Lot number</th><th>Unit entitlement</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="rv" data-status="reported">1<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/2/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">117<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/2/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">2<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/3/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">108<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/3/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">3<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/4/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">113<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/4/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">4<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/5/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">108<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/5/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">5<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/6/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">108<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/6/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">6<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/7/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">113<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/7/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">7<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/8/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">108<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/8/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">8<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/9/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">108<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/9/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      <tr><td><span class="rv" data-status="reported">9<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/10/properties/appellation/hasPart/3/label">R</sup></span></td><td class="num"><span class="rv" data-status="reported">117<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/10/properties/interests/0/entitlementPortion">R</sup></span></td></tr>
+      
+    </tbody>
+    <tfoot>
+      
+      <tr><td>Calculated total (<span class="rv" data-status="derived">9<sup class="status status-derived" title="Derived by the report; count of 1 value(s)">D</sup></span> lots)</td><td id="calculated-total" class="num"><span class="rv" data-status="derived">1000<sup class="status status-derived" title="Derived by the report; sum of 9 value(s)">D</sup></span></td></tr>
+      
+      <tr><td>Declared total</td><td id="declared-total" class="num"><span class="rv" data-status="reported">1100<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/1/properties/interests/0/entitlementTotal">R</sup></span></td></tr>
+    </tfoot>
+  </table>
+  
+  <h2>Basis of the schedule</h2>
+  <dl class="details" id="basis">
+    <dt>Schedule document</dt><dd id="schedule-document"><a href="documents/SP83687-unit-entitlement-schedule.pdf">Schedule of Unit Entitlements - SP83687</a> (application/pdf)</dd>
+        <dt>Approved form</dt><dd id="approved-form"><code>wa-approved-form:2021-47738</code></dd>
+        <dt>Form</dt><dd><span class="rv" data-status="reported">Approved Schedule of Unit Entitlements Form number 2021-47738<sup class="status status-reported" title="Reported from the source; source: https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738">R</sup></span></dd>
+    <dt>Effective for use from</dt><dd id="form-valid-from"><span class="rv" data-status="reported">2021-07-07<sup class="status status-reported" title="Reported from the source; source: https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738; as supplied: &#39;2021-07-07/..&#39;">R</sup></span></dd>
+    <dt>Form published at</dt><dd><span class="rv" data-status="reported">wa-leg:mrdoc_48587.pdf<sup class="status status-reported" title="Reported from the source; source: https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738">R</sup></span></dd>
+    <dt>Legislation</dt><dd id="legislation-1"><span class="rv" data-status="reported">Approved under section 37, Schedule 2A clause 21T(1)(d) and Schedule 2A clause 31E(1)(c) of the Strata Titles Act 1985.<sup class="status status-reported" title="Reported from the source; source: https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738">R</sup></span></dd>
+
+  </dl>
+  <h2>Certificate of licensed valuer</h2>
+  <dl class="details" id="certification">
+    <dt>Valuer first name</dt><dd><span class="rv" data-status="reported">Jordan<sup class="status status-reported" title="Reported from the source; source: /annotations/2/certifier/firstName">R</sup></span></dd>
+    <dt>Valuer last name</dt><dd><span class="rv" data-status="reported">Example<sup class="status status-reported" title="Reported from the source; source: /annotations/2/certifier/lastName">R</sup></span></dd>
+    <dt>Licensed valuer number</dt><dd id="valuer-number"><span class="rv" data-status="reported">00000<sup class="status status-reported" title="Reported from the source; source: /annotations/2/certifier/licensedValuerNumber">R</sup></span></dd>
+    <dt>Date certified</dt><dd id="date-certified"><span class="rv" data-status="reported">2022-05-17<sup class="status status-reported" title="Reported from the source; source: /annotations/2/dateCertified">R</sup></span></dd>
+    <dt>Statement</dt><dd id="certification-statement">Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.</dd>
+        <dt>Certifies</dt><dd><a href="documents/SP83687-unit-entitlement-schedule.pdf">Schedule of Unit Entitlements - SP83687</a> (application/pdf)</dd>
+    </dl>
+
+  
+  <h2>Documents relied on</h2>
+  <ul id="documents">
+    <li><a href="documents/SP83687-unit-entitlement-schedule.pdf">Schedule of Unit Entitlements - SP83687</a> (application/pdf) <span class="meta">(wa-survey-documentation-type:unitEntitlementSchedule)</span></li>
+    
+  </ul>
+  
+  
+  <p class="meta">Value status (hover a marker for its source or derivation):</p>
+  <ul class="legend">
+    <li><sup class="status status-reported">R</sup> Reported from the source</li>
+    <li><sup class="status status-derived">D</sup> Derived by the report</li>
+    
+  </ul>
+  
+  <h2>Checks</h2>
+  <table id="checks">
+    <thead>
+      <tr><th>Outcome</th><th>Severity</th><th>Category</th><th>Check</th><th>Message</th></tr>
+    </thead>
+    <tbody>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>generation</td><td><code>scheme-identified</code></td><td>One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>domain</td><td><code>membership-parcel-aggregate</code></td><td>The scheme topology is ParcelAggregate with 9 member reference(s)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>domain</td><td><code>membership-references-resolve</code></td><td>All 9 references resolve to strata-lot parcels</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>membership-back-links</code></td><td>Every member lot links back to the scheme</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>membership-unreferenced-claimants</code></td><td>No strata lot claims the scheme without being one of its references</td></tr>
+      <tr class="outcome-fail"><td>fail</td><td>info</td><td>source-conformance</td><td><code>entitlement-source-datatype</code></td><td>9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>scheme-number-consistent</code></td><td>The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>lot-numbers-present</code></td><td>Every lot has a lot number</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>domain</td><td><code>lot-numbers-unique</code></td><td>Lot numbers are unique</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>entitlements-present</code></td><td>All 9 lots have a unit entitlement</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>domain</td><td><code>entitlements-valid</code></td><td>Every supplied unit entitlement is a single positive whole number</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>total-covers-all-lots</code></td><td>The calculated total includes all 9 lots</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>declared-total-present</code></td><td>The source declares a total of 1100</td></tr>
+      <tr class="outcome-fail"><td>fail</td><td>error</td><td>domain</td><td><code>total-matches-declared</code></td><td>Calculated total 1000 differs from the declared total 1100</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>schedule-document-referenced</code></td><td>The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687</td></tr>
+      <tr class="outcome-not-evaluated"><td>not-evaluated</td><td>info</td><td>generation</td><td><code>document-hrefs-resolvable</code></td><td>Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>valuer-certification-present</code></td><td>Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>info</td><td>domain</td><td><code>certification-linked-to-schedule</code></td><td>The certification links to the schedule document</td></tr>
+      
+    </tbody>
+  </table>
+  <p class="meta" id="generated-by">Generated by: <code>csdm.reporting.adapters.wa-csdm</code> to-strata-entitlement-facts → <code>csdm.reporting.reports.strata-entitlement</code> complete → <code>csdm.reporting.cadastral-report</code> summarise-checks</p>
+</body>
+</html>

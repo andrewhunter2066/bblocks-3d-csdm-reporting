@@ -1,0 +1,136 @@
+{
+  "title": "Validation report for csdm.reporting.cadastral-report - Cadastral report",
+  "bblockName": "Cadastral report",
+  "bblockId": "csdm.reporting.cadastral-report",
+  "generated": "2026-10-02T20:44:56.804985+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "TRANSFORM_OUTPUT",
+        "requireFail": false,
+        "filename": "build/tests/reporting/cadastral-report/transforms/example_1_1.summarise-checks.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/tests/reporting/cadastral-report/transforms/example_1_1.summarise-checks.json",
+        "language": "application/json",
+        "transformId": "summarise-checks"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.summarise-checks.json from transform outputs"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.summarise-checks.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.summarise-checks.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.summarise-checks.ttl",
+              "size": 40,
+              "isError": false,
+              "message": "Output Turtle example_1_1.summarise-checks.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/cadastral-report/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/cadastral-report/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/cadastral-report/shapes.shacl",
+              "focusNodes": {
+                "cr:ReportStatusFollowsFromChecks": {
+                  "nodes": [
+                    "_:N6d776aadbd874a17b6035579cf9fa4de"
+                  ]
+                },
+                "cr:DocumentAndAnnotationReferencesResolve": {
+                  "nodes": [
+                    "_:N6d776aadbd874a17b6035579cf9fa4de"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N6d776aadbd874a17b6035579cf9fa4de\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N6d776aadbd874a17b6035579cf9fa4de\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/cadastral-report-ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/cadastral-report-ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/cadastral-report-ontology/shapes.shacl",
+              "focusNodes": {
+                "cr:CheckResultShape": {
+                  "nodes": [
+                    "_:N272cb65bacb74f419bcc74cf6e0cab14",
+                    "_:N5c130b16e267422cbafdcb30cc25444c"
+                  ]
+                },
+                "cr:SourceReferenceShape": {
+                  "nodes": [
+                    "_:N4c0ac599698241efbc1dbdbfd1b8bdb4"
+                  ]
+                },
+                "cr:ReportValueShape": {
+                  "nodes": []
+                },
+                "cr:ReportShape": {
+                  "nodes": [
+                    "_:N6d776aadbd874a17b6035579cf9fa4de"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:CheckResultShape: _:N272cb65bacb74f419bcc74cf6e0cab14,_:N5c130b16e267422cbafdcb30cc25444c\n - Shape cr:SourceReferenceShape: _:N4c0ac599698241efbc1dbdbfd1b8bdb4\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N6d776aadbd874a17b6035579cf9fa4de\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  }
+}

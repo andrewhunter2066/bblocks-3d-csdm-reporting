@@ -1,0 +1,12 @@
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+[] dcterms:source [ dcterms:identifier "example-dataset" ] ;
+    dcterms:subject [ cr:kind "parcel" ;
+            cr:sourceRef [ cr:jsonPointer "parcels/0" ;
+                    cr:sourceDataset "example-dataset" ] ] ;
+    cr:content [ ] ;
+    cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete> ;
+    cr:reportType "example.report-type" ;
+    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> .
+

@@ -1,0 +1,190 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:47.192403+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using plain-entitlement-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD plain-entitlement-fail.jsonld created
+Output Turtle plain-entitlement-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 117 is not of type 'object'
+
+Failed validating 'type' in schema['allOf'][1]['properties']['content']['properties']['lots']['items']['properties']['entitlement']['allOf'][0]:
+    {'$anchor': 'ReportValue',
+     'allOf': [{'else': {'properties': {'value': {'type': 'null',
+                                                  'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}}},
+                'if': {'properties': {'status': {'enum': ['reported',
+                                                          'derived',
+                                                          'documented',
+                                                          'configured']}}},
+                'then': {'properties': {'value': {'not': {'type': 'null'},
+                                                  'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}},
+                         'required': ['value']}},
+               {'if': {'properties': {'status': {'const': 'reported'}}},
+                'then': {'required': ['sourceRefs']}},
+               {'if': {'properties': {'status': {'const': 'derived'}}},
+                'then': {'required': ['derivation']}},
+               {'if': {'properties': {'status': {'const': 'documented'}}},
+                'then': {'required': ['documentRef']}},
+               {'if': {'properties': {'status': {'const': 'unresolved'}}},
+                'then': {'required': ['sourceRefs']}},
+               {'if': {'properties': {'status': {'const': 'invalid'}}},
+                'then': {'required': ['sourceRefs', 'lexicalValue']}},
+               {'if': {'properties': {'status': {'const': 'conflicting'}}},
+                'then': {'properties': {'sourceRefs': {'minItems': 2,
+                                                       'x-jsonld-container': '@set',
+                                                       'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'}},
+                         'required': ['sourceRefs']}}],
+     'description': 'A report value together with its provenance and '
+                    'status. Report-type building blocks constrain\n'
+                    '`value` (for example to a positive integer); this '
+                    'definition fixes which provenance each status\n'
+                    'needs:\n'
+                    '\n'
+                    '| status | value | also required |\n'
+                    '|---|---|---|\n'
+                    '| `reported` | present | `sourceRefs`: where the '
+                    'value was read |\n'
+                    '| `derived` | present | `derivation`: method and the '
+                    'report values it was calculated from |\n'
+                    '| `documented` | present | `documentRef`: the '
+                    'supporting document it comes from |\n'
+                    '| `configured` | present | (a report-type constant) '
+                    '|\n'
+                    '| `not-supplied` | null or absent | (`sourceRefs`, '
+                    'when given, say where it was looked for) |\n'
+                    '| `unresolved` | null or absent | `sourceRefs`: the '
+                    'reference that could not be followed |\n'
+                    '| `invalid` | null or absent | `sourceRefs` and '
+                    '`lexicalValue`: the unusable value as supplied |\n'
+                    '| `conflicting` | null or absent | at least two '
+                    '`sourceRefs` that disagree |\n',
+     'properties': {'derivation': {'properties': {'inputs': {'description': 'Pointers '
+                                                                            'to '
+                                                                            'the '
+                                                                            'report '
+                                                                            'values '
+                                                                            'the '
+                                                                            'calculation '
+                                                                            'used.',
+                                                             'items': {'$ref': '#/$defs/ReportPointer'},
+                                                             'type': 'array',
+                                                             'x-jsonld-container': '@set',
+                                                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationInput'},
+                                                  'method': {'description': 'How '
+                                                                            'the '
+                                                                            'value '
+                                                                            'was '
+                                                                            'calculated, '
+                                                                            'for '
+                                                                            'example '
+                                                                            '`sum` '
+                                                                            'or '
+                                                                            '`count`.',
+                                                             'minLength': 1,
+                                                             'type': 'string',
+                                                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationMethod'}},
+                                   'required': ['method', 'inputs'],
+                                   'type': 'object',
+                                   'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivation'},
+                    'documentRef': {'description': 'Identifier of the '
+                                                   'supporting document '
+                                                   'the value was obtained '
+                                                   'from.',
+                                    'type': 'string',
+                                    'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/documentRef'},
+                    'lexicalValue': {'description': 'The value exactly as '
+                                                    'it appears in the '
+                                                    'source, when it '
+                                                    'differs from `value`.',
+                                     'type': 'string',
+                                     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/lexicalValue'},
+                    'note': {'type': 'string',
+                             'x-jsonld-id': 'http://www.w3.org/2000/01/rdf-schema#comment'},
+                    'sourceRefs': {'items': {'$ref': '#/$defs/SourceRef'},
+                                   'minItems': 1,
+                                   'type': 'array',
+                                   'x-jsonld-container': '@set',
+                                   'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'},
+                    'status': {'description': 'Where the value comes from, '
+                                              'or why there is none. '
+                                              "Codelist in this block's "
+                                              '`data.ttl`.',
+                               'enum': ['reported',
+                                        'derived',
+                                        'documented',
+                                        'configured',
+                                        'not-supplied',
+                                        'unresolved',
+                                        'invalid',
+                                        'conflicting'],
+                               'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportStatus',
+                               'x-jsonld-type': '@vocab',
+                               'x-jsonld-vocab': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/'},
+                    'value': {'description': 'The value, or null when '
+                                             'there is no usable value '
+                                             '(see `status`).',
+                              'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}},
+     'required': ['status'],
+     'type': 'object'}
+
+On instance['content']['lots'][0]['entitlement']:
+    117
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+
+** Validation error **
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: se:CalculatedTotalIsTheSumOfTheLots
+  	Focus Node: [ se:basis [ se:approvedForm [ dcterms:identifier Literal("wa-approved-form:2021-47738") ; se:formLabel [ cr:sourceRef <http://recursion.too.deep> ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("Approved Schedule of Unit Entitlements Form number 2021-47738") ] ; se:formPublishedAt [ cr:sourceRef <http://recursion.too.deep> ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("wa-leg:mrdoc_48587.pdf") ] ; se:formValidFrom [ cr:lexicalValue Literal("2021-07-07/..") ; cr:sourceRef <http://recursion.too.deep> ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("2021-07-07") ] ] ; se:certification [ cr:annotationRef Literal("licensed-valuer-certification") ; cr:documentRef Literal("unit-entitlement-schedule") ; se:certifier [ se:certifierFirstName <http://recursion.too.deep> ; se:certifierLastName <http://recursion.too.deep> ; se:licensedValuerNumber <http://recursion.too.deep> ] ; se:dateCertified [ cr:sourceRef <http://recursion.too.deep> ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("2022-05-17") ] ] ; se:schedule [ cr:documentRef Literal("unit-entitlement-schedule") ; dcterms:conformsTo Literal("wa-approved-form:2021-47738") ] ] ; se:legislativeBasis [ cr:sourceRef [ cr:jsonPointer Literal("") ; cr:sourceDataset Literal("https://linked.data.gov.au/def/csdm/wa-approved-form") ; cr:sourceObject Literal("https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("Approved under section 37, Schedule 2A clause 21T(1)(d) and Schedule 2A clause 31E(1)(c) of the Strata Titles Act 1985.") ] ; se:lot [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/10") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:79015221-adeb-482f-988b-ed47e57bc2a4") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/10/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("9") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/10/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("117", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/2") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:e62621ed-1334-4890-964f-608ff68f7a17") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/2/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("1") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement Literal("117", datatype=xsd:integer) ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/3") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/3/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("2") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/3/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("108", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/4") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:85da01f8-9625-4b1e-9f4d-a34c11313512") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/4/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("3") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/4/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("113", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/5") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:5e2823d1-2473-4417-8045-1089d2e86e64") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/5/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("4") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/5/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("108", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/6") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/6/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("5") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/6/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("108", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/7") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/7/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("6") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/7/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("113", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/8") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:0df5a108-f5fe-433a-9934-b0162115248f") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/8/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("7") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/8/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("108", datatype=xsd:integer) ] ], [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/9") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5") ] ; se:lotNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/9/properties/appellation/hasPart/3/label") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("8") ] ; se:membershipEvidence Literal("containingPrimaryParcel"), Literal("references"), Literal("schemeRef") ; se:unitEntitlement [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/9/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("108", datatype=xsd:integer) ] ] ; se:scheme [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/1") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ; cr:sourceObject Literal("uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e") ] ; se:address [ se:addressPart ( <http://recursion.too.deep> <http://recursion.too.deep> <http://recursion.too.deep> <http://recursion.too.deep> <http://recursion.too.deep> <http://recursion.too.deep> ) ; se:formattedAddress [ cr:derivation <http://recursion.too.deep> ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/derived> ; rdf:value Literal("281 Belmont Avenue, Cloverdale") ] ] ; se:schemeName [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/1/properties/schemeName") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("281 Belmont Avenue, Cloverdale") ] ; se:schemeNumber [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/1/properties/schemeNumber") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("SP83687") ] ] ; se:totals [ se:calculatedTotal [ cr:derivation [ cr:derivationInput Literal("/content/lots/0/entitlement"), Literal("/content/lots/1/entitlement"), Literal("/content/lots/2/entitlement"), Literal("/content/lots/3/entitlement"), Literal("/content/lots/4/entitlement"), Literal("/content/lots/5/entitlement"), Literal("/content/lots/6/entitlement"), Literal("/content/lots/7/entitlement"), Literal("/content/lots/8/entitlement") ; cr:derivationMethod Literal("sum") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/derived> ; rdf:value Literal("1000", datatype=xsd:integer) ] ; se:declaredTotal [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/1/properties/interests/0/entitlementTotal") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ; rdf:value Literal("1000", datatype=xsd:integer) ] ; se:lotCount [ cr:derivation [ cr:derivationInput Literal("/content/lots") ; cr:derivationMethod Literal("count") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/derived> ; rdf:value Literal("9", datatype=xsd:integer) ] ] ]
+  	Value Node: Literal("1000", datatype=xsd:integer)
+  	Source Constraint: [ rdf:type sh:SPARQLConstraint ; sh:message Literal("Calculated total {?value} is not the sum of the lots' unit entitlements ({?sum})") ; sh:prefixes se:Prefixes ; sh:select Literal("
+              SELECT $this (SAMPLE(?calculated) AS ?value) (COALESCE(SUM(?entitlement), 0) AS ?sum) WHERE {
+                  $this se:totals/se:calculatedTotal/rdf:value ?calculated .
+                  OPTIONAL { $this se:lot/se:unitEntitlement/rdf:value ?entitlement }
+              }
+              GROUP BY $this
+              HAVING (COALESCE(SUM(?entitlement), 0) != SAMPLE(?calculated))
+          ") ]
+  	Message: Calculated total 1000 is not the sum of the lots' unit entitlements (883)
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:N8f683a0382e4419d9aec2e2b8409570f
+ - Shape se:LotCountIsTheNumberOfLots: _:N8f683a0382e4419d9aec2e2b8409570f
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N11c3acf3c31948dfbc43e563fb0fade4
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N11c3acf3c31948dfbc43e563fb0fade4
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:Nbe2caaa49185478681abb4a7af133b06,_:Nc8132d2de61d4f51b8b437db2fdff241,_:Naf92d4e886a642f6a16316ee0a3175b5,_:Nfbd9ddd2c0ff4260b20e75394578d98b,_:Na6615f45cd9d43d8964457170ab16174,_:N478fafeaf660475596aee42adff478aa,_:Nae9bd5defccf4f2c9272f0667d71d410,_:N9a934a9c7a99461ea39b53f167c6b148,_:Nb95927af37b34f359cfca177a3740dc1,_:N30f375ff8f4c41d09bf9edc0a55b66cc,_:N02589c658301493cb8a1f61b74b54986,_:N6166dbbe46ab43d4b73f43b0ab513a91,_:N88f2b39f529b4d5fa93da802e1a950f2,_:N04912ce9325d4857adacb7f035df1996,_:N3505943c5fbf41eea623984ac3620166,_:N1eabc4a356ae4a9a91ab8d7ab69184dd,_:N8b81886049cb41b29025bad80ba6041f,_:Nb6e5e38b8f794a38a24405501ebd9b08
+ - Shape cr:SourceReferenceShape: _:Nbfa26be639b3405b8c579396f9e9df07,_:N46c87a3e1a6342f5968a963605e86217,_:N43b5ad7822d44071b7c3de10f376ea47,_:Ncad44cfba69a4069bc97a14b865243a3,_:N1377cce9880c405aae4807498956f68b,_:N4518f3799abe472b8f38576832af1d3f,_:N785aec61746d429a99377595335b7202,_:N6763c72bd217477b95c1bba5a52a30ca,_:Ne77c50407c504163b1b74818c2a2fe07,_:N3a3ed314834847a085eb495be8ca2610,_:Nbd1b765f00cf413986df08b0b9347333,_:Ne41f4d4055b84b89a1586570de212c69,_:N07eb02b5d1d144dcbc330638b63dfc38,_:N28baf548c73949f1b24b15e9604b5b4c,_:N077349682560448599d1107c169c7acf,_:Nb4e80028fdcf446487ed37852a1d38c0,_:Nc2fcd4fde8e84448a5b94017a986490c,_:N97fb38e44c954df3949953102c633eb9,_:Ne4c3b70308d643dba1539004369bdc82,_:Nbc28ab7bed7d439986b2232c5f9b518b,_:N78ba871cd61643f2a6962e43e11e4bb0,_:N6a549eb808d044c3adae66ddc6e5bb5f,_:Nce81589c3af049ddb5ab3d8008cad97e,_:N458a1a932d1d44d990583a4f9c0e882f,_:Nf7a682d6aa51492e91e21d81d8eac035,_:N2e1e217162aa4f6aa9cde4a1a0d3e7b3,_:N821a48f05b5e44d080b548f71bea32a9,_:N279de77100aa4a1b876d8272c6841060,_:Nf915649f0c8946738cc44fcb88e1b4b1,_:N78f1c144f2fc42848b14e314a3fc1b6c,_:N8702f8e93d4641e392be120c4d4bad34,_:N8e19f1ca5e7d45abb797e070551f4f03,_:N8354e66bad344fb8b47ca1558fc4d440,_:Ndaeb8239192f4c9c87057081a54c85e6,_:N4ef62a11403e4eb2afc471343a7c992e,_:Nb6c5a01be9cc492b917963126b4ba211,_:N4906acfb26d0435492dc00bf68e32fc6,_:Na5faab750e994e1f9e9fd2d321657e2e,_:Naee7ba5c7380451e80c528bcacde54c3,_:N97b5f735416a44738d44098bc1d9add4,_:Nbfd0df46df1e4be2bcb3d4cae7417ebb,_:N19035c22e9f04202ba23beec8e7a742d,_:Nbea1300bd31842ceb90ea2e6ac7ae436
+ - Shape cr:ReportValueShape: _:Nbe4f8b33a3eb495e8d771b6c38281f1e,_:N011f4995e049452696d0a4ee95d723b1,_:N0a7ac4e72c714caab39c1ccbf24828b6,_:N8708d741e2a548d3b5e782227c1baab6,_:N740c852714a5492394bef385e3b315c6,_:Nd2af610f882b41da9c665b30a68e8867,_:N74e14d7e82d34074aeff68602fbda8c0,_:N20774c2844f64a5b9045b25dfa922bf4,_:N7e834b1cbc35499e8f3a4669003cc654,_:N29da70c7b25542f28fb13f7fe5780990,_:N73b3c134af544f208dbda5414f966584,_:Nc46e8784ad1a4fe8ad5c4c82ca9bcf65,_:N8229ff44c28044d8b1703773f0711180,_:N8d84968f6a314b8aba659ed71fc284d3,_:N31a18b6dee0443c388014967ba530a94,_:N545926882fa94d9a8b941199d4e9b0ca,_:N8e1a6fa255464f57aba2ae1398cf5ffd,_:N519d1c654af64c2999adfb919df1893a,_:N9186bfea5ab649e7b5cbb401d88f9216,_:N94a92c87f0e44d1395829a0105d260ad,_:N0658a2cc671248879c6912da5caaf721,_:N1ed6bdef4bff45e8a630c775ca6067c0,_:N51ec95c5985c49918a7492751b7f8ae4,_:N97b01637f63a423c985c618227af9f43,_:Nf80ea397c1b840d490b8b865416be204,_:N8ac0bcebcff24dc292cd8231a5bb2859,_:Nd6a7de21ed094bb7a69b0020c257d84a,_:Neaf68a4e24f64d2994d301bb3acbd0ed,_:N9b653c8a1606483e9c92e5a548617a5a,_:N092bfef273404e0997f8572fa061bd17,_:Nef7e5bf10d004385ad15d4975c51d7fc,_:N00f1d06c509c4e7c9419b6b720833233,_:N4c891a62461d4e848e1ca4110911e376
+ - Shape cr:ReportShape: _:N11c3acf3c31948dfbc43e563fb0fade4
+
+=== End SHACL ===
+

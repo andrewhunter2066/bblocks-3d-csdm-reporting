@@ -1,0 +1,188 @@
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix se: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+se:address a owl:ObjectProperty ;
+    rdfs:label "address"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The address of the strata scheme."@en .
+
+se:addressPart a owl:ObjectProperty ;
+    rdfs:label "address part"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The ordered list of the address parts as supplied by the source."@en .
+
+se:addressPartLabel a owl:ObjectProperty ;
+    rdfs:label "address part label"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The human-readable label of a coded address part value, such as a road or locality name."@en .
+
+se:addressPartType a owl:ObjectProperty ;
+    rdfs:label "address part type"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:seeAlso <https://linked.data.gov.au/def/addr-part-types> ;
+    skos:definition "The type of an address part, a concept of the ICSM address part types vocabulary (for example apt:road)."@en .
+
+se:addressPartValue a owl:DatatypeProperty ;
+    rdfs:label "address part value"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range rdf:JSON ;
+    skos:definition "The value of an address part exactly as supplied by the source (a literal, a code or an object), kept as JSON."@en .
+
+se:approvedForm a owl:ObjectProperty ;
+    rdfs:label "approved form"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The approved form that the schedule of unit entitlements follows."@en .
+
+se:basis a owl:ObjectProperty ;
+    rdfs:label "basis"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "What the unit entitlements rest on: the lodged schedule, its approved form and the valuer's certification."@en .
+
+se:calculatedTotal a owl:ObjectProperty ;
+    rdfs:label "calculated total"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The sum of the unit entitlements of all lots that have a usable one (derived)."@en .
+
+se:certification a owl:ObjectProperty ;
+    rdfs:label "certification"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The licensed valuer's certification of the schedule of unit entitlements."@en .
+
+se:certifier a owl:ObjectProperty ;
+    rdfs:label "certifier"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The licensed valuer who certified the schedule."@en .
+
+se:certifierFirstName a owl:ObjectProperty ;
+    rdfs:label "certifier first name"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The first name of the licensed valuer who certified the schedule."@en .
+
+se:certifierLastName a owl:ObjectProperty ;
+    rdfs:label "certifier last name"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The last name of the licensed valuer who certified the schedule."@en .
+
+se:dateCertified a owl:ObjectProperty ;
+    rdfs:label "date certified"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The date on which the licensed valuer certified the schedule."@en .
+
+se:declaredTotal a owl:ObjectProperty ;
+    rdfs:label "declared total"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The total unit entitlement declared by the source for the scheme."@en .
+
+se:formLabel a owl:ObjectProperty ;
+    rdfs:label "form label"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The name of the approved form."@en .
+
+se:formPublishedAt a owl:ObjectProperty ;
+    rdfs:label "form published at"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "Where the approved form is published."@en .
+
+se:formValidFrom a owl:ObjectProperty ;
+    rdfs:label "form valid from"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The date from which the approved form is approved for use."@en .
+
+se:formattedAddress a owl:ObjectProperty ;
+    rdfs:label "formatted address"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The single-line address derived from the address parts, for example \"281 Belmont Avenue, Cloverdale\"."@en .
+
+se:legislativeBasis a owl:ObjectProperty ;
+    rdfs:label "legislative basis"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The legislation the schedule is made under, as stated for its approved form."@en .
+
+se:licensedValuerNumber a owl:ObjectProperty ;
+    rdfs:label "licensed valuer number"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The licence number of the licensed valuer who certified the schedule."@en .
+
+se:lot a owl:ObjectProperty ;
+    rdfs:label "lot"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "A member lot of the strata scheme."@en .
+
+se:lotCount a owl:ObjectProperty ;
+    rdfs:label "lot count"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The number of member lots (derived)."@en .
+
+se:lotNumber a owl:ObjectProperty ;
+    rdfs:label "lot number"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The lot number as it appears in the source."@en .
+
+se:membershipEvidence a owl:DatatypeProperty ;
+    rdfs:label "membership evidence"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range xsd:string ;
+    skos:definition "A source link that associates a lot with the scheme; the first listed is the authoritative one that made it a member."@en .
+
+se:schedule a owl:ObjectProperty ;
+    rdfs:label "schedule"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The lodged schedule of unit entitlements."@en .
+
+se:scheme a owl:ObjectProperty ;
+    rdfs:label "scheme"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The strata scheme the report is about."@en .
+
+se:schemeName a owl:ObjectProperty ;
+    rdfs:label "scheme name"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The name of the strata scheme."@en .
+
+se:schemeNumber a owl:ObjectProperty ;
+    rdfs:label "scheme number"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:definition "The scheme (plan) number, for example SP83687."@en .
+
+se:totals a owl:ObjectProperty ;
+    rdfs:label "totals"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    skos:definition "The declared and calculated totals of the scheme's unit entitlements."@en .
+
+se:unitEntitlement a owl:ObjectProperty ;
+    rdfs:label "unit entitlement"@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> ;
+    rdfs:range cr:ReportValue ;
+    skos:closeMatch <https://w3id.org/ogc/ladm/parcels/entitlementPortion> ;
+    skos:definition "The unit entitlement of a lot: a positive whole number giving its share of the scheme."@en .
+
+<https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement> a owl:Ontology ;
+    dcterms:created "2026-10-02"^^xsd:date ;
+    dcterms:description "Properties of the content of a Strata Scheme Entitlement Report: the scheme, its lots and unit entitlements, the totals, and the basis of the schedule of unit entitlements."@en ;
+    dcterms:source <https://github.com/ogcincubator/bblocks-3d-csdm-reporting/tree/master/_sources/reports/strata-entitlement> ;
+    dcterms:title "Strata Scheme Entitlement Report vocabulary"@en ;
+    owl:imports <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> ;
+    owl:versionInfo "0.1" .
+

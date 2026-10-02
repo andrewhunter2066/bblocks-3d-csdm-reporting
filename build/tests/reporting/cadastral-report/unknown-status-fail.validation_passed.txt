@@ -1,0 +1,86 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:43.061827+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using unknown-status-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD unknown-status-fail.jsonld created
+Output Turtle unknown-status-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'done' is not one of ['complete', 'incomplete', 'invalid']
+
+Failed validating 'enum' in schema['properties']['status']:
+    {'description': 'Overall report status, set from the check results by '
+                    'the generic `summarise-checks` transform when\n'
+                    'the report is completed: `invalid` if any `error` '
+                    'check fails; otherwise `incomplete` if any\n'
+                    '`warning` check fails or any `error` check could not '
+                    'be evaluated; otherwise `complete`.\n',
+     'enum': ['complete', 'incomplete', 'invalid'],
+     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportStatus',
+     'x-jsonld-type': '@vocab',
+     'x-jsonld-vocab': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/'}
+
+On instance['status']:
+    'done'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+
+** Validation error **
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: cr:ReportStatusFollowsFromChecks
+  	Focus Node: [ cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> ; cr:reportType Literal("example.report-type") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; dcterms:source [ dcterms:identifier Literal("example-dataset") ] ; dcterms:subject [ cr:kind Literal("parcel") ; cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/0") ; cr:sourceDataset Literal("example-dataset") ] ] ]
+  	Value Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done>
+  	Source Constraint: [ rdf:type sh:SPARQLConstraint ; sh:message Literal("Report status {?value} does not follow from its check results (expected {?expected})") ; sh:prefixes cr:Prefixes ; sh:select Literal("
+              SELECT $this ?value ?expected WHERE {
+                  $this cr:reportStatus ?value .
+                  BIND(EXISTS { $this cr:check ?c . ?c earl:outcome earl:failed ; sh:resultSeverity sh:Violation } AS ?invalid)
+                  BIND(EXISTS { $this cr:check ?w . ?w earl:outcome earl:failed ; sh:resultSeverity sh:Warning } AS ?warned)
+                  BIND(EXISTS { $this cr:check ?u . ?u earl:outcome earl:untested ; sh:resultSeverity sh:Violation } AS ?unevaluated)
+                  BIND(IF(?invalid, rstatus:invalid, IF(?warned || ?unevaluated, rstatus:incomplete, rstatus:complete)) AS ?expected)
+                  FILTER (?value != ?expected)
+              }
+          ") ]
+  	Message: Report status https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done does not follow from its check results (expected https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete)
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N7a25ee154bea4ee3ade34caf7e983928
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N7a25ee154bea4ee3ade34caf7e983928
+
+
+** Validation error **
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in InConstraintComponent (http://www.w3.org/ns/shacl#InConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:in ( rstatus:complete rstatus:incomplete rstatus:invalid ) ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:path cr:reportStatus ]
+  	Focus Node: [ cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> ; cr:reportType Literal("example.report-type") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; dcterms:source [ dcterms:identifier Literal("example-dataset") ] ; dcterms:subject [ cr:kind Literal("parcel") ; cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/0") ; cr:sourceDataset Literal("example-dataset") ] ] ]
+  	Value Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done>
+  	Result Path: cr:reportStatus
+  	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:complete', 'rstatus:invalid', 'rstatus:incomplete']
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N9e8496e1cd624b2096033161e706d45a
+ - Shape cr:SourceReferenceShape: _:Nba501631074c45e8bd1684ffedde485b
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N7a25ee154bea4ee3ade34caf7e983928
+
+=== End SHACL ===
+

@@ -1,0 +1,65 @@
+{
+  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/context.jsonld",
+  "reportType": "example.report-type",
+  "stage": "facts",
+  "subject": {
+    "kind": "strata-scheme",
+    "ref": {
+      "dataset": "SP-1",
+      "pointer": "/parcels/0/features/1"
+    }
+  },
+  "sources": [
+    {
+      "id": "SP-1",
+      "kind": "dataset"
+    }
+  ],
+  "content": {
+    "reportedValue": {
+      "value": 117,
+      "status": "reported",
+      "lexicalValue": "117",
+      "sourceRefs": [
+        {
+          "dataset": "SP-1",
+          "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion"
+        }
+      ]
+    },
+    "derivedValue": {
+      "value": 225,
+      "status": "derived",
+      "derivation": {
+        "method": "sum",
+        "inputs": [
+          "/content/reportedValue",
+          "/content/invalidValue"
+        ]
+      }
+    },
+    "notSuppliedValue": {
+      "value": null,
+      "status": "not-supplied",
+      "sourceRefs": [
+        {
+          "dataset": "SP-1",
+          "pointer": "/parcels/0/features/5"
+        }
+      ],
+      "note": "No interest with interestType wa-interest-type:strata-lot and an entitlementPortion"
+    },
+    "invalidValue": {
+      "value": null,
+      "status": "invalid",
+      "lexicalValue": "12.5",
+      "sourceRefs": [
+        {
+          "dataset": "SP-1",
+          "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion"
+        }
+      ],
+      "note": "Not a positive whole number"
+    }
+  }
+}

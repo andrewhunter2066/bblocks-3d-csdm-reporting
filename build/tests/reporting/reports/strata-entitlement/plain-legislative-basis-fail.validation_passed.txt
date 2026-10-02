@@ -1,0 +1,173 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:47.343045+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using plain-legislative-basis-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD plain-legislative-basis-fail.jsonld created
+Output Turtle plain-legislative-basis-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'Strata Titles Act 1985' is not of type 'object'
+
+Failed validating 'type' in schema['allOf'][1]['properties']['content']['properties']['legislativeBasis']['items']['allOf'][0]:
+    {'$anchor': 'ReportValue',
+     'allOf': [{'else': {'properties': {'value': {'type': 'null',
+                                                  'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}}},
+                'if': {'properties': {'status': {'enum': ['reported',
+                                                          'derived',
+                                                          'documented',
+                                                          'configured']}}},
+                'then': {'properties': {'value': {'not': {'type': 'null'},
+                                                  'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}},
+                         'required': ['value']}},
+               {'if': {'properties': {'status': {'const': 'reported'}}},
+                'then': {'required': ['sourceRefs']}},
+               {'if': {'properties': {'status': {'const': 'derived'}}},
+                'then': {'required': ['derivation']}},
+               {'if': {'properties': {'status': {'const': 'documented'}}},
+                'then': {'required': ['documentRef']}},
+               {'if': {'properties': {'status': {'const': 'unresolved'}}},
+                'then': {'required': ['sourceRefs']}},
+               {'if': {'properties': {'status': {'const': 'invalid'}}},
+                'then': {'required': ['sourceRefs', 'lexicalValue']}},
+               {'if': {'properties': {'status': {'const': 'conflicting'}}},
+                'then': {'properties': {'sourceRefs': {'minItems': 2,
+                                                       'x-jsonld-container': '@set',
+                                                       'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'}},
+                         'required': ['sourceRefs']}}],
+     'description': 'A report value together with its provenance and '
+                    'status. Report-type building blocks constrain\n'
+                    '`value` (for example to a positive integer); this '
+                    'definition fixes which provenance each status\n'
+                    'needs:\n'
+                    '\n'
+                    '| status | value | also required |\n'
+                    '|---|---|---|\n'
+                    '| `reported` | present | `sourceRefs`: where the '
+                    'value was read |\n'
+                    '| `derived` | present | `derivation`: method and the '
+                    'report values it was calculated from |\n'
+                    '| `documented` | present | `documentRef`: the '
+                    'supporting document it comes from |\n'
+                    '| `configured` | present | (a report-type constant) '
+                    '|\n'
+                    '| `not-supplied` | null or absent | (`sourceRefs`, '
+                    'when given, say where it was looked for) |\n'
+                    '| `unresolved` | null or absent | `sourceRefs`: the '
+                    'reference that could not be followed |\n'
+                    '| `invalid` | null or absent | `sourceRefs` and '
+                    '`lexicalValue`: the unusable value as supplied |\n'
+                    '| `conflicting` | null or absent | at least two '
+                    '`sourceRefs` that disagree |\n',
+     'properties': {'derivation': {'properties': {'inputs': {'description': 'Pointers '
+                                                                            'to '
+                                                                            'the '
+                                                                            'report '
+                                                                            'values '
+                                                                            'the '
+                                                                            'calculation '
+                                                                            'used.',
+                                                             'items': {'$ref': '#/$defs/ReportPointer'},
+                                                             'type': 'array',
+                                                             'x-jsonld-container': '@set',
+                                                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationInput'},
+                                                  'method': {'description': 'How '
+                                                                            'the '
+                                                                            'value '
+                                                                            'was '
+                                                                            'calculated, '
+                                                                            'for '
+                                                                            'example '
+                                                                            '`sum` '
+                                                                            'or '
+                                                                            '`count`.',
+                                                             'minLength': 1,
+                                                             'type': 'string',
+                                                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationMethod'}},
+                                   'required': ['method', 'inputs'],
+                                   'type': 'object',
+                                   'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivation'},
+                    'documentRef': {'description': 'Identifier of the '
+                                                   'supporting document '
+                                                   'the value was obtained '
+                                                   'from.',
+                                    'type': 'string',
+                                    'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/documentRef'},
+                    'lexicalValue': {'description': 'The value exactly as '
+                                                    'it appears in the '
+                                                    'source, when it '
+                                                    'differs from `value`.',
+                                     'type': 'string',
+                                     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/lexicalValue'},
+                    'note': {'type': 'string',
+                             'x-jsonld-id': 'http://www.w3.org/2000/01/rdf-schema#comment'},
+                    'sourceRefs': {'items': {'$ref': '#/$defs/SourceRef'},
+                                   'minItems': 1,
+                                   'type': 'array',
+                                   'x-jsonld-container': '@set',
+                                   'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'},
+                    'status': {'description': 'Where the value comes from, '
+                                              'or why there is none. '
+                                              "Codelist in this block's "
+                                              '`data.ttl`.',
+                               'enum': ['reported',
+                                        'derived',
+                                        'documented',
+                                        'configured',
+                                        'not-supplied',
+                                        'unresolved',
+                                        'invalid',
+                                        'conflicting'],
+                               'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportStatus',
+                               'x-jsonld-type': '@vocab',
+                               'x-jsonld-vocab': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/'},
+                    'value': {'description': 'The value, or null when '
+                                             'there is no usable value '
+                                             '(see `status`).',
+                              'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}},
+     'required': ['status'],
+     'type': 'object'}
+
+On instance['content']['legislativeBasis'][0]:
+    'Strata Titles Act 1985'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Nb8f19642ced54bf58ee50c963d7bc83e
+ - Shape se:LotCountIsTheNumberOfLots: _:Nb8f19642ced54bf58ee50c963d7bc83e
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:Nd164190ba9bb43048d03a078d953fca1
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd164190ba9bb43048d03a078d953fca1
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N50de6828a3ff48cb820388806583337c,_:Nfa7b503a5cf1424cb92c4ba1011d53a9,_:Ne275af3635ef474ea222d424557d6f7a,_:N8117eb97a7f74b209d653d82ed316548,_:N95a82b0b71384782bd7cd3ff15412a28,_:N7835a3895d2844de8b3ef7920a071144,_:Nbb0578163ee445439627ddaadbfdd395,_:Nd24671e3c24941f0aa0c69a9d9facc07,_:N3b6bbbc5aef9423a9af076c156e53e16,_:Nc5099fad947e4043b2481e68ac616836,_:N4a8d4042bfcd406f9ec659be501c3672,_:N853fafbd51334d1b99c102a6b96705ac,_:N04a5b4d00d94400ea94433c0c9bc2b6c,_:Nd9df2764de8644feaa13423e9fcaf97d,_:N867ca7961dc24473afc1bee3fb7cb661,_:N4cbe492807ce41a3b8c91a54e7417aaa,_:N345a1bad3ae541598cadcb374716e88e,_:Neb15dc063867439683252c94ca28966e
+ - Shape cr:SourceReferenceShape: _:Nefe4de64bdfe4d2fb8205365fb551e10,_:N4fde1502e9d146d381953c3ca737e113,_:Nc2795a5b3f7c4427959465905440f158,_:N7bb2ed7c370e4056b2250be4c05ec270,_:N3d2efe3498cd4db88e46a402552ea6c2,_:N4698bbf1dfe74d53b4c4d908d219df97,_:N71e8d05ff0754e18ad5a4364639f4609,_:Nda7ff953a8004b59828d582b67963647,_:Nb003469ce5484d288e78e3b78ef9f1b5,_:N0fddde20dfaa4dad86483b2a22f01030,_:N420631b2dd5942708399385907fa4408,_:N84736e3435294c2889c188d90bcacb8a,_:N6e3b4f9e1ea641c1b0aa0901f0c9bcdc,_:N184a15ceda2f4f429c98910f945bb32b,_:N2e9f184cda084a878081d1a36238fcea,_:N796c0e589454432e923c5f294707f3a0,_:Ne1e90149b28a4fa3aded0c2b5809071e,_:N525d47ffd8d54fc78b1972325f0788f0,_:Ncce5514d37204425b14645930aa9ab9f,_:N921ae8e28f094cac8a80982a0b5a6fe7,_:N65c2b8ff35d54c3eb6fa59433e8490f6,_:Nab0dcc7774ef489c819c12b8cff72175,_:N49799910f4ef43c1bb16a9f844276820,_:N42afee16d6f3401ebb5c0da84c8bfca3,_:N6020dab68d664377b5e35e8e468bc866,_:N56f5890513d84d438336d275c3ae06e8,_:N04d1f8d3099d4c7cbba978cf66bbd188,_:Nd367e2160af94d15b7601d5f6bf15fb3,_:Nf4fc82ba3fda4cdba48e00ed62a862a0,_:N752443c63849431e9dbaf881ee15c227,_:Nba28a4a7873f428b99189580af01417f,_:N51954e2bedb544cca4f61dbcdd57c7df,_:Nca5c8528eacf4fcf9a68602c8d33d49c,_:N1eb37e6e2dac497caa7c9774efcbf8f7,_:N9873e147769e408698157765500bbdd5,_:N38e973aea53f4bab8a90115a351210c4,_:Ne05ebf2d1a2e463b995431e56d9107ea,_:N920479d2c99647d3a756b9aa23feb908,_:N7c8916f7ee964faab1f4d022860a8dd3,_:N10e2c9f800a84f28a056625ff428644c,_:N5b8ff84d292840bea098253c72ba19e3,_:N77bb46635d5b4d87bd8525664c84014b,_:N571943a3b8204d8d8f0849d65a675681
+ - Shape cr:ReportValueShape: _:N1bb516431cef4c6982b64fa22bb999b3,_:N1b2affe149b64329ab82a831c8635ac0,_:Nd97d2148598d4896810965183a9b6539,_:Nfe17a28572b94690aea8010327cb5294,_:N2bbb7cea2b584a73b6b60c8674f4feaf,_:N29cd7a36b89542fc8d3b017f58e85bdc,_:N228c2824902d4feb92ae8ce271e377b7,_:Nd6d2a8193ee84af384d62f14eb54262c,_:N836cd443b7394ee2ba99fdb1023aaa9e,_:N412b218fca6f49668dff7ba48470c050,_:N4aad7afa91194f95942df0374fd6a6c5,_:Nb1eb262ec2534f22bb3605a2b1c15e4b,_:Ncfde1e8898ba405085cfd7b1724a85e2,_:Nbf4ddf8028cd46208a913a8d1ec4f51a,_:N13d87b075fb54cb1bc52afde53abf681,_:N74d10c4312e3472e81ffc78801464c58,_:N54b8c5a7e860499097b080e595c2475f,_:N087647a56fe04092a4c29f0508a610e1,_:Na68bec4509eb4621aa8c40cfdf82c56e,_:N4f41ae8700c84eb095e11622ec519a81,_:Ndb9f1fcb237246d2b2ef385b260c44dc,_:Nec0e2387d0054d7fb283707f32e97d34,_:N04609b6a6cf246e0b4779bc428dbc229,_:Na5bcf75ba852438483b3b6515405c3b9,_:Nf563854ba0334ebc8708ffbba0e2e5aa,_:Nbd217b882ad54113b3de59b73222b590,_:Nb64f9e4a46f24d0d819d4f75712c861d,_:Nb84a09d830e143cab537702fe4693dfb,_:Nc677607ab7ed4e779776949ff1e4f5b0,_:Neac7f072a6b4494f8d3915a9ab8feb99,_:Ne654a8f169fa44a8ac5a6c971d96fd07,_:N8bb8c042b1e74bcab46d1b474e1ab465,_:N70b9fdee94164c6c8e63690fb97c125e
+ - Shape cr:ReportShape: _:Nd164190ba9bb43048d03a078d953fca1
+
+=== End SHACL ===
+

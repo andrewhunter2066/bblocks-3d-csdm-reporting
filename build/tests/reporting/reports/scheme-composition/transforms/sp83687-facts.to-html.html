@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Scheme Composition Report: SP83687</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; color: #222; max-width: 60rem; }
+    table { border-collapse: collapse; min-width: 18rem; }
+    th, td { border: 1px solid #999; padding: 0.3rem 0.8rem; }
+    th { background: #eee; text-align: left; }
+    td.num, tfoot td { text-align: right; }
+    .missing { color: #a00; font-style: italic; }
+    .meta { color: #555; }
+    sup.status { font-size: 0.65em; margin-left: 0.2em; padding: 0 0.25em; border-radius: 0.3em;
+                 background: #e6e6e6; color: #333; cursor: help; }
+    sup.status-derived { background: #dbe9ff; }
+    sup.status-not-supplied, sup.status-unresolved, sup.status-invalid, sup.status-conflicting {
+      background: #ffd9d9; color: #800; }
+    ul.legend { list-style: none; padding: 0; color: #555; font-size: 0.9em; }
+    dl.details { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1rem; }
+    dl.details dt { font-weight: bold; }
+    dl.details dd { margin: 0; }
+    .report-status { padding: 0.4rem 0.8rem; border-radius: 0.3rem; background: #eee; display: inline-block; }
+    .report-status.status-complete { background: #dff3df; }
+    .report-status.status-incomplete { background: #fff1cc; }
+    .report-status.status-invalid { background: #ffd9d9; }
+    table#checks { margin-top: 0.5rem; font-size: 0.9em; }
+    tr.outcome-fail td:first-child { color: #a00; font-weight: bold; }
+    tr.outcome-not-evaluated td:first-child { color: #8a6d00; }
+  </style>
+</head>
+<body>
+  <h1>Scheme Composition Report</h1>
+  <p id="report-status" class="report-status">Report status: <strong>not yet assessed</strong> (facts-stage report)</p>
+  <p class="meta" id="sources">Source: SP83687</p>
+
+  <p><strong>Scheme number:</strong> <span id="scheme-number"><span class="rv" data-status="reported">SP83687<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/1/properties/schemeNumber">R</sup></span></span></p>
+  
+  <h2>Members</h2>
+  <table id="members">
+    <thead>
+      <tr><th>Lot number</th><th>Geometry type</th><th>Representation status</th><th>Components found</th><th>Spatially resolved</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="rv" data-status="reported">1<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/2/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/2/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/2/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">4 of 4</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">2<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/3/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/3/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/3/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">5 of 5</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">3<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/4/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/4/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/4/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">4<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/5/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/5/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/5/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">5<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/6/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/6/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/6/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">6<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/7/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/7/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/7/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">7<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/8/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/8/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/8/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">8<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/9/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/9/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/9/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      <tr><td><span class="rv" data-status="reported">9<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/10/properties/appellation/hasPart/3/label">R</sup></span></td><td><span class="rv" data-status="reported">AggregateSolid<sup class="status status-reported" title="Reported from the source; source: /parcels/0/features/10/topology/type">R</sup></span></td><td><span class="rv" data-status="not-supplied"><span class="missing">not supplied</span><sup class="status status-not-supplied" title="Not supplied by the source; source: /parcels/0/features/10/properties; The lot has no spatialRepresentationDefinitions.representationStatus">N</sup></span></td><td class="num">0 of 0</td><td><span class="missing">not assessed (facts-stage report)</span></td></tr>
+      
+    </tbody>
+  </table>
+
+  
+  
+  <p class="meta">Value status (hover a marker for its source or derivation):</p>
+  <ul class="legend">
+    <li><sup class="status status-reported">R</sup> Reported from the source</li>
+    <li><sup class="status status-not-supplied">N</sup> Not supplied by the source</li>
+    
+  </ul>
+  
+  <h2>Checks</h2>
+  <table id="checks">
+    <thead>
+      <tr><th>Outcome</th><th>Severity</th><th>Category</th><th>Check</th><th>Message</th></tr>
+    </thead>
+    <tbody>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>generation</td><td><code>scheme-identified</code></td><td>One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>domain</td><td><code>membership-parcel-aggregate</code></td><td>The scheme topology is ParcelAggregate with 9 member reference(s)</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>error</td><td>domain</td><td><code>membership-references-resolve</code></td><td>All 9 references resolve to strata-lot parcels</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>membership-back-links</code></td><td>Every member lot links back to the scheme</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>membership-unreferenced-claimants</code></td><td>No strata lot claims the scheme without being one of its references</td></tr>
+      <tr class="outcome-pass"><td>pass</td><td>warning</td><td>domain</td><td><code>scheme-number-consistent</code></td><td>The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)</td></tr>
+      
+    </tbody>
+  </table>
+  <p class="meta" id="generated-by">Generated by: <code>csdm.reporting.adapters.wa-csdm</code> to-scheme-composition-facts</p>
+</body>
+</html>

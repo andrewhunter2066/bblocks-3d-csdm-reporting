@@ -1,0 +1,272 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:45.177198+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using complete-without-totals-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD complete-without-totals-fail.jsonld created
+Output Turtle complete-without-totals-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'totals' is a required property
+
+Failed validating 'required' in schema['allOf'][2]['then']['properties']['content']:
+    {'properties': {'totals': {'required': ['calculated', 'lotCount'],
+                               'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/totals'}},
+     'required': ['totals']}
+
+On instance['content']:
+    {'basis': {'certification': {'annotationRef': 'licensed-valuer-certification',
+                                 'certifier': {'firstName': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                                             'pointer': '/annotations/2/certifier/firstName'}],
+                                                             'status': 'reported',
+                                                             'value': 'Jordan'},
+                                               'lastName': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                                            'pointer': '/annotations/2/certifier/lastName'}],
+                                                            'status': 'reported',
+                                                            'value': 'Example'},
+                                               'licensedValuerNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                                                        'pointer': '/annotations/2/certifier/licensedValuerNumber'}],
+                                                                        'status': 'reported',
+                                                                        'value': '00000'}},
+                                 'dateCertified': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                                   'pointer': '/annotations/2/dateCertified'}],
+                                                   'status': 'reported',
+                                                   'value': '2022-05-17'},
+                                 'documentRef': 'unit-entitlement-schedule'},
+               'form': {'id': 'wa-approved-form:2021-47738',
+                        'label': {'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-approved-form',
+                                                  'id': 'https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738',
+                                                  'pointer': ''}],
+                                  'status': 'reported',
+                                  'value': 'Approved Schedule of Unit '
+                                           'Entitlements Form number '
+                                           '2021-47738'},
+                        'source': {'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-approved-form',
+                                                   'id': 'https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738',
+                                                   'pointer': ''}],
+                                   'status': 'reported',
+                                   'value': 'wa-leg:mrdoc_48587.pdf'},
+                        'validFrom': {'lexicalValue': '2021-07-07/..',
+                                      'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-approved-form',
+                                                      'id': 'https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738',
+                                                      'pointer': ''}],
+                                      'status': 'reported',
+                                      'value': '2021-07-07'}},
+               'schedule': {'conformsTo': 'wa-approved-form:2021-47738',
+                            'documentRef': 'unit-entitlement-schedule'}},
+     'legislativeBasis': [{'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-approved-form',
+                                           'id': 'https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738',
+                                           'pointer': ''}],
+                           'status': 'reported',
+                           'value': 'Approved under section 37, Schedule '
+                                    '2A clause 21T(1)(d) and Schedule 2A '
+                                    'clause 31E(1)(c) of the Strata Titles '
+                                    'Act 1985.'}],
+     'lots': [{'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/2/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 117},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/2/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '1'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:e62621ed-1334-4890-964f-608ff68f7a17',
+                       'pointer': '/parcels/0/features/2'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/3/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 108},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/3/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '2'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9',
+                       'pointer': '/parcels/0/features/3'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/4/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 113},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/4/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '3'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:85da01f8-9625-4b1e-9f4d-a34c11313512',
+                       'pointer': '/parcels/0/features/4'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/5/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 108},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/5/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '4'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:5e2823d1-2473-4417-8045-1089d2e86e64',
+                       'pointer': '/parcels/0/features/5'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/6/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 108},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/6/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '5'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3',
+                       'pointer': '/parcels/0/features/6'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/7/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 113},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/7/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '6'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078',
+                       'pointer': '/parcels/0/features/7'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/8/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 108},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/8/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '7'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:0df5a108-f5fe-433a-9934-b0162115248f',
+                       'pointer': '/parcels/0/features/8'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/9/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 108},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/9/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '8'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5',
+                       'pointer': '/parcels/0/features/9'}},
+              {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/10/properties/interests/0/entitlementPortion'}],
+                               'status': 'reported',
+                               'value': 117},
+               'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                             'pointer': '/parcels/0/features/10/properties/appellation/hasPart/3/label'}],
+                             'status': 'reported',
+                             'value': '9'},
+               'membershipEvidence': ['references',
+                                      'containingPrimaryParcel',
+                                      'schemeRef'],
+               'ref': {'dataset': 'SP-83687-1-1-0.00',
+                       'id': 'uuid:79015221-adeb-482f-988b-ed47e57bc2a4',
+                       'pointer': '/parcels/0/features/10'}}],
+     'scheme': {'address': {'formatted': {'derivation': {'inputs': ['/content/scheme/address/parts/0/value',
+                                                                    '/content/scheme/address/parts/1/label',
+                                                                    '/content/scheme/address/parts/2/label'],
+                                                         'method': 'format-address'},
+                                          'status': 'derived',
+                                          'value': '281 Belmont Avenue, '
+                                                   'Cloverdale'},
+                            'parts': [{'partType': 'apt:addressNumberFirst',
+                                       'value': 281},
+                                      {'label': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                                 'pointer': '/parcels/0/features/1/properties/schemeAddress/hasPart/1/value/label'}],
+                                                 'status': 'reported',
+                                                 'value': 'Belmont Avenue'},
+                                       'partType': 'apt:road',
+                                       'value': {'@id': 'https://example.com/road/belmont-avenue',
+                                                 'label': 'Belmont '
+                                                          'Avenue'}},
+                                      {'label': {'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-locality',
+                                                                 'id': 'https://linked.data.gov.au/def/csdm/wa-locality/cloverdale',
+                                                                 'pointer': ''}],
+                                                 'status': 'reported',
+                                                 'value': 'Cloverdale'},
+                                       'partType': 'apt:locality',
+                                       'value': 'wa-locality:cloverdale'},
+                                      {'partType': 'apt:stateOrTerritory',
+                                       'value': {'@id': 'https://linked.data.gov.au/dataset/asgsed3/STE/5'}},
+                                      {'partType': 'apt:postcode',
+                                       'value': 6105},
+                                      {'partType': 'apt:country',
+                                       'value': {'@id': 'https://linked.data.gov.au/dataset/asgsed3/AUS/AUS'}}]},
+                'ref': {'dataset': 'SP-83687-1-1-0.00',
+                        'id': 'uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e',
+                        'pointer': '/parcels/0/features/1'},
+                'schemeName': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                               'pointer': '/parcels/0/features/1/properties/schemeName'}],
+                               'status': 'reported',
+                               'value': '281 Belmont Avenue, Cloverdale'},
+                'schemeNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                 'pointer': '/parcels/0/features/1/properties/schemeNumber'}],
+                                 'status': 'reported',
+                                 'value': 'SP83687'}}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: *none*
+ - Shape se:LotCountIsTheNumberOfLots: *none*
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N4515e3f770084d34be77edf6c712a9bc
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N4515e3f770084d34be77edf6c712a9bc
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N63d909518f3a42dfb828cbc193143d0f,_:N8aa1bc8332c24d869290c87b32bef361,_:N09a7b1261a834a84892bae3a54d77a57,_:N1af19c3f269747c59973cee90f56e092,_:Ncd3c77f2e69249839e84d741f3353328,_:N0d010f21c34543ddbc569ac19e2212c2,_:N2d097e8fa6624e1ca65baa3a516d0826,_:N886edbaf9c594b6eb66e754681f9bbb3,_:N26de583a58084f7e988c66f066510e86,_:N1071165fa28e4155905912953c1e0bd1,_:N64f8b0d17c2f429594fb717cf66c2370,_:N0f7f48e6acbe4037a88f69069567d482,_:N212a430a13de40e88155383c472bb3d7,_:Nc5d276c213954fff920babbabaa3604c,_:N89c04a2edd204ec5a8fcaff7338c59f6,_:Nb42f46bb22aa492f8e8d4c428c455326,_:N7da95e0898d34c33865910c7bfbbae47,_:Ne8a6161945f54e1c9e916bd364fd349d
+ - Shape cr:SourceReferenceShape: _:N7842b431c685420b9ab150b28ccaf63a,_:N347e7014eed04a4986a912895e6ad0df,_:N78fc434bbb784848a0ccaaebebc45c2f,_:N036f7379f3334b56b9f21962be28c768,_:Nb7c4b1d2fa274339a88c60bfc094b97e,_:N96928bfb62764724bd7a6ef68e7307a2,_:Nbcf579833c8a4d78965ac1cf74a50772,_:N0a5aae8beef94f39824e7d9d01926a0c,_:N1f0b1c5562fb4183a41797c6d819cf26,_:Nd766c6a940b84d9bb89da9a599b68662,_:N6b3e712232b84dc7b925ad597d527bea,_:Nbe58773580de47efaa501902bb6ee068,_:N6a618de698ef4fcbb6434383ef6a8791,_:Na009aa47f2da4742b187315838764aa6,_:Nc655ad1940824a20aa3ee15a67770333,_:N7c10766a41b9405d80147c2c57455e89,_:N2bec2c5d933e43bc98c0334f973ad74d,_:Nd3691bd887a04a9c90388da47650871b,_:N0b7e8399e58648259d1fb27dc793055c,_:N84a74d98ed884b3b8aaaf91a5ec13471,_:N2770779939274d4a9df2eded9923d77f,_:N645480df88724d549d5a35441099cf4f,_:Nef10f5ed2ccc49e38bfc3132cd9aa1c5,_:N3a0796ac183b4db6aa9f58e37a9d2dc2,_:Naec07d9066ab4417bc22ef56d1b5d752,_:Nf88bccd9acb545529c255dbaf333369e,_:N99acde5cce074acd88cc3deddc0bab4d,_:N3b2d623d404c483d8fa9dad42197bf07,_:N2bf877c7237b45d697649d2cbf36fd55,_:N5b79584461a7410f9c2c24c148d2bb59,_:N8924611113e84aa18ba77fe4dc07424f,_:Na118a5f88cbf48e693c4d1dffc41d982,_:N31efece7b947407c92fae4fb99ccb0de,_:N82c174572c8242349afbdc2e6c29775b,_:Nd98429ba24924bc49942bd3c0a30169e,_:N16e316b837d34cecbe88ae4bd207b287,_:N3cc1e9c2b049440c96c1d8787473bba2,_:Nc6f65120b4ad45708df374ef5aa19143,_:Nd2fcf64eab3744309900cad1e562f152,_:N31f44ec0adb847698f12157f7d8a11ca,_:N43ad06e89cb24912a9610b9101b96920,_:Neda12b513e504d73bd98099f6b58455c,_:N4bf07bf35c4d44d0ac08f20bf2ed15cc
+ - Shape cr:ReportValueShape: _:Nc10a0d4ef14b4d319a06753dc160788f,_:N4c0650671f5e434da1c985500579ea15,_:N2d68f6d76a884f89ae7647ae6ad5376d,_:N4a7baed8fc3f4adebbde8ab0eeea2429,_:N85117b97fbc64190a2f8f8dcb228d162,_:N8434f6f3187b4b4290a63e8f7ae834fa,_:N64c29ba64c484e7796299ba7bb838444,_:N85668c3bdc6441588774c956fdbff63f,_:N84107718dcfd439ea5019c2bde80d652,_:N091f564e4ba24e7a950ffc44f0800a6d,_:N57f4605f181243bd888fd58d33cda5b3,_:N731c430728bc4ac0af1cb8c019ebaff4,_:N3ea1600f3c244874809e65dc6b958da0,_:N90e60dfd442244fab8b72f8d5956ca97,_:N83098a7b8e7848a1be434475518cb802,_:Ndd8076b999cf49f6b5becf08ef75e48e,_:N857a0dcd2fac4146b958a0296c5a45eb,_:N10e6bd281c4c42328c1e84baa8ff59c9,_:N13797a6a698748498120a4851dbb6ebd,_:Nc675e33a8a534227bddc0bf5e89999db,_:Nc32652beea6e4f0ea7b4f4946061f3c5,_:N0fef613e14cc45978dd936cdceca3db6,_:N528d6376fbb94d348b9f8b6859334d19,_:N1bf69545a60e45159ba27cc01d6a25b5,_:Nc2309751a8d54651ad85d772f6b20533,_:N186cab0b295345b7a81281b5d7dda82f,_:N8205c81aa172433b8ec5e5d0517d7dab,_:N846a8f3ff2c84664bce4c5da7d419b20,_:Nbece335edf984c528ec9021043332617,_:Nb50f2d915c2f4ab7a5061dca08b927c5,_:N964ea916539c4bd88db1e1b084b6c33c
+ - Shape cr:ReportShape: _:N4515e3f770084d34be77edf6c712a9bc
+
+=== End SHACL ===
+

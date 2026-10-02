@@ -1,0 +1,184 @@
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] dcterms:references [ dcterms:conformsTo "wa-approved-form:2021-47738" ;
+            dcterms:format "application/pdf" ;
+            dcterms:identifier "unit-entitlement-schedule" ;
+            dcterms:title "Schedule of Unit Entitlements - SP83687" ;
+            cr:role "wa-survey-documentation-type:unitEntitlementSchedule" ;
+            cr:sourceRef [ cr:jsonPointer "/supportingDocuments/3" ;
+                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+            schema:url "documents/SP83687-unit-entitlement-schedule.pdf" ] ;
+    dcterms:source [ rdfs:label "SP83687" ;
+            dcterms:conformsTo "icsm.profiles.wa.wa-3d" ;
+            dcterms:date "2023-02-06" ;
+            dcterms:identifier "SP-83687-1-1-0.00" ;
+            cr:kind "dataset" ],
+        [ rdfs:label "WA Localities" ;
+            dcterms:identifier "https://linked.data.gov.au/def/csdm/wa-locality" ;
+            cr:kind "vocabulary" ],
+        [ rdfs:label "wa-approved-form" ;
+            dcterms:identifier "https://linked.data.gov.au/def/csdm/wa-approved-form" ;
+            cr:kind "vocabulary" ] ;
+    dcterms:subject [ rdfs:label "Lots 1 to 9 on Plan SP 83687" ;
+            cr:kind "strata-scheme" ;
+            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/1" ;
+                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                    cr:sourceObject "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e" ] ] ;
+    prov:wasGeneratedBy ( [ cr:buildingBlock "csdm.reporting.adapters.wa-csdm" ;
+                cr:transform "to-strata-entitlement-facts" ] [ cr:buildingBlock "csdm.reporting.reports.strata-entitlement" ;
+                cr:transform "complete" ] [ cr:buildingBlock "csdm.reporting.cadastral-report" ;
+                cr:transform "summarise-checks" ] ) ;
+    cr:annotation [ dcterms:description "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022." ;
+            dcterms:identifier "licensed-valuer-certification" ;
+            cr:documentRef "unit-entitlement-schedule" ;
+            cr:linkRelation "via" ;
+            cr:sourceRef [ cr:jsonPointer "/annotations/2" ;
+                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+            schema:url "documents/SP83687-unit-entitlement-schedule.pdf" ] ;
+    cr:check [ dcterms:description "One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)" ;
+            dcterms:identifier "scheme-identified" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}"^^rdf:JSON ],
+        [ dcterms:description "Calculated total 1000 equals the declared total 1000" ;
+            dcterms:identifier "total-matches-declared" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:evidence "{\"calculated\":1000,\"declared\":1000}"^^rdf:JSON ;
+            cr:target "/content/totals/calculated",
+                "/content/totals/declared" ],
+        [ dcterms:description "Lot numbers are unique" ;
+            dcterms:identifier "lot-numbers-unique" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
+        [ dcterms:description "No strata lot claims the scheme without being one of its references" ;
+            dcterms:identifier "membership-unreferenced-claimants" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+        [ dcterms:description "Every lot has a lot number" ;
+            dcterms:identifier "lot-numbers-present" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
+        [ dcterms:description "All 9 references resolve to strata-lot parcels" ;
+            dcterms:identifier "membership-references-resolve" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+        [ dcterms:description "The certification links to the schedule document" ;
+            dcterms:identifier "certification-linked-to-schedule" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Info ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/basis/certification" ],
+        [ dcterms:description "The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)" ;
+            dcterms:identifier "scheme-number-consistent" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"appellationSurveyNumber\":\"SP 83687\",\"csdName\":\"SP83687\",\"schemeNumber\":\"SP83687\"}"^^rdf:JSON ;
+            cr:target "/content/scheme/schemeNumber" ],
+        [ dcterms:description "Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)" ;
+            dcterms:identifier "document-hrefs-resolvable" ;
+            earl:outcome earl:untested ;
+            sh:resultSeverity sh:Info ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:evidence "{\"hrefs\":[\"documents/SP83687-unit-entitlement-schedule.pdf\"]}"^^rdf:JSON ],
+        [ dcterms:description "The source declares a total of 1000" ;
+            dcterms:identifier "declared-total-present" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/totals/declared" ],
+        [ dcterms:description "The scheme topology is ParcelAggregate with 9 member reference(s)" ;
+            dcterms:identifier "membership-parcel-aggregate" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"references\":9,\"topologyType\":\"ParcelAggregate\"}"^^rdf:JSON ],
+        [ dcterms:description "The calculated total includes all 9 lots" ;
+            dcterms:identifier "total-covers-all-lots" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/totals/calculated" ],
+        [ dcterms:description "9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)" ;
+            dcterms:identifier "entitlement-source-datatype" ;
+            earl:outcome earl:failed ;
+            sh:resultSeverity sh:Info ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:target "/content/lots/0/entitlement",
+                "/content/lots/1/entitlement",
+                "/content/lots/2/entitlement",
+                "/content/lots/3/entitlement",
+                "/content/lots/4/entitlement",
+                "/content/lots/5/entitlement",
+                "/content/lots/6/entitlement",
+                "/content/lots/7/entitlement",
+                "/content/lots/8/entitlement" ],
+        [ dcterms:description "Every supplied unit entitlement is a single positive whole number" ;
+            dcterms:identifier "entitlements-valid" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
+        [ dcterms:description "Every member lot links back to the scheme" ;
+            dcterms:identifier "membership-back-links" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+        [ dcterms:description "Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17" ;
+            dcterms:identifier "valuer-certification-present" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/basis/certification" ],
+        [ dcterms:description "All 9 lots have a unit entitlement" ;
+            dcterms:identifier "entitlements-present" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
+        [ dcterms:description "The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687" ;
+            dcterms:identifier "schedule-document-referenced" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/basis/schedule" ] ;
+    cr:content [ ] ;
+    cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete> ;
+    cr:reportType "csdm.reporting.reports.strata-entitlement" ;
+    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ;
+    cr:statusSummary [ cr:checkCount 18 ;
+            cr:failedErrors 0 ;
+            cr:failedWarnings 0 ;
+            cr:unevaluatedErrors 0 ] .
+

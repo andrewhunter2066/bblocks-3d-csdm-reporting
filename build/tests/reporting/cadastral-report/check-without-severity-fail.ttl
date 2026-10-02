@@ -1,0 +1,18 @@
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+
+[] dcterms:source [ dcterms:identifier "example-dataset" ] ;
+    dcterms:subject [ cr:kind "parcel" ;
+            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/0" ;
+                    cr:sourceDataset "example-dataset" ] ] ;
+    cr:check [ dcterms:description "ok" ;
+            dcterms:identifier "subject-identified" ;
+            earl:outcome earl:passed ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "example.adapter" ] ;
+    cr:content [ ] ;
+    cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete> ;
+    cr:reportType "example.report-type" ;
+    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> .
+

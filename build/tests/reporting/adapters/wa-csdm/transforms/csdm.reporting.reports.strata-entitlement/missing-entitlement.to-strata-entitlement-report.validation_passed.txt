@@ -1,0 +1,45 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:59.956140+00:00
+=== Files ===
+Using missing-entitlement.to-strata-entitlement-report.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD missing-entitlement.to-strata-entitlement-report.jsonld created
+Output Turtle missing-entitlement.to-strata-entitlement-report.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Nb4a80b74d08d4f0281fcb435f6a2010d
+ - Shape se:LotCountIsTheNumberOfLots: _:Nb4a80b74d08d4f0281fcb435f6a2010d
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N35e2edb122994b9d953d402135439d1e
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N35e2edb122994b9d953d402135439d1e
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:Naf807ed29fcb46fc8695640cd0374d47,_:Nc9c1593a768b4bee8edd80b468558ec8,_:N4ea4a68b47d34a91be6474d0040a5694,_:N7119222407e946e09c3a5955db949f1f,_:N108e6b2126b74778823a1c02ee0fd09b,_:N54c11e1f114c4cf0b6233a99c9da6013,_:N5c8eb62e74d7403da37c239698796ee9,_:N030cd446e0b94488a72d6a611a30e673,_:Na0077fdf7c5c499ca676f92523227ee0,_:N682f51385de54a57a95f8673274994b2,_:Nbb7c60d1393a4efb95d25c9beb325f25,_:N46928f5cdbf14fa888a043c403537514,_:N3289f2d8d48e4116927b9952a62880fe,_:Naa9ba20544c94fc2bc876e46d0618d5e,_:N2c46a875166242bca924342cb93b1eac,_:Ne15a6ec67a9344acb8d26db0eadb4e56,_:N1db25fe0ffa64a4191f09cd80a538fb2,_:Nc2a1a1c78bf84c8282a3a40251dba882
+ - Shape cr:SourceReferenceShape: _:N3e590824a19c435cb1f98c0f35e6d21b,_:Nc19321c5bbe049e08c0b3c5472016e27,_:N1d588977bf6c44bfbc8a8dea997b3a72,_:N76afd778d02a4412b3d4b147b2b6ed77,_:N7193ad3135234d3f8431b606dc33e596,_:N81f17b7fb5d44a10a849e59336ab4820,_:N27393bc2b2b44df28bf99c5edd057a96,_:N632b3f8bda6348749bb194664ae32677,_:N372c679a05f14d3298cb19efc5a9b940,_:Ndb7cc10c2e844ffa99d55c98192a8945,_:Ncf245179f167410cbd635b781d4874e8,_:N63e299f23e03437f949ff8a75855f98d,_:N9c9f160a30574bd4bcc18e8222d265b5,_:N44eb8259daee4494a8d5e67201c36109,_:N64a55072fee7432db42df24409fb3408,_:N074cc31d2ebb4948b46560fae3af3127,_:N6fcf7ac1613e4de59e7b729dcabcc9c7,_:N152362c755a2463c9b32673329c568bf,_:N3197a150975b449a862a9b4532068670,_:N6919c482a67a4a8b9641c2c3140f879c,_:N441bf5038cb640118b33d05ec7544e32,_:N1185b813eece418ba7bed6504c6be9f7,_:Nd26df18520ae41d79cda4d34a07bb34b,_:N0482c1f74c3146d2b607c03842297ca7,_:N81d1082e6822436790a93b3cf670802a,_:N8c5cfc6dd7c0424e88e408a395c8c281,_:N9a79e96e7b2a4e9fa44d8e23ec5a9e77,_:N8a0a502adc944e93ba4deef50296a396,_:N723d4b0ce4c344e987703a198ec025d2,_:Nd9084ce677644d52a1c67f0c95a1856f,_:Naa8a168537c84eb7abce7b552b5387a3,_:Nac5671910dd44faca92965ea22038e6c,_:Nf92b250a97e1406480d4dcd3e16eb96e,_:N960a9c12f838457a80a3f21ed0635e64,_:N29adff0bb55c4456b72e839f9971632b,_:N7cd44fea82fb49babe76a7aa1cb55b9a,_:N245c37020c2b41708b29237ad123211e,_:N089a81d50d154f4da11f89117255c5c8,_:N3b6c7e452b504b079411cb9f1b94dd80,_:N2c25918e81624af097ffcf259beda9a4,_:Nd6f2b3db67124bfe935ad6af14062ce3,_:N63730320a4dd4b4f907a34ee8e7cb64b,_:Ne2b2030a5a404db096844d3ef6c1ab77,_:N0f1d631e97424744a73cd6608b91695d
+ - Shape cr:ReportValueShape: _:N0edfefb017844ec1b40c936ad9c4227e,_:N15ed5819b7fe401498be46fc32d9add5,_:N1152beaf764e43738f62560a408c6b1a,_:Nf013863f38d140678318dbb5e3e3edff,_:N56e735f3f7684b22b3d01ba537fdd820,_:Nd0a7ce7ded5f4abead897c513ee9b1be,_:N6f48cee9097a4080a04ef2303b3da813,_:N931956ee3fcd4bbca043bf708273ce75,_:N3b086bbf8df04f8883ba4c29335be922,_:N403f237e48944d8b9701400dedb8f5fb,_:N807c404dca2646f1a44973d979a9d3bb,_:N8d854115aea44094b8d6180eb0b95d56,_:N624ecc74bb684a18962413dd1bc0f04a,_:N6f53888501ee4b4d87d65fbba1f48b8c,_:N2442b65272c841ee84f9adb6d08e6a87,_:N86fdc3af9a4b4358adb29217783b0b9e,_:N91d811d9ed844c149c30a0c468b8e13c,_:Nf1ee6884a1df4f8e8eeb18894aabef4e,_:N35a7d9faf9854964a678cd269d27bdc7,_:Nb502a1fc26dd4292935d89c97430b488,_:N3654fd78f1e44c269d7de18daebc7851,_:N827dcfff02b64cdeb6279172ed36eb73,_:N2b8659d0f0dd4a7092454d08c0425606,_:N3cc5fceab60945359cbda3e845f2d654,_:N124b4277faaf4d668c901648b22f6636,_:N0dc7b3e575d94f6ebc06959b710f13f4,_:N0f24116ba6a843f08acda00194b337ba,_:Ncd09ad1a281d4e46b558ce75e32d5fcd,_:N5be8389cccb9494990c163cc1f8b7698,_:N756b239ad67d42f8b29b6bbdb2662fab,_:N65f458a492a94c0d8ff0c42cca4f38c9,_:N8d53615adc914991ae23df6bc6b3a12e,_:N6894b197be8d4564bea2961c9fd7f3f5,_:N17c57bf6e10e4429a65337ab87e90c3e
+ - Shape cr:ReportShape: _:N35e2edb122994b9d953d402135439d1e
+
+=== End SHACL ===
+

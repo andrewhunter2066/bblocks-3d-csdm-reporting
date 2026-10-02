@@ -1,0 +1,61 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.606585+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using facts-with-status-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD facts-with-status-fail.jsonld created
+Output Turtle facts-with-status-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'reportType': 'example.report-type', 'stage': 'facts', 'status': 'complete', 'checks': [{'id': 'subject-identified', 'definedBy': 'example.adapter', 'category': 'generation', 'severity': 'error', 'outcome': 'pass', 'message': 'ok'}], 'subject': {'kind': 'parcel', 'ref': {'dataset': 'example-dataset', 'pointer': '/parcels/0/features/0'}}, 'sources': [{'id': 'example-dataset'}], 'content': {}} should not be valid under {'required': ['status']}
+
+Failed validating 'not' in schema['allOf'][0]['else']:
+    {'not': {'required': ['status']}}
+
+On instance:
+    {'checks': [{'category': 'generation',
+                 'definedBy': 'example.adapter',
+                 'id': 'subject-identified',
+                 'message': 'ok',
+                 'outcome': 'pass',
+                 'severity': 'error'}],
+     'content': {},
+     'reportType': 'example.report-type',
+     'sources': [{'id': 'example-dataset'}],
+     'stage': 'facts',
+     'status': 'complete',
+     'subject': {'kind': 'parcel',
+                 'ref': {'dataset': 'example-dataset',
+                         'pointer': '/parcels/0/features/0'}}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:Nc44741b1d1454afc8da95957241c4ac7
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nc44741b1d1454afc8da95957241c4ac7
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N30f04135c93746d0a03d29daf6136c25
+ - Shape cr:SourceReferenceShape: _:Na76c898344764bfab3135c134353d8b9
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:Nc44741b1d1454afc8da95957241c4ac7
+
+=== End SHACL ===
+

@@ -1,0 +1,49 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.943934+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using unknown-source-kind-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD unknown-source-kind-fail.jsonld created
+Output Turtle unknown-source-kind-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'codelist' is not one of ['dataset', 'vocabulary']
+
+Failed validating 'enum' in schema['properties']['sources']['items']['properties']['kind']:
+    {'enum': ['dataset', 'vocabulary'],
+     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/kind'}
+
+On instance['sources'][1]['kind']:
+    'codelist'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N68e7f78529e845219d621426a9619b04
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N68e7f78529e845219d621426a9619b04
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N8bf3059c41dd482cafbe41c20e8ecd57,_:Nd7ec711127824c38b4c3519628a4bd07,_:Nb89760d7ab0f4481b65ac8f43059f5d0,_:Na2d25d18903b4555895cd8a274404de2,_:N71c820c9f82b400087ca94fdc696ed68,_:Nfa568ffa41b9439ea84b73279a7ab6dc,_:N97acb92cb84e4a02ac2da8c5fea2eace,_:Neb7ee175b06f4d79b5275177ebde6d48,_:Nd9581c98b35f4a6ba2a4ae5818ff20ea,_:Nc757ccca667f46c8ab7be7439560842a,_:N888a517ca64b49d083124d044c0ddad0,_:N76b1ac31cfa14040a19644a4f793d4c4,_:Nc93c9f4926af44209748d4799431a466,_:Nfa837495858f4f85ad989c8f11006a9e,_:Nb6264eaff221469fae66f41dd68f7389,_:N2a90490b36b5444e8508d97f9475648f,_:N5c67a67f7a2545c8b6cc910e9c1651e6,_:Na792aeb5d6c5478bbe77d139af8f9655
+ - Shape cr:SourceReferenceShape: _:N2250e339d901466d83b3d91dd536c663,_:Nb9335bfadb4043a1b6ad36db64c04e3a,_:Nd6e152247c4242749beb0b385fb6d4ee
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N68e7f78529e845219d621426a9619b04
+
+=== End SHACL ===
+

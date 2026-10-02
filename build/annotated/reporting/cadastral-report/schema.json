@@ -1,0 +1,674 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Generic cadastral report envelope. Report-type building blocks extend this schema and define\n`content`, using `ReportValue` for every value whose provenance matters, `Check` for every check result,\nand `DocumentReference` / `AnnotationReference` for the supporting documents and annotations the report\nrelies on. Stage 5 of the implementation plan.\n",
+  "type": "object",
+  "required": [
+    "reportType",
+    "stage",
+    "subject",
+    "sources",
+    "content"
+  ],
+  "properties": {
+    "reportType": {
+      "description": "Identifier of the report-type building block that defines `content`.",
+      "type": "string",
+      "minLength": 1,
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportType"
+    },
+    "stage": {
+      "description": "`facts`: source facts only, as produced by a source adapter. `complete`: derived values added by\nthe report-type building block. Both stages share this schema; report types state which members\neach stage requires.\n",
+      "enum": [
+        "facts",
+        "complete"
+      ],
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/stage",
+      "x-jsonld-type": "@vocab",
+      "x-jsonld-vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/"
+    },
+    "status": {
+      "description": "Overall report status, set from the check results by the generic `summarise-checks` transform when\nthe report is completed: `invalid` if any `error` check fails; otherwise `incomplete` if any\n`warning` check fails or any `error` check could not be evaluated; otherwise `complete`.\n",
+      "enum": [
+        "complete",
+        "incomplete",
+        "invalid"
+      ],
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportStatus",
+      "x-jsonld-type": "@vocab",
+      "x-jsonld-vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/"
+    },
+    "statusSummary": {
+      "description": "Counts behind `status`, recorded by `summarise-checks`.",
+      "type": "object",
+      "properties": {
+        "checks": {
+          "type": "integer",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/checkCount"
+        },
+        "failedErrors": {
+          "type": "integer",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/failedErrors"
+        },
+        "failedWarnings": {
+          "type": "integer",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/failedWarnings"
+        },
+        "unevaluatedErrors": {
+          "type": "integer",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/unevaluatedErrors"
+        }
+      },
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/statusSummary"
+    },
+    "checks": {
+      "description": "Results of the checks run while generating the report (source adapter and report type).",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Check"
+      },
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/check",
+      "x-jsonld-container": "@set"
+    },
+    "generatedBy": {
+      "description": "Pipeline steps that produced this report, in order.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "bblock",
+          "transform"
+        ],
+        "properties": {
+          "bblock": {
+            "type": "string",
+            "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/buildingBlock"
+          },
+          "transform": {
+            "type": "string",
+            "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/transform"
+          }
+        }
+      },
+      "x-jsonld-id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "x-jsonld-container": "@list"
+    },
+    "subject": {
+      "description": "The cadastral object the report is about (for example a strata scheme or a parcel).",
+      "type": "object",
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "description": "Kind of subject, for example `strata-scheme`.",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/kind"
+        },
+        "label": {
+          "type": "string",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        "ref": {
+          "$ref": "#/$defs/SourceRef",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef"
+        }
+      },
+      "x-jsonld-id": "http://purl.org/dc/terms/subject"
+    },
+    "sources": {
+      "description": "Source datasets the report was generated from.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/SourceDataset"
+      },
+      "x-jsonld-id": "http://purl.org/dc/terms/source",
+      "x-jsonld-container": "@set"
+    },
+    "documents": {
+      "description": "Supporting documents the report relies on (not every document of the source dataset).",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/DocumentReference"
+      },
+      "x-jsonld-id": "http://purl.org/dc/terms/references",
+      "x-jsonld-container": "@set"
+    },
+    "annotations": {
+      "description": "Source annotations the report relies on (for example a certification).",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AnnotationReference"
+      },
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/annotation",
+      "x-jsonld-container": "@set"
+    },
+    "content": {
+      "description": "Report-type specific content, defined by the report-type building block.",
+      "type": "object",
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/content",
+      "x-jsonld-extra-terms": {
+        "status": {
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/valueStatus",
+          "x-jsonld-type": "@vocab",
+          "x-jsonld-context": {
+            "@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "stage"
+        ],
+        "properties": {
+          "stage": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "status",
+          "checks"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "status"
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Check": {
+      "$anchor": "Check",
+      "description": "The result of one check on the source data or the report.",
+      "type": "object",
+      "x-jsonld-extra-terms": {
+        "pass": "http://www.w3.org/ns/earl#passed",
+        "fail": "http://www.w3.org/ns/earl#failed",
+        "not-evaluated": "http://www.w3.org/ns/earl#untested",
+        "not-applicable": "http://www.w3.org/ns/earl#inapplicable",
+        "error": "http://www.w3.org/ns/shacl#Violation",
+        "warning": "http://www.w3.org/ns/shacl#Warning",
+        "info": "http://www.w3.org/ns/shacl#Info"
+      },
+      "required": [
+        "id",
+        "definedBy",
+        "category",
+        "severity",
+        "outcome",
+        "message"
+      ],
+      "properties": {
+        "id": {
+          "description": "Identifier of the check, unique within the building block that defines it.",
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "x-jsonld-id": "http://purl.org/dc/terms/identifier"
+        },
+        "definedBy": {
+          "description": "Identifier of the building block that defines (and ran) the check.",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/definedBy"
+        },
+        "category": {
+          "description": "`source-conformance`: the source against its own profile. `generation`: what the report needs\nto be generated. `domain`: business rules of the report type.\n",
+          "enum": [
+            "source-conformance",
+            "generation",
+            "domain"
+          ],
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/checkCategory",
+          "x-jsonld-type": "@vocab",
+          "x-jsonld-vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/"
+        },
+        "severity": {
+          "enum": [
+            "error",
+            "warning",
+            "info"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/shacl#resultSeverity",
+          "x-jsonld-type": "@vocab"
+        },
+        "outcome": {
+          "enum": [
+            "pass",
+            "fail",
+            "not-evaluated",
+            "not-applicable"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/earl#outcome",
+          "x-jsonld-type": "@vocab"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "x-jsonld-id": "http://purl.org/dc/terms/description"
+        },
+        "targets": {
+          "description": "Pointers to the report values the check is about.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReportPointer"
+          },
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/target",
+          "x-jsonld-container": "@set"
+        },
+        "evidence": {
+          "description": "Small structured detail, for example the expected and actual values.",
+          "type": "object",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/evidence",
+          "x-jsonld-type": "@json"
+        }
+      }
+    },
+    "SourceRef": {
+      "$anchor": "SourceRef",
+      "description": "Reference to an object in a source dataset.",
+      "type": "object",
+      "required": [
+        "dataset",
+        "pointer"
+      ],
+      "properties": {
+        "dataset": {
+          "description": "Identifier of the source dataset (matches a `sources[].id`).",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceDataset"
+        },
+        "pointer": {
+          "description": "JSON Pointer (RFC 6901) to the object within the source dataset.",
+          "type": "string",
+          "pattern": "^(/([^/~]|~[01])*)*$",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/jsonPointer"
+        },
+        "id": {
+          "description": "Identifier of the object in the source dataset, when it has one.",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceObject"
+        },
+        "property": {
+          "description": "IRI of the source property the value was read from, as defined by the source dataset's own\nsemantics (for example `https://w3id.org/ogc/ladm/parcels/entitlementPortion`). Given only when\nthe source profile defines one.\n",
+          "type": "string",
+          "format": "iri",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceProperty",
+          "x-jsonld-type": "@id"
+        }
+      }
+    },
+    "SourceDataset": {
+      "$anchor": "SourceDataset",
+      "description": "A source the report draws on: the cadastral dataset itself, or a vocabulary used to label its codes.\n`SourceRef.dataset` refers to `id`. For a vocabulary, `id` is the concept scheme IRI and a\n`SourceRef` names the concept in `id` (with an empty `pointer`).\n",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/identifier"
+        },
+        "kind": {
+          "enum": [
+            "dataset",
+            "vocabulary"
+          ],
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/kind"
+        },
+        "name": {
+          "type": "string",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        "date": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/date"
+        },
+        "conformsTo": {
+          "description": "Identifier of the profile or specification the dataset follows.",
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/conformsTo"
+        }
+      }
+    },
+    "DocumentReference": {
+      "$anchor": "DocumentReference",
+      "description": "A supporting document referenced by the source dataset.",
+      "type": "object",
+      "required": [
+        "id",
+        "href",
+        "sourceRef"
+      ],
+      "properties": {
+        "id": {
+          "description": "Identifier of the document within this report (used by `documentRef`).",
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9._-]*$",
+          "x-jsonld-id": "http://purl.org/dc/terms/identifier"
+        },
+        "title": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/title"
+        },
+        "href": {
+          "description": "Link to the document, as given by the source (may be relative).",
+          "type": "string",
+          "x-jsonld-id": "https://schema.org/url"
+        },
+        "mediaType": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/format"
+        },
+        "role": {
+          "description": "Role of the document, as given by the source (an IRI or CURIE).",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/role"
+        },
+        "conformsTo": {
+          "description": "Specification or approved form the document follows (an IRI or CURIE).",
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/conformsTo"
+        },
+        "sourceRef": {
+          "$ref": "#/$defs/SourceRef",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef"
+        }
+      }
+    },
+    "AnnotationReference": {
+      "$anchor": "AnnotationReference",
+      "description": "An annotation of the source dataset (a statement made on the plan or survey).",
+      "type": "object",
+      "required": [
+        "id",
+        "role",
+        "sourceRef"
+      ],
+      "properties": {
+        "id": {
+          "description": "Identifier of the annotation within this report (used by `annotationRef`).",
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9._-]*$",
+          "x-jsonld-id": "http://purl.org/dc/terms/identifier"
+        },
+        "role": {
+          "description": "Role of the annotation, as given by the source (an IRI or CURIE).",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/role"
+        },
+        "statement": {
+          "description": "The annotation text, verbatim.",
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/description"
+        },
+        "href": {
+          "type": "string",
+          "x-jsonld-id": "https://schema.org/url"
+        },
+        "rel": {
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/linkRelation"
+        },
+        "documentRef": {
+          "description": "The document in `documents` that the annotation links to, if any.",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/documentRef"
+        },
+        "sourceRef": {
+          "$ref": "#/$defs/SourceRef",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef"
+        }
+      }
+    },
+    "ReportPointer": {
+      "$anchor": "ReportPointer",
+      "description": "JSON Pointer (RFC 6901) to a value within this report.",
+      "type": "string",
+      "pattern": "^(/([^/~]|~[01])*)*$"
+    },
+    "ReportValue": {
+      "$anchor": "ReportValue",
+      "description": "A report value together with its provenance and status. Report-type building blocks constrain\n`value` (for example to a positive integer); this definition fixes which provenance each status\nneeds:\n\n| status | value | also required |\n|---|---|---|\n| `reported` | present | `sourceRefs`: where the value was read |\n| `derived` | present | `derivation`: method and the report values it was calculated from |\n| `documented` | present | `documentRef`: the supporting document it comes from |\n| `configured` | present | (a report-type constant) |\n| `not-supplied` | null or absent | (`sourceRefs`, when given, say where it was looked for) |\n| `unresolved` | null or absent | `sourceRefs`: the reference that could not be followed |\n| `invalid` | null or absent | `sourceRefs` and `lexicalValue`: the unusable value as supplied |\n| `conflicting` | null or absent | at least two `sourceRefs` that disagree |\n",
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "value": {
+          "description": "The value, or null when there is no usable value (see `status`).",
+          "x-jsonld-id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+        },
+        "status": {
+          "description": "Where the value comes from, or why there is none. Codelist in this block's `data.ttl`.",
+          "enum": [
+            "reported",
+            "derived",
+            "documented",
+            "configured",
+            "not-supplied",
+            "unresolved",
+            "invalid",
+            "conflicting"
+          ],
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportStatus",
+          "x-jsonld-type": "@vocab",
+          "x-jsonld-vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/"
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef",
+          "x-jsonld-container": "@set"
+        },
+        "derivation": {
+          "type": "object",
+          "required": [
+            "method",
+            "inputs"
+          ],
+          "properties": {
+            "method": {
+              "description": "How the value was calculated, for example `sum` or `count`.",
+              "type": "string",
+              "minLength": 1,
+              "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationMethod"
+            },
+            "inputs": {
+              "description": "Pointers to the report values the calculation used.",
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ReportPointer"
+              },
+              "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationInput",
+              "x-jsonld-container": "@set"
+            }
+          },
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivation"
+        },
+        "documentRef": {
+          "description": "Identifier of the supporting document the value was obtained from.",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/documentRef"
+        },
+        "lexicalValue": {
+          "description": "The value exactly as it appears in the source, when it differs from `value`.",
+          "type": "string",
+          "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/lexicalValue"
+        },
+        "note": {
+          "type": "string",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#comment"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "reported",
+                  "derived",
+                  "documented",
+                  "configured"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "not": {
+                  "type": "null"
+                },
+                "x-jsonld-id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "null",
+                "x-jsonld-id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "reported"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sourceRefs"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "derived"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "derivation"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "documented"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "documentRef"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unresolved"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sourceRefs"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "invalid"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sourceRefs",
+              "lexicalValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "conflicting"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sourceRefs"
+            ],
+            "properties": {
+              "sourceRefs": {
+                "minItems": 2,
+                "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef",
+                "x-jsonld-container": "@set"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "annotationRef": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/annotationRef",
+    "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+    "derivation": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivation",
+    "method": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationMethod",
+    "inputs": {
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/derivationInput",
+      "x-jsonld-container": "@set"
+    },
+    "lexicalValue": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/lexicalValue",
+    "note": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "sourceRefs": {
+      "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef",
+      "x-jsonld-container": "@set"
+    }
+  },
+  "x-jsonld-prefixes": {
+    "cr": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "earl": "http://www.w3.org/ns/earl#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}

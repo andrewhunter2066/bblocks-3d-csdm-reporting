@@ -1,0 +1,79 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:48.666538+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using unknown-status-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD unknown-status-fail.jsonld created
+Output Turtle unknown-status-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'guessed' is not one of ['reported', 'derived', 'documented', 'configured', 'not-supplied', 'unresolved', 'invalid', 'conflicting']
+
+Failed validating 'enum' in schema['allOf'][1]['properties']['content']['properties']['lots']['items']['properties']['entitlement']['allOf'][0]['properties']['status']:
+    {'description': 'Where the value comes from, or why there is none. '
+                    "Codelist in this block's `data.ttl`.",
+     'enum': ['reported',
+              'derived',
+              'documented',
+              'configured',
+              'not-supplied',
+              'unresolved',
+              'invalid',
+              'conflicting'],
+     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/reportStatus',
+     'x-jsonld-type': '@vocab',
+     'x-jsonld-vocab': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/'}
+
+On instance['content']['lots'][0]['entitlement']['status']:
+    'guessed'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:N87697b8423324f1eb987fd9bfae9c147
+ - Shape se:LotCountIsTheNumberOfLots: _:N87697b8423324f1eb987fd9bfae9c147
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N665b748961c74c73af50132fb9a29b0b
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N665b748961c74c73af50132fb9a29b0b
+
+
+** Validation error **
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in InConstraintComponent (http://www.w3.org/ns/shacl#InConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:in ( vs:reported vs:derived vs:documented vs:configured vs:not-supplied vs:unresolved vs:invalid vs:conflicting ) ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path cr:valueStatus ]
+  	Focus Node: [ cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/2/properties/interests/0/entitlementPortion") ; cr:sourceDataset Literal("SP-83687-1-1-0.00") ] ; cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/guessed> ; rdf:value Literal("117", datatype=xsd:integer) ]
+  	Value Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/guessed>
+  	Result Path: cr:valueStatus
+  	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/guessed> not in list ['vs:documented', 'vs:derived', 'vs:unresolved', 'vs:not-supplied', 'vs:invalid', 'vs:conflicting', 'vs:configured', 'vs:reported']
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N5b736ce88cc84eaab6b136c031436605,_:Nc0796f94f370420bbb0b20c8671587ee,_:Nccb368e8589b4586bda4cf16cd0dfbc5,_:N9872fa7a84a84a508f3fe73773d440bf,_:N8a2fe728171243f3a49c8e9c7dc0cae4,_:Nab835ddc1ea64d4b9668e6352fe92999,_:N4f29f098e96f489e88f1c5c8c904ea5c,_:Nfc2c9d8fc34b49d3a919dc4e75f41e33,_:N01b1de44403246678851cef8ec89de2c,_:Nb2eea7959afd48c9a770258055353c2c,_:Ndc26214c290741d2a4ebec4424bf023a,_:Nb503c414bb874038a91bdf706501c259,_:N0a2d59142928406c862cc90191561972,_:Nd42145e1acea410dbf08d048af4134ac,_:Ne2678e9b43b548dc9862106a522a8315,_:N93b99a3802dd468fb6dbbfa11e47f2ce,_:N05852b571083442f897395eb3fe67fc5,_:Nbc748890a7df49a8b7a19ddcc2caa997
+ - Shape cr:SourceReferenceShape: _:Nd78b059f4a774baab5c8fcf3e36e290a,_:Nb72e90e31dc94e74909b220880c9421c,_:Ncecec5026fc04feb933fc48fa0f0b0ee,_:N34651fc02efc4690a701a9f180dd8373,_:N094471d0fd4a496ba153012b820e86fa,_:N1f58c1964590473a82396c3d4d3c696f,_:Nb4189e28d3624ce58f5dd1fdc2ff4cb4,_:Ncb7113d1bb354d88ae8617b39bf71a20,_:Nf05b0e2f052942a38581a9c1307fb20b,_:N26b25ac30b9c4f8bb9321450543a825a,_:N666ad0557a584e9fbc736cf8f2c6490b,_:N7b9cbbb0b507468caf3209d182f335ea,_:Nb689e9f3513e4c31a11460413f5b6c86,_:Nac8146cc6b124809a3dd2ddc4afad47d,_:Na0f96be3919b44688c324ac7effdc720,_:Nace08b6e7faa49428e30b49e8ec31a71,_:N2c2114521faa4b96940bf4c761969c67,_:N586049732dfa4149a2b0dc187023dfd2,_:N116dc5d3a6c247bab266200320143981,_:N4457556d60904269a18d87e2706afa8c,_:Nda030b2d2b314edda02d31c88b2ead9a,_:N130740082c33493ba7a43cba1e4a2a89,_:Nc2286dc1ed9d40248d11cd3d8ed123da,_:N1b697d35d54c40708eb8a5842333d40a,_:Nfae0143c14bf4826bca55c40dda6283c,_:N8209dac623f24294a36021b903074086,_:N49355b9668ae4ade8de1037a59caead6,_:N19cd6b79be744823940af43df987cb62,_:N18051beeae0d484ea4f21ffffb9f9f25,_:N7bdae83a9f3e43eb8cc01595f9ca3981,_:Nd288c3e649e444d284d772812c34addb,_:N3db0eeb2ecb444f5987ef8f507d1fe46,_:Na9a6aec13d9043689443442a1071b69e,_:Nfa8fef06cc414ad581ddc36d692e5879,_:Nd2223588d1604deb98c26e41d1e86101,_:Ne08869b24e5946b8a7adf2c0d5ee9ed9,_:N65a8c07decc24a8c9dd1e3940204e35c,_:N35b1c56f490f495581aa61d3082cf22b,_:N753882a747504f0e8ccfa69362645e15,_:N369dd2aebfe84b3382578dbef77d3286,_:N6a2a34811d1f417aba29c5c0ed59484a,_:Nca5473ac20a344eaad1fd55eb2b3a99c,_:Nc8efda7b5d7e4e9eb443ee55f8c3e015,_:N55721013f11c4da0931f5134b7938beb
+ - Shape cr:ReportValueShape: _:Nb1971a537175433ca699b0af2bac31e9,_:Nd6d30e0b63e448c19480e21ebee50f67,_:N3c96705e6040482db298b4acb5111aee,_:N95385cb894de4ac5bfb00d4510b714e3,_:N66a0b68f67714f1489401f4994b62d7c,_:N55602598006a480b82682d2c03082837,_:N05da1f033b294ef1bb97ef8326f9ba40,_:N876d3682dcde49bbbbb257bde36aeb8c,_:N88f894e6cdfb462999112e693e5b08b7,_:Nae4ef7d07d9f4092a427c9b6ac762866,_:Nb43a874c80d84ea6a845b723f1d5ce25,_:N5c15770a4472476e80a72fc222a4dcaa,_:Na438397d1ef24949905ff6145e5a4838,_:N46e5de1c9fe8404ea630664241acf9a8,_:N7ff07e9a37a9499c920788c2376f05c6,_:N2731566c6cf249b0824f5008fc4ae1b5,_:N6a60df71c1364a1882dce78cecca89c8,_:Na69d2fc926964eb3925a0f7f6281b8ca,_:N420da3087d3b456184920a8b54526d9f,_:N5c3d0a1e094f4948a957aace407b3397,_:Ndc506bdf9cb44dc09429bba0b84d32fd,_:N474fdd207284474e81721a0391c656f7,_:N2779285224ea43f28e70fe5ec46c2cf6,_:Ndfbb6c654afb499bb79c612aee9d3b6b,_:Nfa33134a90904d42ae58b066b6d867e3,_:N43a2921fab66415c9fd873cce3385e0e,_:N78dd4da673a9439ea0e6793e14e805e0,_:N49d07cab974540888382398337f515ae,_:N84105fc63b734003a066a0047831fc7a,_:N278c14cb34864411bc1c783531e4ac9d,_:N6a30d7861482438ba0b246e65602357a,_:Nfe2ca38d47774b85b803a0ac92c7b2a3,_:N9c62718429e34cf1835388f3937c9ed9,_:N85b61e205e7f49abac8418ef2998563e
+ - Shape cr:ReportShape: _:N665b748961c74c73af50132fb9a29b0b
+
+=== End SHACL ===
+

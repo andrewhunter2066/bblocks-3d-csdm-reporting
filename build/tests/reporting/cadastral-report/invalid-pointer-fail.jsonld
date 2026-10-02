@@ -1,0 +1,20 @@
+{
+  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/context.jsonld",
+  "reportType": "example.report-type",
+  "stage": "complete",
+  "status": "complete",
+  "checks": [],
+  "subject": {
+    "kind": "parcel",
+    "ref": {
+      "dataset": "example-dataset",
+      "pointer": "parcels/0"
+    }
+  },
+  "sources": [
+    {
+      "id": "example-dataset"
+    }
+  ],
+  "content": {}
+}

@@ -1,0 +1,126 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.362875+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using check-without-severity-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD check-without-severity-fail.jsonld created
+Output Turtle check-without-severity-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'severity' is a required property
+
+Failed validating 'required' in schema['properties']['checks']['items']:
+    {'$anchor': 'Check',
+     'description': 'The result of one check on the source data or the '
+                    'report.',
+     'properties': {'category': {'description': '`source-conformance`: the '
+                                                'source against its own '
+                                                'profile. `generation`: '
+                                                'what the report needs\n'
+                                                'to be generated. '
+                                                '`domain`: business rules '
+                                                'of the report type.\n',
+                                 'enum': ['source-conformance',
+                                          'generation',
+                                          'domain'],
+                                 'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/checkCategory',
+                                 'x-jsonld-type': '@vocab',
+                                 'x-jsonld-vocab': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/'},
+                    'definedBy': {'description': 'Identifier of the '
+                                                 'building block that '
+                                                 'defines (and ran) the '
+                                                 'check.',
+                                  'type': 'string',
+                                  'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/definedBy'},
+                    'evidence': {'description': 'Small structured detail, '
+                                                'for example the expected '
+                                                'and actual values.',
+                                 'type': 'object',
+                                 'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/evidence',
+                                 'x-jsonld-type': '@json'},
+                    'id': {'description': 'Identifier of the check, unique '
+                                          'within the building block that '
+                                          'defines it.',
+                           'pattern': '^[a-z][a-z0-9-]*$',
+                           'type': 'string',
+                           'x-jsonld-id': 'http://purl.org/dc/terms/identifier'},
+                    'message': {'minLength': 1,
+                                'type': 'string',
+                                'x-jsonld-id': 'http://purl.org/dc/terms/description'},
+                    'outcome': {'enum': ['pass',
+                                         'fail',
+                                         'not-evaluated',
+                                         'not-applicable'],
+                                'x-jsonld-id': 'http://www.w3.org/ns/earl#outcome',
+                                'x-jsonld-type': '@vocab'},
+                    'severity': {'enum': ['error', 'warning', 'info'],
+                                 'x-jsonld-id': 'http://www.w3.org/ns/shacl#resultSeverity',
+                                 'x-jsonld-type': '@vocab'},
+                    'targets': {'description': 'Pointers to the report '
+                                               'values the check is about.',
+                                'items': {'$ref': '#/$defs/ReportPointer'},
+                                'type': 'array',
+                                'x-jsonld-container': '@set',
+                                'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/target'}},
+     'required': ['id',
+                  'definedBy',
+                  'category',
+                  'severity',
+                  'outcome',
+                  'message'],
+     'type': 'object',
+     'x-jsonld-extra-terms': {'error': 'http://www.w3.org/ns/shacl#Violation',
+                              'fail': 'http://www.w3.org/ns/earl#failed',
+                              'info': 'http://www.w3.org/ns/shacl#Info',
+                              'not-applicable': 'http://www.w3.org/ns/earl#inapplicable',
+                              'not-evaluated': 'http://www.w3.org/ns/earl#untested',
+                              'pass': 'http://www.w3.org/ns/earl#passed',
+                              'warning': 'http://www.w3.org/ns/shacl#Warning'}}
+
+On instance['checks'][0]:
+    {'category': 'generation',
+     'definedBy': 'example.adapter',
+     'id': 'subject-identified',
+     'message': 'ok',
+     'outcome': 'pass'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N3238206d241749fdb356f9096e236fe5
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N3238206d241749fdb356f9096e236fe5
+
+
+** Validation error **
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:in ( sh:Violation sh:Warning sh:Info ) ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path sh:resultSeverity ]
+  	Focus Node: [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome earl:passed ]
+  	Result Path: sh:resultSeverity
+  	Message: Less than 1 values on [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome earl:passed ]->sh:resultSeverity
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:Nbd73e5e81abb41a1a676948edc6138af
+ - Shape cr:SourceReferenceShape: _:Nf9a66d2183064728b74d1db3bfc08d76
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N3238206d241749fdb356f9096e236fe5
+
+=== End SHACL ===
+

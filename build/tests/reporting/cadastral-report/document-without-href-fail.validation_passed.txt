@@ -1,0 +1,86 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.568124+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using document-without-href-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD document-without-href-fail.jsonld created
+Output Turtle document-without-href-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'href' is a required property
+
+Failed validating 'required' in schema['properties']['documents']['items']:
+    {'$anchor': 'DocumentReference',
+     'description': 'A supporting document referenced by the source '
+                    'dataset.',
+     'properties': {'conformsTo': {'description': 'Specification or '
+                                                  'approved form the '
+                                                  'document follows (an '
+                                                  'IRI or CURIE).',
+                                   'type': 'string',
+                                   'x-jsonld-id': 'http://purl.org/dc/terms/conformsTo'},
+                    'href': {'description': 'Link to the document, as '
+                                            'given by the source (may be '
+                                            'relative).',
+                             'type': 'string',
+                             'x-jsonld-id': 'https://schema.org/url'},
+                    'id': {'description': 'Identifier of the document '
+                                          'within this report (used by '
+                                          '`documentRef`).',
+                           'pattern': '^[A-Za-z][A-Za-z0-9._-]*$',
+                           'type': 'string',
+                           'x-jsonld-id': 'http://purl.org/dc/terms/identifier'},
+                    'mediaType': {'type': 'string',
+                                  'x-jsonld-id': 'http://purl.org/dc/terms/format'},
+                    'role': {'description': 'Role of the document, as '
+                                            'given by the source (an IRI '
+                                            'or CURIE).',
+                             'type': 'string',
+                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/role'},
+                    'sourceRef': {'$ref': '#/$defs/SourceRef',
+                                  'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'},
+                    'title': {'type': 'string',
+                              'x-jsonld-id': 'http://purl.org/dc/terms/title'}},
+     'required': ['id', 'href', 'sourceRef'],
+     'type': 'object'}
+
+On instance['documents'][0]:
+    {'conformsTo': 'wa-approved-form:2021-47738',
+     'id': 'unit-entitlement-schedule',
+     'mediaType': 'application/pdf',
+     'role': 'wa-survey-documentation-type:unitEntitlementSchedule',
+     'sourceRef': {'dataset': 'SP-83687-1-1-0.00',
+                   'pointer': '/supportingDocuments/3'},
+     'title': 'Schedule of Unit Entitlements - SP83687'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N73b67c5f35504917a09d8bcca2242edf
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N73b67c5f35504917a09d8bcca2242edf
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N73d844ef9d5b4f1f9d09e0afa1501904,_:N3a494f850d394f5a861566f3758e8326,_:Nfd839602ca534bdfa240996ecd7aeec3,_:Na1b1d21aa453448688888f34c1883158,_:N6b8ddacdc4d7425d9126df0f3eebb487,_:Nc987f79b0d5a4cfd94ed4ca5587d6b0e,_:Naece276f25174c1eb332dd2a0c3216f0,_:Nba622dfa3eac4a9f98b50ccd73637c6f,_:N69dd1f60af0c4a7283e3c5b3915a80c6,_:N3b864ce1451a44f4850f44161b366819,_:Nf8ae54d2d46e46b196a0f9f20973fbc1,_:Nf9cad7bc2ac24342b2475c9c47456bc9,_:Na44c215cae5344d88d8571da9eeb1eb9,_:N5e9cbaf7134741d2a5ba24348a3bc9ac,_:N0881c31f91c9483285abb2f357646095,_:N03509571192d4222b3731ded9854874c,_:Neac8033ab9134528b6b68a22f01707ca,_:N00572674deb74173b8bb8dc32c0a5bb2
+ - Shape cr:SourceReferenceShape: _:N979e59e5d0b447c9a93776dc53bd711c,_:Nbeba5b0f217a4fc7949842ea14bf83f9,_:N6a262c6f023b42698fc37f3b2057ea34
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N73b67c5f35504917a09d8bcca2242edf
+
+=== End SHACL ===
+

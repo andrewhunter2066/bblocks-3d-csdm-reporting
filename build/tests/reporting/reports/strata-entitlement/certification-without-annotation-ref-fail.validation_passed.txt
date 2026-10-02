@@ -1,0 +1,97 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:45.046179+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using certification-without-annotation-ref-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD certification-without-annotation-ref-fail.jsonld created
+Output Turtle certification-without-annotation-ref-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'annotationRef' is a required property
+
+Failed validating 'required' in schema['allOf'][1]['properties']['content']['properties']['basis']['properties']['certification']:
+    {'description': "The licensed valuer's certification of the schedule.",
+     'properties': {'annotationRef': {'description': "The certification's "
+                                                     "`id` in the report's "
+                                                     '`annotations`.',
+                                      'type': 'string',
+                                      'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/annotationRef'},
+                    'certifier': {'properties': {'firstName': {'$ref': '#/$defs/TextValue',
+                                                               'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/certifierFirstName'},
+                                                 'lastName': {'$ref': '#/$defs/TextValue',
+                                                              'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/certifierLastName'},
+                                                 'licensedValuerNumber': {'$ref': '#/$defs/TextValue',
+                                                                          'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/licensedValuerNumber'}},
+                                  'type': 'object',
+                                  'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/certifier'},
+                    'dateCertified': {'$ref': '#/$defs/TextValue',
+                                      'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/dateCertified'},
+                    'documentRef': {'description': 'The document the '
+                                                   'certification links to '
+                                                   '(its `id` in '
+                                                   '`documents`), if any.',
+                                    'type': 'string',
+                                    'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/documentRef'}},
+     'required': ['annotationRef'],
+     'type': 'object',
+     'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/certification'}
+
+On instance['content']['basis']['certification']:
+    {'certifier': {'firstName': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                 'pointer': '/annotations/2/certifier/firstName'}],
+                                 'status': 'reported',
+                                 'value': 'Jordan'},
+                   'lastName': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                'pointer': '/annotations/2/certifier/lastName'}],
+                                'status': 'reported',
+                                'value': 'Example'},
+                   'licensedValuerNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                                            'pointer': '/annotations/2/certifier/licensedValuerNumber'}],
+                                            'status': 'reported',
+                                            'value': '00000'}},
+     'dateCertified': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
+                                       'pointer': '/annotations/2/dateCertified'}],
+                       'status': 'reported',
+                       'value': '2022-05-17'},
+     'documentRef': 'unit-entitlement-schedule'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Nb3670c51e105403b829c64c8c8e1e7a4
+ - Shape se:LotCountIsTheNumberOfLots: _:Nb3670c51e105403b829c64c8c8e1e7a4
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N57b4efd81f0446ddb7220765db161ba4
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N57b4efd81f0446ddb7220765db161ba4
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N1e553d195df34bd7b2f47d313e247cd3,_:N29f0811011f24c63a5cfa9b4da15ae34,_:Nc20473f8b2b14a3eba292e3ea042db69,_:N5819b58eeb45438b9cf8fc06ac960ab2,_:N4548415289be431d85907a8dc848e780,_:N92337ad54569474d80b5cd3b31560ac7,_:Nc127bd3ca7ac4977a4bffaf756b91fee,_:N8e21eb6d7ca74f8aad2654bbfe78f070,_:N13131b43f6db46dca9a61f16ecd8cbaf,_:Nb29f9a79f53944ca8d569fc2d16d9613,_:N71241787e6574133b437bf159a14a4eb,_:N6cff204332fd455081809aa21e9ed68f,_:Ndf422fb6013b4256bb6f7626058033d5,_:N8a0257bbf1974e1d99c6feb94f4d861d,_:N0deb18e253ad43f394d93ecd54b17aa7,_:Ne1eae5c42db04c3887793ecbb2b3cc04,_:N0f61d3df0d1a49b18bf8a3bbe6401919,_:Nfda1ec358b0b4098a7337e200ea99197
+ - Shape cr:SourceReferenceShape: _:N6ec8cee91b054dac9bc73bad0834899f,_:Nabd092dc2b8949d9af69b4f01332ca36,_:Nd7684d6878c24c0987f8e0f977840f13,_:Na4089513ab5646cc845899f9dd7fa865,_:N7279328e04124d17a054675e52b1f4b6,_:N05f4493d75404f7981f45838edeb6b3f,_:N636029a9a2fc4911ad31981787a195fc,_:Nebcc5aa0bacd4917bf21fb83500bd76b,_:N981141120558419ca116b13d200a9887,_:N89ebb3cb54814882a7273762dd6ca2e1,_:Nd22fa1791c214e738f6e78480df3ee39,_:N48202c4417dd4ee1b9a702dd62306e8c,_:Nc8b8402a02f34b9d990b401ecea2e644,_:Nf3c591aab83049b099bc4a982db95edd,_:N430e3700d62d422d887d27c76a6e87dc,_:N2bf92710f94c40d6bb63635fb15462c4,_:N0c45938aa14d4e51a5f738d5a43797b4,_:Nfb8dd7cb5df24bd0982cebc9bf4af4d2,_:N5fc377a242074df8b52fa824b0a98be0,_:N27ae5ff26259440485b3f4f57fd070ba,_:N63f996a63e4949599cd1545b7051e3d4,_:N32c3ea0ff2a64587a646ec663dbe7254,_:N3b84f3d1f29e4bd88b09780db2afa992,_:N645aa79ef46c4135819781a15aa92d92,_:N61ab51fd515a40b6be9333cce8f2c535,_:N0f479fefd39f4288b307d44f4748168f,_:Nf7fad7feb91d4fe6938379db85ad3fde,_:N8107621dd88a470d8493c877bd06121c,_:Nd88a88523a414de49924874eb473d488,_:N6b8e6e93b11044c091da8c75b22a72a0,_:Na8492ae3e10546b9ac8815989c472073,_:Nd3c2bc1ee3db4eb4a01fb7c535fcab6e,_:N7dc29711acf04d1f9511e9fa912b138a,_:N0dfe7462f4684e018940db8d7dc3c5d1,_:N03bdbb0817554dffa7f2b50d231ba69b,_:N71915546248849b28613fcfc1a375497,_:Nac7c54b3b65949cd9224aa504a1112bf,_:Nd521d9cb141b4e63b308efa6d6d3227c,_:N03d77fecc9874039821c65f37dbfe382,_:Neca72f0e2aef420f8d0fd05193ca55cc,_:Nec626e5765f04e5c9213d29d5119be12,_:N20e916a9f1dc4a0baf4dde9c4977e450,_:Nb4fb701632d540e583a52f2d2e987277,_:Nb1324a9e1a6848ac96909868207af690
+ - Shape cr:ReportValueShape: _:Nefb9e72faf2b48d09ec8190e19596cee,_:Na50cc2db94d3480d9e53b5bb03f69c77,_:Ndd22db264eb44512a337d352b18a1bb6,_:Na07178a8d3164122ad55334e10cb5d83,_:N693b3982a6b546e7861cb3d189798fa1,_:N0819d4f3f2e5464db869c8f568af60a9,_:N6053f03e66f84137976d02a57be4abee,_:N47c62893516a4e0db8d7bfc9734e75f5,_:N1065c997b5a04a4587f71e32228e779d,_:Ned97a688172346a5a333098d4b0cf175,_:Nc2921925a1c9477ca55cfa525c2f9a02,_:N6b446d5e8cce4f47b9a77f528cc89c72,_:N3788f5234b804289931a2783901b31f9,_:N75485a1b86e14492b195ccb1f34b776c,_:N20e321931f90458689d15dac3d709b9f,_:N3c42393071b948038b07d8fcd3400cf2,_:N8a50a33b2ca848f5a948505f0074741e,_:Nadfb1ef69f9740329d5ec011cdef31db,_:N6081266a524b456a8e1c1a39e2396043,_:Nafa0917b645d48b0afd264d0101b48ca,_:N81db0a113fc64af18c32f79214e90200,_:Nc882ab0b14e2402989ee0350cfbb82d3,_:N7f6477634aca4365872e9e14456a34c9,_:N3a8c3f90367f41e1902b6de36f324874,_:Nb5ac2d3bef6f47ccb0a1deeca41518b1,_:N187cc206db5f49f69a4eac43ab7bb107,_:Nc7999c73cf2a449c84e6d393b71b6087,_:N8a06859a2f6547509ff8b2df4ddc60e7,_:N672b860858f64cf9a651e3e556c5e3b4,_:Naaeb4f5efbeb487d8d860e630b2edae9,_:N0a89d72a773e489b8c684ca592669f88,_:N5865015511ac4606a99d100ec1e8ef40,_:N4f16c3c096c045d984cd056e0757363f,_:Ne1b0afd93f9a4034ae23403bb6f40c8f
+ - Shape cr:ReportShape: _:N57b4efd81f0446ddb7220765db161ba4
+
+=== End SHACL ===
+

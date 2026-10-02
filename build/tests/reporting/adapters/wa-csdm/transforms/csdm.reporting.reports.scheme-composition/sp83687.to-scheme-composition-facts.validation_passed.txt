@@ -1,0 +1,44 @@
+Validation report for csdm.reporting.reports.scheme-composition - Scheme Composition Report
+Generated 2026-10-02T20:45:00.947105+00:00
+=== Files ===
+Using sp83687.to-scheme-composition-facts.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD sp83687.to-scheme-composition-facts.jsonld created
+Output Turtle sp83687.to-scheme-composition-facts.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/scheme-composition/ontology.ttl
+Validation result for _sources/reports/scheme-composition/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/scheme-composition/shapes.shacl:
+ - Shape sc:MemberParcelCountIsTheNumberOfMembers: *none*
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: *none*
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Ncf3088932cbe4c39b6d11c491a1cdf43
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:Nba30b85171734af6a4b9c840fb1e336b,_:N797e60332f3f4fb8a24ffd123b1ad52b,_:Ncbaffceba3854b808706741c7a4b1304,_:N82197cbde00c47a89bd2f5f37466e54b,_:N71dd78cb0baa4ea0bc72e7e0a418e441,_:N8a61ab1f4b914a0fbd722f0743f7313e
+ - Shape cr:SourceReferenceShape: _:Nf898f636c89840e5bf2536e945d0b3d3,_:Nf5297a3ff5354cb2bbfc67b394d0cd54,_:N959c0b0c9b8e495e839145f0253f6cf3,_:N9a895553ae224c1ca944820fb0b5d77f,_:N6545f4f9ebdb4eafa7464e25665d13ca,_:N84167dc9baad4d12a89146e34e9a1fba,_:Nbc2a4fad4668442d8ad18f9e1d45270c,_:N7a7179326d324c8e87be28a4c4163e18,_:Nbabee133f9be4be093d4e48f2d6bcd9f,_:Na5749b05af77482bbb44d0abd0ffc6f7,_:N78dcc1702b22417bbc4a8652539cc007,_:N0f1b974d7367478b86b51a4b2e90d4c4,_:N7960e05c2f69466f94097ae32f0a7d4b,_:Nb3a26b9b4cb6488994c4a65a187cf085,_:N314af6b12a454e8e814e2aa169dbf953,_:N2d3fc992b780476e9bc6289d9ff4a65d,_:Ne5309fb5b4ca40f0bae7f0e66a7c75b1,_:N9d794fe39856419d8e842fa23bc7da59,_:N7dda9e97fb594ac8a88c13c368f15306,_:N428373d51b6e4c96b739b0ee2cc77c9f,_:N749449319e0842098df2e84cc30a5598,_:N8a8414c14c324de98bc65fa4e2f8d2fa,_:Na6c430cabc504292a74963765f9c321d,_:N5f3b7c6f922649c08ecf2556421b0e84,_:N195a589e4daa49d38c2df7a96f51413f,_:Nc19ca3af42aa4eeebf3f0f65fe2dde10,_:N6d54e55444f5463d9cf5c2fe8a38b553,_:N67c0278eaef94978ba3dece80b7a8930,_:Na95597c7046d4665a70b9d029aaef1b0,_:Nf28dcd8545254ce08df58a7ab0a6680a,_:N767969c591344a279548bebbd9806145,_:N5781fbb984f84a4fa7dd342625d41f7a,_:N83a818649ae24931a78b0c51da241801,_:N51e849a5c79c43b6957595fc64a23c46,_:N0fa94847b8af49ddb15876b3673ab71e,_:N34ad0c5d6391429c9876f27e96f7f990,_:N44fc23673f41439083f852befc3abcc5,_:N63ee108339da4f9692a383a24a0ae570,_:N508b8bd727974ff2a18094ca0cb54d1f,_:Nf610717b31d04393b36a9d6393b7b1cf,_:Nfbe4b33025b44f768286742b9be6dc64,_:N182d344a91334f4893aea9fe32858a27,_:N8e793a6a893f41398787badc366c5273,_:N4602582600854439a48846bcfefccf33,_:N8a4f8759778548a7b1caa9020291937a,_:N2f49dddb09524ed5a8bd5ba1d3617335,_:N2bd18247c3ac4d8ea0b1f9212fa91c9c,_:N0337415544164e2599dd8767785fc4da
+ - Shape cr:ReportValueShape: _:N379d4ca672224c2686afe9444efab8d8,_:N3db159b405ef47aaa3389487d90048a7,_:Na4ecb9a20a11453e915e54f2f34b15a7,_:N23c23b8a4f0a475982367b30e9315a5d,_:N434645252fe844de9660899861cbb3c8,_:N1bda3c11d2f149269ca8a84b7840f6ee,_:Na04d0b63154642018964d3c5158c98eb,_:Nb4db0e7ef8024ebd897e2eecb69599c9,_:N0280f42f60fd47c98eae56f3f5ecdf68,_:N3485929da08847198021bf957f06e81e,_:N65e2c2b94bd047c485ea4b4354e6fbd6,_:N6a4601dfe36d44d49c4790008052797f,_:N7cc546f42aaa434a9cb3ae8fad3d89b5,_:N17bf43c1f35342ae8cfc8864be33f622,_:N3a12bc3bbc1b4fa1b746ed3b637fda72,_:N27e83babb277496cadb6c907c46fc0fc,_:N897d6691115a485ab1a0ab5a3d50ce77,_:N7c10bfda39d940b4a0579d42d9ef93a4,_:N28906e22a0e646c38d0a6d92c5606a84,_:N604db9ef6e9341f8b6cdef333389fb26,_:Ne1dba97554e241bda539f62dd2842132,_:Nf25b2b82ffaa44b3a2bd9a1a506c10fc,_:Nc70155b9dc7c4dff886b3c861841460e,_:N6d6da13377fc4a64b126b853940bf092,_:Nacaf3538114a48d68cb5e19672175d0c,_:N4630e21216534f0199b481979dc86d8b,_:N4d869a765a044a6ab85cd6921a4f288b,_:N9a39d1f017d6407589d517a53eab3387
+ - Shape cr:ReportShape: _:Ncf3088932cbe4c39b6d11c491a1cdf43
+
+=== End SHACL ===
+

@@ -1,0 +1,64 @@
+Validation report for csdm.reporting.reports.scheme-composition - Scheme Composition Report
+Generated 2026-10-02T20:44:43.675374+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using component-without-found-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD component-without-found-fail.jsonld created
+Output Turtle component-without-found-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'found' is a required property
+
+Failed validating 'required' in schema['allOf'][1]['properties']['content']['properties']['members']['items']['properties']['components']['items']:
+    {'properties': {'found': {'type': 'boolean',
+                              'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/componentFound',
+                              'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#boolean'},
+                    'ref': {'$ref': 'https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef',
+                            'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'}},
+     'required': ['ref', 'found'],
+     'type': 'object'}
+
+On instance['content']['members'][0]['components'][0]:
+    {'ref': {'dataset': 'SP-83687-1-1-0.00',
+             'id': 'uuid:bebe0853-7b46-4ee0-a2d2-b60a445f6b2d',
+             'pointer': '/solids/0/features/1'}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/scheme-composition/ontology.ttl
+Validation result for _sources/reports/scheme-composition/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/scheme-composition/shapes.shacl:
+ - Shape sc:MemberParcelCountIsTheNumberOfMembers: _:N892436b467e34e27a70a2d29f20aa299
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N5634a079b8b84273a49de707cb980f51
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N5634a079b8b84273a49de707cb980f51
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N2d687c61c7694dac94fc1069435347b5,_:Nb88219712d7245529211b307c9ed2c35,_:Nf2e1fa306f4d48d3afca57889948371e,_:Ne731d480337d4517af2bfe59d589c6e4,_:Nc7e592b532e541539f112022b0e24c16,_:Ndcd6ca867d234c738ecc92c74a6fcbf8,_:N2d02797cc0d24f4eb6d5260265f4ad99,_:Nd6baf30e358745078a171ab7bf2f00e1,_:N261a85f534ab4cd1a6c4c1fc6801e19f,_:Ndb31e6d52a634089a96c8bbcb53e665a
+ - Shape cr:SourceReferenceShape: _:Ne8f01c0f72cc41c49fd12d9841d6edec,_:N024d0f62518c4e259c90778351585105,_:N8e87049788c74b5faeaab3b60c1a25a5,_:N18b07de0e3eb4b11bcf3cac802236fe3,_:N9dbb34c4353c474b939276fba2b47b80,_:Nd0f4057343ea467c908ec9252b959e6c,_:N0318a20b13c14d079af722f0057b1a71,_:N9335b00cd651407c8294dbf1bfe5042e,_:N431fc8779d7146bfa47a85035fd01852,_:N6e391a03cb7d40a38444b162223b150e,_:Nf8e2f4780cd34148a48548fd5c9dd689,_:N1ce30b3901e644b3b10b049b11ae8a46,_:N0bc892f6c6384482a373861345757dfc,_:N2f8e99a028fb43e09f0e1f7b203d98f6,_:Nd7ecc1fae1a44f19b4c0c62ba25826d1,_:N245c12fa89ab4e2894c52c8b7f23cbfa,_:N45102121964a429b93c36a69fbafbee6,_:N48383dcea34c4ee0854a41bcea34d198,_:N7715630521d64e10a64105388256e8d8,_:Ncb6a5b14c8284cd180bf09bbc0579084,_:N0f619a3bbd6c4a21b9a5584851d7f452,_:N4df7991323da4c16bdcf418f2a0852df,_:Nc3698056c62448ff8834f01631a5db92,_:N3d8ba5ee5dd54baf9cc3e2e36eb96bff,_:Ncc42a217c82a402b9734e0fc9870850d,_:N59a9bd4b8e734f58becf820df20272f5,_:Nd93e75734e5e470391befec4451f4200,_:N77ff9c79ec4844ce814b06518060ee4d,_:Nc9c83be09c5948bc92324d5944c733c1,_:Ne48ea0e6c5834500940954c6088eee9c,_:Nc95678a4ef3c435a8bb68d7dbdd56d43,_:Ne9d0caef519e425fb6a4c3776994f580,_:N96cac3640b98409b9a5c29e204d2cc00,_:N5f8ebefc50034de796021e60b3d6e5c7,_:N6b7992e33eba44e6b77eb33ca5b18bb5,_:Nb10445f2e4b54cc1a711dfe81b3d3360,_:Ne589ab671f1b4008b459998f0cb16f92,_:Nc66575c9ff7844cbb0ad3fbe3f279e2d,_:Nb571c8f9350c4fb09f15b3bbf424000c,_:N80b6b18c98a247f692e8fcc63ff4c764,_:N273c9a83c48f47938b2af995990d6770,_:N83cff5f5ed79489399cc86d11f24145e,_:Ncc7be4e50f874adb924ec4dccfb0eb85,_:Nb77b299391a242a796848dad78c6342a,_:N8b7d8f8efbca43bb95f7d314697958bc,_:Nc30e5f3d70294468b10b3355066c2384,_:Na41037fffa894d689abf9eb87c103dcf,_:Ne4bf938922f14cef903199124578a366
+ - Shape cr:ReportValueShape: _:Na85b464b57014d35bd4f0c323664403f,_:Nf8b7be7f9d2d4a9ca7cd6bd1a3ff4979,_:N8414196038004f3a8521e5553f1b6942,_:N0d609ebc8a084977935325764873142f,_:Nfd33198fbde9419e9d02c1e470267607,_:N5303cbd8e0824e7b9068a31f1e94b784,_:Ne7841be8bc024a3987750ef336b022a7,_:N8a23bdfb409241c384ef75efe639ef03,_:N6adc4f278992441ab63aec3306fd4674,_:Nc938cefaaab947d3a5a44b656c0475ca,_:Nc7d17f40a75b42949815519f993f8c65,_:N0ffaeba82abb4995a5da148c10faf8a2,_:Nca51b819a1da493191f1c99211e55342,_:Nb129aeae9af24983a4b47360a5d25b7a,_:Nc4e75c453c904c90bfd46beffb58531e,_:N01a0ee19fa854ad29d2e7a2226f45e80,_:Nddd6831293fb4edf873ebf85afd269b0,_:N1d70b57b383d4a9e8f6b8a0767459847,_:Nb595a0477f0a49a59af0353615dd5742,_:N0010b0b9cc95467ca13fc0929a3446e0,_:Nee1a4028efc346f180c4f78ac9bf0af4,_:N00352af83e154210b86bf1a973c4b4b0,_:Nbb2c10146ef24bcdb2ddc8bf0fe5fe92,_:Nf258da16bb714b229b24407440d7eb29,_:N58f2535113154102944a593d92e49347,_:Nb7353ec0363445c0b99089b9e49f0ee0,_:N9e9e17c8306046e8962d112ad7b14eb2,_:Nc6e3fbde244045bba5062117024f2e83,_:N1301614fd6fd4102a21299d2f18cc4b5,_:N8865d387552b4624b05b03a907527d1b,_:Nad2205ba467c46bbbe9a6afe0a9aea48,_:Nc0a499d147b84b499e4f5ecd52b54db8,_:N96107b49a7cd4d63807e5e333bf804b0,_:Nd4f02225bead4225a70799f60a8554df,_:N8aa4a276320f48ca883cc003a00c9edf,_:N1ae30ada661e4ec38ed51a71e83097e9,_:N3d66e0750f1249c38e4e020cc189d337,_:N119f9d878a5249fb962771c026de4000,_:Nbfb8bdbddee04dd9805f0a103ff39d79,_:N5e68e48dbb13457dab5ae52d8c93aa24,_:N280cc9768fd34f6281f2d14ee5166093
+ - Shape cr:ReportShape: _:N5634a079b8b84273a49de707cb980f51
+
+=== End SHACL ===
+

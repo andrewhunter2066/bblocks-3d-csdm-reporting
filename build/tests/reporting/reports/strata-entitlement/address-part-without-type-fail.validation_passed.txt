@@ -1,0 +1,74 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:44.638536+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using address-part-without-type-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD address-part-without-type-fail.jsonld created
+Output Turtle address-part-without-type-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'partType' is a required property
+
+Failed validating 'required' in schema['allOf'][1]['properties']['content']['properties']['scheme']['properties']['address']['properties']['parts']['items']:
+    {'properties': {'label': {'$ref': '#/$defs/TextValue',
+                              'description': 'Human-readable label of a '
+                                             'coded value (road name, '
+                                             'locality name).',
+                              'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPartLabel'},
+                    'partType': {'description': 'Address part type (an IRI '
+                                                'or CURIE, e.g. '
+                                                '`apt:road`).',
+                                 'type': 'string',
+                                 'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPartType',
+                                 'x-jsonld-type': '@vocab'},
+                    'value': {'description': "The part's value as supplied "
+                                             '(a literal, a code or an '
+                                             '`@id` object).',
+                              'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/addressPartValue',
+                              'x-jsonld-type': '@json'}},
+     'required': ['partType'],
+     'type': 'object'}
+
+On instance['content']['scheme']['address']['parts'][0]:
+    {'value': 281}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+Validation result for _sources/reports/strata-entitlement/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Nac0c9fea10cc428790a0c116ce6db053
+ - Shape se:LotCountIsTheNumberOfLots: _:Nac0c9fea10cc428790a0c116ce6db053
+
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:Nce1c5254875642b3afee8f61ae4d9284
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nce1c5254875642b3afee8f61ae4d9284
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N0cc061f69d874c20a4f97ee578d43e2a,_:Nc667faaebd5b4663aa8de778807e9fa2,_:N1eb34d38f55c4e9a9067f3b9bd45ba0d,_:N9acff2187b19443b826c97fa3f19460b,_:Nad951d0e1a3c47668944cb0756cc4cb5,_:N2162a9a031034c97a834fc1925dfa006,_:N741e20c7a4fd43588c70a12c98e6e255,_:Nacc723b50b904fdf819946bd9cc2c461,_:N769ad44e4e4b4bd8a7c04b6034a73115,_:N4cdf3cc9db2d4f95a21b3bc17661a23b,_:N9c2dbeeb8e1f4ca3a3603f8731a0b6fe,_:N7dc93d78c506478e8b9ea812c075f896,_:N8cd7cfe9c5aa4b099f50489f5f9eddad,_:N1faa659fd31f4d3781777e8b170f681f,_:N2eccf85abc374e1a8ebb336d7e50ab86,_:N510f3737a1a3464dbc210a4ea6084369,_:N764f41f599424327820805ae57c12a4e,_:N14d408e4040b47e6bdf4a5c208a7efd3
+ - Shape cr:SourceReferenceShape: _:Nf3bee235b32745b6b3262615287a06c6,_:Nefa9be0d2a97490da68cee53da5abda5,_:Ne858fef972c44ffa886d15bb01a813e0,_:N9774f6c5dbdd45a2a8841afbc02d12bd,_:N27d45445b5bb45f084bbfba152ec643b,_:N0aad1afb8bbb4c69859b0370f9b9a74a,_:N3bb8f54f0ef64711bf9093795c1efd42,_:Nc9f8145a94c542f1848d22b56dc3f95d,_:N2c2d4ec7c6e44310a26066f56c69d905,_:N1359d908b9414ecfa1296857cf7768f2,_:N9e17d53da01245b582d38a1d85c3af83,_:N347e26814ac142809a0fcb20042419b9,_:N9231a7d1afe746bd811aab43782cb7a4,_:N450580785718488296481f75e323595a,_:Ne9f4ce8b6f754d52bee82efb5b056abf,_:Nf98710d3beaf4a1eb730e2c040599758,_:N756a4e91c2a2406c929551735f524ef1,_:N3e8a6970d11d4d82be6c8cdc5e1a3675,_:Naa82c4ebf1d04fb0a864532685a3528b,_:Nd1512825b2c245ca965fce60fe548b47,_:N9ab11bd81956427189b1b8ec83585830,_:Nb9e3b7c1fe0f4b5ba2dda5e8f9829381,_:Nc6965e029d8d42ab8ecf181423d71d92,_:Nd71bb30041384d40b470ba847c1f081b,_:N28e3e6f3ad27449387cfe80c9679feb3,_:N252f3a4f75ad4947b598ab196f402e83,_:Nf43163fd62524a91a6b3d4e5bb199b69,_:Na0783616bd8440bb9ba10c1db23e38e9,_:N800bf96ed0d34b4dba33dff37cd2a170,_:N03309ed9aa9842e9acda244f821f732c,_:N390b568469274e9da5a540fd1c4cd2cc,_:N3a0a6877403941aa98e1ebfd62a47214,_:N4194cb0794be4189ba82c2522544103e,_:N323344cb796a425680083ab78bd9316d,_:N2f2ae8d6ba894bb59289c84579ab4df6,_:N8d2a5ecde23441eca135203842a18a21,_:N1e6d4c9856384a2b9fc146bfaa7de5c4,_:N5b9dd690abf54f5b8cad357e798769d7,_:N996d9a76814a4c38a784cd519b18d314,_:N1fbccad84340424fa90e7c9abc5c8557,_:N4015814f59fe4e48b9aefc4d70bbe35e,_:N6e6e8eaba9444d5fb4e4de1dd7670d43,_:Ned9fa4a212a04755a8f0b0885d888e80,_:Na9d36d42d8c74a74a3c53e6bf9244857
+ - Shape cr:ReportValueShape: _:N7f249c30912e49cabfbd1f84e700b6e4,_:N22b1876928cb4322adb265c1048745c4,_:N22da14730db34f7aa819666cbe65148e,_:Ne053bb036cb24f4ba10a9f149cb16d01,_:N2b197260a2f247528d9a4de7926138a5,_:N9065844b6ca7490c90e97d9e8f62d5eb,_:N99c836a7d04f4e63b1d56f39640c3a6e,_:Nec0223d3252745d2932d014e3cb5af9a,_:N9dad27320d38440499ef4481c3668a2f,_:Nbb6f5f0070b74fa59011d4ce1f253844,_:N139fda1495d24b42ad7085793c1d5391,_:N69272b11647743efaae06051b51a8f03,_:N0f823fe833374e5296369277b681a35e,_:Ne8f9c09d3a1a42e484b3b37cb69592d0,_:N1a8506c338df4ff3a283a1abcebc1aa6,_:N0262e9ff93dd4f60a6bb9fa1f3319c49,_:N7ceacb5bb70f40c7aba610fb8cf20dba,_:N06686830fb0442ddbae6f95f2cb08d7b,_:N7f150f2c853b4a79aa1ad0fd1488fc65,_:N9b07f7335eec43a7a5fcfafe7a21de5b,_:N30e522d6d3bf4c0d8017ff6289270381,_:N721f67dd149f40ec807c1abeb60922d4,_:N35bdbd7b1fd04ecba220824c92047634,_:Nc94704fe149f46239ad30c88bdfc35a2,_:Na5b92a74e58b4d48870daf99766a5866,_:Nf934556390ed4fd99028c76470fc98c8,_:Nd8e6b4eeb0cd4390be469d13bdb7e9bf,_:N66ad4fc2bbd24688a239e61b65b7f4d9,_:N9e7d027ecfb04d23a4d0cf8148da3c8c,_:N3c44b134cc5f489b83ba10f9daa4ff9f,_:N30b87a6059184baeaabeeaf5a33fb1b1,_:Nb3d24a1bcedd4c76bf431a0ca2f65ca4,_:Nf6a94dc01dd94651b7bc03f6d902825e,_:Ndf3ac8cdba7b463ea9d501a3f43e6cf0
+ - Shape cr:ReportShape: _:Nce1c5254875642b3afee8f61ae4d9284
+
+=== End SHACL ===
+

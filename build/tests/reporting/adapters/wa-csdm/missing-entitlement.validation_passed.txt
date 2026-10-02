@@ -1,0 +1,6 @@
+Validation report for csdm.reporting.adapters.wa-csdm - WA 3D CSDM reporting adapter
+Generated 2026-10-02T20:44:53.756356+00:00
+=== Files ===
+Using examples/missing-entitlement.json from examples
+=== End Files ===
+

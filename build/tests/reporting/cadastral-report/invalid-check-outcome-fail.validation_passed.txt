@@ -1,0 +1,60 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.646325+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using invalid-check-outcome-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD invalid-check-outcome-fail.jsonld created
+Output Turtle invalid-check-outcome-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'passed' is not one of ['pass', 'fail', 'not-evaluated', 'not-applicable']
+
+Failed validating 'enum' in schema['properties']['checks']['items']['properties']['outcome']:
+    {'enum': ['pass', 'fail', 'not-evaluated', 'not-applicable'],
+     'x-jsonld-id': 'http://www.w3.org/ns/earl#outcome',
+     'x-jsonld-type': '@vocab'}
+
+On instance['checks'][0]['outcome']:
+    'passed'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:Nc12dc5828b7a44589928fccb8de15ef0
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nc12dc5828b7a44589928fccb8de15ef0
+
+
+** Validation error **
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in InConstraintComponent (http://www.w3.org/ns/shacl#InConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:in ( earl:passed earl:failed earl:untested earl:inapplicable ) ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path earl:outcome ]
+  	Focus Node: [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome <file:///github/workspace/passed> ; sh:resultSeverity sh:Violation ]
+  	Value Node: <file:///github/workspace/passed>
+  	Result Path: earl:outcome
+  	Message: Value <file:///github/workspace/passed> not in list ['earl:inapplicable', 'earl:failed', 'earl:passed', 'earl:untested']
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:Nbfe79abe474b4aee9b1a43609660aa8c
+ - Shape cr:SourceReferenceShape: _:N82923c8b343748cd9c7cd5e2de642986
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:Nc12dc5828b7a44589928fccb8de15ef0
+
+=== End SHACL ===
+

@@ -1,0 +1,423 @@
+{
+  "@context": {
+    "annotationRef": "cr:annotationRef",
+    "value": "rdf:value",
+    "derivation": "cr:derivation",
+    "method": "cr:derivationMethod",
+    "inputs": {
+      "@id": "cr:derivationInput",
+      "@container": "@set"
+    },
+    "lexicalValue": "cr:lexicalValue",
+    "note": "rdfs:comment",
+    "sourceRefs": {
+      "@id": "cr:sourceRef",
+      "@container": "@set"
+    },
+    "reportType": "cr:reportType",
+    "stage": {
+      "@context": {
+        "@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/"
+      },
+      "@id": "cr:stage",
+      "@type": "@vocab"
+    },
+    "status": {
+      "@context": {
+        "@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/"
+      },
+      "@id": "cr:reportStatus",
+      "@type": "@vocab"
+    },
+    "statusSummary": {
+      "@context": {
+        "checks": "cr:checkCount",
+        "failedErrors": "cr:failedErrors",
+        "failedWarnings": "cr:failedWarnings",
+        "unevaluatedErrors": "cr:unevaluatedErrors"
+      },
+      "@id": "cr:statusSummary"
+    },
+    "checks": {
+      "@context": {
+        "pass": "earl:passed",
+        "fail": "earl:failed",
+        "not-evaluated": "earl:untested",
+        "not-applicable": "earl:inapplicable",
+        "error": "sh:Violation",
+        "warning": "sh:Warning",
+        "info": "sh:Info",
+        "id": "dcterms:identifier",
+        "definedBy": "cr:definedBy",
+        "category": {
+          "@context": {
+            "@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/"
+          },
+          "@id": "cr:checkCategory",
+          "@type": "@vocab"
+        },
+        "severity": {
+          "@id": "sh:resultSeverity",
+          "@type": "@vocab"
+        },
+        "outcome": {
+          "@id": "earl:outcome",
+          "@type": "@vocab"
+        },
+        "message": "dcterms:description",
+        "targets": {
+          "@id": "cr:target",
+          "@container": "@set"
+        },
+        "evidence": {
+          "@id": "cr:evidence",
+          "@type": "@json"
+        }
+      },
+      "@id": "cr:check",
+      "@container": "@set"
+    },
+    "generatedBy": {
+      "@context": {
+        "bblock": "cr:buildingBlock",
+        "transform": "cr:transform"
+      },
+      "@id": "prov:wasGeneratedBy",
+      "@container": "@list"
+    },
+    "subject": {
+      "@context": {
+        "kind": "cr:kind",
+        "label": "rdfs:label",
+        "ref": {
+          "@context": {
+            "dataset": "cr:sourceDataset",
+            "pointer": "cr:jsonPointer",
+            "id": "cr:sourceObject",
+            "property": {
+              "@id": "cr:sourceProperty",
+              "@type": "@id"
+            }
+          },
+          "@id": "cr:sourceRef"
+        }
+      },
+      "@id": "dcterms:subject"
+    },
+    "sources": {
+      "@context": {
+        "id": "dcterms:identifier",
+        "kind": "cr:kind",
+        "name": "rdfs:label",
+        "date": "dcterms:date",
+        "conformsTo": "dcterms:conformsTo"
+      },
+      "@id": "dcterms:source",
+      "@container": "@set"
+    },
+    "documents": {
+      "@context": {
+        "id": "dcterms:identifier",
+        "title": "dcterms:title",
+        "href": "schema:url",
+        "mediaType": "dcterms:format",
+        "role": "cr:role",
+        "conformsTo": "dcterms:conformsTo",
+        "sourceRef": {
+          "@context": {
+            "dataset": "cr:sourceDataset",
+            "pointer": "cr:jsonPointer",
+            "id": "cr:sourceObject",
+            "property": {
+              "@id": "cr:sourceProperty",
+              "@type": "@id"
+            }
+          },
+          "@id": "cr:sourceRef"
+        }
+      },
+      "@id": "dcterms:references",
+      "@container": "@set"
+    },
+    "annotations": {
+      "@context": {
+        "id": "dcterms:identifier",
+        "role": "cr:role",
+        "statement": "dcterms:description",
+        "href": "schema:url",
+        "rel": "cr:linkRelation",
+        "documentRef": "cr:documentRef",
+        "sourceRef": {
+          "@context": {
+            "dataset": "cr:sourceDataset",
+            "pointer": "cr:jsonPointer",
+            "id": "cr:sourceObject",
+            "property": {
+              "@id": "cr:sourceProperty",
+              "@type": "@id"
+            }
+          },
+          "@id": "cr:sourceRef"
+        }
+      },
+      "@id": "cr:annotation",
+      "@container": "@set"
+    },
+    "content": {
+      "@context": {
+        "status": {
+          "@id": "cr:valueStatus",
+          "@type": "@vocab",
+          "@context": {
+            "@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/"
+          }
+        }
+      },
+      "@id": "cr:content"
+    },
+    "scheme": {
+      "@context": {
+        "schemeNumber": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:schemeNumber"
+        },
+        "ref": {
+          "@context": {
+            "dataset": "cr:sourceDataset",
+            "pointer": "cr:jsonPointer",
+            "id": "cr:sourceObject",
+            "property": {
+              "@id": "cr:sourceProperty",
+              "@type": "@id"
+            }
+          },
+          "@id": "cr:sourceRef"
+        }
+      },
+      "@id": "sc:scheme"
+    },
+    "members": {
+      "@context": {
+        "ref": {
+          "@context": {
+            "dataset": "cr:sourceDataset",
+            "pointer": "cr:jsonPointer",
+            "id": "cr:sourceObject",
+            "property": {
+              "@id": "cr:sourceProperty",
+              "@type": "@id"
+            }
+          },
+          "@id": "cr:sourceRef"
+        },
+        "lotNumber": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:lotNumber"
+        },
+        "membershipEvidence": {
+          "@id": "sc:membershipEvidence",
+          "@container": "@set"
+        },
+        "geometryType": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:geometryType"
+        },
+        "representationStatus": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:representationStatus"
+        },
+        "components": {
+          "@context": {
+            "found": {
+              "@id": "sc:componentFound",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "sc:component",
+          "@container": "@set"
+        },
+        "spatiallyResolved": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:spatiallyResolved"
+        }
+      },
+      "@id": "sc:member",
+      "@container": "@set"
+    },
+    "summary": {
+      "@context": {
+        "memberParcelCount": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:memberParcelCount"
+        },
+        "geometryTypes": {
+          "@context": {
+            "value": {
+              "@id": "rdf:value",
+              "@container": "@list"
+            },
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:geometryTypes"
+        },
+        "memberRepresentationStatuses": {
+          "@context": {
+            "value": {
+              "@id": "rdf:value",
+              "@container": "@list"
+            },
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:memberRepresentationStatuses"
+        },
+        "allMemberParcelsSpatiallyResolved": {
+          "@context": {
+            "sourceRefs": {
+              "@context": {
+                "dataset": "cr:sourceDataset",
+                "pointer": "cr:jsonPointer",
+                "id": "cr:sourceObject",
+                "property": {
+                  "@id": "cr:sourceProperty",
+                  "@type": "@id"
+                }
+              },
+              "@id": "cr:sourceRef",
+              "@container": "@set"
+            },
+            "documentRef": "cr:documentRef"
+          },
+          "@id": "sc:allMemberParcelsSpatiallyResolved"
+        }
+      },
+      "@id": "sc:summary"
+    },
+    "cr": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "earl": "http://www.w3.org/ns/earl#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sc": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/",
+    "@version": 1.1
+  }
+}

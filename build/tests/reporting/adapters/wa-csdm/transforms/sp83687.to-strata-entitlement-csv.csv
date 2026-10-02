@@ -1,0 +1,10 @@
+scheme_number,lot_number,lot_number_status,unit_entitlement,unit_entitlement_status,unit_entitlement_source,parcel_id
+SP83687,1,reported,117,reported,/parcels/0/features/2/properties/interests/0/entitlementPortion,uuid:e62621ed-1334-4890-964f-608ff68f7a17
+SP83687,2,reported,108,reported,/parcels/0/features/3/properties/interests/0/entitlementPortion,uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9
+SP83687,3,reported,113,reported,/parcels/0/features/4/properties/interests/0/entitlementPortion,uuid:85da01f8-9625-4b1e-9f4d-a34c11313512
+SP83687,4,reported,108,reported,/parcels/0/features/5/properties/interests/0/entitlementPortion,uuid:5e2823d1-2473-4417-8045-1089d2e86e64
+SP83687,5,reported,108,reported,/parcels/0/features/6/properties/interests/0/entitlementPortion,uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3
+SP83687,6,reported,113,reported,/parcels/0/features/7/properties/interests/0/entitlementPortion,uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078
+SP83687,7,reported,108,reported,/parcels/0/features/8/properties/interests/0/entitlementPortion,uuid:0df5a108-f5fe-433a-9934-b0162115248f
+SP83687,8,reported,108,reported,/parcels/0/features/9/properties/interests/0/entitlementPortion,uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5
+SP83687,9,reported,117,reported,/parcels/0/features/10/properties/interests/0/entitlementPortion,uuid:79015221-adeb-482f-988b-ed47e57bc2a4

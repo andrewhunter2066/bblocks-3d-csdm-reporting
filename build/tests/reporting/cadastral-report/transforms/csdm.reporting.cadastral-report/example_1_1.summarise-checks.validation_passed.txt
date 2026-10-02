@@ -1,0 +1,36 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:56.729928+00:00
+=== Files ===
+Using example_1_1.summarise-checks.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.summarise-checks.jsonld created
+Output Turtle example_1_1.summarise-checks.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N6d776aadbd874a17b6035579cf9fa4de
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N6d776aadbd874a17b6035579cf9fa4de
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N272cb65bacb74f419bcc74cf6e0cab14,_:N5c130b16e267422cbafdcb30cc25444c
+ - Shape cr:SourceReferenceShape: _:N4c0ac599698241efbc1dbdbfd1b8bdb4
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N6d776aadbd874a17b6035579cf9fa4de
+
+=== End SHACL ===
+

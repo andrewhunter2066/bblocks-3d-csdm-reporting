@@ -1,0 +1,44 @@
+{
+  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/context.jsonld",
+  "reportType": "example.report-type",
+  "stage": "complete",
+  "status": "incomplete",
+  "checks": [
+    {
+      "id": "subject-identified",
+      "definedBy": "example.adapter",
+      "category": "generation",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "One parcel identified as the subject"
+    },
+    {
+      "id": "area-present",
+      "definedBy": "example.report-type",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "fail",
+      "message": "The parcel has no area",
+      "targets": [
+        "/content"
+      ]
+    }
+  ],
+  "subject": {
+    "kind": "parcel",
+    "label": "Lot 1 on Plan DP 1",
+    "ref": {
+      "dataset": "example-dataset",
+      "pointer": "/parcels/0/features/0",
+      "id": "uuid:parcel-1"
+    }
+  },
+  "sources": [
+    {
+      "id": "example-dataset",
+      "name": "DP 1",
+      "conformsTo": "example.profile"
+    }
+  ],
+  "content": {}
+}

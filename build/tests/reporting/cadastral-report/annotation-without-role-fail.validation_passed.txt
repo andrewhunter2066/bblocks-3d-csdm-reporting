@@ -1,0 +1,87 @@
+Validation report for csdm.reporting.cadastral-report - Cadastral report
+Generated 2026-10-02T20:44:42.320971+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using annotation-without-role-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD annotation-without-role-fail.jsonld created
+Output Turtle annotation-without-role-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'role' is a required property
+
+Failed validating 'required' in schema['properties']['annotations']['items']:
+    {'$anchor': 'AnnotationReference',
+     'description': 'An annotation of the source dataset (a statement made '
+                    'on the plan or survey).',
+     'properties': {'documentRef': {'description': 'The document in '
+                                                   '`documents` that the '
+                                                   'annotation links to, '
+                                                   'if any.',
+                                    'type': 'string',
+                                    'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/documentRef'},
+                    'href': {'type': 'string',
+                             'x-jsonld-id': 'https://schema.org/url'},
+                    'id': {'description': 'Identifier of the annotation '
+                                          'within this report (used by '
+                                          '`annotationRef`).',
+                           'pattern': '^[A-Za-z][A-Za-z0-9._-]*$',
+                           'type': 'string',
+                           'x-jsonld-id': 'http://purl.org/dc/terms/identifier'},
+                    'rel': {'type': 'string',
+                            'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/linkRelation'},
+                    'role': {'description': 'Role of the annotation, as '
+                                            'given by the source (an IRI '
+                                            'or CURIE).',
+                             'type': 'string',
+                             'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/role'},
+                    'sourceRef': {'$ref': '#/$defs/SourceRef',
+                                  'x-jsonld-id': 'https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef'},
+                    'statement': {'description': 'The annotation text, '
+                                                 'verbatim.',
+                                  'type': 'string',
+                                  'x-jsonld-id': 'http://purl.org/dc/terms/description'}},
+     'required': ['id', 'role', 'sourceRef'],
+     'type': 'object'}
+
+On instance['annotations'][0]:
+    {'documentRef': 'unit-entitlement-schedule',
+     'href': 'documents/SP83687-unit-entitlement-schedule.pdf',
+     'id': 'licensed-valuer-certification',
+     'rel': 'via',
+     'sourceRef': {'dataset': 'SP-83687-1-1-0.00',
+                   'pointer': '/annotations/2'},
+     'statement': 'Schedule of Unit Entitlements certified by Jordan '
+                  'Example AAPI, Licensed Valuer No. 00000, dated 17 May '
+                  '2022.'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+Validation result for _sources/cadastral-report/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:ReportStatusFollowsFromChecks: _:N020d617bab5b471e850e33808b3e4acb
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N020d617bab5b471e850e33808b3e4acb
+
+Validation result for _sources/cadastral-report-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:CheckResultShape: _:N704e49a1cbd04a16b7c58148c457082d,_:N0215afd86e614ff2a0c47510ca726d13,_:N6e5984a5f8c247cab1d8eb09b9674bd6,_:N045582b7828e47dea19330f82df10f1d,_:Nd4a39f9ae5794022a6849286ccabd0c7,_:N1fea96b67eef40d19f1c5c85852b2f9b,_:Nff975aa84e8c4ed89314c1f61f9740ce,_:Nd68d8da6c45e4a448df688c3a3278270,_:Nf7a74ced7b2943959b8332eea519109c,_:Ne3c982f8ee004317a1e38ec6d169441a,_:N66c88de73ab749c2af994559cfc7a679,_:N5905e6e0309e45f3b08c7f4249ef53c8,_:Nf4c938986db840d8b69b25207fa7e32a,_:Nde8d4f78135a4fc58e1993b0f87bb53d,_:N9805cbf9c7054fcb91f202f63d2f9451,_:Naf9dc6f45d044404a95a9bee1b82e013,_:N53a3a82af36b4f0c8707b86e7b0ca2e3,_:Nec497399c9e643148724b1c41eaefcbe
+ - Shape cr:SourceReferenceShape: _:N647062ce41bd452fa0bbb0f91c791dbd,_:N27504edd261a4e21939d815551ca269a,_:N8f6b9171885f4b9fb0814a6b68b70318
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N020d617bab5b471e850e33808b3e4acb
+
+=== End SHACL ===
+

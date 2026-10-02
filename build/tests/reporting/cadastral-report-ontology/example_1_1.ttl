@@ -1,0 +1,27 @@
+@prefix ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/> .
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/> .
+@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .
+@prefix se: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vs: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] cr:check [ dcterms:description "Calculated total 1000 equals the declared total 1000" ;
+            dcterms:identifier "total-matches-declared" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory ccat:domain ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ] ;
+    cr:content [ se:lot [ se:unitEntitlement [ rdf:value 117 ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/interests/0/entitlementPortion" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                                    cr:sourceProperty <https://w3id.org/ogc/ladm/parcels/entitlementPortion> ] ;
+                            cr:valueStatus vs:reported ] ] ] ;
+    cr:reportStatus rstatus:complete ;
+    cr:reportType "csdm.reporting.reports.strata-entitlement" ;
+    cr:stage rstage:complete .
+

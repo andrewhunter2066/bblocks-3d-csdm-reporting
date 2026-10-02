@@ -1,0 +1,81 @@
+Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
+Generated 2026-10-02T20:44:48.316864+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using string-entitlement-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD string-entitlement-fail.jsonld created
+Output Turtle string-entitlement-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: '117' is not of type 'integer', 'null'
+
+Failed validating 'type' in schema['allOf'][1]['properties']['content']['properties']['lots']['items']['properties']['entitlement']['allOf'][1]['properties']['value']:
+    {'minimum': 1,
+     'type': ['integer', 'null'],
+     'x-jsonld-id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'}
+
+On instance['content']['lots'][0]['entitlement']['value']:
+    '117'
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/cadastral-report-ontology/ontology.ttl
+ - /github/workspace/_sources/reports/strata-entitlement/ontology.ttl
+=== End SHACL ===
+
+=== Unknown errors ===
+
+** Validation error **
+Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 327, in _validate_resource
+    result = validator.validate(filename, output_filename, report,
+,  File "/src/ogc/bblocks/validation/rdf.py", line 500, in validate
+    shacl_conforms, shacl_result, shacl_report, focus_nodes = shacl_validate(
+,  File "/src/ogc/bblocks/validation/rdf.py", line 82, in shacl_validate
+    conforms, shacl_result, shacl_report = validator.run()
+,  File "/venv/lib/python3.10/site-packages/pyshacl/validate.py", line 265, in run
+    _is_conform, _reports = s.validate(
+,  File "/venv/lib/python3.10/site-packages/pyshacl/shape.py", line 511, in validate
+    _is_conform, _reports = c.evaluate(target_graph, focus_value_nodes, _e_p)
+,  File "/venv/lib/python3.10/site-packages/pyshacl/constraints/sparql/sparql_based_constraints.py", line 104, in evaluate
+    _nc, _r = self._evaluate_sparql_constraint(query_helper, target_graph, focus_value_nodes)
+,  File "/venv/lib/python3.10/site-packages/pyshacl/constraints/sparql/sparql_based_constraints.py", line 121, in _evaluate_sparql_constraint
+    violating_vals = self._validate_sparql_query(sparql_text, init_binds, target_graph)
+,  File "/venv/lib/python3.10/site-packages/pyshacl/constraints/sparql/sparql_based_constraints.py", line 167, in _validate_sparql_query
+    if not results or len(results.bindings) < 1:
+,  File "/venv/lib/python3.10/site-packages/rdflib/query.py", line 357, in __bool__
+    return len(self) > 0
+,  File "/venv/lib/python3.10/site-packages/rdflib/query.py", line 347, in __len__
+    return len(self.bindings)
+,  File "/venv/lib/python3.10/site-packages/rdflib/query.py", line 242, in bindings
+    self._bindings += list(self._genbindings)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/evaluate.py", line 562, in <genexpr>
+    return (row.project(project.PV) for row in res)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/evaluate.py", line 121, in evalExtend
+    for c in evalPart(ctx, extend.p):
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/evaluate.py", line 121, in evalExtend
+    for c in evalPart(ctx, extend.p):
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/evaluate.py", line 204, in evalFilter
+    for c in evalPart(ctx, part.p):
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/evaluate.py", line 121, in evalExtend
+    for c in evalPart(ctx, extend.p):
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/evaluate.py", line 473, in evalAggregateJoin
+    res[k].update(row)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/aggregates.py", line 300, in update
+    acc.update(row, self)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/aggregates.py", line 131, in update
+    self.value = sum(type_safe_numbers(self.value, numeric(value)))
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/operators.py", line 1072, in numeric
+    raise SPARQLTypeError("%r does not have a numeric datatype!" % expr)
+,rdflib.plugins.sparql.sparql.SPARQLTypeError: rdflib.term.Literal('117') does not have a numeric datatype!
+
+=== End Unknown errors ===
+
