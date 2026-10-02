@@ -1,5 +1,5 @@
 {
-  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/context.jsonld",
+  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/context.jsonld",
   "reportType": "example.report-type",
   "stage": "facts",
   "subject": {

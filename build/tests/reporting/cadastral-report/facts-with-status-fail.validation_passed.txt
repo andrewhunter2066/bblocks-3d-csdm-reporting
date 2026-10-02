@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T20:44:42.606585+00:00
+Generated 2026-10-02T21:50:25.052132+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -44,18 +44,18 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:Nc44741b1d1454afc8da95957241c4ac7
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nc44741b1d1454afc8da95957241c4ac7
+ - Shape cr:ReportStatusFollowsFromChecks: _:N06f0c79f0edf406a9ce0885620094c12
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N06f0c79f0edf406a9ce0885620094c12
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:N30f04135c93746d0a03d29daf6136c25
- - Shape cr:SourceReferenceShape: _:Na76c898344764bfab3135c134353d8b9
+ - Shape cr:CheckResultShape: _:Ndc9e56334b9d4be5961342c2001bcc37
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:Nc44741b1d1454afc8da95957241c4ac7
+ - Shape cr:ReportShape: _:N06f0c79f0edf406a9ce0885620094c12
+ - Shape cr:SourceReferenceShape: _:Ne5b8d90739334cb694b470862c48a354
 
 === End SHACL ===
 

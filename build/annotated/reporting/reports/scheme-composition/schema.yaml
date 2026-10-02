@@ -18,7 +18,7 @@ description: 'Scheme Composition Report. Extends the generic cadastral report en
 
   '
 allOf:
-- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml
+- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml
 - type: object
   properties:
     reportType:
@@ -38,7 +38,7 @@ allOf:
               $ref: '#/$defs/TextValue'
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/schemeNumber
             ref:
-              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
           x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/scheme
         members:
@@ -53,7 +53,7 @@ allOf:
             - components
             properties:
               ref:
-                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
                 x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
               lotNumber:
                 $ref: '#/$defs/TextValue'
@@ -84,7 +84,7 @@ allOf:
                   - found
                   properties:
                     ref:
-                      $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+                      $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
                       x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
                     found:
                       type: boolean
@@ -157,7 +157,7 @@ allOf:
 $defs:
   DerivedCount:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         status:
           const: derived
@@ -167,7 +167,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   TextValue:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         value:
           type:
@@ -176,7 +176,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   BooleanValue:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         status:
           const: derived
@@ -185,7 +185,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   DerivedList:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         status:
           const: derived

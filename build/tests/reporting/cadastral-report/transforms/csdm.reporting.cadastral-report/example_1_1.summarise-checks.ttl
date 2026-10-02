@@ -17,19 +17,19 @@
                     cr:sourceObject "uuid:parcel-1" ] ] ;
     prov:wasGeneratedBy ( [ cr:buildingBlock "csdm.reporting.cadastral-report" ;
                 cr:transform "summarise-checks" ] ) ;
-    cr:check [ dcterms:description "The parcel has no area" ;
+    cr:check [ dcterms:description "One parcel identified as the subject" ;
+            dcterms:identifier "subject-identified" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "example.adapter" ],
+        [ dcterms:description "The parcel has no area" ;
             dcterms:identifier "area-present" ;
             earl:outcome earl:failed ;
             sh:resultSeverity sh:Warning ;
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "example.report-type" ;
-            cr:target "/content" ],
-        [ dcterms:description "One parcel identified as the subject" ;
-            dcterms:identifier "subject-identified" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Violation ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
-            cr:definedBy "example.adapter" ] ;
+            cr:target "/content" ] ;
     cr:content [ ] ;
     cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete> ;
     cr:reportType "example.report-type" ;

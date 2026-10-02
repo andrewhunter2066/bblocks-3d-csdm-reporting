@@ -11,29 +11,26 @@ Structured report of what a strata scheme is made of: its member lots, how each 
 
 # Scheme Composition Report
 
-What a strata scheme is made of: its member lots, how each one is spatially represented, and a summary
-for the scheme. It produces the `members` and `spatialRepresentationSummary` that the WA built-strata
-scope note says should be "generated via a reporting transform", without adding them to the source model.
+What a strata scheme is made of: its member lots, how each one is spatially represented, and a summary for the scheme.
+It produces the `members` and `spatialRepresentationSummary` that the WA built-strata scope note says should be "generated via a reporting transform", without adding them to the source model.
 
-This is the register's second report type. It was built in Stage 8 to test that the generic
-`csdm.reporting.cadastral-report` block serves more than one report: it uses the same envelope,
-`ReportValue`, checks, `summarise-checks`, `render-html`, vocabulary and SHACL rules as the Strata Scheme
-Entitlement Report, and the WA 3D CSDM adapter's shared `resolve-scheme` transform.
+This is the register's second report type.
+It was built in Stage 8 to test that the generic `csdm.reporting.cadastral-report` block serves more than one report: it uses the same envelope, `ReportValue`, checks, `summarise-checks`, `render-html`, vocabulary and [SHACL](https://www.w3.org/TR/shacl/) rules as the Strata Scheme Entitlement Report, and the WA 3D CSDM adapter's shared `resolve-scheme` transform.
 
 ## Content
 
 | Property | Stage | Meaning |
 |---|---|---|
 | `content.scheme.schemeNumber` | facts | Scheme (plan) number |
-| `content.members[]` | facts | Member lots, ordered by lot number: `lotNumber`, `membershipEvidence`, `geometryType` (e.g. `AggregateSolid`), `representationStatus` (the source's code, e.g. `representation-status:d3d`), and `components` (each referenced component solid, with `found`: whether it is present in the source) |
+| `content.members[]` | facts | Member lots, ordered by lot number: `lotNumber`, `membershipEvidence`, `geometryType` (e.g. [`AggregateSolid`](https://ogcincubator.github.io/topo-feature/bblock/ogc.geo.topo.features.topo-aggregate-solid)), `representationStatus` (the source's code, e.g. `representation-status:d3d`), and `components` (each referenced component solid, with `found`: whether it is present in the source) |
 | `content.members[].spatiallyResolved` | complete | derived: the member has components and every one is present |
 | `content.summary.memberParcelCount` | complete | derived: number of members |
 | `content.summary.geometryTypes` | complete | derived: the members' distinct geometry types |
 | `content.summary.memberRepresentationStatuses` | complete | derived: the members' distinct representation statuses (supplied ones only) |
 | `content.summary.allMemberParcelsSpatiallyResolved` | complete | derived: every member is spatially resolved |
 
-A summary value reports what the source says, not a default. If no member has a representation status,
-`memberRepresentationStatuses` is empty and the `representation-status-present` check fails.
+A summary value reports what the source says, not a default.
+If no member has a representation status, `memberRepresentationStatuses` is empty and the `representation-status-present` check fails.
 
 ## Checks
 
@@ -46,19 +43,19 @@ The adapter's shared membership checks, plus:
 | `component-references-resolve` | warning | a member references a component that is not in the source |
 | `all-members-spatially-resolved` | warning | a member has no components, or some are missing |
 
-For SP83687 the report is `incomplete`. Lots 1 and 2 are spatially resolved (all 4 and 5 of their
-component solids are present), Lots 3 to 9 have no component solids yet, and no lot carries a
-representation status. That is an accurate picture of the dataset.
+For SP83687 the report is `incomplete`.
+Lots 1 and 2 are spatially resolved (all 4 and 5 of their component solids are present), Lots 3 to 9 have no component solids yet, and no lot carries a representation status.
+That is an accurate picture of the dataset.
 
 ## Semantics
 
-`context.jsonld` maps the content to `ontology.ttl` (prefix `sc:` =
-`https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/`); the list-valued
-summaries are RDF lists. `shapes.shacl` adds `sc:MemberParcelCountIsTheNumberOfMembers`.
+`context.jsonld` maps the content to `ontology.ttl` (prefix `sc:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/`); the list-valued summaries are RDF lists.
+`shapes.shacl` adds `sc:MemberParcelCountIsTheNumberOfMembers`.
 
 ## Transforms
 
-- **`complete`:** facts-stage report → complete report (derived values, checks, status). Idempotent.
+- **`complete`:** facts-stage report → complete report (derived values, checks, status).
+  Idempotent.
 - **`to-html`:** template only, rendered by the generic `render-html`.
 
 ## Examples
@@ -1503,7 +1500,7 @@ description: 'Scheme Composition Report. Extends the generic cadastral report en
 
   '
 allOf:
-- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml
+- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml
 - type: object
   properties:
     reportType:
@@ -1523,7 +1520,7 @@ allOf:
               $ref: '#/$defs/TextValue'
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/schemeNumber
             ref:
-              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
           x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/scheme
         members:
@@ -1538,7 +1535,7 @@ allOf:
             - components
             properties:
               ref:
-                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
                 x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
               lotNumber:
                 $ref: '#/$defs/TextValue'
@@ -1569,7 +1566,7 @@ allOf:
                   - found
                   properties:
                     ref:
-                      $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+                      $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
                       x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
                     found:
                       type: boolean
@@ -1642,7 +1639,7 @@ allOf:
 $defs:
   DerivedCount:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         status:
           const: derived
@@ -1652,7 +1649,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   TextValue:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         value:
           type:
@@ -1661,7 +1658,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   BooleanValue:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         status:
           const: derived
@@ -1670,7 +1667,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   DerivedList:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         status:
           const: derived
@@ -1689,8 +1686,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/scheme-composition/schema.json)
-* JSON version: [schema.json](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/scheme-composition/schema.yaml)
+* YAML version: [schema.yaml](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/schema.json)
+* JSON version: [schema.json](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/schema.yaml)
 
 
 # JSON-LD Context
@@ -2122,7 +2119,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/scheme-composition/context.jsonld)
+[context.jsonld](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/context.jsonld)
 
 ## Sources
 
@@ -2132,6 +2129,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting-clean](https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting-clean)
+* URL: [https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting](https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting)
 * Path: `_sources/reports/scheme-composition`
 

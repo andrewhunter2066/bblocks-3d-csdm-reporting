@@ -1,5 +1,5 @@
 {
-  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/scheme-composition/context.jsonld",
+  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/context.jsonld",
   "reportType": "csdm.reporting.reports.scheme-composition",
   "stage": "facts",
   "generatedBy": [

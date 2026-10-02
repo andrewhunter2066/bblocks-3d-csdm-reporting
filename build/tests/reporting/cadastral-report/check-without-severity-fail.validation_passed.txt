@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T20:44:42.362875+00:00
+Generated 2026-10-02T21:50:24.703267+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -100,8 +100,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N3238206d241749fdb356f9096e236fe5
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N3238206d241749fdb356f9096e236fe5
+ - Shape cr:ReportStatusFollowsFromChecks: _:N9ba4b84c6d204026ae1810920ae0c6e5
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N9ba4b84c6d204026ae1810920ae0c6e5
 
 
 ** Validation error **
@@ -117,10 +117,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Message: Less than 1 values on [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome earl:passed ]->sh:resultSeverity
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:Nbd73e5e81abb41a1a676948edc6138af
- - Shape cr:SourceReferenceShape: _:Nf9a66d2183064728b74d1db3bfc08d76
+ - Shape cr:CheckResultShape: _:N51c003d932c94ca49d86d71cee92a383
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N3238206d241749fdb356f9096e236fe5
+ - Shape cr:ReportShape: _:N9ba4b84c6d204026ae1810920ae0c6e5
+ - Shape cr:SourceReferenceShape: _:N840f25d32f5b4e45b1bcb5e1d4a77cf7
 
 === End SHACL ===
 

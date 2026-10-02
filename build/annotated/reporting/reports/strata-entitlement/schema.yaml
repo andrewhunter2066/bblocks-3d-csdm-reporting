@@ -24,7 +24,7 @@ description: 'Strata Scheme Entitlement Report. Extends the generic cadastral re
 
   '
 allOf:
-- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml
+- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml
 - type: object
   properties:
     reportType:
@@ -43,7 +43,7 @@ allOf:
             schemeNumber:
               description: Scheme (plan) number, e.g. SP83687.
               allOf:
-              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
               - properties:
                   value:
                     type:
@@ -93,7 +93,7 @@ allOf:
                   x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/formattedAddress
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/address
             ref:
-              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
           x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/scheme
         lots:
@@ -114,7 +114,7 @@ allOf:
               lotNumber:
                 description: Lot number as it appears in the source.
                 allOf:
-                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
                 - properties:
                     value:
                       type:
@@ -125,7 +125,7 @@ allOf:
               entitlement:
                 description: Unit entitlement of the lot, a positive whole number.
                 allOf:
-                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
                 - properties:
                     value:
                       type:
@@ -137,7 +137,7 @@ allOf:
               ref:
                 description: The lot parcel in the source (or, if it could not be
                   found, the reference to it).
-                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
                 x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
               membershipEvidence:
                 description: 'The source links that associate the lot with the scheme.
@@ -249,7 +249,7 @@ allOf:
             declared:
               description: Total unit entitlement declared by the source for the scheme.
               allOf:
-              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
               - properties:
                   value:
                     type:
@@ -303,7 +303,7 @@ $defs:
   TextValue:
     description: A ReportValue whose value is text.
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         value:
           type:
@@ -313,7 +313,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   DerivedCount:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - required:
       - value
       properties:

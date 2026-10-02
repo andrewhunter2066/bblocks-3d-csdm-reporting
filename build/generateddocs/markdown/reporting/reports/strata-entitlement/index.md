@@ -11,28 +11,27 @@ Structured report of the unit entitlement of every lot in a strata scheme, with 
 
 # Strata Scheme Entitlement Report
 
-A structured, machine-readable report of the unit entitlement of every lot in a strata scheme. It
-captures the semantic content of a lodged *Schedule of Unit Entitlements* (in WA, approved form
-2021-47738), not its layout.
+A structured, machine-readable report of the unit entitlement of every lot in a strata scheme.
+It captures the semantic content of a lodged *Schedule of Unit Entitlements* (in WA, approved form 2021-47738), not its layout.
 
-This block knows nothing about the source data format. Source adapters (such as
-`csdm.reporting.adapters.wa-csdm`) produce the report; this block's transforms present it.
+This block knows nothing about the source data format.
+Source adapters (such as `csdm.reporting.adapters.wa-csdm`) produce the report; this block's transforms present it.
 
 ## Stages
 
 A report passes through two stages, both validated by this block's schema:
 
-1. **`facts`:** produced by a source adapter. Source facts only; `content.totals` is not allowed.
-2. **`complete`:** produced by this block's `complete` transform. Adds the derived values; `content.totals`
-   is required.
+1. **`facts`:** produced by a source adapter.
+   Source facts only; `content.totals` is not allowed.
+2. **`complete`:** produced by this block's `complete` transform.
+   Adds the derived values; `content.totals` is required.
 
 Keeping all calculation here means every source adapter gets the same totals.
 
 ## Content
 
-Every value is a `ReportValue` (see `csdm.reporting.cadastral-report`): the value, its status and its
-provenance. Source values point at the exact source property; derived values list the report values they
-were calculated from.
+Every value is a `ReportValue` (see `csdm.reporting.cadastral-report`): the value, its status and its provenance.
+Source values point at the exact source property; derived values list the report values they were calculated from.
 
 | Property | Stage | Status | Meaning |
 |---|---|---|---|
@@ -52,33 +51,26 @@ were calculated from.
 | `content.totals.calculated` | complete | derived (`sum`) | Sum of the lots with a usable entitlement; a `note` says when some lots were left out |
 | `content.totals.lotCount` | complete | derived (`count`) | Number of member lots |
 
-A lot whose entitlement is missing or unusable stays in the report with that status, and a scheme whose
-members cannot be identified still produces a report (with no lots). Such problems are recorded as
-check failures, not schema errors.
+A lot whose entitlement is missing or unusable stays in the report with that status, and a scheme whose members cannot be identified still produces a report (with no lots).
+Such problems are recorded as check failures, not schema errors.
 
 ## Semantics (RDF)
 
-`context.jsonld` maps the content to the strata entitlement vocabulary (`ontology.ttl`, prefix
-`se:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/`); the
-envelope, report values, checks and documents use the generic mapping of
-`csdm.reporting.cadastral-report`. Address part types are kept as ICSM address part type concepts
-(`apt:road`, …), and the parts' supplied values as JSON literals. `se:unitEntitlement` is a close match of
-LADM's `entitlementPortion`, and each entitlement's source reference names that LADM property, so the RDF
-says exactly which source property every entitlement was read from.
+`context.jsonld` maps the content to the strata entitlement vocabulary (`ontology.ttl`, prefix `se:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/`); the envelope, report values, checks and documents use the generic mapping of `csdm.reporting.cadastral-report`.
+Address part types are kept as ICSM address part type concepts (`apt:road`, …), and the parts' supplied values as JSON literals.
+`se:unitEntitlement` is a close match of [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology)'s `entitlementPortion`, and each entitlement's source reference names that LADM property, so the RDF says exactly which source property every entitlement was read from.
 
 `shapes.shacl` adds the report's cross-field rules, checked after uplift:
 
-- **`se:CalculatedTotalIsTheSumOfTheLots`:** the calculated total equals the sum of the lots' unit
-  entitlements.
+- **`se:CalculatedTotalIsTheSumOfTheLots`:** the calculated total equals the sum of the lots' unit entitlements.
 - **`se:LotCountIsTheNumberOfLots`:** the lot count equals the number of lots.
 
-The `-fail` tests `calculated-total-not-the-sum`, `lot-count-not-the-number-of-lots` and
-`document-ref-unresolved` are valid JSON that only these rules reject.
+The `-fail` tests `calculated-total-not-the-sum`, `lot-count-not-the-number-of-lots` and `document-ref-unresolved` are valid JSON that only these rules reject.
 
 ## Checks
 
-The source adapter records the source-specific checks (scheme identification, membership, source
-datatypes). `complete` adds these report-level checks:
+The source adapter records the source-specific checks (scheme identification, membership, source datatypes).
+`complete` adds these report-level checks:
 
 | Check | Severity | Fails when |
 |---|---|---|
@@ -94,25 +86,19 @@ datatypes). `complete` adds these report-level checks:
 | `certification-linked-to-schedule` | info | the certification links to a different document (not applicable when either is missing) |
 | `document-hrefs-resolvable` | info | not evaluated: links are not resolved during generation, and relative links have no base (D12) |
 
-So a missing entitlement makes a report `incomplete`, while a wrong one, or a total that does not match,
-makes it `invalid`.
+So a missing entitlement makes a report `incomplete`, while a wrong one, or a total that does not match, makes it `invalid`.
 
-The report deliberately does not reproduce the lodged form's wording, signature, logos or QR code (D6):
-it is a derived report that cites the form and the lodged schedule.
+The report deliberately does not reproduce the lodged form's wording, signature, logos or QR code (D6): it is a derived report that cites the form and the lodged schedule.
 
 ## Transforms
 
-- **`complete`:** facts-stage report → complete report: calculated total and lot count, the report-level
-  checks, and the overall status (via `summarise-checks` of `csdm.reporting.cadastral-report`). Idempotent.
-- **`to-html`:** renders a report as a standalone HTML page: the scheme's number, name and address, the
-  lots and totals, the basis of the schedule (document, approved form, legislation) and the valuer's
-  certification. Template only: `transforms/to_html.py` holds the Jinja2 body and passes it to the generic
-  `render-html` of `csdm.reporting.cadastral-report`, which adds the report status, status markers and
-  legend, the documents relied on, the check results and the pipeline. For a facts-stage report, the total
-  row says it has not been calculated yet.
-- **`to-csv`:** the lots as CSV, one row per lot: scheme number, lot number, unit entitlement, the status
-  of each, the entitlement's source pointer and the parcel id. A missing entitlement is an empty value with
-  status `not-supplied`.
+- **`complete`:** facts-stage report → complete report: calculated total and lot count, the report-level checks, and the overall status (via `summarise-checks` of `csdm.reporting.cadastral-report`).
+  Idempotent.
+- **`to-html`:** renders a report as a standalone HTML page: the scheme's number, name and address, the lots and totals, the basis of the schedule (document, approved form, legislation) and the valuer's certification.
+  Template only: `transforms/to_html.py` holds the Jinja2 body and passes it to the generic `render-html` of `csdm.reporting.cadastral-report`, which adds the report status, status markers and legend, the documents relied on, the check results and the pipeline.
+  For a facts-stage report, the total row says it has not been calculated yet.
+- **`to-csv`:** the lots as CSV, one row per lot: scheme number, lot number, unit entitlement, the status of each, the entitlement's source pointer and the parcel id.
+  A missing entitlement is an empty value with status `not-supplied`.
 
 ## Examples
 
@@ -1646,7 +1632,7 @@ description: 'Strata Scheme Entitlement Report. Extends the generic cadastral re
 
   '
 allOf:
-- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml
+- $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml
 - type: object
   properties:
     reportType:
@@ -1665,7 +1651,7 @@ allOf:
             schemeNumber:
               description: Scheme (plan) number, e.g. SP83687.
               allOf:
-              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
               - properties:
                   value:
                     type:
@@ -1715,7 +1701,7 @@ allOf:
                   x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/formattedAddress
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/address
             ref:
-              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+              $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
               x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
           x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/scheme
         lots:
@@ -1736,7 +1722,7 @@ allOf:
               lotNumber:
                 description: Lot number as it appears in the source.
                 allOf:
-                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
                 - properties:
                     value:
                       type:
@@ -1747,7 +1733,7 @@ allOf:
               entitlement:
                 description: Unit entitlement of the lot, a positive whole number.
                 allOf:
-                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+                - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
                 - properties:
                     value:
                       type:
@@ -1759,7 +1745,7 @@ allOf:
               ref:
                 description: The lot parcel in the source (or, if it could not be
                   found, the reference to it).
-                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
+                $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#SourceRef
                 x-jsonld-id: https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef
               membershipEvidence:
                 description: 'The source links that associate the lot with the scheme.
@@ -1871,7 +1857,7 @@ allOf:
             declared:
               description: Total unit entitlement declared by the source for the scheme.
               allOf:
-              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+              - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
               - properties:
                   value:
                     type:
@@ -1925,7 +1911,7 @@ $defs:
   TextValue:
     description: A ReportValue whose value is text.
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - properties:
         value:
           type:
@@ -1935,7 +1921,7 @@ $defs:
           x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   DerivedCount:
     allOf:
-    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
+    - $ref: https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml#ReportValue
     - required:
       - value
       properties:
@@ -1956,8 +1942,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/strata-entitlement/schema.json)
-* JSON version: [schema.json](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/strata-entitlement/schema.yaml)
+* YAML version: [schema.yaml](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/schema.json)
+* JSON version: [schema.json](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/schema.yaml)
 
 
 # JSON-LD Context
@@ -2569,13 +2555,13 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/strata-entitlement/context.jsonld)
+[context.jsonld](https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/context.jsonld)
 
 
 # For developers
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting-clean](https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting-clean)
+* URL: [https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting](https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting)
 * Path: `_sources/reports/strata-entitlement`
 

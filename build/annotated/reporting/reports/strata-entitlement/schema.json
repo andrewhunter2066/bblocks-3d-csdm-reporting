@@ -3,7 +3,7 @@
   "description": "Strata Scheme Entitlement Report. Extends the generic cadastral report envelope with the scheme, its\nlots and their unit entitlements, the declared and calculated totals, and the basis of the schedule\n(the lodged schedule document, its approved form, the valuer's certification and the legislation).\nStage 5 of the implementation plan: every value is a `ReportValue` carrying its status and provenance,\nand check results are recorded in `checks`.\n\nA `facts` stage report (source adapter output) holds source facts only and must not carry the derived\ntotals (`calculated`, `lotCount`); a `complete` stage report (output of this block's `complete`\ntransform) must carry them.\n",
   "allOf": [
     {
-      "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json"
+      "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json"
     },
     {
       "type": "object",
@@ -28,7 +28,7 @@
                   "description": "Scheme (plan) number, e.g. SP83687.",
                   "allOf": [
                     {
-                      "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
+                      "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
                     },
                     {
                       "properties": {
@@ -93,7 +93,7 @@
                   "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/address"
                 },
                 "ref": {
-                  "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#SourceRef",
+                  "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#SourceRef",
                   "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef"
                 }
               },
@@ -113,7 +113,7 @@
                     "description": "Lot number as it appears in the source.",
                     "allOf": [
                       {
-                        "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
+                        "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
                       },
                       {
                         "properties": {
@@ -133,7 +133,7 @@
                     "description": "Unit entitlement of the lot, a positive whole number.",
                     "allOf": [
                       {
-                        "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
+                        "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
                       },
                       {
                         "properties": {
@@ -152,7 +152,7 @@
                   },
                   "ref": {
                     "description": "The lot parcel in the source (or, if it could not be found, the reference to it).",
-                    "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#SourceRef",
+                    "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#SourceRef",
                     "x-jsonld-id": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/sourceRef"
                   },
                   "membershipEvidence": {
@@ -284,7 +284,7 @@
                   "description": "Total unit entitlement declared by the source for the scheme.",
                   "allOf": [
                     {
-                      "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
+                      "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
                     },
                     {
                       "properties": {
@@ -387,7 +387,7 @@
       "description": "A ReportValue whose value is text.",
       "allOf": [
         {
-          "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
+          "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
         },
         {
           "properties": {
@@ -406,7 +406,7 @@
     "DerivedCount": {
       "allOf": [
         {
-          "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
+          "$ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json#ReportValue"
         },
         {
           "required": [

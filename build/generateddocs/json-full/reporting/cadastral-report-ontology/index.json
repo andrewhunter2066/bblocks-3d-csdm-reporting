@@ -18,7 +18,7 @@
   ],
   "shaclShapes": {
     "csdm.reporting.cadastral-report-ontology": [
-      "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/_sources/cadastral-report-ontology/shapes.shacl"
+      "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl"
     ]
   },
   "sources": [
@@ -54,7 +54,7 @@
   "resources": [
     {
       "role": "data",
-      "ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/_sources/cadastral-report-ontology/data.ttl",
+      "ref": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/data.ttl",
       "format": "text/turtle"
     }
   ],
@@ -62,12 +62,12 @@
     "name": "Apache-2.0",
     "url": "https://www.apache.org/licenses/LICENSE-2.0"
   },
-  "ontology": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/cadastral-report-ontology/ontology.ttl",
+  "ontology": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report-ontology/ontology.ttl",
   "dateOfLastChange": "2026-10-02",
-  "sourceFiles": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/_sources/cadastral-report-ontology/",
+  "sourceFiles": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/",
   "validationPassed": true,
-  "testOutputs": "https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting-clean/blob/master/build/tests/reporting/cadastral-report-ontology/",
-  "description": "# Cadastral reporting vocabulary\n\nThe RDF vocabulary behind cadastral reports. It defines only what existing vocabularies do not provide;\nthe JSON-LD context of `csdm.reporting.cadastral-report` maps everything else to reused terms.\n\n| Report element | RDF |\n|---|---|\n| Report | `cr:CadastralReport` (a `prov:Entity`); `cr:reportType`, `cr:stage`, `cr:reportStatus`, `cr:content` |\n| Report value | `cr:ReportValue`: `rdf:value`, `cr:valueStatus`, `cr:sourceRef`, `cr:derivation`, `cr:lexicalValue`, `rdfs:comment` |\n| Source reference | `cr:SourceReference`: `cr:sourceDataset`, `cr:jsonPointer`, `cr:sourceObject`, `cr:sourceProperty` (the source's own property IRI, e.g. LADM `entitlementPortion`) |\n| Check result | `cr:CheckResult` (close to `earl:Assertion`): `earl:outcome` (`earl:passed`, `failed`, `untested`, `inapplicable`), `sh:resultSeverity` (`sh:Violation`, `Warning`, `Info`), `cr:checkCategory`, `dcterms:description` |\n| Documents, annotations | `dcterms:references` \u2192 `cr:DocumentReference` (`dcterms:title`, `schema:url`, `dcterms:format`, `dcterms:conformsTo`); `cr:annotation` \u2192 `cr:AnnotationReference` |\n| Sources, pipeline | `dcterms:source`; `prov:wasGeneratedBy` \u2192 `cr:PipelineStep` (`cr:buildingBlock`, `cr:transform`) |\n\nCodelists (`data.ttl`, SKOS): report stage, report status, report value status, check category. Each\nconcept's `skos:notation` is the value used in JSON reports.\n\nNamespaces: `cr:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/`;\ncodelists under `\u2026/def/report-stage/`, `\u2026/def/report-status/`, `\u2026/def/value-status/` and\n`\u2026/def/check-category/`. These resolve once the register is published on the ogcincubator GitHub Pages site.\n\nReport-type specific terms are defined with their report type (for example the `se:` terms of\n`csdm.reporting.reports.strata-entitlement`).\n",
+  "testOutputs": "https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting/blob/master/build/tests/reporting/cadastral-report-ontology/",
+  "description": "# Cadastral reporting vocabulary\n\nThe RDF vocabulary behind cadastral reports.\nIt defines only what existing vocabularies do not provide; the [JSON-LD](https://www.w3.org/TR/json-ld11/) context of `csdm.reporting.cadastral-report` maps everything else to reused terms.\n\n| Report element | RDF |\n|---|---|\n| Report | `cr:CadastralReport` (a [`prov:Entity`](https://www.w3.org/TR/prov-o/)); `cr:reportType`, `cr:stage`, `cr:reportStatus`, `cr:content` |\n| Report value | `cr:ReportValue`: `rdf:value`, `cr:valueStatus`, `cr:sourceRef`, `cr:derivation`, `cr:lexicalValue`, `rdfs:comment` |\n| Source reference | `cr:SourceReference`: `cr:sourceDataset`, `cr:jsonPointer`, `cr:sourceObject`, `cr:sourceProperty` (the source's own property IRI, e.g. [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology) `entitlementPortion`) |\n| Check result | `cr:CheckResult` (close to [`earl:Assertion`](https://www.w3.org/TR/EARL10-Schema/)): `earl:outcome` (`earl:passed`, `failed`, `untested`, `inapplicable`), `sh:resultSeverity` (`sh:Violation`, `Warning`, `Info`), `cr:checkCategory`, `dcterms:description` |\n| Documents, annotations | `dcterms:references` \u2192 `cr:DocumentReference` (`dcterms:title`, `schema:url`, `dcterms:format`, `dcterms:conformsTo`); `cr:annotation` \u2192 `cr:AnnotationReference` |\n| Sources, pipeline | `dcterms:source`; `prov:wasGeneratedBy` \u2192 `cr:PipelineStep` (`cr:buildingBlock`, `cr:transform`) |\n\nCodelists (`data.ttl`, [SKOS](https://www.w3.org/TR/skos-reference/)): report stage, report status, report value status, check category.\nEach concept's `skos:notation` is the value used in JSON reports.\n\nNamespaces: `cr:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/`; codelists under `\u2026/def/report-stage/`, `\u2026/def/report-status/`, `\u2026/def/value-status/` and `\u2026/def/check-category/`.\nThese resolve once the register is published on the ogcincubator GitHub Pages site.\n\nReport-type specific terms are defined with their report type (for example the `se:` terms of `csdm.reporting.reports.strata-entitlement`).\n",
   "examples": [
     {
       "title": "A report value and a check result (SP83687)",
@@ -75,7 +75,7 @@
       "snippets": [
         {
           "language": "turtle",
-          "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/tests/reporting/cadastral-report-ontology/example_1_1.ttl",
+          "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/tests/reporting/cadastral-report-ontology/example_1_1.ttl",
           "sizeBytes": 1595,
           "code": "@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/> .\n@prefix rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix vs: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/> .\n@prefix se: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n\n[] cr:reportType \"csdm.reporting.reports.strata-entitlement\" ;\n   cr:stage rstage:complete ;\n   cr:reportStatus rstatus:complete ;\n   cr:content [ se:lot [ se:unitEntitlement [\n       rdf:value 117 ;\n       cr:valueStatus vs:reported ;\n       cr:sourceRef [\n           cr:sourceDataset \"SP-83687-1-1-0.00\" ;\n           cr:jsonPointer \"/parcels/0/features/2/properties/interests/0/entitlementPortion\" ;\n           cr:sourceProperty <https://w3id.org/ogc/ladm/parcels/entitlementPortion> ] ] ] ] ;\n   cr:check [\n       dcterms:identifier \"total-matches-declared\" ;\n       cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n       cr:checkCategory ccat:domain ;\n       sh:resultSeverity sh:Violation ;\n       earl:outcome earl:passed ;\n       dcterms:description \"Calculated total 1000 equals the declared total 1000\" ] .\n"
         }
@@ -83,6 +83,6 @@
     }
   ],
   "annotatedSchema": null,
-  "gitRepository": "https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting-clean",
+  "gitRepository": "https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting",
   "gitPath": "_sources/cadastral-report-ontology"
 }

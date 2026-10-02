@@ -2,7 +2,7 @@
   "title": "Validation report for csdm.reporting.adapters.wa-csdm - WA 3D CSDM reporting adapter",
   "bblockName": "WA 3D CSDM reporting adapter",
   "bblockId": "csdm.reporting.adapters.wa-csdm",
-  "generated": "2026-10-02T20:44:53.758592+00:00",
+  "generated": "2026-10-02T21:50:37.534805+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/reporting/adapters/wa-csdm/sp83687.json",
-        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/tests/reporting/adapters/wa-csdm/sp83687.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/tests/reporting/adapters/wa-csdm/sp83687.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"
@@ -34,7 +34,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/reporting/adapters/wa-csdm/missing-entitlement.json",
-        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/tests/reporting/adapters/wa-csdm/missing-entitlement.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/tests/reporting/adapters/wa-csdm/missing-entitlement.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"
@@ -58,7 +58,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/reporting/adapters/wa-csdm/total-mismatch.json",
-        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/tests/reporting/adapters/wa-csdm/total-mismatch.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/tests/reporting/adapters/wa-csdm/total-mismatch.json",
         "exampleIndex": 3,
         "snippetIndex": 1,
         "language": "application/json"

@@ -1,5 +1,5 @@
 {
-  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting-clean/build/annotated/reporting/reports/strata-entitlement/context.jsonld",
+  "@context": "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/context.jsonld",
   "reportType": "csdm.reporting.reports.strata-entitlement",
   "stage": "complete",
   "generatedBy": [
