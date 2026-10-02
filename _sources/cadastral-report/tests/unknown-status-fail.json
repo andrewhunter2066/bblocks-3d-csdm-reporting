@@ -1,0 +1,28 @@
+{
+  "reportType": "example.report-type",
+  "stage": "complete",
+  "status": "done",
+  "checks": [
+    {
+      "id": "subject-identified",
+      "definedBy": "example.adapter",
+      "category": "generation",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "ok"
+    }
+  ],
+  "subject": {
+    "kind": "parcel",
+    "ref": {
+      "dataset": "example-dataset",
+      "pointer": "/parcels/0/features/0"
+    }
+  },
+  "sources": [
+    {
+      "id": "example-dataset"
+    }
+  ],
+  "content": {}
+}

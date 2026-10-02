@@ -1,0 +1,17 @@
+{
+  "name": "Cadastral report",
+  "abstract": "Generic envelope for structured cadastral reports: report type, subject, source datasets and a report-specific content section. Report-type building blocks extend it; it knows nothing about any jurisdiction, source format or report type.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "group": "Cadastral reporting",
+  "tags": [
+    "cadastre",
+    "reporting",
+    "provenance"
+  ],
+  "dependsOn": [
+    "bblocks://csdm.reporting.cadastral-report-ontology"
+  ]
+}

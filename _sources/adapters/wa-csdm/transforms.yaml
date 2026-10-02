@@ -1,0 +1,143 @@
+transforms:
+  - id: to-strata-entitlement-facts
+    description: |
+      Interprets a WA 3D CSDM cadastral survey dataset (built strata) and extracts the source facts of a
+      Strata Scheme Entitlement Report (`stage: facts`): the scheme number and each member lot's number
+      and unit entitlement. Members are the scheme parcel's `ParcelAggregate` references. Calculates
+      nothing. Fails only when the dataset does not contain exactly one strata scheme parcel.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.reports.strata-entitlement
+    ref: transforms/strata_entitlement_facts.py
+
+  - id: to-strata-entitlement-report
+    description: |
+      Converts a WA 3D CSDM cadastral survey dataset into a complete Strata Scheme Entitlement Report by
+      composing `to-strata-entitlement-facts` (this block) with `complete`
+      (`csdm.reporting.reports.strata-entitlement`).
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.reports.strata-entitlement
+    ref: transforms/strata_entitlement_report.py
+
+  - id: to-strata-entitlement-html
+    description: |
+      Converts a WA 3D CSDM cadastral survey dataset straight to an HTML Strata Scheme Entitlement Report:
+      `to-strata-entitlement-report` (facts, then `complete`), then `to-html`
+      (`csdm.reporting.reports.strata-entitlement`).
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/html
+          defaultExtension: html
+    ref: transforms/strata_entitlement_html.py
+
+  - id: to-strata-entitlement-csv
+    description: |
+      Converts a WA 3D CSDM cadastral survey dataset straight to the lots of a Strata Scheme Entitlement
+      Report as CSV: `to-strata-entitlement-report`, then `to-csv` (`csdm.reporting.reports.strata-entitlement`).
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/csv
+          defaultExtension: csv
+    ref: transforms/strata_entitlement_csv.py
+
+  - id: to-scheme-composition-facts
+    description: |
+      Interprets a WA 3D CSDM cadastral survey dataset (built strata) and extracts the source facts of a
+      Scheme Composition Report (`stage: facts`): the scheme's member lots (from `resolve-scheme`) with,
+      for each, its geometry type, representation status and component solids (and whether each is present
+      in the dataset).
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.reports.scheme-composition
+    ref: transforms/scheme_composition_facts.py
+
+  - id: to-scheme-composition-report
+    description: |
+      Converts a WA 3D CSDM dataset into a complete Scheme Composition Report: `to-scheme-composition-facts`,
+      then `complete` (`csdm.reporting.reports.scheme-composition`).
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.reports.scheme-composition
+    ref: transforms/scheme_composition_report.py
+
+  - id: to-scheme-composition-html
+    description: |
+      Converts a WA 3D CSDM dataset straight to an HTML Scheme Composition Report:
+      `to-scheme-composition-report`, then `to-html` (`csdm.reporting.reports.scheme-composition`).
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/html
+          defaultExtension: html
+    ref: transforms/scheme_composition_html.py
+
+  - id: resolve-scheme
+    description: |
+      Shared source interpretation for every strata report built from a WA 3D CSDM dataset: identifies the
+      one strata scheme parcel (raising when there is not exactly one), resolves its members from the
+      scheme's `ParcelAggregate` references with per-lot membership evidence and lot numbers, and runs the
+      source-specific checks (scheme identification, membership, scheme-number consistency). Returns JSON
+      for the report-specific facts transforms, which call it with `get_transformer()`; it is not a report.
+      Promoted from `to-strata-entitlement-facts` when the Scheme Composition Report needed the same
+      interpretation.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+    ref: transforms/resolve_scheme.py
+
+  - id: vocabulary-labels
+    description: |
+      Returns (as JSON) the labels of the WA vocabularies the adapter needs: `wa-locality` (from
+      icsm-vocabs) and `wa-approved-form` (label, validity, source and scope note, from the WA profile's
+      vocabulary supplements), keyed by CURIE prefix and local name. The input is ignored. Generated by
+      `scripts/build_vocabulary_labels.py`, because these vocabularies are not yet published at resolvable
+      IRIs. Called by the other transforms with `get_transformer()`; it produces no output when run on its
+      own.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+    ref: transforms/vocabulary_labels.py

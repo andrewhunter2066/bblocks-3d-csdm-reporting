@@ -1,0 +1,37 @@
+examples:
+  - title: A report value and a check result (SP83687)
+    content: |
+      Lot 1's unit entitlement in the SP83687 Strata Scheme Entitlement Report, and one of its check
+      results, as RDF. The value is `reported`, and its source reference names the LADM land-parcels
+      property it was read from. The check outcome and severity reuse EARL and SHACL terms.
+    snippets:
+      - language: turtle
+        code: |
+          @prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+          @prefix ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/> .
+          @prefix rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/> .
+          @prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .
+          @prefix vs: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/> .
+          @prefix se: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/> .
+          @prefix dcterms: <http://purl.org/dc/terms/> .
+          @prefix earl: <http://www.w3.org/ns/earl#> .
+          @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+          @prefix sh: <http://www.w3.org/ns/shacl#> .
+
+          [] cr:reportType "csdm.reporting.reports.strata-entitlement" ;
+             cr:stage rstage:complete ;
+             cr:reportStatus rstatus:complete ;
+             cr:content [ se:lot [ se:unitEntitlement [
+                 rdf:value 117 ;
+                 cr:valueStatus vs:reported ;
+                 cr:sourceRef [
+                     cr:sourceDataset "SP-83687-1-1-0.00" ;
+                     cr:jsonPointer "/parcels/0/features/2/properties/interests/0/entitlementPortion" ;
+                     cr:sourceProperty <https://w3id.org/ogc/ladm/parcels/entitlementPortion> ] ] ] ] ;
+             cr:check [
+                 dcterms:identifier "total-matches-declared" ;
+                 cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+                 cr:checkCategory ccat:domain ;
+                 sh:resultSeverity sh:Violation ;
+                 earl:outcome earl:passed ;
+                 dcterms:description "Calculated total 1000 equals the declared total 1000" ] .

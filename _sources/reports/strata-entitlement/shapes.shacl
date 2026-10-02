@@ -1,0 +1,49 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix se: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Cross-field rules of the Strata Scheme Entitlement Report: the derived totals must agree with the lots
+# they are derived from. Applied after JSON-LD uplift. Facts-stage reports carry no derived totals, so
+# these rules do not apply to them.
+
+se:CalculatedTotalIsTheSumOfTheLots
+    a sh:NodeShape ;
+    sh:targetSubjectsOf se:totals ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Calculated total {?value} is not the sum of the lots' unit entitlements ({?sum})" ;
+        sh:prefixes se:Prefixes ;
+        sh:select """
+            SELECT $this (SAMPLE(?calculated) AS ?value) (COALESCE(SUM(?entitlement), 0) AS ?sum) WHERE {
+                $this se:totals/se:calculatedTotal/rdf:value ?calculated .
+                OPTIONAL { $this se:lot/se:unitEntitlement/rdf:value ?entitlement }
+            }
+            GROUP BY $this
+            HAVING (COALESCE(SUM(?entitlement), 0) != SAMPLE(?calculated))
+        """ ;
+    ] .
+
+se:LotCountIsTheNumberOfLots
+    a sh:NodeShape ;
+    sh:targetSubjectsOf se:totals ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Lot count {?value} is not the number of lots ({?lots})" ;
+        sh:prefixes se:Prefixes ;
+        sh:select """
+            SELECT $this (SAMPLE(?count) AS ?value) (COUNT(DISTINCT ?lot) AS ?lots) WHERE {
+                $this se:totals/se:lotCount/rdf:value ?count .
+                OPTIONAL { $this se:lot ?lot }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?lot) != SAMPLE(?count))
+        """ ;
+    ] .
+
+se:Prefixes
+    a owl:Ontology ;
+    sh:declare
+        [ sh:prefix "se" ; sh:namespace "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/"^^xsd:anyURI ] ,
+        [ sh:prefix "rdf" ; sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ] .

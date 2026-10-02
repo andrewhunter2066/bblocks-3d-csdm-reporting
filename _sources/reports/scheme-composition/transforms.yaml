@@ -1,0 +1,31 @@
+transforms:
+  - id: complete
+    description: |
+      Completes a facts-stage Scheme Composition Report (as produced by any source adapter): whether each
+      member is spatially resolved, the spatial representation summary (member parcel count, geometry types,
+      representation statuses, whether all members are spatially resolved), the report-level checks and the
+      overall status (via `summarise-checks` of `csdm.reporting.cadastral-report`). Idempotent.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.reports.scheme-composition
+    ref: transforms/complete.py
+
+  - id: to-html
+    description: |
+      Renders a Scheme Composition Report as a standalone HTML page. Template only: passes its Jinja2
+      template to the generic `render-html` of `csdm.reporting.cadastral-report`.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/html
+          defaultExtension: html
+    ref: transforms/to_html.py

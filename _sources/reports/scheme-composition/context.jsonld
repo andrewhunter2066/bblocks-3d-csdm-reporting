@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "sc": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/",
+    "cr": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+
+    "ref": "cr:sourceRef",
+    "value": "rdf:value",
+    "scheme": "sc:scheme",
+    "schemeNumber": "sc:schemeNumber",
+    "members": {"@id": "sc:member", "@container": "@set"},
+    "lotNumber": "sc:lotNumber",
+    "membershipEvidence": {"@id": "sc:membershipEvidence", "@container": "@set"},
+    "geometryType": "sc:geometryType",
+    "representationStatus": "sc:representationStatus",
+    "components": {"@id": "sc:component", "@container": "@set"},
+    "found": {"@id": "sc:componentFound", "@type": "http://www.w3.org/2001/XMLSchema#boolean"},
+    "spatiallyResolved": "sc:spatiallyResolved",
+    "summary": "sc:summary",
+    "memberParcelCount": "sc:memberParcelCount",
+    "geometryTypes": {"@id": "sc:geometryTypes", "@context": {"value": {"@id": "rdf:value", "@container": "@list"}}},
+    "memberRepresentationStatuses": {"@id": "sc:memberRepresentationStatuses", "@context": {"value": {"@id": "rdf:value", "@container": "@list"}}},
+    "allMemberParcelsSpatiallyResolved": "sc:allMemberParcelsSpatiallyResolved"
+  }
+}

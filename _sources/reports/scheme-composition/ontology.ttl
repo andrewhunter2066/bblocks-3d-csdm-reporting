@@ -1,0 +1,105 @@
+PREFIX cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Terms specific to the Scheme Composition Report (the report content). Generic report terms are in the
+# cadastral reporting vocabulary. Definitions are taken from this block's schema.
+
+<https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition>
+    a owl:Ontology ;
+    dcterms:title "Scheme Composition Report vocabulary"@en ;
+    dcterms:description "Properties of the content of a Scheme Composition Report: the scheme's member lots, how each is spatially represented, and the scheme's spatial representation summary."@en ;
+    owl:imports <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> ;
+    owl:versionInfo "0.1" ;
+    dcterms:created "2026-10-02"^^xsd:date ;
+.
+
+sc:scheme a owl:ObjectProperty ;
+    rdfs:label "scheme"@en ;
+    skos:definition "The strata scheme the report is about."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:schemeNumber a owl:ObjectProperty ;
+    rdfs:label "scheme number"@en ;
+    skos:definition "The scheme (plan) number."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:member a owl:ObjectProperty ;
+    rdfs:label "member"@en ;
+    skos:definition "A member lot of the strata scheme."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:lotNumber a owl:ObjectProperty ;
+    rdfs:label "lot number"@en ;
+    skos:definition "The member lot's number as it appears in the source."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:membershipEvidence a owl:DatatypeProperty ;
+    rdfs:label "membership evidence"@en ;
+    skos:definition "A source link that associates the lot with the scheme; the first listed is the authoritative one."@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:geometryType a owl:ObjectProperty ;
+    rdfs:label "geometry type"@en ;
+    skos:definition "The member's geometry (topology) type, for example AggregateSolid."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:representationStatus a owl:ObjectProperty ;
+    rdfs:label "representation status"@en ;
+    skos:definition "How the member is spatially represented, as a code of the source (for example representation-status:d3d)."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:component a owl:ObjectProperty ;
+    rdfs:label "component"@en ;
+    skos:definition "A component solid the member references."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:componentFound a owl:DatatypeProperty ;
+    rdfs:label "component found"@en ;
+    skos:definition "Whether the referenced component is present in the source dataset."@en ;
+    rdfs:range xsd:boolean ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:spatiallyResolved a owl:ObjectProperty ;
+    rdfs:label "spatially resolved"@en ;
+    skos:definition "Whether the member has components and every one is present in the source (derived)."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:summary a owl:ObjectProperty ;
+    rdfs:label "summary"@en ;
+    skos:definition "The spatial representation summary of the scheme (derived)."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:memberParcelCount a owl:ObjectProperty ;
+    rdfs:label "member parcel count"@en ;
+    skos:definition "The number of member lots (derived)."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:geometryTypes a owl:ObjectProperty ;
+    rdfs:label "geometry types"@en ;
+    skos:definition "The distinct geometry types of the members (derived)."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:memberRepresentationStatuses a owl:ObjectProperty ;
+    rdfs:label "member representation statuses"@en ;
+    skos:definition "The distinct representation statuses of the members (derived)."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .
+
+sc:allMemberParcelsSpatiallyResolved a owl:ObjectProperty ;
+    rdfs:label "all member parcels spatially resolved"@en ;
+    skos:definition "Whether every member is spatially resolved (derived)."@en ;
+    rdfs:range cr:ReportValue ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition> .

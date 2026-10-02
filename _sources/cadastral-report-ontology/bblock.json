@@ -1,0 +1,20 @@
+{
+  "name": "Cadastral reporting vocabulary",
+  "abstract": "RDF vocabulary for cadastral reports: the classes and properties a generic cadastral report needs that existing vocabularies do not provide, and the SKOS codelists for report stage, report status, value status and check category. Reused terms (RDF, RDFS, Dublin Core, PROV-O, EARL, SHACL, schema.org) are not redefined.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-02T00:00:00Z",
+  "itemClass": "model",
+  "version": "0.1",
+  "group": "Cadastral reporting",
+  "tags": ["cadastre", "reporting", "ontology", "provenance", "SKOS"],
+  "shaclShapes": ["shapes.shacl"],
+  "sources": [
+    {"title": "csdm.reporting.cadastral-report schema (definitions of the owned elements)", "link": "https://github.com/ogcincubator/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report"},
+    {"title": "PROV-O: The PROV Ontology", "link": "https://www.w3.org/TR/prov-o/"},
+    {"title": "Evaluation and Report Language (EARL) 1.0 Schema", "link": "https://www.w3.org/TR/EARL10-Schema/"},
+    {"title": "Shapes Constraint Language (SHACL), validation results and severities", "link": "https://www.w3.org/TR/shacl/#results-validation-result"},
+    {"title": "DCMI Metadata Terms", "link": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"},
+    {"title": "SKOS Simple Knowledge Organization System Reference", "link": "https://www.w3.org/TR/skos-reference/"},
+    {"title": "RFC 6901 JavaScript Object Notation (JSON) Pointer", "link": "https://www.rfc-editor.org/rfc/rfc6901"}
+  ]
+}

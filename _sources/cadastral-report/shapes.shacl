@@ -1,0 +1,66 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# Cross-field rules of every cadastral report: relations between parts of a report that JSON Schema
+# cannot express. Applied to reports after JSON-LD uplift; inherited by report-type blocks.
+
+cr:ReportStatusFollowsFromChecks
+    a sh:NodeShape ;
+    sh:targetSubjectsOf cr:reportStatus ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Report status {?value} does not follow from its check results (expected {?expected})" ;
+        sh:prefixes cr:Prefixes ;
+        sh:select """
+            SELECT $this ?value ?expected WHERE {
+                $this cr:reportStatus ?value .
+                BIND(EXISTS { $this cr:check ?c . ?c earl:outcome earl:failed ; sh:resultSeverity sh:Violation } AS ?invalid)
+                BIND(EXISTS { $this cr:check ?w . ?w earl:outcome earl:failed ; sh:resultSeverity sh:Warning } AS ?warned)
+                BIND(EXISTS { $this cr:check ?u . ?u earl:outcome earl:untested ; sh:resultSeverity sh:Violation } AS ?unevaluated)
+                BIND(IF(?invalid, rstatus:invalid, IF(?warned || ?unevaluated, rstatus:incomplete, rstatus:complete)) AS ?expected)
+                FILTER (?value != ?expected)
+            }
+        """ ;
+    ] .
+
+cr:DocumentAndAnnotationReferencesResolve
+    a sh:NodeShape ;
+    sh:targetSubjectsOf cr:reportType ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "documentRef {?value} does not name a document of the report" ;
+        sh:prefixes cr:Prefixes ;
+        sh:select """
+            SELECT $this ?value WHERE {
+                $this (cr:content|cr:annotation)/(<urn:x-any>|!<urn:x-any>)* ?node .
+                ?node cr:documentRef ?value .
+                FILTER NOT EXISTS { $this dcterms:references/dcterms:identifier ?value }
+            }
+        """ ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "annotationRef {?value} does not name an annotation of the report" ;
+        sh:prefixes cr:Prefixes ;
+        sh:select """
+            SELECT $this ?value WHERE {
+                $this cr:content/(<urn:x-any>|!<urn:x-any>)* ?node .
+                ?node cr:annotationRef ?value .
+                FILTER NOT EXISTS { $this cr:annotation/dcterms:identifier ?value }
+            }
+        """ ;
+    ] .
+
+cr:Prefixes
+    a owl:Ontology ;
+    sh:declare
+        [ sh:prefix "cr" ; sh:namespace "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/"^^xsd:anyURI ] ,
+        [ sh:prefix "dcterms" ; sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI ] ,
+        [ sh:prefix "earl" ; sh:namespace "http://www.w3.org/ns/earl#"^^xsd:anyURI ] ,
+        [ sh:prefix "rstatus" ; sh:namespace "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/"^^xsd:anyURI ] ,
+        [ sh:prefix "sh" ; sh:namespace "http://www.w3.org/ns/shacl#"^^xsd:anyURI ] .

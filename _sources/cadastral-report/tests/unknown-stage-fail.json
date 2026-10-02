@@ -1,0 +1,17 @@
+{
+  "reportType": "example.report-type",
+  "stage": "draft",
+  "subject": {
+    "kind": "parcel",
+    "ref": {
+      "dataset": "example-dataset",
+      "pointer": "/parcels/0/features/0"
+    }
+  },
+  "sources": [
+    {
+      "id": "example-dataset"
+    }
+  ],
+  "content": {}
+}

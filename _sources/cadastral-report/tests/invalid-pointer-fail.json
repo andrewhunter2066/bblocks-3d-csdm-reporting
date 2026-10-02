@@ -1,0 +1,19 @@
+{
+  "reportType": "example.report-type",
+  "stage": "complete",
+  "status": "complete",
+  "checks": [],
+  "subject": {
+    "kind": "parcel",
+    "ref": {
+      "dataset": "example-dataset",
+      "pointer": "parcels/0"
+    }
+  },
+  "sources": [
+    {
+      "id": "example-dataset"
+    }
+  ],
+  "content": {}
+}

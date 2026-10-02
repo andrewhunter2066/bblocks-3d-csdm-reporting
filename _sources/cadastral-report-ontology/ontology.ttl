@@ -1,0 +1,273 @@
+PREFIX cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX earl: <http://www.w3.org/ns/earl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Cadastral reporting vocabulary: the terms a generic cadastral report needs that existing vocabularies do
+# not provide. Everything else a report says is mapped to reused terms (rdf:value, rdfs:label,
+# rdfs:comment, dcterms:*, prov:wasGeneratedBy, earl:outcome, sh:resultSeverity, schema:url) by the JSON-LD
+# context of csdm.reporting.cadastral-report. Definitions are taken from that block's schema.
+
+<https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report>
+    a owl:Ontology ;
+    dcterms:title "Cadastral reporting vocabulary"@en ;
+    dcterms:description "Classes and properties for structured, validated cadastral reports: report values with their provenance and status, source references, check results and the documents a report relies on."@en ;
+    owl:versionInfo "0.1" ;
+    dcterms:created "2026-10-02"^^xsd:date ;
+    dcterms:source <https://github.com/ogcincubator/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report> ;
+.
+
+# --- Classes --------------------------------------------------------------------------------------------
+
+cr:CadastralReport a owl:Class ;
+    rdfs:label "Cadastral report"@en ;
+    skos:definition "A structured report about a cadastral object (for example a strata scheme or a parcel), generated from one or more source datasets."@en ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:ReportValue a owl:Class ;
+    rdfs:label "Report value"@en ;
+    skos:definition "A value in a cadastral report together with its provenance and status: where it comes from, or why the report has no usable value. The value itself is given by rdf:value."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:SourceReference a owl:Class ;
+    rdfs:label "Source reference"@en ;
+    skos:definition "A reference to an object in a source dataset: the dataset, a JSON Pointer to the object and, when the source defines it, the property the value was read from."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:Derivation a owl:Class ;
+    rdfs:label "Derivation"@en ;
+    skos:definition "How a derived report value was calculated: the method and the report values it was calculated from."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:CheckResult a owl:Class ;
+    rdfs:label "Check result"@en ;
+    skos:definition "The result of one check run while generating a cadastral report, with its category, severity and outcome."@en ;
+    skos:closeMatch earl:Assertion ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:DocumentReference a owl:Class ;
+    rdfs:label "Document reference"@en ;
+    skos:definition "A supporting document referenced by the source dataset that the report relies on."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:AnnotationReference a owl:Class ;
+    rdfs:label "Annotation reference"@en ;
+    skos:definition "An annotation of the source dataset (a statement made on the plan or survey) that the report relies on."@en ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:PipelineStep a owl:Class ;
+    rdfs:label "Pipeline step"@en ;
+    skos:definition "One transform, of one building block, that took part in producing a report."@en ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+# --- Report properties ----------------------------------------------------------------------------------
+
+cr:reportType a owl:DatatypeProperty ;
+    rdfs:label "report type"@en ;
+    skos:definition "Identifier of the report-type building block that defines the report's content."@en ;
+    rdfs:domain cr:CadastralReport ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:stage a owl:ObjectProperty ;
+    rdfs:label "stage"@en ;
+    skos:definition "How far the report has been produced; a concept of the report stage codelist."@en ;
+    rdfs:domain cr:CadastralReport ; rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:reportStatus a owl:ObjectProperty ;
+    rdfs:label "report status"@en ;
+    skos:definition "Overall result of the report, set from its check results; a concept of the report status codelist."@en ;
+    rdfs:domain cr:CadastralReport ; rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:statusSummary a owl:ObjectProperty ;
+    rdfs:label "status summary"@en ;
+    skos:definition "The counts of check results behind the report status."@en ;
+    rdfs:domain cr:CadastralReport ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:checkCount a owl:DatatypeProperty ;
+    rdfs:label "check count"@en ;
+    skos:definition "Number of checks behind the report status."@en ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:failedErrors a owl:DatatypeProperty ;
+    rdfs:label "failed errors"@en ;
+    skos:definition "Number of checks with severity error that failed."@en ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:failedWarnings a owl:DatatypeProperty ;
+    rdfs:label "failed warnings"@en ;
+    skos:definition "Number of checks with severity warning that failed."@en ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:unevaluatedErrors a owl:DatatypeProperty ;
+    rdfs:label "unevaluated errors"@en ;
+    skos:definition "Number of checks with severity error that could not be evaluated."@en ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:content a owl:ObjectProperty ;
+    rdfs:label "content"@en ;
+    skos:definition "The report-type specific content of the report."@en ;
+    rdfs:domain cr:CadastralReport ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:kind a owl:DatatypeProperty ;
+    rdfs:label "kind"@en ;
+    skos:definition "Kind of a report subject (for example strata-scheme) or of a report source (dataset or vocabulary)."@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:check a owl:ObjectProperty ;
+    rdfs:label "check"@en ;
+    skos:definition "A check result recorded for the report."@en ;
+    rdfs:domain cr:CadastralReport ; rdfs:range cr:CheckResult ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:annotation a owl:ObjectProperty ;
+    rdfs:label "annotation"@en ;
+    skos:definition "A source annotation the report relies on."@en ;
+    rdfs:domain cr:CadastralReport ; rdfs:range cr:AnnotationReference ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:buildingBlock a owl:DatatypeProperty ;
+    rdfs:label "building block"@en ;
+    skos:definition "Identifier of the building block whose transform performed a pipeline step."@en ;
+    rdfs:domain cr:PipelineStep ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:transform a owl:DatatypeProperty ;
+    rdfs:label "transform"@en ;
+    skos:definition "Identifier of the transform that performed a pipeline step."@en ;
+    rdfs:domain cr:PipelineStep ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+# --- Check result properties ----------------------------------------------------------------------------
+
+cr:definedBy a owl:DatatypeProperty ;
+    rdfs:label "defined by"@en ;
+    skos:definition "Identifier of the building block that defines (and ran) the check."@en ;
+    rdfs:domain cr:CheckResult ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:checkCategory a owl:ObjectProperty ;
+    rdfs:label "check category"@en ;
+    skos:definition "What the check examines; a concept of the check category codelist."@en ;
+    rdfs:domain cr:CheckResult ; rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:target a owl:DatatypeProperty ;
+    rdfs:label "target"@en ;
+    skos:definition "JSON Pointer to a report value the check is about."@en ;
+    rdfs:domain cr:CheckResult ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:evidence a owl:DatatypeProperty ;
+    rdfs:label "evidence"@en ;
+    skos:definition "Small structured detail behind a check result, for example the expected and actual values, kept as JSON."@en ;
+    rdfs:domain cr:CheckResult ; rdfs:range rdf:JSON ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+# --- Report value properties ----------------------------------------------------------------------------
+
+cr:valueStatus a owl:ObjectProperty ;
+    rdfs:label "value status"@en ;
+    skos:definition "Where a report value comes from, or why the report has no usable value; a concept of the report value status codelist."@en ;
+    rdfs:domain cr:ReportValue ; rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:sourceRef a owl:ObjectProperty ;
+    rdfs:label "source reference"@en ;
+    skos:definition "Where in a source dataset a value, an object or a document was read (or, for a value with no usable content, where it was looked for)."@en ;
+    rdfs:range cr:SourceReference ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:derivation a owl:ObjectProperty ;
+    rdfs:label "derivation"@en ;
+    skos:definition "How a derived report value was calculated."@en ;
+    rdfs:domain cr:ReportValue ; rdfs:range cr:Derivation ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:derivationMethod a owl:DatatypeProperty ;
+    rdfs:label "derivation method"@en ;
+    skos:definition "How the value was calculated, for example sum, count or format-address."@en ;
+    rdfs:domain cr:Derivation ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:derivationInput a owl:DatatypeProperty ;
+    rdfs:label "derivation input"@en ;
+    skos:definition "JSON Pointer to a report value the calculation used."@en ;
+    rdfs:domain cr:Derivation ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:lexicalValue a owl:DatatypeProperty ;
+    rdfs:label "lexical value"@en ;
+    skos:definition "The value exactly as it appears in the source, when it differs from the report value."@en ;
+    rdfs:domain cr:ReportValue ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:documentRef a owl:DatatypeProperty ;
+    rdfs:label "document reference"@en ;
+    skos:definition "Identifier, within the report, of a document the report relies on."@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:annotationRef a owl:DatatypeProperty ;
+    rdfs:label "annotation reference"@en ;
+    skos:definition "Identifier, within the report, of an annotation the report relies on."@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+# --- Source reference properties ------------------------------------------------------------------------
+
+cr:sourceDataset a owl:DatatypeProperty ;
+    rdfs:label "source dataset"@en ;
+    skos:definition "Identifier of the source dataset (or vocabulary) referred to."@en ;
+    rdfs:domain cr:SourceReference ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:jsonPointer a owl:DatatypeProperty ;
+    rdfs:label "JSON pointer"@en ;
+    skos:definition "JSON Pointer (RFC 6901) to the object within the source dataset; empty for a vocabulary concept."@en ;
+    rdfs:domain cr:SourceReference ; rdfs:range xsd:string ;
+    dcterms:source <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:sourceObject a owl:DatatypeProperty ;
+    rdfs:label "source object"@en ;
+    skos:definition "Identifier of the referred object in the source dataset, or the IRI of the referred vocabulary concept."@en ;
+    rdfs:domain cr:SourceReference ; rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:sourceProperty a owl:ObjectProperty ;
+    rdfs:label "source property"@en ;
+    skos:definition "The property, as defined by the source dataset's own semantics, that the value was read from."@en ;
+    rdfs:domain cr:SourceReference ; rdfs:range rdf:Property ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+# --- Document and annotation properties -----------------------------------------------------------------
+
+cr:role a owl:DatatypeProperty ;
+    rdfs:label "role"@en ;
+    skos:definition "Role of a document or annotation, as given by the source (an IRI or CURIE of the source's vocabulary)."@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .
+
+cr:linkRelation a owl:DatatypeProperty ;
+    rdfs:label "link relation"@en ;
+    skos:definition "Relation type of an annotation's link, as given by the source (for example via)."@en ;
+    rdfs:domain cr:AnnotationReference ; rdfs:range xsd:string ;
+    dcterms:source <https://www.iana.org/assignments/link-relations/> ;
+    rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report> .

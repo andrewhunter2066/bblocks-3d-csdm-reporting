@@ -1,0 +1,32 @@
+{
+  "name": "WA 3D CSDM reporting adapter",
+  "abstract": "Interprets cadastral survey datasets that follow the WA profile of the 3D CSDM (built strata) and extracts the source facts needed by cadastral reports. This is the only reporting block that knows CSDM paths and WA vocabularies.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "group": "Source adapters",
+  "tags": [
+    "cadastre",
+    "3D CSDM",
+    "Western Australia",
+    "built strata",
+    "reporting",
+    "adapter"
+  ],
+  "dependsOn": [
+    "bblocks://icsm.profiles.wa.wa-3d",
+    "bblocks://csdm.reporting.reports.strata-entitlement",
+    "bblocks://csdm.reporting.reports.scheme-composition"
+  ],
+  "sources": [
+    {
+      "title": "WA Implementation Profile for 3D CSDM",
+      "link": "https://surroundaustralia.github.io/3d-csdm-profile-wa/"
+    },
+    {
+      "title": "Built strata proposal (wa-built-strata, under development)",
+      "link": "https://github.com/surroundaustralia/3d-csdm-profile-wa/tree/main/proposals/development/built-strata"
+    }
+  ]
+}

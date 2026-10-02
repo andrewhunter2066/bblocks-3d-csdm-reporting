@@ -1,0 +1,1670 @@
+{
+  "@context": {
+    "wa-profile": "https://surroundaustralia.github.io/3d-csdm-profile-wa/build/annotated/profiles/wa/wa-core/context.jsonld",
+    "wa-leg": "https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/",
+    "wa-title": "https://example.com/title/",
+    "wa-interest": "https://example.com/interest/"
+  },
+  "id": "SP-83687-1-1-0.00",
+  "name": "SP83687",
+  "description": "Subdivision - Built Strata Survey",
+  "type": "FeatureCollection",
+  "featureType": "CSD",
+  "tenureType": "wa-parcel-type:freehold",
+  "planType": "wa-survey-type:strata-plan",
+  "purpose": "wa-survey-purpose:subdivision",
+  "surveyType": "wa-survey-type:strata-plan",
+  "time": {
+    "date": "2023-02-06"
+  },
+  "horizontalCRS": "epsg:7850",
+  "verticalCRS": "epsg:5711",
+  "bearingRotation": -0.54,
+  "surveyTitle": "Lots 1 to 9 and Common Areas being subdivision of Lot 1 on Plan DP 413673",
+  "adminUnit": [
+    {
+      "href": "wa-locality:cloverdale",
+      "rel": "related",
+      "role": "icsm-admin-unit-type:locality"
+    },
+    {
+      "href": "wa-local-government:city-of-belmont",
+      "rel": "related",
+      "role": "icsm-admin-unit-type:localGovernmentArea"
+    }
+  ],
+  "hasProvenance": [
+    {
+      "id": "uuid:6121a8c5-902f-4bed-b958-615f0aeb6353",
+      "activityType": "certification-of-field-record",
+      "wasAssociatedWith": {
+        "agentType": "Person",
+        "name": {
+          "firstName": "S.",
+          "lastName": "Example",
+          "formattedName": "S. Example"
+        },
+        "surveyorReference": null,
+        "surveyCertificate": "wa-annotation:r-54",
+        "certified": "hereby certify that this plan is accurate and is a correct representation of the (a) survey; and (b) calculations from measurements recorded in the field records, undertaken for the purposes of this plan and that it complies with the relevant written law(s) in relation to which it is lodged",
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "legalName": "Example Surveying Pty Ltd",
+          "Address": {
+            "hasPart": [
+              {
+                "partType": "apt:addressNumberFirst",
+                "value": 1
+              },
+              {
+                "partType": "apt:road",
+                "value": {
+                  "@id": "https://example.com/road/example-street",
+                  "label": "Example Street"
+                }
+              },
+              {
+                "partType": "apt:locality",
+                "value": "wa-locality:kingsley"
+              },
+              {
+                "partType": "apt:stateOrTerritory",
+                "value": {
+                  "@id": "https://linked.data.gov.au/dataset/asgsed3/STE/5"
+                }
+              },
+              {
+                "partType": "apt:postcode",
+                "value": 6026
+              },
+              {
+                "partType": "apt:country",
+                "value": {
+                  "@id": "https://linked.data.gov.au/dataset/asgsed3/AUS/AUS"
+                }
+              }
+            ]
+          },
+          "phone": "61400000000",
+          "email": "surveyor@example.com"
+        },
+        "surveyReference": "",
+        "signedTimestamp": "2023-02-06T05:53:32+08"
+      },
+      "generated": "SP-83687-1-1-0.00"
+    },
+    {
+      "id": "uuid:d41dfac9-0db3-4b1f-8f37-b3ed90763176",
+      "activityType": "plan-examination",
+      "wasAssociatedWith": {
+        "agentType": "Person",
+        "name": {
+          "firstName": "E.",
+          "lastName": "Example",
+          "formattedName": "E. Example"
+        },
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "name": "Landgate"
+        }
+      },
+      "generated": "SP-83687-1-1-0.00",
+      "signedTimestamp": "2023-02-23"
+    },
+    {
+      "id": "uuid:e35c4ac4-25ff-4937-865b-38021a86862a",
+      "activityType": "in-order-for-dealings",
+      "wasAssociatedWith": {
+        "agentType": "Person",
+        "name": {
+          "firstName": "E.",
+          "lastName": "Example",
+          "formattedName": "E. Example"
+        },
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "name": "Registrar of Titles"
+        }
+      },
+      "subjectTo": [
+        "Application to Register Strata Titles Scheme",
+        "Lodgement of Scheme by-laws",
+        "Sec. 70A of the LTA"
+      ],
+      "generated": "SP-83687-1-1-0.00",
+      "signedTimestamp": "2023-02-23"
+    },
+    {
+      "id": "uuid:5f993d03-d426-4cbd-bbc9-015eacda454d",
+      "activityType": "plan-approved",
+      "wasAssociatedWith": {
+        "agentType": "Person",
+        "name": {
+          "firstName": "I.",
+          "lastName": "Example",
+          "formattedName": "I. Example"
+        },
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "name": "Landgate, Inspector of Plans and Surveys"
+        }
+      },
+      "generated": "SP-83687-1-1-0.00",
+      "signedTimestamp": "2023-02-23"
+    },
+    {
+      "id": "uuid:6ba13900-623f-490e-b303-00de89c58b73",
+      "activityType": "registered",
+      "wasAssociatedWith": {
+        "agentType": "Person",
+        "name": {
+          "firstName": "R.",
+          "lastName": "Example",
+          "formattedName": "R. Example"
+        },
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "name": "Landgate, Register of Titles"
+        }
+      },
+      "sealed": true,
+      "generated": "SP-83687-1-1-0.00",
+      "signedTimestamp": "2023-02-23"
+    }
+  ],
+  "wasGeneratedBy": {
+    "id": "uuid:c1fedb0d-597e-4987-9c3a-e7895f9b064e",
+    "type": "prov:Activity",
+    "label": "Convert APX-05 CSD file and associated PDF to WA 3D CSDM JSON",
+    "startedAtTime": "2026-07-09T22:40:22Z",
+    "endedAtTime": "2026-07-09T22:40:23Z",
+    "generatedBy": "src/process_csd_pdf/build_wa_csd_pdf.py",
+    "used": [
+      {
+        "id": "file:SP83687-ground.csd",
+        "type": "prov:Entity",
+        "role": "wa-prov-role:source-csd-file",
+        "format": "APX-05 CSD"
+      },
+      {
+        "id": "file:SP83687-first.csd",
+        "type": "prov:Entity",
+        "role": "wa-prov-role:source-csd-file",
+        "format": "APX-05 CSD"
+      },
+      {
+        "id": "file:SP83687.pdf",
+        "type": "prov:Entity",
+        "role": "wa-prov-role:source-pdf-file",
+        "format": "pdf"
+      }
+    ],
+    "generated": [
+      {
+        "id": "file:SP83687.json",
+        "type": "prov:Entity",
+        "role": "convertedCsdmJson",
+        "format": "application/json"
+      }
+    ],
+    "qualifiedUsage": [
+      {
+        "type": "Usage",
+        "entity": "file:CSD_DP431276.csd",
+        "hadRole": "wa-prov-role:source-csd-file"
+      },
+      {
+        "type": "Usage",
+        "entity": "file:DP431276.pdf",
+        "hadRole": "wa-prov-role:source-pdf-file"
+      }
+    ],
+    "wasAssociatedWith": [
+      {
+        "id": "src/process_csd/process_wa_csd.py",
+        "type": [
+          "prov:SoftwareAgent",
+          "schema:SoftwareApplication"
+        ],
+        "label": "Python module used to convert APX-05 CSD records into WA 3D CSDM JSON."
+      },
+      {
+        "id": "src/process_csd_pdf/build_wa_csd_pdf.py",
+        "type": [
+          "prov:SoftwareAgent",
+          "schema:SoftwareApplication"
+        ],
+        "label": "Python module used to run the CSD converter, run the PDF metadata extractor, and merge the resulting JSON outputs."
+      }
+    ],
+    "qualifiedAssociation": [
+      {
+        "type": "Association",
+        "agent": "src/process_csd/process_wa_csd.py",
+        "hadRole": "wa-prov-role:format-converter"
+      },
+      {
+        "type": "Association",
+        "agent": "src/process_csd_pdf/build_wa_csd_pdf.py",
+        "hadRole": "wa-prov-role:workflow-orchestrator"
+      }
+    ]
+  },
+  "features": [],
+  "referencedCSDs": [
+    {
+      "id": "uuid:3d03f87e-6251-4c14-89ea-fb4ed3bfe23a",
+      "name": "DP 413673",
+      "adminUnit": {
+        "href": "wa-locality:cloverdale",
+        "rel": "related",
+        "role": "icsm-admin-unit-type:locality"
+      },
+      "bearingRotation": -0.54,
+      "time": {
+        "date": null
+      }
+    }
+  ],
+  "points": [
+    {
+      "id": "uuid:51ab7d1c-49a7-4225-823a-a1cc40ef52a4",
+      "type": "FeatureCollection",
+      "featureType": "CadastralMark",
+      "features": []
+    }
+  ],
+  "vectorObservations": [],
+  "edges": [
+    {
+      "id": "uuid:8f7ebcb2-8670-4843-917c-cd97188d5c66",
+      "type": "FeatureCollection",
+      "featureType": "Edge",
+      "features": []
+    }
+  ],
+  "rings": [
+    {
+      "id": "uuid:5d21e5ac-44e4-4ddc-9492-2e7feec8b11f",
+      "type": "FeatureCollection",
+      "featureType": "Ring",
+      "features": []
+    }
+  ],
+  "faces": [
+    {
+      "id": "uuid:4cf2cf43-eb7d-4613-b360-1492c453da16",
+      "type": "FeatureCollection",
+      "featureType": "Face",
+      "features": []
+    }
+  ],
+  "shells": [
+    {
+      "id": "uuid:3d8eb926-de61-47a1-b773-14224d648e47",
+      "type": "FeatureCollection",
+      "featureType": "Shell",
+      "features": []
+    }
+  ],
+  "solids": [
+    {
+      "id": "uuid:663c2af2-b369-4f26-9ce7-7dda2fcd494c",
+      "type": "FeatureCollection",
+      "featureType": "Solid",
+      "features": [
+        {
+          "id": "uuid:c1bd36ff-69a4-45d8-864b-8d0fbb8a1533",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:b55624e5-9033-4cb5-bffe-038ac5aa6cd9",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Central Wall - Ground",
+            "floors": [
+              1
+            ],
+            "volume": 10.0747
+          }
+        },
+        {
+          "id": "uuid:bebe0853-7b46-4ee0-a2d2-b60a445f6b2d",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:f6ddcb79-d9ec-4661-bd5e-021752c82959",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:e62621ed-1334-4890-964f-608ff68f7a17",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Principal Unit 1 - lower",
+            "floors": [
+              1
+            ],
+            "volume": 214.758639
+          }
+        },
+        {
+          "id": "uuid:93f32e94-6a66-4405-9763-bf9d9771e654",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:d252310e-25ec-42a6-8167-f32c3703595f",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:e62621ed-1334-4890-964f-608ff68f7a17",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Principal Unit 1 - upper",
+            "floors": [
+              2
+            ],
+            "volume": 241.008111
+          }
+        },
+        {
+          "id": "uuid:720d46e0-f6b3-4348-a932-da6191a5efa3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:9348a1b9-8061-4cff-96b2-96e257076a91",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Principal Unit 2 - lower",
+            "floors": [
+              1
+            ],
+            "volume": 232.437417
+          }
+        },
+        {
+          "id": "uuid:ab63e7a8-93a3-4f90-848f-4f247ab771fe",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:a0aff180-5c28-4e44-adcc-b9ae9c116c4d",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Principal Unit 2 - upper",
+            "floors": [
+              2
+            ],
+            "volume": 246.357094
+          }
+        },
+        {
+          "id": "uuid:8834fa5e-529b-4258-9537-a01bea709001",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:989c1eb8-ef9b-498d-b3a5-bb0bcaea513e",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:e62621ed-1334-4890-964f-608ff68f7a17",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 1 Courtyard -upper",
+            "floors": [
+              2
+            ],
+            "volume": 14.365639
+          }
+        },
+        {
+          "id": "uuid:fa342e93-b1c6-4254-ad40-45f1d756702d",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:3bb3bdcf-5bdf-448f-be9a-8e0ba7b971ac",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 2 Courtyard - upper",
+            "floors": [
+              2
+            ],
+            "volume": 14.876682
+          }
+        },
+        {
+          "id": "uuid:ff58b138-4e52-49e8-8157-e1274ab5a348",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:a6021c35-f376-491a-ae43-adb50bce185d",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Central Wall - Floor 1",
+            "floors": [
+              2
+            ],
+            "volume": 9.888924
+          }
+        },
+        {
+          "id": "uuid:f2505d07-b096-487c-8858-0150c5160759",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:300ffe90-6cb7-4aac-9834-d1d2377f6408",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Outer Walls - Floor 1",
+            "floors": [
+              2
+            ],
+            "volume": 48.140428
+          }
+        },
+        {
+          "id": "uuid:b224f581-3650-4b74-b58c-709dd84a1b8a",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:99b977d0-adde-4f4d-981f-07c2ee2848c2",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Outer Walls - Ground",
+            "floors": [
+              1
+            ],
+            "volume": 49.467393
+          }
+        },
+        {
+          "id": "uuid:ee8e75e8-5925-45a2-9336-e9b6f56b190f",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:88639da1-42fd-47be-af82-3044cd05eec0",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Ceiling",
+            "floors": [
+              2
+            ],
+            "volume": 60.946513
+          }
+        },
+        {
+          "id": "uuid:73be9e96-e250-4bf3-ab2b-2801f4bf5421",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:f6576c5e-34e5-4ec6-9247-f87032fd649e",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Floor 1",
+            "floors": [
+              2
+            ],
+            "volume": 99.66045
+          }
+        },
+        {
+          "id": "uuid:e1102530-0aae-4a27-87a1-ad9dbe7372e9",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:e1cba599-b410-4b6e-829c-25bdd298baf6",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:e62621ed-1334-4890-964f-608ff68f7a17",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 1 Courtyard - lower",
+            "floors": [
+              1
+            ],
+            "volume": 117.691932
+          }
+        },
+        {
+          "id": "uuid:6077a08d-0df0-46c4-90a7-ef94a5daebd2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:498ea6f4-7c67-4420-beed-e3d97d6f3711",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 2 Courtyard a - lower",
+            "floors": [
+              1
+            ],
+            "volume": 72.35087
+          }
+        },
+        {
+          "id": "uuid:c6cc1caf-1246-4ac1-aee6-a9980a93b393",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:d88a61ac-b8d8-4034-98e4-12651272e5f8",
+                "orientation": "+"
+              }
+            ],
+            "relationships": [
+              {
+                "href": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 2 Courtyard b - lower",
+            "floors": [
+              1
+            ],
+            "volume": 10.20581
+          }
+        },
+        {
+          "id": "uuid:2cd21913-38d1-4e03-95ac-600874491519",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:edad1d15-d676-45af-a7b2-fea46358fe48",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Ground Floor",
+            "floors": [
+              1
+            ],
+            "volume": 82.548826
+          }
+        },
+        {
+          "id": "uuid:0b47b088-6bf1-40e9-a098-b3c584dde094",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:c3b57e0a-8052-4750-83ea-c473b8ebdc82",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 1- Mechanical",
+            "floors": [
+              2
+            ],
+            "volume": 4.145607
+          }
+        },
+        {
+          "id": "uuid:1b281ee5-28f4-4950-b478-40b9cd228d63",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "uuid:557f0e7e-e156-403d-aa04-1ca0b59b66e2",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Unit 2 - Mechanical",
+            "floors": [
+              2
+            ],
+            "volume": 4.161683
+          }
+        }
+      ]
+    }
+  ],
+  "parcels": [
+    {
+      "id": "uuid:63c654cd-0c9a-496a-aebf-b6cb4a784525",
+      "type": "FeatureCollection",
+      "featureType": "PrimaryParcel",
+      "properties": null,
+      "features": [
+        {
+          "id": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "uuid:8871fa1f-64d6-43a2-ba1f-e64dd963698f",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 1 on Plan DP 413673",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:deposited-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "DP 413673"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "1"
+                }
+              ]
+            },
+            "area": 1639,
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:lot",
+            "parcelState": "wa-parcel-state:former-tenure",
+            "spatialRepresentationDefinitions": {
+              "representationStatus": "representation-status:2d",
+              "geometryLegalStatus": "geometry-legal-status:a2d",
+              "coordinateRepresentation": {
+                "coordinateDimension": 3,
+                "zValueRole": "coordinate-z-role:oh"
+              },
+              "verticalExtent": {
+                "status": "vertical-extent-status:und",
+                "lowerBoundary": {
+                  "state": "vertical-boundary-state:und"
+                },
+                "upperBoundary": {
+                  "state": "vertical-boundary-state:und"
+                }
+              },
+              "computabilityStatus": "computability-status:nc",
+              "referenceSurfaces": [
+                {
+                  "id": "surface-ground-1",
+                  "surfaceType": "height-reference:gl",
+                  "geometryLegalStatus": "geometry-legal-status:obs",
+                  "ref": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
+                  "boundedByFootprint": true
+                }
+              ],
+              "derivedGeometry": {
+                "status": "icsm-derived-geometry-status:not-generated"
+              }
+            },
+            "interests": [
+              {
+                "interestLink": "wa-title:4027-1000",
+                "interestType": "wa-interest-type:ct",
+                "titleRefAppellation": {
+                  "label": "CT 4027/1000",
+                  "hasPart": [
+                    {
+                      "type": "prefix",
+                      "ref": "wa-survey-documentation-type:certificate-of-title"
+                    },
+                    {
+                      "type": "volume",
+                      "label": "4027"
+                    },
+                    {
+                      "type": "folio",
+                      "label": "1000"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "ParcelAggregate",
+            "references": [
+              "uuid:e62621ed-1334-4890-964f-608ff68f7a17",
+              "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+              "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512",
+              "uuid:5e2823d1-2473-4417-8045-1089d2e86e64",
+              "uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3",
+              "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078",
+              "uuid:0df5a108-f5fe-433a-9934-b0162115248f",
+              "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5",
+              "uuid:79015221-adeb-482f-988b-ed47e57bc2a4"
+            ],
+            "relationships": [
+              {
+                "href": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          },
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lots 1 to 9 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:scheme-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "1 to 9"
+                }
+              ]
+            },
+            "area": 1639,
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-scheme",
+            "parcelState": "wa-parcel-state:created",
+            "zMin": 20.424501,
+            "zMax": 27.536458,
+            "schemeName": "281 Belmont Avenue, Cloverdale",
+            "schemeNumber": "SP83687",
+            "bylawsLodged": true,
+            "schemeAddress": {
+              "hasPart": [
+                {
+                  "partType": "apt:addressNumberFirst",
+                  "value": 281
+                },
+                {
+                  "partType": "apt:road",
+                  "value": {
+                    "@id": "https://example.com/road/belmont-avenue",
+                    "label": "Belmont Avenue"
+                  }
+                },
+                {
+                  "partType": "apt:locality",
+                  "value": "wa-locality:cloverdale"
+                },
+                {
+                  "partType": "apt:stateOrTerritory",
+                  "value": {
+                    "@id": "https://linked.data.gov.au/dataset/asgsed3/STE/5"
+                  }
+                },
+                {
+                  "partType": "apt:postcode",
+                  "value": 6105
+                },
+                {
+                  "partType": "apt:country",
+                  "value": {
+                    "@id": "https://linked.data.gov.au/dataset/asgsed3/AUS/AUS"
+                  }
+                }
+              ]
+            },
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687",
+                "interestType": "wa-interest-type:strata-scheme",
+                "entitlementTotal": 1100
+              }
+            ],
+            "floors": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "id": "uuid:e62621ed-1334-4890-964f-608ff68f7a17",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 1 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "1"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-1",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 117
+              }
+            ],
+            "zMin": 20.424501,
+            "zMax": 27.386423,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [
+              "uuid:bebe0853-7b46-4ee0-a2d2-b60a445f6b2d",
+              "uuid:93f32e94-6a66-4405-9763-bf9d9771e654",
+              "uuid:8834fa5e-529b-4258-9537-a01bea709001",
+              "uuid:e1102530-0aae-4a27-87a1-ad9dbe7372e9"
+            ],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 2 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "2"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-2",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 108
+              }
+            ],
+            "zMin": 20.57451,
+            "zMax": 27.536458,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [
+              "uuid:720d46e0-f6b3-4348-a932-da6191a5efa3",
+              "uuid:ab63e7a8-93a3-4f90-848f-4f247ab771fe",
+              "uuid:fa342e93-b1c6-4254-ad40-45f1d756702d",
+              "uuid:6077a08d-0df0-46c4-90a7-ef94a5daebd2",
+              "uuid:c6cc1caf-1246-4ac1-aee6-a9980a93b393"
+            ],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 3 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "3"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-3",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 113
+              }
+            ],
+            "zMin": 20.424501,
+            "zMax": 27.386423,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:5e2823d1-2473-4417-8045-1089d2e86e64",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 4 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "4"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-4",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 108
+              }
+            ],
+            "zMin": 20.57451,
+            "zMax": 27.536458,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 5 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "5"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-5",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 108
+              }
+            ],
+            "zMin": 20.424501,
+            "zMax": 27.386423,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 6 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "6"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-6",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 113
+              }
+            ],
+            "zMin": 20.57451,
+            "zMax": 27.536458,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:0df5a108-f5fe-433a-9934-b0162115248f",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 7 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "7"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-7",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 108
+              }
+            ],
+            "zMin": 20.424501,
+            "zMax": 27.386423,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 8 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "8"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-8",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 108
+              }
+            ],
+            "zMin": 20.57451,
+            "zMax": 27.536458,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "uuid:79015221-adeb-482f-988b-ed47e57bc2a4",
+          "type": "Feature",
+          "geometry": null,
+          "properties": {
+            "appellation": {
+              "type": "wa:LotOnPlanAppellation",
+              "label": "Lot 9 on Plan SP 83687",
+              "hasPart": [
+                {
+                  "type": "surveyType",
+                  "ref": "wa-survey-type:strata-plan"
+                },
+                {
+                  "type": "surveyNumber",
+                  "label": "SP 83687"
+                },
+                {
+                  "type": "lotPrefix",
+                  "ref": "wa-parcel-purpose:strata-lot"
+                },
+                {
+                  "type": "lotNumber",
+                  "label": "9"
+                }
+              ]
+            },
+            "parcelType": "wa-parcel-type:freehold",
+            "parcelPurpose": "wa-parcel-purpose:strata-lot",
+            "parcelState": "wa-parcel-state:created",
+            "interests": [
+              {
+                "interestLink": "wa-interest:SP83687-lot-9",
+                "interestType": "wa-interest-type:strata-lot",
+                "entitlementPortion": 117
+              }
+            ],
+            "zMin": 20.424501,
+            "zMax": 27.386423,
+            "floors": [
+              1,
+              2
+            ],
+            "schemeRef": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+          },
+          "topology": {
+            "type": "AggregateSolid",
+            "references": [],
+            "relationships": [
+              {
+                "href": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e",
+                "rel": "topology",
+                "role": "containingPrimaryParcel",
+                "targetFeatureType": "PrimaryParcel"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "occupationFeatures": [
+    {
+      "id": "uuid:5caf24ce-649b-4b5c-b045-9fd1c70034d4",
+      "type": "FeatureCollection",
+      "features": []
+    }
+  ],
+  "supportingDocuments": [
+    {
+      "title": "SP 83687",
+      "href": "https://wa.gov.au/deposited-plans/SP83687.pdf",
+      "role": "wa-survey-documentation-type:built-strata-plan",
+      "rel": "related"
+    },
+    {
+      "title": "CSD for ground level of SP 83687",
+      "href": "https://wa.gov.au/csd/CSD_ground_SP83687.csd",
+      "role": "wa-survey-documentation-type:csd",
+      "rel": "related"
+    },
+    {
+      "title": "CSD for first level of SP 83687",
+      "href": "https://wa.gov.au/csd/CSD_first_SP83687.csd",
+      "role": "wa-survey-documentation-type:csd",
+      "rel": "related"
+    },
+    {
+      "href": "documents/SP83687-unit-entitlement-schedule.pdf",
+      "rel": "related",
+      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "type": "application/pdf",
+      "title": "Schedule of Unit Entitlements - SP83687",
+      "conformsTo": "wa-approved-form:2021-47738"
+    },
+    {
+      "href": "documents/SP83687-building-approval-certificate.pdf",
+      "rel": "related",
+      "role": "wa-survey-documentation-type:buildingApprovalCertificate",
+      "type": "application/pdf",
+      "title": "Building Approval Certificate BA14 - Certificate 545/2022",
+      "conformsTo": "wa-approved-form:BA14"
+    },
+    {
+      "href": "documents/SP83687-endorsement-certificate.pdf",
+      "rel": "related",
+      "role": "wa-survey-documentation-type:strataPlanEndorsementCertificate",
+      "type": "application/pdf",
+      "title": "Endorsement Certificate - LG Ref 467/2022 - SP83687",
+      "conformsTo": "wa-approved-form:15c"
+    },
+    {
+      "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
+      "rel": "related",
+      "role": "wa-survey-documentation-type:recordOfStrataTitlesScheme",
+      "type": "application/pdf",
+      "title": "Record of Strata Titles Scheme - SP83687",
+      "conformsTo": "wa-approved-form:2020-27588-v3"
+    },
+    {
+      "href": "documents/P361938-scheme-by-laws.pdf",
+      "rel": "related",
+      "role": "wa-survey-documentation-type:schemeByLaws",
+      "type": "application/pdf",
+      "title": "Scheme By-Laws - P361938"
+    },
+    {
+      "href": "documents/P361939-scheme-notices.pdf",
+      "rel": "related",
+      "role": "wa-survey-documentation-type:schemeNotices",
+      "type": "application/pdf",
+      "title": "Scheme Notices - P361939"
+    }
+  ],
+  "annotations": [
+    {
+      "description": "Survey carried out in accordance with Regulation 54 of the Licensed Surveyors (General Surveying Practice) Regulations 1961",
+      "href": "wa-leg:Licensed%20Surveyors%20(General%20Surveying%20Practice)%20Regulations%201961%20-%20%5B05-a0-05%5D.pdf",
+      "rel": "related",
+      "type": "application/pdf",
+      "title": "Section 54 Certification - SP83687",
+      "role": "wa-annotation-role:r-54"
+    },
+    {
+      "description": "THE BOUNDARIES OF THE PARTS OF LOTS WHICH ARE COURTYARDS SHOWN ON THE STRATA PLAN ARE TO THE OUTER SURFACE OF THE BUILDING WALL, THE INNER SURFACE OF ALL OTHER WALLS OR PIERS OR WHERE SHOWN DESIGNATED DIMENSIONS, THE UPPER SURFACE OF THEIR FLOOR AND THE PROLONGATION OF THE UNDER SURFACE OF THE CEILING OF THE RESPECTIVE BUILDING PART LOT EXCEPT WHERE COVERED. UNDER SCHEDULE 2A, CLAUSE 3AB OF THE STRATA TITLES ACT 1985, THE BOUNDARIES OF THE LOTS OR PART LOTS WHICH ARE BUILDINGS SHOWN ON THE STRATA PLAN ARE THE EXTERNAL SURFACES OF THOSE BUILDINGS. WHERE 2 LOTS HAVE A COMMON OR PARTY WALL OR HAVE BUILDINGS ON THEM WHICH ARE JOINED, THE CENTRE PLANE OF THAT WALL, OR THE PLANE AT WHICH THEY ARE JOINED, IS THE BOUNDARY. DISTANCES ARE FROM BOUNDARIES OR EXTERNAL FACES OF WALLS UNLESS SHOWN OTHERWISE. ALL ANGLES ARE 90 DEGREES UNLESS SHOWN OTHERWISE",
+      "href": "wa-leg:Strata%20Titles%20Act%201985%20-%20%5B08-a0-00%5D.pdf",
+      "rel": "related",
+      "type": "application/pdf",
+      "title": "Boundary Definition Statement - SP83687",
+      "role": "wa-annotation-role:boundary-definition-statement"
+    },
+    {
+      "role": "wa-annotation-role:licensed-valuer-certification",
+      "description": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
+      "href": "documents/SP83687-unit-entitlement-schedule.pdf",
+      "rel": "via",
+      "type": "application/pdf",
+      "title": "Schedule of Unit Entitlements - SP83687",
+      "certifier": {
+        "firstName": "Jordan",
+        "lastName": "Example",
+        "licensedValuerNumber": "00000"
+      },
+      "dateCertified": "2022-05-17"
+    },
+    {
+      "role": "wa-annotation-role:building-approval-certification",
+      "description": "Building Approval Certificate 545/2022; whole of building; grouped dwellings and garages; Building Act 2011 section 52; indefinite validity; issued by Casey Example, Building Surveying Coordinator, City of Belmont, 9 December 2022.",
+      "href": "documents/SP83687-building-approval-certificate.pdf",
+      "rel": "via",
+      "type": "application/pdf",
+      "title": "Building Approval Certificate",
+      "certifier": {
+        "firstName": "Casey",
+        "lastName": "Example",
+        "jobTitle": "Building Surveying Coordinator"
+      },
+      "dateCertified": "2022-12-09",
+      "authority": {
+        "permitAuthority": "wa-local-government:city-of-belmont",
+        "rel": "related",
+        "role": "icsm-admin-unit-type:localGovernmentArea"
+      }
+    },
+    {
+      "role": "wa-annotation-role:strata-plan-endorsement",
+      "description": "LG Ref 467/2022; approval pursuant to section 15(4) of the Strata Titles Act 1985; endorsed 2 February 2023.",
+      "href": "documents/SP83687-endorsement-certificate.pdf",
+      "rel": "via",
+      "type": "application/pdf",
+      "title": "Certificate Endorsing Strata Plan or Amendment to a Strata Plan by Western Australian Planning Commission",
+      "certifier": {
+        "firstName": "Illegiable",
+        "lastName": "Name",
+        "delegatedAuthority": "wa-leg:planning-and-development-act-2005:16(3)(e)"
+      },
+      "dateCertified": "2023-02-02",
+      "authority": {
+        "permitAuthority": "wa-local-government:city-of-belmont",
+        "rel": "related",
+        "role": "icsm-admin-unit-type:localGovernmentArea"
+      }
+    },
+    {
+      "role": "wa-annotation-role:record-of-strata-titles-scheme",
+      "description": "Annex A, Strata Plan 83687 Scheme Bylaws (P361938) and Scheme Notice (P361939) endorsed 23 February 2023 by R. Example, Registrar of Titles.",
+      "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
+      "rel": "via",
+      "type": "application/pdf",
+      "title": "Record of Strata Title Scheme Limitations, Interests, Encumbrances and Notifications",
+      "certifier": {
+        "firstName": "R.",
+        "lastName": "Example",
+        "jobTitle": "Registrar of Titles"
+      },
+      "dateCertified": "2023-02-23"
+    }
+  ]
+}

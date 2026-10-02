@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "se": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/strata-entitlement/",
+    "apt": "https://linked.data.gov.au/def/addr-part-types/",
+    "cr": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+
+    "ref": "cr:sourceRef",
+    "value": "rdf:value",
+    "id": "dcterms:identifier",
+    "conformsTo": "dcterms:conformsTo",
+    "documentRef": "cr:documentRef",
+    "annotationRef": "cr:annotationRef",
+
+    "scheme": "se:scheme",
+    "schemeNumber": "se:schemeNumber",
+    "schemeName": "se:schemeName",
+    "address": "se:address",
+    "parts": {
+      "@id": "se:addressPart",
+      "@container": "@list",
+      "@context": {
+        "partType": {"@id": "se:addressPartType", "@type": "@vocab"},
+        "value": {"@id": "se:addressPartValue", "@type": "@json"},
+        "label": {"@id": "se:addressPartLabel", "@context": {"value": "rdf:value"}}
+      }
+    },
+    "formatted": "se:formattedAddress",
+    "lots": {"@id": "se:lot", "@container": "@set"},
+    "lotNumber": "se:lotNumber",
+    "entitlement": "se:unitEntitlement",
+    "membershipEvidence": {"@id": "se:membershipEvidence", "@container": "@set"},
+    "basis": "se:basis",
+    "schedule": "se:schedule",
+    "form": {
+      "@id": "se:approvedForm",
+      "@context": {"label": "se:formLabel", "source": "se:formPublishedAt"}
+    },
+    "validFrom": "se:formValidFrom",
+    "certification": "se:certification",
+    "certifier": "se:certifier",
+    "firstName": "se:certifierFirstName",
+    "lastName": "se:certifierLastName",
+    "licensedValuerNumber": "se:licensedValuerNumber",
+    "dateCertified": "se:dateCertified",
+    "legislativeBasis": {"@id": "se:legislativeBasis", "@container": "@set"},
+    "totals": "se:totals",
+    "declared": "se:declaredTotal",
+    "calculated": "se:calculatedTotal",
+    "lotCount": "se:lotCount"
+  }
+}

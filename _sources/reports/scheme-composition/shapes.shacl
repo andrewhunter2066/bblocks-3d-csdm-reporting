@@ -1,0 +1,30 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sc: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Cross-field rule of the Scheme Composition Report: the derived member count agrees with the members.
+
+sc:MemberParcelCountIsTheNumberOfMembers
+    a sh:NodeShape ;
+    sh:targetSubjectsOf sc:summary ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Member parcel count {?value} is not the number of members ({?members})" ;
+        sh:prefixes sc:Prefixes ;
+        sh:select """
+            SELECT $this (SAMPLE(?count) AS ?value) (COUNT(DISTINCT ?member) AS ?members) WHERE {
+                $this sc:summary/sc:memberParcelCount/rdf:value ?count .
+                OPTIONAL { $this sc:member ?member }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?member) != SAMPLE(?count))
+        """ ;
+    ] .
+
+sc:Prefixes
+    a owl:Ontology ;
+    sh:declare
+        [ sh:prefix "sc" ; sh:namespace "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/"^^xsd:anyURI ] ,
+        [ sh:prefix "rdf" ; sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ] .

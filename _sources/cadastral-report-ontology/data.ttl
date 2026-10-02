@@ -1,0 +1,177 @@
+PREFIX cs: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vs: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/>
+
+# Codelists of the cadastral reporting vocabulary (SKOS). The skos:notation of each concept is the JSON
+# value used in reports; the JSON-LD contexts of csdm.reporting.cadastral-report map those values to these
+# concepts.
+#
+# Status of a report value (ReportValue.status in csdm.reporting.cadastral-report).
+# Namespace: the register's GitHub Pages site under ogcincubator (resolvable once the register is published
+# there; a w3id.org redirect could be registered later without changing the terms' local names).
+
+cs:
+    a skos:ConceptScheme ;
+    skos:prefLabel "Report value status"@en ;
+    skos:definition "Where a cadastral report value comes from, or why the report has no usable value."@en ;
+    dcterms:created "2026-10-01" ;
+    skos:hasTopConcept vs:reported , vs:derived , vs:documented , vs:configured ,
+        vs:not-supplied , vs:unresolved , vs:invalid , vs:conflicting ;
+.
+
+vs:reported
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "reported" ;
+    skos:prefLabel "Reported"@en ;
+    skos:definition "Taken directly from a property of the source dataset, possibly converted to the report's datatype (the original is kept as the lexical value)."@en ;
+.
+
+vs:derived
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "derived" ;
+    skos:prefLabel "Derived"@en ;
+    skos:definition "Calculated by the report from other report values, which the derivation identifies."@en ;
+.
+
+vs:documented
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "documented" ;
+    skos:prefLabel "Documented"@en ;
+    skos:definition "Known only from a supporting document referenced by the source dataset."@en ;
+.
+
+vs:configured
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "configured" ;
+    skos:prefLabel "Configured"@en ;
+    skos:definition "A constant of the report type rather than a fact about the subject."@en ;
+.
+
+vs:not-supplied
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "not-supplied" ;
+    skos:prefLabel "Not supplied"@en ;
+    skos:definition "Expected by the report but absent from the source dataset."@en ;
+.
+
+vs:unresolved
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "unresolved" ;
+    skos:prefLabel "Unresolved"@en ;
+    skos:definition "The source refers to the value's object, but the reference could not be followed."@en ;
+.
+
+vs:invalid
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "invalid" ;
+    skos:prefLabel "Invalid"@en ;
+    skos:definition "Supplied by the source, but not usable as a value of the required kind; the supplied value is kept as the lexical value."@en ;
+.
+
+vs:conflicting
+    a skos:Concept ;
+    skos:inScheme cs: ; skos:topConceptOf cs: ;
+    skos:notation "conflicting" ;
+    skos:prefLabel "Conflicting"@en ;
+    skos:definition "Two or more sources supply different values, and the report does not choose between them."@en ;
+.
+
+# ---------------------------------------------------------------------------------------------------------
+# Report stage, report status and check category (the `stage`, `status` and `checks[].category` values).
+# ---------------------------------------------------------------------------------------------------------
+PREFIX rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/>
+PREFIX rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/>
+PREFIX ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/>
+
+<https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Report stage"@en ;
+    skos:definition "How far a cadastral report has been produced: source facts only, or completed by its report type."@en ;
+    skos:hasTopConcept rstage:facts , rstage:complete ;
+.
+rstage:facts
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage> ;
+    skos:notation "facts" ;
+    skos:prefLabel "Facts"@en ;
+    skos:definition "Source facts only, as produced by a source adapter; no derived values and no overall status."@en ;
+.
+rstage:complete
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage> ;
+    skos:notation "complete" ;
+    skos:prefLabel "Complete"@en ;
+    skos:definition "Completed by the report-type building block: derived values, report-level checks and the overall status added."@en ;
+.
+
+<https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Report status"@en ;
+    skos:definition "Overall result of a completed cadastral report, set from its check results."@en ;
+    skos:hasTopConcept rstatus:complete , rstatus:incomplete , rstatus:invalid ;
+.
+rstatus:complete
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status> ;
+    skos:notation "complete" ;
+    skos:prefLabel "Complete"@en ;
+    skos:definition "No error check failed, no warning check failed, and every error check was evaluated."@en ;
+.
+rstatus:incomplete
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status> ;
+    skos:notation "incomplete" ;
+    skos:prefLabel "Incomplete"@en ;
+    skos:definition "No error check failed, but a warning check failed or an error check could not be evaluated: information is missing."@en ;
+.
+rstatus:invalid
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status> ;
+    skos:notation "invalid" ;
+    skos:prefLabel "Invalid"@en ;
+    skos:definition "An error check failed: the report's information is wrong or inconsistent."@en ;
+.
+
+<https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Check category"@en ;
+    skos:definition "What a check on a cadastral report examines."@en ;
+    skos:hasTopConcept ccat:source-conformance , ccat:generation , ccat:domain ;
+.
+ccat:source-conformance
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category> ;
+    skos:notation "source-conformance" ;
+    skos:prefLabel "Source conformance"@en ;
+    skos:definition "The source dataset against its own profile."@en ;
+.
+ccat:generation
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category> ;
+    skos:notation "generation" ;
+    skos:prefLabel "Generation"@en ;
+    skos:definition "What the report needs in order to be generated."@en ;
+.
+ccat:domain
+    a skos:Concept ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category> ;
+    skos:notation "domain" ;
+    skos:prefLabel "Domain"@en ;
+    skos:definition "A business rule of the report type."@en ;
+.

@@ -1,0 +1,51 @@
+@prefix ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/> .
+@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/> .
+@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vs: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Shapes for the cadastral reporting vocabulary's own terms: codelist membership and cardinalities.
+# Cross-field rules of reports live with the report schemas (csdm.reporting.cadastral-report and the
+# report-type blocks).
+
+cr:ReportShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf cr:reportType ;
+    sh:property [ sh:path cr:reportType ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path cr:stage ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( rstage:facts rstage:complete ) ] ;
+    sh:property [ sh:path cr:reportStatus ; sh:maxCount 1 ;
+                  sh:in ( rstatus:complete rstatus:incomplete rstatus:invalid ) ] .
+
+cr:ReportValueShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf cr:valueStatus ;
+    sh:property [ sh:path cr:valueStatus ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( vs:reported vs:derived vs:documented vs:configured vs:not-supplied vs:unresolved
+                          vs:invalid vs:conflicting ) ] ;
+    sh:property [ sh:path rdf:value ; sh:maxCount 1 ] ;
+    sh:property [ sh:path cr:derivation ; sh:maxCount 1 ] .
+
+cr:SourceReferenceShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf cr:sourceRef ;
+    sh:property [ sh:path cr:sourceDataset ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path cr:jsonPointer ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                  sh:pattern "^(/([^/~]|~[01])*)*$" ] ;
+    sh:property [ sh:path cr:sourceProperty ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
+
+cr:CheckResultShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf cr:check ;
+    sh:property [ sh:path dcterms:identifier ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path cr:definedBy ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path cr:checkCategory ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( ccat:source-conformance ccat:generation ccat:domain ) ] ;
+    sh:property [ sh:path sh:resultSeverity ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( sh:Violation sh:Warning sh:Info ) ] ;
+    sh:property [ sh:path earl:outcome ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( earl:passed earl:failed earl:untested earl:inapplicable ) ] .

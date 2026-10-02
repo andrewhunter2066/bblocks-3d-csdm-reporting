@@ -1,0 +1,22 @@
+examples:
+  - title: SP83687 facts-stage composition
+    base-output-filename: sp83687-facts
+    content: |
+      The source facts for strata plan SP83687 as extracted by the WA 3D CSDM adapter: each member lot's
+      geometry type, representation status and component solids (with whether each is in the dataset).
+    snippets:
+      - language: json
+        ref: examples/sp83687-facts.json
+        doc-uplift-formats: []
+
+  - title: SP83687 complete composition
+    base-output-filename: sp83687-report
+    content: |
+      The complete Scheme Composition Report for SP83687. Lots 1 and 2 are spatially resolved (all 4 and 5
+      of their component solids are present); Lots 3 to 9 have no component solids yet, and no lot carries
+      a representation status, so the report is `incomplete`: an honest picture of the dataset, not a
+      failure of the report.
+    snippets:
+      - language: json
+        ref: examples/sp83687-report.json
+        doc-uplift-formats: []

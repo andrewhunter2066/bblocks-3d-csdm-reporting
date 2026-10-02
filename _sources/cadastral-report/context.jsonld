@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "cr": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "earl": "http://www.w3.org/ns/earl#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "reportType": "cr:reportType",
+    "stage": {
+      "@id": "cr:stage",
+      "@type": "@vocab",
+      "@context": {"@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/"}
+    },
+    "status": {
+      "@id": "cr:reportStatus",
+      "@type": "@vocab",
+      "@context": {"@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/"}
+    },
+    "statusSummary": {
+      "@id": "cr:statusSummary",
+      "@context": {
+        "checks": "cr:checkCount",
+        "failedErrors": "cr:failedErrors",
+        "failedWarnings": "cr:failedWarnings",
+        "unevaluatedErrors": "cr:unevaluatedErrors"
+      }
+    },
+    "checks": {"@id": "cr:check", "@container": "@set"},
+    "definedBy": "cr:definedBy",
+    "category": {
+      "@id": "cr:checkCategory",
+      "@type": "@vocab",
+      "@context": {"@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/"}
+    },
+    "severity": {"@id": "sh:resultSeverity", "@type": "@vocab"},
+    "outcome": {"@id": "earl:outcome", "@type": "@vocab"},
+    "message": "dcterms:description",
+    "targets": {"@id": "cr:target", "@container": "@set"},
+    "evidence": {"@id": "cr:evidence", "@type": "@json"},
+    "generatedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@container": "@list",
+      "@context": {"bblock": "cr:buildingBlock", "transform": "cr:transform"}
+    },
+    "subject": "dcterms:subject",
+    "kind": "cr:kind",
+    "label": "rdfs:label",
+    "sources": {"@id": "dcterms:source", "@container": "@set"},
+    "name": "rdfs:label",
+    "date": "dcterms:date",
+    "conformsTo": "dcterms:conformsTo",
+    "documents": {"@id": "dcterms:references", "@container": "@set"},
+    "annotations": {"@id": "cr:annotation", "@container": "@set"},
+    "id": "dcterms:identifier",
+    "title": "dcterms:title",
+    "href": "schema:url",
+    "mediaType": "dcterms:format",
+    "role": "cr:role",
+    "rel": "cr:linkRelation",
+    "statement": "dcterms:description",
+    "documentRef": "cr:documentRef",
+    "annotationRef": "cr:annotationRef",
+    "content": {
+      "@id": "cr:content",
+      "@context": {
+        "status": {
+          "@id": "cr:valueStatus",
+          "@type": "@vocab",
+          "@context": {"@vocab": "https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/"}
+        }
+      }
+    },
+    "value": "rdf:value",
+    "derivation": "cr:derivation",
+    "method": "cr:derivationMethod",
+    "inputs": {"@id": "cr:derivationInput", "@container": "@set"},
+    "lexicalValue": "cr:lexicalValue",
+    "note": "rdfs:comment",
+    "ref": "cr:sourceRef",
+    "sourceRef": "cr:sourceRef",
+    "sourceRefs": {"@id": "cr:sourceRef", "@container": "@set"},
+    "dataset": "cr:sourceDataset",
+    "pointer": "cr:jsonPointer",
+    "property": {"@id": "cr:sourceProperty", "@type": "@id"}
+  }
+}

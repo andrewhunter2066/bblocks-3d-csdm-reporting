@@ -1,0 +1,25 @@
+build-local/
+# Postprocessor sandboxes for transform/plugin dependencies (created by every local build)
+.bblocks-sandbox/
+.idea/
+.mcp.json
+bblocks-config-local.yml
+bblocks-config-local.yaml
+.volumes
+
+# Plugin build (dist/ is published to the `dist` branch by CI, never committed on master)
+node_modules/
+dist/
+
+# Local AI-assistant tooling and instructions, not part of the project
+.agents/
+.claude/
+skills-lock.json
+CLAUDE.md
+
+# Python bytecode and pytest cache (local transform tests)
+__pycache__/
+.pytest_cache/
+
+# Lodged source documents (contain personal data and third-party branding; kept locally only)
+data/examples/pdf/

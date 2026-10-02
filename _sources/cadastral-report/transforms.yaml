@@ -1,0 +1,40 @@
+transforms:
+  - id: summarise-checks
+    description: |
+      Sets a report's overall `status` from its check results: `invalid` if any `error` check fails;
+      otherwise `incomplete` if any `warning` check fails or any `error` check could not be evaluated;
+      otherwise `complete`. Records the counts in `statusSummary`. Only complete-stage reports get a status;
+      other input produces no output. Generic: works for any report type, and
+      is called by report-type blocks when they complete a report.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.cadastral-report
+    ref: transforms/summarise_checks.py
+
+  - id: render-html
+    description: |
+      Renders any cadastral report as a standalone HTML page with Jinja2. Generic: it draws the page frame,
+      the report status, sources, the documents and annotations relied on, a status marker (with its source
+      or derivation) for every value, a legend, the check results and the pipeline. A report type supplies
+      the body as a Jinja2 template in `metadata.template`, normally by calling this transform with
+      `get_transformer(...)(report, extra_metadata={'template': ...})`; templates extend `base.html` and
+      can use `rv(value)`, `doc_link(id)`, `dl(id)` and `dt_dd(label, value, id)`. Without a template it
+      renders the envelope only.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/html
+          defaultExtension: html
+    metadata:
+      dependencies:
+        pip: jinja2>=3.1
+    ref: transforms/render_html.py

@@ -1,0 +1,48 @@
+transforms:
+  - id: complete
+    description: |
+      Completes a facts-stage Strata Scheme Entitlement Report (as produced by any source adapter) by adding
+      the derived values: the calculated total and the lot count. Independent of the source format.
+      Idempotent: completing a complete report returns the same report.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+      profiles:
+        - bblocks://csdm.reporting.reports.strata-entitlement
+    ref: transforms/complete.py
+
+  - id: to-html
+    description: |
+      Renders a Strata Scheme Entitlement Report as a standalone HTML page: the scheme, its lots and unit
+      entitlements, the totals, the basis of the schedule (document, approved form, legislation), the
+      valuer's certification, every value's status and provenance, and the check results. Template only:
+      it passes its Jinja2 template to the generic `render-html` transform of
+      `csdm.reporting.cadastral-report`.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/html
+          defaultExtension: html
+    ref: transforms/to_html.py
+
+  - id: to-csv
+    description: |
+      Exports the lots of a Strata Scheme Entitlement Report as CSV, one row per lot: scheme number, lot
+      number, unit entitlement, the status of each, the entitlement's source pointer and the parcel id.
+      Python standard library only.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: text/csv
+          defaultExtension: csv
+    ref: transforms/to_csv.py

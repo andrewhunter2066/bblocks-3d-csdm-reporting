@@ -1,0 +1,16 @@
+{
+  "name": "Scheme Composition Report",
+  "abstract": "Structured report of what a strata scheme is made of: its member lots, how each is spatially represented, and a summary (member count, geometry types, representation statuses, whether every member is spatially resolved). The second report type of the register, built to test that the generic cadastral-report block serves more than one report.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-02T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "group": "Cadastral reports",
+  "tags": ["cadastre", "strata", "scheme composition", "3D", "reporting"],
+  "sources": [
+    {
+      "title": "Built strata bblock scope note (members and spatialRepresentationSummary, \"generate via a reporting transform\")",
+      "link": "https://github.com/surroundaustralia/3d-csdm-profile-wa/tree/main/proposals/development/built-strata"
+    }
+  ]
+}

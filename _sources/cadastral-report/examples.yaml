@@ -1,0 +1,69 @@
+examples:
+  - title: Minimal report envelope
+    content: |
+      The smallest valid complete report: a report type, its stage and status, its check results, a
+      subject that points back into its source dataset, one source dataset and an (empty) report-specific
+      `content` section. The `summarise-checks` transform recalculates `status` from the checks: one
+      `warning` check failed, so the report is `incomplete`.
+    snippets:
+      - language: json
+        doc-uplift-formats: []
+        code: |
+          {
+            "reportType": "example.report-type",
+            "stage": "complete",
+            "status": "incomplete",
+            "checks": [
+              {"id": "subject-identified", "definedBy": "example.adapter", "category": "generation",
+               "severity": "error", "outcome": "pass", "message": "One parcel identified as the subject"},
+              {"id": "area-present", "definedBy": "example.report-type", "category": "domain",
+               "severity": "warning", "outcome": "fail", "message": "The parcel has no area",
+               "targets": ["/content"]}
+            ],
+            "subject": {
+              "kind": "parcel",
+              "label": "Lot 1 on Plan DP 1",
+              "ref": {"dataset": "example-dataset", "pointer": "/parcels/0/features/0", "id": "uuid:parcel-1"}
+            },
+            "sources": [{"id": "example-dataset", "name": "DP 1", "conformsTo": "example.profile"}],
+            "content": {}
+          }
+
+  - title: Report values with their statuses
+    content: |
+      A minimal facts-stage report whose content holds four `ReportValue`s, one per common status:
+      `reported` (read from the source; the supplied text `"117"` is kept as `lexicalValue` because the
+      report holds an integer), `derived` (calculated from other report values, which `derivation.inputs`
+      points at), `not-supplied` (expected but absent; `sourceRefs` says where it was looked for) and
+      `invalid` (supplied but unusable; the supplied value is kept). The content keys are illustrative:
+      report types define (and map to RDF) their own content.
+    snippets:
+      - language: json
+        doc-uplift-formats: []
+        code: |
+          {
+            "reportType": "example.report-type",
+            "stage": "facts",
+            "subject": {"kind": "strata-scheme", "ref": {"dataset": "SP-1", "pointer": "/parcels/0/features/1"}},
+            "sources": [{"id": "SP-1", "kind": "dataset"}],
+            "content": {
+              "reportedValue": {
+                "value": 117, "status": "reported", "lexicalValue": "117",
+                "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion"}]
+              },
+              "derivedValue": {
+                "value": 225, "status": "derived",
+                "derivation": {"method": "sum", "inputs": ["/content/reportedValue", "/content/invalidValue"]}
+              },
+              "notSuppliedValue": {
+                "value": null, "status": "not-supplied",
+                "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/5"}],
+                "note": "No interest with interestType wa-interest-type:strata-lot and an entitlementPortion"
+              },
+              "invalidValue": {
+                "value": null, "status": "invalid", "lexicalValue": "12.5",
+                "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion"}],
+                "note": "Not a positive whole number"
+              }
+            }
+          }

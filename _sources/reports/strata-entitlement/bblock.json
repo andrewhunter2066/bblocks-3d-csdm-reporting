@@ -1,0 +1,10 @@
+{
+  "name": "Strata Scheme Entitlement Report",
+  "abstract": "Structured report of the unit entitlement of every lot in a strata scheme, with the calculated total. Independent of the source data format: source adapters produce it, and its own transforms present it.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "group": "Cadastral reports",
+  "tags": ["cadastre", "strata", "unit entitlement", "reporting"]
+}

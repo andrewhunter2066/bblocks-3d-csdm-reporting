@@ -1,0 +1,810 @@
+{
+  "reportType": "csdm.reporting.reports.strata-entitlement",
+  "stage": "complete",
+  "generatedBy": [
+    {
+      "bblock": "csdm.reporting.adapters.wa-csdm",
+      "transform": "to-strata-entitlement-facts"
+    },
+    {
+      "bblock": "csdm.reporting.reports.strata-entitlement",
+      "transform": "complete"
+    },
+    {
+      "bblock": "csdm.reporting.cadastral-report",
+      "transform": "summarise-checks"
+    }
+  ],
+  "subject": {
+    "kind": "strata-scheme",
+    "label": "Lots 1 to 9 on Plan SP 83687",
+    "ref": {
+      "dataset": "SP-83687-1-1-0.00",
+      "pointer": "/parcels/0/features/1",
+      "id": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+    }
+  },
+  "sources": [
+    {
+      "id": "SP-83687-1-1-0.00",
+      "kind": "dataset",
+      "name": "SP83687",
+      "date": "2023-02-06",
+      "conformsTo": "icsm.profiles.wa.wa-3d"
+    },
+    {
+      "id": "https://linked.data.gov.au/def/csdm/wa-approved-form",
+      "kind": "vocabulary",
+      "name": "wa-approved-form"
+    },
+    {
+      "id": "https://linked.data.gov.au/def/csdm/wa-locality",
+      "kind": "vocabulary",
+      "name": "WA Localities"
+    }
+  ],
+  "documents": [
+    {
+      "id": "unit-entitlement-schedule",
+      "title": "Schedule of Unit Entitlements - SP83687",
+      "href": "documents/SP83687-unit-entitlement-schedule.pdf",
+      "mediaType": "application/pdf",
+      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "conformsTo": "wa-approved-form:2021-47738",
+      "sourceRef": {
+        "dataset": "SP-83687-1-1-0.00",
+        "pointer": "/supportingDocuments/3"
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "id": "licensed-valuer-certification",
+      "role": "wa-annotation-role:licensed-valuer-certification",
+      "statement": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
+      "href": "documents/SP83687-unit-entitlement-schedule.pdf",
+      "rel": "via",
+      "documentRef": "unit-entitlement-schedule",
+      "sourceRef": {
+        "dataset": "SP-83687-1-1-0.00",
+        "pointer": "/annotations/2"
+      }
+    }
+  ],
+  "content": {
+    "scheme": {
+      "schemeNumber": {
+        "value": "SP83687",
+        "status": "reported",
+        "sourceRefs": [
+          {
+            "dataset": "SP-83687-1-1-0.00",
+            "pointer": "/parcels/0/features/1/properties/schemeNumber"
+          }
+        ]
+      },
+      "schemeName": {
+        "value": "281 Belmont Avenue, Cloverdale",
+        "status": "reported",
+        "sourceRefs": [
+          {
+            "dataset": "SP-83687-1-1-0.00",
+            "pointer": "/parcels/0/features/1/properties/schemeName"
+          }
+        ]
+      },
+      "address": {
+        "parts": [
+          {
+            "partType": "apt:addressNumberFirst",
+            "value": 281
+          },
+          {
+            "partType": "apt:road",
+            "value": {
+              "@id": "https://example.com/road/belmont-avenue",
+              "label": "Belmont Avenue"
+            },
+            "label": {
+              "value": "Belmont Avenue",
+              "status": "reported",
+              "sourceRefs": [
+                {
+                  "dataset": "SP-83687-1-1-0.00",
+                  "pointer": "/parcels/0/features/1/properties/schemeAddress/hasPart/1/value/label"
+                }
+              ]
+            }
+          },
+          {
+            "partType": "apt:locality",
+            "value": "wa-locality:cloverdale",
+            "label": {
+              "value": "Cloverdale",
+              "status": "reported",
+              "sourceRefs": [
+                {
+                  "dataset": "https://linked.data.gov.au/def/csdm/wa-locality",
+                  "pointer": "",
+                  "id": "https://linked.data.gov.au/def/csdm/wa-locality/cloverdale"
+                }
+              ]
+            }
+          },
+          {
+            "partType": "apt:stateOrTerritory",
+            "value": {
+              "@id": "https://linked.data.gov.au/dataset/asgsed3/STE/5"
+            }
+          },
+          {
+            "partType": "apt:postcode",
+            "value": 6105
+          },
+          {
+            "partType": "apt:country",
+            "value": {
+              "@id": "https://linked.data.gov.au/dataset/asgsed3/AUS/AUS"
+            }
+          }
+        ],
+        "formatted": {
+          "value": 281,
+          "status": "derived",
+          "derivation": {
+            "method": "format-address",
+            "inputs": [
+              "/content/scheme/address/parts/0/value",
+              "/content/scheme/address/parts/1/label",
+              "/content/scheme/address/parts/2/label"
+            ]
+          }
+        }
+      },
+      "ref": {
+        "dataset": "SP-83687-1-1-0.00",
+        "pointer": "/parcels/0/features/1",
+        "id": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+      }
+    },
+    "lots": [
+      {
+        "lotNumber": {
+          "value": "1",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/2/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 117,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/2",
+          "id": "uuid:e62621ed-1334-4890-964f-608ff68f7a17"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "2",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/3/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 108,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/3",
+          "id": "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "3",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/4/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 113,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/4/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/4",
+          "id": "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "4",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/5/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 108,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/5/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/5",
+          "id": "uuid:5e2823d1-2473-4417-8045-1089d2e86e64"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "5",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/6/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 108,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/6/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/6",
+          "id": "uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "6",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/7/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 113,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/7/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/7",
+          "id": "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "7",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/8/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 108,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/8/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/8",
+          "id": "uuid:0df5a108-f5fe-433a-9934-b0162115248f"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "8",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/9/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 108,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/9/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/9",
+          "id": "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      },
+      {
+        "lotNumber": {
+          "value": "9",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/10/properties/appellation/hasPart/3/label"
+            }
+          ]
+        },
+        "entitlement": {
+          "value": 117,
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/parcels/0/features/10/properties/interests/0/entitlementPortion"
+            }
+          ]
+        },
+        "ref": {
+          "dataset": "SP-83687-1-1-0.00",
+          "pointer": "/parcels/0/features/10",
+          "id": "uuid:79015221-adeb-482f-988b-ed47e57bc2a4"
+        },
+        "membershipEvidence": [
+          "references",
+          "containingPrimaryParcel",
+          "schemeRef"
+        ]
+      }
+    ],
+    "basis": {
+      "schedule": {
+        "documentRef": "unit-entitlement-schedule",
+        "conformsTo": "wa-approved-form:2021-47738"
+      },
+      "form": {
+        "id": "wa-approved-form:2021-47738",
+        "label": {
+          "value": "Approved Schedule of Unit Entitlements Form number 2021-47738",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "https://linked.data.gov.au/def/csdm/wa-approved-form",
+              "pointer": "",
+              "id": "https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738"
+            }
+          ]
+        },
+        "validFrom": {
+          "value": "2021-07-07",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "https://linked.data.gov.au/def/csdm/wa-approved-form",
+              "pointer": "",
+              "id": "https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738"
+            }
+          ],
+          "lexicalValue": "2021-07-07/.."
+        },
+        "source": {
+          "value": "wa-leg:mrdoc_48587.pdf",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "https://linked.data.gov.au/def/csdm/wa-approved-form",
+              "pointer": "",
+              "id": "https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738"
+            }
+          ]
+        }
+      },
+      "certification": {
+        "annotationRef": "licensed-valuer-certification",
+        "certifier": {
+          "firstName": {
+            "value": "Jordan",
+            "status": "reported",
+            "sourceRefs": [
+              {
+                "dataset": "SP-83687-1-1-0.00",
+                "pointer": "/annotations/2/certifier/firstName"
+              }
+            ]
+          },
+          "lastName": {
+            "value": "Example",
+            "status": "reported",
+            "sourceRefs": [
+              {
+                "dataset": "SP-83687-1-1-0.00",
+                "pointer": "/annotations/2/certifier/lastName"
+              }
+            ]
+          },
+          "licensedValuerNumber": {
+            "value": "00000",
+            "status": "reported",
+            "sourceRefs": [
+              {
+                "dataset": "SP-83687-1-1-0.00",
+                "pointer": "/annotations/2/certifier/licensedValuerNumber"
+              }
+            ]
+          }
+        },
+        "dateCertified": {
+          "value": "2022-05-17",
+          "status": "reported",
+          "sourceRefs": [
+            {
+              "dataset": "SP-83687-1-1-0.00",
+              "pointer": "/annotations/2/dateCertified"
+            }
+          ]
+        },
+        "documentRef": "unit-entitlement-schedule"
+      }
+    },
+    "legislativeBasis": [
+      {
+        "value": "Approved under section 37, Schedule 2A clause 21T(1)(d) and Schedule 2A clause 31E(1)(c) of the Strata Titles Act 1985.",
+        "status": "reported",
+        "sourceRefs": [
+          {
+            "dataset": "https://linked.data.gov.au/def/csdm/wa-approved-form",
+            "pointer": "",
+            "id": "https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738"
+          }
+        ]
+      }
+    ],
+    "totals": {
+      "declared": {
+        "value": 1000,
+        "status": "reported",
+        "sourceRefs": [
+          {
+            "dataset": "SP-83687-1-1-0.00",
+            "pointer": "/parcels/0/features/1/properties/interests/0/entitlementTotal"
+          }
+        ]
+      },
+      "calculated": {
+        "value": 1000,
+        "status": "derived",
+        "derivation": {
+          "method": "sum",
+          "inputs": [
+            "/content/lots/0/entitlement",
+            "/content/lots/1/entitlement",
+            "/content/lots/2/entitlement",
+            "/content/lots/3/entitlement",
+            "/content/lots/4/entitlement",
+            "/content/lots/5/entitlement",
+            "/content/lots/6/entitlement",
+            "/content/lots/7/entitlement",
+            "/content/lots/8/entitlement"
+          ]
+        }
+      },
+      "lotCount": {
+        "value": 9,
+        "status": "derived",
+        "derivation": {
+          "method": "count",
+          "inputs": [
+            "/content/lots"
+          ]
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "id": "scheme-identified",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "generation",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)",
+      "evidence": {
+        "schemeId": "uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e"
+      }
+    },
+    {
+      "id": "membership-parcel-aggregate",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "domain",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "The scheme topology is ParcelAggregate with 9 member reference(s)",
+      "evidence": {
+        "topologyType": "ParcelAggregate",
+        "references": 9
+      }
+    },
+    {
+      "id": "membership-references-resolve",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "domain",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "All 9 references resolve to strata-lot parcels"
+    },
+    {
+      "id": "membership-back-links",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "Every member lot links back to the scheme"
+    },
+    {
+      "id": "membership-unreferenced-claimants",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "No strata lot claims the scheme without being one of its references"
+    },
+    {
+      "id": "entitlement-source-datatype",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "source-conformance",
+      "severity": "info",
+      "outcome": "fail",
+      "message": "9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)",
+      "targets": [
+        "/content/lots/0/entitlement",
+        "/content/lots/1/entitlement",
+        "/content/lots/2/entitlement",
+        "/content/lots/3/entitlement",
+        "/content/lots/4/entitlement",
+        "/content/lots/5/entitlement",
+        "/content/lots/6/entitlement",
+        "/content/lots/7/entitlement",
+        "/content/lots/8/entitlement"
+      ]
+    },
+    {
+      "id": "scheme-number-consistent",
+      "definedBy": "csdm.reporting.adapters.wa-csdm",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)",
+      "targets": [
+        "/content/scheme/schemeNumber"
+      ],
+      "evidence": {
+        "schemeNumber": "SP83687",
+        "csdName": "SP83687",
+        "appellationSurveyNumber": "SP 83687"
+      }
+    },
+    {
+      "id": "lot-numbers-present",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "Every lot has a lot number"
+    },
+    {
+      "id": "lot-numbers-unique",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "Lot numbers are unique"
+    },
+    {
+      "id": "entitlements-present",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "All 9 lots have a unit entitlement"
+    },
+    {
+      "id": "entitlements-valid",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "Every supplied unit entitlement is a single positive whole number"
+    },
+    {
+      "id": "total-covers-all-lots",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "The calculated total includes all 9 lots",
+      "targets": [
+        "/content/totals/calculated"
+      ]
+    },
+    {
+      "id": "declared-total-present",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "The source declares a total of 1000",
+      "targets": [
+        "/content/totals/declared"
+      ]
+    },
+    {
+      "id": "total-matches-declared",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "error",
+      "outcome": "pass",
+      "message": "Calculated total 1000 equals the declared total 1000",
+      "targets": [
+        "/content/totals/calculated",
+        "/content/totals/declared"
+      ],
+      "evidence": {
+        "calculated": 1000,
+        "declared": 1000
+      }
+    },
+    {
+      "id": "schedule-document-referenced",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687",
+      "targets": [
+        "/content/basis/schedule"
+      ]
+    },
+    {
+      "id": "document-hrefs-resolvable",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "generation",
+      "severity": "info",
+      "outcome": "not-evaluated",
+      "message": "Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)",
+      "evidence": {
+        "hrefs": [
+          "documents/SP83687-unit-entitlement-schedule.pdf"
+        ]
+      }
+    },
+    {
+      "id": "valuer-certification-present",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "warning",
+      "outcome": "pass",
+      "message": "Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17",
+      "targets": [
+        "/content/basis/certification"
+      ]
+    },
+    {
+      "id": "certification-linked-to-schedule",
+      "definedBy": "csdm.reporting.reports.strata-entitlement",
+      "category": "domain",
+      "severity": "info",
+      "outcome": "pass",
+      "message": "The certification links to the schedule document",
+      "targets": [
+        "/content/basis/certification"
+      ]
+    }
+  ],
+  "status": "complete",
+  "statusSummary": {
+    "checks": 18,
+    "failedErrors": 0,
+    "failedWarnings": 0,
+    "unevaluatedErrors": 0
+  }
+}

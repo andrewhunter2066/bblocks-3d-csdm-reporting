@@ -1,0 +1,23 @@
+examples:
+  - title: SP83687 facts-stage report
+    base-output-filename: sp83687-facts
+    content: |
+      The source facts for strata plan SP83687 as extracted by the WA 3D CSDM adapter (`stage: facts`):
+      the scheme number and each lot's number and unit entitlement, with references back to the source
+      parcels. It carries no derived values. This block's `complete` transform turns it into the complete
+      report in the next example.
+    snippets:
+      - language: json
+        ref: examples/sp83687-facts.json
+        doc-uplift-formats: []
+
+  - title: SP83687 complete report
+    base-output-filename: sp83687-report
+    content: |
+      The complete report for strata plan SP83687 (Lots 1 to 9, 281 Belmont Avenue, Cloverdale). The lot
+      numbers, unit entitlements and total (1000) match the lodged Schedule of Unit Entitlements. The
+      `to-html` transform renders this example as an HTML page.
+    snippets:
+      - language: json
+        ref: examples/sp83687-report.json
+        doc-uplift-formats: []
