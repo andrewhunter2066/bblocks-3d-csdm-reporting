@@ -26,12 +26,13 @@
             sh:resultSeverity sh:Warning ;
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
-        [ dcterms:description "Every member lot links back to the scheme" ;
-            dcterms:identifier "membership-back-links" ;
+        [ dcterms:description "One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)" ;
+            dcterms:identifier "scheme-identified" ;
             earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}"^^rdf:JSON ],
         [ dcterms:description "All 9 references resolve to strata-lot parcels" ;
             dcterms:identifier "membership-references-resolve" ;
             earl:outcome earl:passed ;
@@ -45,13 +46,12 @@
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
             cr:evidence "{\"references\":9,\"topologyType\":\"ParcelAggregate\"}"^^rdf:JSON ],
-        [ dcterms:description "One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)" ;
-            dcterms:identifier "scheme-identified" ;
+        [ dcterms:description "Every member lot links back to the scheme" ;
+            dcterms:identifier "membership-back-links" ;
             earl:outcome earl:passed ;
-            sh:resultSeverity sh:Violation ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
-            cr:evidence "{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}"^^rdf:JSON ],
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
         [ dcterms:description "The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)" ;
             dcterms:identifier "scheme-number-consistent" ;
             earl:outcome earl:passed ;
@@ -60,42 +60,24 @@
             cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
             cr:evidence "{\"appellationSurveyNumber\":\"SP 83687\",\"csdName\":\"SP83687\",\"schemeNumber\":\"SP83687\"}"^^rdf:JSON ;
             cr:target "/content/scheme/schemeNumber" ] ;
-    cr:content [ sc:member [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:79015221-adeb-482f-988b-ed47e57bc2a4" ] ;
-                    sc:geometryType [ rdf:value "AggregateSolid" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10/topology/type" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:lotNumber [ rdf:value "9" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10/properties" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3" ;
+    cr:content [ sc:member [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
                             cr:sourceObject "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9" ] ;
-                    sc:component [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/3" ;
+                    sc:component [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/13" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:720d46e0-f6b3-4348-a932-da6191a5efa3" ] ;
-                            sc:componentFound true ],
-                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/14" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:c6cc1caf-1246-4ac1-aee6-a9980a93b393" ] ;
+                                    cr:sourceObject "uuid:6077a08d-0df0-46c4-90a7-ef94a5daebd2" ] ;
                             sc:componentFound true ],
                         [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/6" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ;
                                     cr:sourceObject "uuid:fa342e93-b1c6-4254-ad40-45f1d756702d" ] ;
                             sc:componentFound true ],
-                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/13" ;
+                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/14" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:6077a08d-0df0-46c4-90a7-ef94a5daebd2" ] ;
+                                    cr:sourceObject "uuid:c6cc1caf-1246-4ac1-aee6-a9980a93b393" ] ;
+                            sc:componentFound true ],
+                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/3" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                                    cr:sourceObject "uuid:720d46e0-f6b3-4348-a932-da6191a5efa3" ] ;
                             sc:componentFound true ],
                         [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/4" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ;
@@ -116,40 +98,22 @@
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3/properties" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9" ;
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5" ] ;
+                            cr:sourceObject "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512" ] ;
                     sc:geometryType [ rdf:value "AggregateSolid" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/topology/type" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/topology/type" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:lotNumber [ rdf:value "8" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties/appellation/hasPart/3/label" ;
+                    sc:lotNumber [ rdf:value "3" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties/appellation/hasPart/3/label" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
                     sc:membershipEvidence "containingPrimaryParcel",
                         "references",
                         "schemeRef" ;
                     sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078" ] ;
-                    sc:geometryType [ rdf:value "AggregateSolid" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/topology/type" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:lotNumber [ rdf:value "6" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
                 [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/5" ;
@@ -170,40 +134,6 @@
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/5/properties" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:e62621ed-1334-4890-964f-608ff68f7a17" ] ;
-                    sc:component [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/12" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:e1102530-0aae-4a27-87a1-ad9dbe7372e9" ] ;
-                            sc:componentFound true ],
-                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/1" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:bebe0853-7b46-4ee0-a2d2-b60a445f6b2d" ] ;
-                            sc:componentFound true ],
-                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/5" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:8834fa5e-529b-4258-9537-a01bea709001" ] ;
-                            sc:componentFound true ],
-                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/2" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
-                                    cr:sourceObject "uuid:93f32e94-6a66-4405-9763-bf9d9771e654" ] ;
-                            sc:componentFound true ] ;
-                    sc:geometryType [ rdf:value "AggregateSolid" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/topology/type" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:lotNumber [ rdf:value "1" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
                 [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/6" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
                             cr:sourceObject "uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3" ] ;
@@ -222,24 +152,6 @@
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/6/properties" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512" ] ;
-                    sc:geometryType [ rdf:value "AggregateSolid" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/topology/type" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:lotNumber [ rdf:value "3" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    sc:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
                 [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/8" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
                             cr:sourceObject "uuid:0df5a108-f5fe-433a-9934-b0162115248f" ] ;
@@ -256,6 +168,94 @@
                         "schemeRef" ;
                     sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/8/properties" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078" ] ;
+                    sc:geometryType [ rdf:value "AggregateSolid" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/topology/type" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:lotNumber [ rdf:value "6" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:e62621ed-1334-4890-964f-608ff68f7a17" ] ;
+                    sc:component [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/12" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                                    cr:sourceObject "uuid:e1102530-0aae-4a27-87a1-ad9dbe7372e9" ] ;
+                            sc:componentFound true ],
+                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/2" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                                    cr:sourceObject "uuid:93f32e94-6a66-4405-9763-bf9d9771e654" ] ;
+                            sc:componentFound true ],
+                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/5" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                                    cr:sourceObject "uuid:8834fa5e-529b-4258-9537-a01bea709001" ] ;
+                            sc:componentFound true ],
+                        [ cr:sourceRef [ cr:jsonPointer "/solids/0/features/1" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ;
+                                    cr:sourceObject "uuid:bebe0853-7b46-4ee0-a2d2-b60a445f6b2d" ] ;
+                            sc:componentFound true ] ;
+                    sc:geometryType [ rdf:value "AggregateSolid" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/topology/type" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:lotNumber [ rdf:value "1" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5" ] ;
+                    sc:geometryType [ rdf:value "AggregateSolid" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/topology/type" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:lotNumber [ rdf:value "8" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:79015221-adeb-482f-988b-ed47e57bc2a4" ] ;
+                    sc:geometryType [ rdf:value "AggregateSolid" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10/topology/type" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:lotNumber [ rdf:value "9" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    sc:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    sc:representationStatus [ rdfs:comment "The lot has no spatialRepresentationDefinitions.representationStatus" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10/properties" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ] ;
             sc:scheme [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/1" ;

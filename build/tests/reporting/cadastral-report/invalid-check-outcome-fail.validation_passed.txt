@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T21:50:25.110588+00:00
+Generated 2026-10-02T22:05:44.323084+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -33,8 +33,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N69f89505c37d4affa432d8553f053603
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N69f89505c37d4affa432d8553f053603
+ - Shape cr:ReportStatusFollowsFromChecks: _:N0a770413879b41c38eb871a1639ef5de
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N0a770413879b41c38eb871a1639ef5de
 
 
 ** Validation error **
@@ -48,13 +48,13 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Focus Node: [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome <file:///github/workspace/passed> ; sh:resultSeverity sh:Violation ]
   	Value Node: <file:///github/workspace/passed>
   	Result Path: earl:outcome
-  	Message: Value <file:///github/workspace/passed> not in list ['earl:passed', 'earl:failed', 'earl:inapplicable', 'earl:untested']
+  	Message: Value <file:///github/workspace/passed> not in list ['earl:inapplicable', 'earl:failed', 'earl:passed', 'earl:untested']
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:N8730f464e1614b93af640d2ebbb5e6e3
+ - Shape cr:SourceReferenceShape: _:N4534b3b110d848a5af9ddf6e115fce37
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N69f89505c37d4affa432d8553f053603
- - Shape cr:SourceReferenceShape: _:Nbb562be6617c4fb49e421e7803086bea
+ - Shape cr:ReportShape: _:N0a770413879b41c38eb871a1639ef5de
+ - Shape cr:CheckResultShape: _:Ned11d35a82c1432e94132fc99e2168e8
 
 === End SHACL ===
 

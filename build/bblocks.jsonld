@@ -213,7 +213,7 @@
   "name": "Building Blocks - Cadastral Reporting Building Blocks",
   "abstract": "Reusable building blocks for transforming cadastral data into structured, validated cadastral reports,\nproven first with a Strata Scheme Entitlement Report generated from the WA profile of the 3D CSDM.\n",
   "description": "Cadastral source data is interpreted by **source adapters**, which produce a facts-stage report.\nReport-type blocks complete the report (derived values and domain checks) and generic\n**cadastral-report** components carry provenance, status and presentation (HTML, CSV).\nSee `docs/cadastral-reporting-investigation-and-plan.md` in the repository for the architecture and plan.\n",
-  "modified": "2026-10-02T21:50:21.342540",
+  "modified": "2026-10-02T22:05:40.597043",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"e64dad0d6a1d0045bec6b1c52f7117632deabfc8",
@@ -914,9 +914,9 @@
         "adapter"
       ],
       "dependsOn": [
-        "bblocks://csdm.reporting.reports.scheme-composition",
+        "bblocks://icsm.profiles.wa.wa-3d",
         "bblocks://csdm.reporting.reports.strata-entitlement",
-        "bblocks://icsm.profiles.wa.wa-3d"
+        "bblocks://csdm.reporting.reports.scheme-composition"
       ],
       "sources": [
         {
@@ -929,42 +929,6 @@
         }
       ],
       "shaclShapes": [
-        {
-          "prof:hasArtifact": [
-            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://csdm.reporting.reports.scheme-composition",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://csdm.reporting.cadastral-report",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://csdm.reporting.cadastral-report-ontology",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/strata-entitlement/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://csdm.reporting.reports.strata-entitlement",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
         {
           "prof:hasArtifact": [
             "https://surroundaustralia.github.io/3d-csdm-profile-wa/profiles/wa-pointnames-shacl.ttl"
@@ -994,11 +958,11 @@
         },
         {
           "prof:hasArtifact": [
-            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-survey-metadata-shacl.ttl",
-            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-point-codetypes-shacl.ttl",
-            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-parcel-codetypes-shacl.ttl",
             "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-references-shacl.ttl",
-            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-observation-properties.shacl"
+            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-survey-metadata-shacl.ttl",
+            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-parcel-codetypes-shacl.ttl",
+            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-observation-properties.shacl",
+            "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-point-codetypes-shacl.ttl"
           ],
           "rdfs:seeAlso": "bblocks://icsm.profiles.common",
           "prof:hasRole": "role:validation",
@@ -1007,9 +971,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/CSD/tests/obs-match-vectors.shacl",
             "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/parcel_module.shapes.ttl",
-            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/container.shapes.ttl"
+            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/container.shapes.ttl",
+            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/CSD/tests/obs-match-vectors.shacl"
           ],
           "rdfs:seeAlso": "bblocks://icsm.csdm.features.CSD",
           "prof:hasRole": "role:validation",
@@ -1027,8 +991,8 @@
         },
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
-            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl"
+            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.topo.features.topo-feature",
           "prof:hasRole": "role:validation",
@@ -1037,8 +1001,8 @@
         },
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
-            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl"
+            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.topo.features.topo-feature-collection",
           "prof:hasRole": "role:validation",
@@ -1065,8 +1029,8 @@
         },
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
-            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl"
+            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+            "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.topo.features.topo-arc",
           "prof:hasRole": "role:validation",
@@ -1096,6 +1060,42 @@
             "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.sosa.properties.observation",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/strata-entitlement/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://csdm.reporting.reports.strata-entitlement",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://csdm.reporting.cadastral-report",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://csdm.reporting.cadastral-report-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://csdm.reporting.reports.scheme-composition",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"

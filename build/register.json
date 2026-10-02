@@ -3,7 +3,7 @@
   "name": "Cadastral Reporting Building Blocks",
   "abstract": "Reusable building blocks for transforming cadastral data into structured, validated cadastral reports,\nproven first with a Strata Scheme Entitlement Report generated from the WA profile of the 3D CSDM.\n",
   "description": "Cadastral source data is interpreted by **source adapters**, which produce a facts-stage report.\nReport-type blocks complete the report (derived values and domain checks) and generic\n**cadastral-report** components carry provenance, status and presentation (HTML, CSV).\nSee `docs/cadastral-reporting-investigation-and-plan.md` in the repository for the architecture and plan.\n",
-  "modified": "2026-10-02T21:50:21.342540",
+  "modified": "2026-10-02T22:05:40.597043",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"e64dad0d6a1d0045bec6b1c52f7117632deabfc8",
@@ -503,9 +503,9 @@
         "adapter"
       ],
       "dependsOn": [
-        "bblocks://csdm.reporting.reports.scheme-composition",
+        "bblocks://icsm.profiles.wa.wa-3d",
         "bblocks://csdm.reporting.reports.strata-entitlement",
-        "bblocks://icsm.profiles.wa.wa-3d"
+        "bblocks://csdm.reporting.reports.scheme-composition"
       ],
       "sources": [
         {
@@ -518,18 +518,6 @@
         }
       ],
       "shaclShapes": {
-        "csdm.reporting.reports.scheme-composition": [
-          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/shapes.shacl"
-        ],
-        "csdm.reporting.cadastral-report": [
-          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report/shapes.shacl"
-        ],
-        "csdm.reporting.cadastral-report-ontology": [
-          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl"
-        ],
-        "csdm.reporting.reports.strata-entitlement": [
-          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/strata-entitlement/shapes.shacl"
-        ],
         "icsm.profiles.wa.wa-core": [
           "https://surroundaustralia.github.io/3d-csdm-profile-wa/profiles/wa-pointnames-shacl.ttl"
         ],
@@ -540,27 +528,27 @@
           "https://surroundaustralia.github.io/3d-csdm-profile-wa/_sources/datatypes/miscellaneousTenure/rules.shacl"
         ],
         "icsm.profiles.common": [
-          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-survey-metadata-shacl.ttl",
-          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-point-codetypes-shacl.ttl",
-          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-parcel-codetypes-shacl.ttl",
           "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-references-shacl.ttl",
-          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-observation-properties.shacl"
+          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-survey-metadata-shacl.ttl",
+          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-parcel-codetypes-shacl.ttl",
+          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-observation-properties.shacl",
+          "https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-point-codetypes-shacl.ttl"
         ],
         "icsm.csdm.features.CSD": [
-          "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/CSD/tests/obs-match-vectors.shacl",
           "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/parcel_module.shapes.ttl",
-          "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/container.shapes.ttl"
+          "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/container.shapes.ttl",
+          "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/CSD/tests/obs-match-vectors.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
         ],
         "ogc.geo.topo.features.topo-feature": [
-          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
-          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl"
+          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
         ],
         "ogc.geo.topo.features.topo-feature-collection": [
-          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
-          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl"
+          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
         ],
         "ogc.geo.features.feature": [
           "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
@@ -569,8 +557,8 @@
           "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
         ],
         "ogc.geo.topo.features.topo-arc": [
-          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
-          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl"
+          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+          "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
         ],
         "icsm.csdm.features.SurveyObservations": [
           "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl"
@@ -580,6 +568,18 @@
         ],
         "ogc.sosa.properties.observation": [
           "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+        ],
+        "csdm.reporting.reports.strata-entitlement": [
+          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/strata-entitlement/shapes.shacl"
+        ],
+        "csdm.reporting.cadastral-report": [
+          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report/shapes.shacl"
+        ],
+        "csdm.reporting.cadastral-report-ontology": [
+          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl"
+        ],
+        "csdm.reporting.reports.scheme-composition": [
+          "https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/shapes.shacl"
         ]
       },
       "license": {
