@@ -39,7 +39,7 @@ Stage 0 can start.
 Platform facts checked in [`ghcr.io/opengeospatial/bblocks-postprocess:latest`](https://github.com/opengeospatial/bblocks-postprocess) (Python 3.10):
 
 - Transforms run only on the **declaring block's own examples**.
-- `outputs.profiles` validates outputs with JSON Schema, [JSON-LD](https://www.w3.org/TR/json-ld11/) and [SHACL](https://www.w3.org/TR/shacl/).
+- `outputs.profiles` validates outputs with [[JSON Schema](https://github.com/json-schema-org/json-schema-spec), [JSON-LD](https://www.w3.org/TR/json-ld11/) and [SHACL](https://www.w3.org/TR/shacl/).
 - Snippets can override their validation schema with `schema-ref`.
 - `get_transformer()` reaches local and imported blocks, and passes `extra_metadata` through.
 
@@ -331,10 +331,10 @@ Platform constraints that shape this design:
   Pass anything else explicitly.
   Use `_nested_transform` to keep a sub-transform's output quiet.
 - **Output profiles do the model validation.**
-  `outputs.profiles: [bblocks://…reports.strata-entitlement]` validates each output (JSON Schema + JSON-LD + SHACL) into `build/tests/…/transforms/`.
+  `outputs.profiles: [bblocks://…reports.strata-entitlement]` validates each output ([JSON Schema](https://github.com/json-schema-org/json-schema-spec) + [JSON-LD](https://www.w3.org/TR/json-ld11/) + [SHACL](https://www.w3.org/TR/shacl/)) into `build/tests/…/transforms/`.
 - **Python 3.10** in the current image.
   Avoid 3.11+ syntax.
-- **Minor caveat:** the `get_transformer` registry lists `jsonld-frame` while the declared type is `json-ld-frame`, so JSON-LD frame transforms may not be callable as composition targets.
+- **Minor caveat:** the `get_transformer` registry lists `jsonld-frame` while the declared type is `json-ld-frame`, so [JSON-LD](https://www.w3.org/TR/json-ld11/) frame transforms may not be callable as composition targets.
   Not needed here.
 
 PDF stays downstream and out of the build: HTML → PDF (for example WeasyPrint or a headless browser) is a later, separate transform or an external step.
@@ -350,9 +350,9 @@ Updated 2026-10-02 to the checks implemented through Stage 5.
 
 | Layer | What is validated | Mechanism | Where | On failure |
 | --- | --- | --- | --- | --- |
-| Source-data conformance | The CSDM against its profile ([`icsm.profiles.wa.wa-3d`](https://surroundaustralia.github.io/3d-csdm-profile-wa/bblock/icsm.profiles.wa.wa-3d); `wa-built-strata` once published) | `scripts/check_source_conformance.sh`: the WA profile's JSON Schema (every error listed), JSON-LD uplift and SHACL shapes; plus the adapter's `entitlement-source-datatype` check in the report | Findings in `adapters/wa-csdm/description.md`; one check in the report | Recorded, never blocks |
+| Source-data conformance | The CSDM against its profile ([`icsm.profiles.wa.wa-3d`](https://surroundaustralia.github.io/3d-csdm-profile-wa/bblock/icsm.profiles.wa.wa-3d); `wa-built-strata` once published) | `scripts/check_source_conformance.sh`: the WA profile's [JSON Schema](https://github.com/json-schema-org/json-schema-spec) (every error listed), [JSON-LD](https://www.w3.org/TR/json-ld11/) uplift and [SHACL](https://www.w3.org/TR/shacl/) shapes; plus the adapter's `entitlement-source-datatype` check in the report | Findings in `adapters/wa-csdm/description.md`; one check in the report | Recorded, never blocks |
 | Report-generation requirements | Exactly one strata scheme parcel (a `scheme-id` parameter is planned for multi-scheme CSDs) | Adapter code; `scheme-identified` check | `to-strata-entitlement-facts` | 0 or more than 1 scheme: the transform raises. Everything else continues |
-| Report-model conformance | Both stages against the report schema: `ReportValue` status rules (e.g. `derived` needs `derivation`), derived totals forbidden at `facts` and required at `complete`, `status` and `checks` required at `complete` and `status` forbidden at `facts` | JSON Schema | `outputs.profiles` on every transform; examples; 25 must-fail tests | Build test failure: a bug in a transform or schema |
+| Report-model conformance | Both stages against the report schema: `ReportValue` status rules (e.g. `derived` needs `derivation`), derived totals forbidden at `facts` and required at `complete`, `status` and `checks` required at `complete` and `status` forbidden at `facts` | [JSON Schema](https://github.com/json-schema-org/json-schema-spec) | `outputs.profiles` on every transform; examples; 25 must-fail tests | Build test failure: a bug in a transform or schema |
 | Business / domain validation | Membership, lot numbers, entitlements, totals, documents | `Check` objects from the adapter (source-specific) and `complete` (report-level); the generic `summarise-checks` sets `status` | `to-strata-entitlement-facts`, `complete` | Recorded in the report; `status` becomes `incomplete` or `invalid`; the report is still produced |
 
 ### Report status
@@ -529,10 +529,10 @@ Every stage completes with `./build.sh` (or `--steps transforms,tests` with `--f
      CSV output.
    - Tests: HTML output for SP83687 and missing-entitlement; CSV with 9 rows.
    - Done when: the Stage 1 standard-library renderer is deleted and the report-specific code is template-only.
-7. **Semantics and SHACL** (can run in parallel with 6)
+7. **Semantics and [SHACL](https://www.w3.org/TR/shacl/)** (can run in parallel with 6)
    - Files: `context.jsonld` for both report blocks, `shapes.shacl`; optionally an ontology block, following `bblocks/schema-ontology` (reuse PROV-O and LADM terms; mint only report-specific terms).
-   - Behaviour: reports uplift to RDF; SHACL enforces cross-field rules.
-   - Tests: uplifted examples pass SHACL; one SHACL negative test.
+   - Behaviour: reports uplift to RDF; [SHACL](https://www.w3.org/TR/shacl/) enforces cross-field rules.
+   - Tests: uplifted examples pass [SHACL](https://www.w3.org/TR/shacl/); one [SHACL](https://www.w3.org/TR/shacl/) negative test.
    - Done when: the Turtle output links `entitlementPortion` provenance to the [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology) IRI `https://w3id.org/ogc/ladm/parcels/entitlementPortion`.
 8. **Generalisation check**
    - Files: a design note, or a skeleton second report: "scheme composition", which would produce the `members` and `spatialRepresentationSummary` that the WA scope note says should be "generated via a reporting transform".
@@ -548,7 +548,7 @@ Full detail: `docs/stage-8-generalisation-check.md`.
 
 | Question | Finding |
 | --- | --- |
-| Did the second report need changes to `cadastral-report`? | One: `render-html` now shows list values comma-separated (an empty list as "none") and booleans as yes/no, instead of Python representations. The envelope schema, `ReportValue`, `Check`, `summarise-checks`, the JSON-LD context, the vocabulary, the codelists and the SHACL rules were unchanged. The entitlement HTML is byte-identical |
+| Did the second report need changes to `cadastral-report`? | One: `render-html` now shows list values comma-separated (an empty list as "none") and booleans as yes/no, instead of Python representations. The envelope schema, `ReportValue`, `Check`, `summarise-checks`, the [JSON-LD](https://www.w3.org/TR/json-ld11/) context, the vocabulary, the codelists and the [SHACL](https://www.w3.org/TR/shacl/) rules were unchanged. The entitlement HTML is byte-identical |
 | Did strata or WA assumptions leak into the generic blocks? | No. "Strata" appears there only in "for example" description text |
 | Did the section 3 duplication trigger fire? | Yes. The new report needed the same scheme resolution, membership checks, lot numbers and scheme-number check. They were promoted to a shared `resolve-scheme` transform in the adapter: `to-strata-entitlement-facts` went from 465 to 342 lines, `to-scheme-composition-facts` is 107, and the entitlement outputs are byte-identical |
 | What does the second report say about SP83687? | `incomplete`: 9 members, all [`AggregateSolid`](https://ogcincubator.github.io/topo-feature/bblock/ogc.geo.topo.features.topo-aggregate-solid); Lots 1 and 2 are spatially resolved (4/4 and 5/5 component solids present), Lots 3 to 9 have no solids yet, and no lot has a representation status. An accurate picture of the dataset |
