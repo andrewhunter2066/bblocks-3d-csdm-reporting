@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T22:05:44.323084+00:00
+Generated 2026-10-05T17:37:31.096904+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -33,8 +33,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N0a770413879b41c38eb871a1639ef5de
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N0a770413879b41c38eb871a1639ef5de
+ - Shape cr:ReportStatusFollowsFromChecks: _:N557986f9ac2b4d378819055fdf30c14c
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N557986f9ac2b4d378819055fdf30c14c
 
 
 ** Validation error **
@@ -51,10 +51,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Message: Value <file:///github/workspace/passed> not in list ['earl:inapplicable', 'earl:failed', 'earl:passed', 'earl:untested']
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N4534b3b110d848a5af9ddf6e115fce37
+ - Shape cr:SourceReferenceShape: _:N6b02cb2e312f4153a360bd0a5e4143e5
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N0a770413879b41c38eb871a1639ef5de
- - Shape cr:CheckResultShape: _:Ned11d35a82c1432e94132fc99e2168e8
+ - Shape cr:ReportShape: _:N557986f9ac2b4d378819055fdf30c14c
+ - Shape cr:CheckResultShape: _:Nef06a9d16bc842428d6e054a273092f8
 
 === End SHACL ===
 

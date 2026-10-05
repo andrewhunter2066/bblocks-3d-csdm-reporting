@@ -2,7 +2,7 @@
   "title": "Validation report for csdm.reporting.cadastral-report - Cadastral report",
   "bblockName": "Cadastral report",
   "bblockId": "csdm.reporting.cadastral-report",
-  "generated": "2026-10-02T22:05:44.860471+00:00",
+  "generated": "2026-10-05T17:37:31.734041+00:00",
   "result": true,
   "items": [
     {
@@ -89,17 +89,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N72281d43ccb54ce48e33e267b457eb3e"
+                    "_:N6a605b287ad9415c91003d29e4ead93c"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N72281d43ccb54ce48e33e267b457eb3e"
+                    "_:N6a605b287ad9415c91003d29e4ead93c"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N72281d43ccb54ce48e33e267b457eb3e\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N72281d43ccb54ce48e33e267b457eb3e\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N6a605b287ad9415c91003d29e4ead93c\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N6a605b287ad9415c91003d29e4ead93c\n"
             },
             {
               "op": "shacl-report",
@@ -113,9 +113,9 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Na8122a5ecf8d4b0bb9765f582ffae545",
-                    "_:Nefd8794f0d2a4d769a8c7e3faf6ccfa9",
-                    "_:N947af82e130944e68f1c6d9c5737a3dd"
+                    "_:Nfc5b2afa931d4ae690c96685f4e5c220",
+                    "_:Nc7f7a0f1ec5e4793a3f08446bae8b66e",
+                    "_:N0127bbfc289b4f6194df0a0c871e6f0f"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -123,34 +123,34 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N72281d43ccb54ce48e33e267b457eb3e"
+                    "_:N6a605b287ad9415c91003d29e4ead93c"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N3aba11aa9d8c493d9a2a21dda1d7a6fe",
-                    "_:N2ac83f88fafa410eb8b90784c3965cae",
-                    "_:N1e6bae306a9248f7a2d8049cf0ffee34",
-                    "_:N4665ea6143ea4059bfa39968022c608e",
-                    "_:N90a994d90a74423da8f63ecd3d1876c1",
-                    "_:N3a050e7ef9d84312bcafbbca5050b62e",
-                    "_:N930d1f5cd9c3441a886dd2332220f830",
-                    "_:Nbd5e50d74e2f4e6694d9fc0bb4e3e277",
-                    "_:Ne6a3d7dd55164db988e513a73090aac0",
-                    "_:Nde97c48259444251abdc29fef3ed587f",
-                    "_:Nd78b3f20c01b4772b891a95f94f3f265",
-                    "_:N91ce4a9dc58d41ecafba6a2ae25ce1e2",
-                    "_:N08e2db1b94774ceca0f0b8b1f7827bc3",
-                    "_:Nf531ae0534f54334be0c2dcfd108b900",
-                    "_:Nbb98e1f14c2440b686c85e4e81427026",
-                    "_:Nbcefb45bd48b457cba972c9d0ef9e245",
-                    "_:Nd18219a6ac284adfbc12d72dbe9c8cdf",
-                    "_:N390284a2ef2b4184b6e944cdb28c88a1"
+                    "_:N454c896844b0413b8800c6b6649b4251",
+                    "_:N9bdb81aa05e240a591c95e8cb7d97f41",
+                    "_:N26f17dfce6a440d687d20ec5985da355",
+                    "_:Nab55a9737bba4716ad2105a23bfd24c4",
+                    "_:Nb53fe705ecfa4e32a4cf754b50bf01df",
+                    "_:N98826141835844a88118c93b4b532ae8",
+                    "_:N78b0587cc4144686a8a166fcce383606",
+                    "_:N0051026cd9cf4b0f8419c815a8b0de22",
+                    "_:N6321e327f88c4d6a89f4800250dee89d",
+                    "_:Nae371570267642b4b0241ff107a3fdb2",
+                    "_:Nabdcad0516e14f22bbb1522cdb1e8243",
+                    "_:N672ac39d0043492c96a72084fec2dc8e",
+                    "_:Nef5aaf629ded4ce4a729b7a046c7b6dc",
+                    "_:N7e1ee929f8d04b349cbfc099d39c3e1c",
+                    "_:N1213f0a91fcb411e98e66cba79a213ca",
+                    "_:N177094cf07cc4a4cb7ad61eb2ae43a5a",
+                    "_:Ndd60e4dc3d6e49b7ae24951416f99fe0",
+                    "_:N14d6bd38b5e34f4a9ff635c3d5e849f7"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Na8122a5ecf8d4b0bb9765f582ffae545,_:Nefd8794f0d2a4d769a8c7e3faf6ccfa9,_:N947af82e130944e68f1c6d9c5737a3dd\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N72281d43ccb54ce48e33e267b457eb3e\n - Shape cr:CheckResultShape: _:N3aba11aa9d8c493d9a2a21dda1d7a6fe,_:N2ac83f88fafa410eb8b90784c3965cae,_:N1e6bae306a9248f7a2d8049cf0ffee34,_:N4665ea6143ea4059bfa39968022c608e,_:N90a994d90a74423da8f63ecd3d1876c1,_:N3a050e7ef9d84312bcafbbca5050b62e,_:N930d1f5cd9c3441a886dd2332220f830,_:Nbd5e50d74e2f4e6694d9fc0bb4e3e277,_:Ne6a3d7dd55164db988e513a73090aac0,_:Nde97c48259444251abdc29fef3ed587f,_:Nd78b3f20c01b4772b891a95f94f3f265,_:N91ce4a9dc58d41ecafba6a2ae25ce1e2,_:N08e2db1b94774ceca0f0b8b1f7827bc3,_:Nf531ae0534f54334be0c2dcfd108b900,_:Nbb98e1f14c2440b686c85e4e81427026,_:Nbcefb45bd48b457cba972c9d0ef9e245,_:Nd18219a6ac284adfbc12d72dbe9c8cdf,_:N390284a2ef2b4184b6e944cdb28c88a1\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nfc5b2afa931d4ae690c96685f4e5c220,_:Nc7f7a0f1ec5e4793a3f08446bae8b66e,_:N0127bbfc289b4f6194df0a0c871e6f0f\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N6a605b287ad9415c91003d29e4ead93c\n - Shape cr:CheckResultShape: _:N454c896844b0413b8800c6b6649b4251,_:N9bdb81aa05e240a591c95e8cb7d97f41,_:N26f17dfce6a440d687d20ec5985da355,_:Nab55a9737bba4716ad2105a23bfd24c4,_:Nb53fe705ecfa4e32a4cf754b50bf01df,_:N98826141835844a88118c93b4b532ae8,_:N78b0587cc4144686a8a166fcce383606,_:N0051026cd9cf4b0f8419c815a8b0de22,_:N6321e327f88c4d6a89f4800250dee89d,_:Nae371570267642b4b0241ff107a3fdb2,_:Nabdcad0516e14f22bbb1522cdb1e8243,_:N672ac39d0043492c96a72084fec2dc8e,_:Nef5aaf629ded4ce4a729b7a046c7b6dc,_:N7e1ee929f8d04b349cbfc099d39c3e1c,_:N1213f0a91fcb411e98e66cba79a213ca,_:N177094cf07cc4a4cb7ad61eb2ae43a5a,_:Ndd60e4dc3d6e49b7ae24951416f99fe0,_:N14d6bd38b5e34f4a9ff635c3d5e849f7\n"
             }
           ]
         }
@@ -240,17 +240,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N66f95ed22d3a4a618ce43d72a8efeefa"
+                    "_:Nee710eed47be4e31bf24c3bf054a1ef8"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N66f95ed22d3a4a618ce43d72a8efeefa"
+                    "_:Nee710eed47be4e31bf24c3bf054a1ef8"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N66f95ed22d3a4a618ce43d72a8efeefa\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N66f95ed22d3a4a618ce43d72a8efeefa\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:Nee710eed47be4e31bf24c3bf054a1ef8\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nee710eed47be4e31bf24c3bf054a1ef8\n"
             },
             {
               "op": "shacl-report",
@@ -264,7 +264,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N70c58628e17341d19a9d29d9a792352a"
+                    "_:N62579fc850884ec599f5bad2eefd88b4"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -272,17 +272,17 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N66f95ed22d3a4a618ce43d72a8efeefa"
+                    "_:Nee710eed47be4e31bf24c3bf054a1ef8"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N16f1e3da43b6445f9d6959e743d0783e"
+                    "_:N1a620cc942db4d6b86543921fb82b93a"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N70c58628e17341d19a9d29d9a792352a\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N66f95ed22d3a4a618ce43d72a8efeefa\n - Shape cr:CheckResultShape: _:N16f1e3da43b6445f9d6959e743d0783e\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N62579fc850884ec599f5bad2eefd88b4\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:Nee710eed47be4e31bf24c3bf054a1ef8\n - Shape cr:CheckResultShape: _:N1a620cc942db4d6b86543921fb82b93a\n"
             }
           ]
         }
@@ -375,12 +375,12 @@
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N4efced1b726e4a70b642767162facf99"
+                    "_:N7904edf3866f40c683af8b0443fce349"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N4efced1b726e4a70b642767162facf99\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N7904edf3866f40c683af8b0443fce349\n"
             },
             {
               "op": "shacl-report",
@@ -394,7 +394,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N439efc8863fb426b8325cd0d1326b193"
+                    "_:N2a3b51768d43494cbd68447c7d6b4a98"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -402,17 +402,17 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N4efced1b726e4a70b642767162facf99"
+                    "_:N7904edf3866f40c683af8b0443fce349"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:Nc651ad1940ca4fd3ba6439e02bfb6137"
+                    "_:N9beb60b5b9914ed4bce1d2ed3a5b2a27"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N439efc8863fb426b8325cd0d1326b193\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N4efced1b726e4a70b642767162facf99\n - Shape cr:CheckResultShape: _:Nc651ad1940ca4fd3ba6439e02bfb6137\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N2a3b51768d43494cbd68447c7d6b4a98\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N7904edf3866f40c683af8b0443fce349\n - Shape cr:CheckResultShape: _:N9beb60b5b9914ed4bce1d2ed3a5b2a27\n"
             }
           ]
         }
@@ -493,7 +493,7 @@
             {
               "op": "shacl-report",
               "shaclFile": "_sources/cadastral-report/shapes.shacl",
-              "graph": "@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix schema: <https://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ dcterms:references [ dcterms:conformsTo \"wa-approved-form:2021-47738\" ;\n                            dcterms:format \"application/pdf\" ;\n                            dcterms:identifier \"1 schedule\" ;\n                            dcterms:title \"Schedule of Unit Entitlements - SP83687\" ;\n                            cr:role \"wa-survey-documentation-type:unitEntitlementSchedule\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/supportingDocuments/3\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    dcterms:source [ rdfs:label \"wa-approved-form\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-approved-form\" ;\n                            cr:kind \"vocabulary\" ],\n                        [ rdfs:label \"SP83687\" ;\n                            dcterms:conformsTo \"icsm.profiles.wa.wa-3d\" ;\n                            dcterms:date \"2023-02-06\" ;\n                            dcterms:identifier \"SP-83687-1-1-0.00\" ;\n                            cr:kind \"dataset\" ],\n                        [ rdfs:label \"WA Localities\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-locality\" ;\n                            cr:kind \"vocabulary\" ] ;\n                    dcterms:subject [ rdfs:label \"Lots 1 to 9 on Plan SP 83687\" ;\n                            cr:kind \"strata-scheme\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/parcels/0/features/1\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ;\n                                    cr:sourceObject \"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\" ] ] ;\n                    prov:wasGeneratedBy ( [ cr:buildingBlock \"csdm.reporting.adapters.wa-csdm\" ;\n                                cr:transform \"to-strata-entitlement-facts\" ] [ cr:buildingBlock \"csdm.reporting.reports.strata-entitlement\" ;\n                                cr:transform \"complete\" ] [ cr:buildingBlock \"csdm.reporting.cadastral-report\" ;\n                                cr:transform \"summarise-checks\" ] ) ;\n                    cr:annotation [ dcterms:description \"Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.\" ;\n                            dcterms:identifier \"licensed-valuer-certification\" ;\n                            cr:documentRef \"unit-entitlement-schedule\" ;\n                            cr:linkRelation \"via\" ;\n                            cr:role \"wa-annotation-role:licensed-valuer-certification\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/annotations/2\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    cr:check [ dcterms:description \"No strata lot claims the scheme without being one of its references\" ;\n                            dcterms:identifier \"membership-unreferenced-claimants\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"The source declares a total of 1000\" ;\n                            dcterms:identifier \"declared-total-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/declared\" ],\n                        [ dcterms:description \"The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)\" ;\n                            dcterms:identifier \"scheme-number-consistent\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"appellationSurveyNumber\\\":\\\"SP 83687\\\",\\\"csdName\\\":\\\"SP83687\\\",\\\"schemeNumber\\\":\\\"SP83687\\\"}\"^^rdf:JSON ;\n                            cr:target \"/content/scheme/schemeNumber\" ],\n                        [ dcterms:description \"The certification links to the schedule document\" ;\n                            dcterms:identifier \"certification-linked-to-schedule\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)\" ;\n                            dcterms:identifier \"scheme-identified\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"schemeId\\\":\\\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)\" ;\n                            dcterms:identifier \"entitlement-source-datatype\" ;\n                            earl:outcome earl:failed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:target \"/content/lots/0/entitlement\",\n                                \"/content/lots/1/entitlement\",\n                                \"/content/lots/2/entitlement\",\n                                \"/content/lots/3/entitlement\",\n                                \"/content/lots/4/entitlement\",\n                                \"/content/lots/5/entitlement\",\n                                \"/content/lots/6/entitlement\",\n                                \"/content/lots/7/entitlement\",\n                                \"/content/lots/8/entitlement\" ],\n                        [ dcterms:description \"Lot numbers are unique\" ;\n                            dcterms:identifier \"lot-numbers-unique\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687\" ;\n                            dcterms:identifier \"schedule-document-referenced\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/schedule\" ],\n                        [ dcterms:description \"All 9 references resolve to strata-lot parcels\" ;\n                            dcterms:identifier \"membership-references-resolve\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17\" ;\n                            dcterms:identifier \"valuer-certification-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"Every lot has a lot number\" ;\n                            dcterms:identifier \"lot-numbers-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Every supplied unit entitlement is a single positive whole number\" ;\n                            dcterms:identifier \"entitlements-valid\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Every member lot links back to the scheme\" ;\n                            dcterms:identifier \"membership-back-links\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"The scheme topology is ParcelAggregate with 9 member reference(s)\" ;\n                            dcterms:identifier \"membership-parcel-aggregate\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"references\\\":9,\\\"topologyType\\\":\\\"ParcelAggregate\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)\" ;\n                            dcterms:identifier \"document-hrefs-resolvable\" ;\n                            earl:outcome earl:untested ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"hrefs\\\":[\\\"documents/SP83687-unit-entitlement-schedule.pdf\\\"]}\"^^rdf:JSON ],\n                        [ dcterms:description \"The calculated total includes all 9 lots\" ;\n                            dcterms:identifier \"total-covers-all-lots\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/calculated\" ],\n                        [ dcterms:description \"All 9 lots have a unit entitlement\" ;\n                            dcterms:identifier \"entitlements-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Calculated total 1000 equals the declared total 1000\" ;\n                            dcterms:identifier \"total-matches-declared\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"calculated\\\":1000,\\\"declared\\\":1000}\"^^rdf:JSON ;\n                            cr:target \"/content/totals/calculated\",\n                                \"/content/totals/declared\" ] ;\n                    cr:content [ ] ;\n                    cr:reportStatus rstatus:complete ;\n                    cr:reportType \"csdm.reporting.reports.strata-entitlement\" ;\n                    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ;\n                    cr:statusSummary [ cr:checkCount 18 ;\n                            cr:failedErrors 0 ;\n                            cr:failedWarnings 0 ;\n                            cr:unevaluatedErrors 0 ] ] ;\n            sh:resultMessage \"documentRef unit-entitlement-schedule does not name a document of the report\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"documentRef {?value} does not name a document of the report\" ;\n                    sh:prefixes cr:Prefixes ;\n                    sh:select \"\"\"\n            SELECT $this ?value WHERE {\n                $this (cr:content|cr:annotation)/(<urn:x-any>|!<urn:x-any>)* ?node .\n                ?node cr:documentRef ?value .\n                FILTER NOT EXISTS { $this dcterms:references/dcterms:identifier ?value }\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape cr:DocumentAndAnnotationReferencesResolve ;\n            sh:value \"unit-entitlement-schedule\" ] .\n\n",
+              "graph": "@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix schema: <https://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ dcterms:references [ dcterms:conformsTo \"wa-approved-form:2021-47738\" ;\n                            dcterms:format \"application/pdf\" ;\n                            dcterms:identifier \"1 schedule\" ;\n                            dcterms:title \"Schedule of Unit Entitlements - SP83687\" ;\n                            cr:role \"wa-survey-documentation-type:unitEntitlementSchedule\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/supportingDocuments/3\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    dcterms:source [ rdfs:label \"WA Localities\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-locality\" ;\n                            cr:kind \"vocabulary\" ],\n                        [ rdfs:label \"SP83687\" ;\n                            dcterms:conformsTo \"icsm.profiles.wa.wa-3d\" ;\n                            dcterms:date \"2023-02-06\" ;\n                            dcterms:identifier \"SP-83687-1-1-0.00\" ;\n                            cr:kind \"dataset\" ],\n                        [ rdfs:label \"wa-approved-form\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-approved-form\" ;\n                            cr:kind \"vocabulary\" ] ;\n                    dcterms:subject [ rdfs:label \"Lots 1 to 9 on Plan SP 83687\" ;\n                            cr:kind \"strata-scheme\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/parcels/0/features/1\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ;\n                                    cr:sourceObject \"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\" ] ] ;\n                    prov:wasGeneratedBy ( [ cr:buildingBlock \"csdm.reporting.adapters.wa-csdm\" ;\n                                cr:transform \"to-strata-entitlement-facts\" ] [ cr:buildingBlock \"csdm.reporting.reports.strata-entitlement\" ;\n                                cr:transform \"complete\" ] [ cr:buildingBlock \"csdm.reporting.cadastral-report\" ;\n                                cr:transform \"summarise-checks\" ] ) ;\n                    cr:annotation [ dcterms:description \"Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.\" ;\n                            dcterms:identifier \"licensed-valuer-certification\" ;\n                            cr:documentRef \"unit-entitlement-schedule\" ;\n                            cr:linkRelation \"via\" ;\n                            cr:role \"wa-annotation-role:licensed-valuer-certification\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/annotations/2\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    cr:check [ dcterms:description \"Lot numbers are unique\" ;\n                            dcterms:identifier \"lot-numbers-unique\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"The certification links to the schedule document\" ;\n                            dcterms:identifier \"certification-linked-to-schedule\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)\" ;\n                            dcterms:identifier \"scheme-number-consistent\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"appellationSurveyNumber\\\":\\\"SP 83687\\\",\\\"csdName\\\":\\\"SP83687\\\",\\\"schemeNumber\\\":\\\"SP83687\\\"}\"^^rdf:JSON ;\n                            cr:target \"/content/scheme/schemeNumber\" ],\n                        [ dcterms:description \"The calculated total includes all 9 lots\" ;\n                            dcterms:identifier \"total-covers-all-lots\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/calculated\" ],\n                        [ dcterms:description \"All 9 references resolve to strata-lot parcels\" ;\n                            dcterms:identifier \"membership-references-resolve\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)\" ;\n                            dcterms:identifier \"entitlement-source-datatype\" ;\n                            earl:outcome earl:failed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:target \"/content/lots/0/entitlement\",\n                                \"/content/lots/1/entitlement\",\n                                \"/content/lots/2/entitlement\",\n                                \"/content/lots/3/entitlement\",\n                                \"/content/lots/4/entitlement\",\n                                \"/content/lots/5/entitlement\",\n                                \"/content/lots/6/entitlement\",\n                                \"/content/lots/7/entitlement\",\n                                \"/content/lots/8/entitlement\" ],\n                        [ dcterms:description \"One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)\" ;\n                            dcterms:identifier \"scheme-identified\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"schemeId\\\":\\\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17\" ;\n                            dcterms:identifier \"valuer-certification-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)\" ;\n                            dcterms:identifier \"document-hrefs-resolvable\" ;\n                            earl:outcome earl:untested ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"hrefs\\\":[\\\"documents/SP83687-unit-entitlement-schedule.pdf\\\"]}\"^^rdf:JSON ],\n                        [ dcterms:description \"The scheme topology is ParcelAggregate with 9 member reference(s)\" ;\n                            dcterms:identifier \"membership-parcel-aggregate\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"references\\\":9,\\\"topologyType\\\":\\\"ParcelAggregate\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"Calculated total 1000 equals the declared total 1000\" ;\n                            dcterms:identifier \"total-matches-declared\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"calculated\\\":1000,\\\"declared\\\":1000}\"^^rdf:JSON ;\n                            cr:target \"/content/totals/calculated\",\n                                \"/content/totals/declared\" ],\n                        [ dcterms:description \"The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687\" ;\n                            dcterms:identifier \"schedule-document-referenced\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/schedule\" ],\n                        [ dcterms:description \"Every member lot links back to the scheme\" ;\n                            dcterms:identifier \"membership-back-links\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"The source declares a total of 1000\" ;\n                            dcterms:identifier \"declared-total-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/declared\" ],\n                        [ dcterms:description \"Every lot has a lot number\" ;\n                            dcterms:identifier \"lot-numbers-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"All 9 lots have a unit entitlement\" ;\n                            dcterms:identifier \"entitlements-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"No strata lot claims the scheme without being one of its references\" ;\n                            dcterms:identifier \"membership-unreferenced-claimants\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"Every supplied unit entitlement is a single positive whole number\" ;\n                            dcterms:identifier \"entitlements-valid\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ] ;\n                    cr:content [ ] ;\n                    cr:reportStatus rstatus:complete ;\n                    cr:reportType \"csdm.reporting.reports.strata-entitlement\" ;\n                    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ;\n                    cr:statusSummary [ cr:checkCount 18 ;\n                            cr:failedErrors 0 ;\n                            cr:failedWarnings 0 ;\n                            cr:unevaluatedErrors 0 ] ] ;\n            sh:resultMessage \"documentRef unit-entitlement-schedule does not name a document of the report\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"documentRef {?value} does not name a document of the report\" ;\n                    sh:prefixes cr:Prefixes ;\n                    sh:select \"\"\"\n            SELECT $this ?value WHERE {\n                $this (cr:content|cr:annotation)/(<urn:x-any>|!<urn:x-any>)* ?node .\n                ?node cr:documentRef ?value .\n                FILTER NOT EXISTS { $this dcterms:references/dcterms:identifier ?value }\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape cr:DocumentAndAnnotationReferencesResolve ;\n            sh:value \"unit-entitlement-schedule\" ] .\n\n",
               "isError": true,
               "message": "Validation result for _sources/cadastral-report/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: cr:DocumentAndAnnotationReferencesResolve\n  \tFocus Node: [ cr:annotation [ cr:documentRef Literal(\"unit-entitlement-schedule\") ; cr:linkRelation Literal(\"via\") ; cr:role Literal(\"wa-annotation-role:licensed-valuer-certification\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/annotations/2\") ; cr:sourceDataset Literal(\"SP-83687-1-1-0.00\") ] ; dcterms:description Literal(\"Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.\") ; dcterms:identifier Literal(\"licensed-valuer-certification\") ; schema:url Literal(\"documents/SP83687-unit-entitlement-schedule.pdf\") ] ; cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:evidence Literal(\"{\"appellationSurveyNumber\":\"SP 83687\",\"csdName\":\"SP83687\",\"schemeNumber\":\"SP83687\"}\" = None, datatype=rdf:JSON) ; cr:target Literal(\"/content/scheme/schemeNumber\") ; dcterms:description Literal(\"The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)\") ; dcterms:identifier Literal(\"scheme-number-consistent\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:evidence Literal(\"{\"references\":9,\"topologyType\":\"ParcelAggregate\"}\" = None, datatype=rdf:JSON) ; dcterms:description Literal(\"The scheme topology is ParcelAggregate with 9 member reference(s)\") ; dcterms:identifier Literal(\"membership-parcel-aggregate\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; dcterms:description Literal(\"All 9 references resolve to strata-lot parcels\") ; dcterms:identifier Literal(\"membership-references-resolve\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; dcterms:description Literal(\"Every member lot links back to the scheme\") ; dcterms:identifier Literal(\"membership-back-links\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; dcterms:description Literal(\"No strata lot claims the scheme without being one of its references\") ; dcterms:identifier Literal(\"membership-unreferenced-claimants\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:evidence Literal(\"{\"calculated\":1000,\"declared\":1000}\" = None, datatype=rdf:JSON) ; cr:target Literal(\"/content/totals/calculated\"), Literal(\"/content/totals/declared\") ; dcterms:description Literal(\"Calculated total 1000 equals the declared total 1000\") ; dcterms:identifier Literal(\"total-matches-declared\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/basis/certification\") ; dcterms:description Literal(\"Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17\") ; dcterms:identifier Literal(\"valuer-certification-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/basis/certification\") ; dcterms:description Literal(\"The certification links to the schedule document\") ; dcterms:identifier Literal(\"certification-linked-to-schedule\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Info ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/basis/schedule\") ; dcterms:description Literal(\"The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687\") ; dcterms:identifier Literal(\"schedule-document-referenced\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/totals/calculated\") ; dcterms:description Literal(\"The calculated total includes all 9 lots\") ; dcterms:identifier Literal(\"total-covers-all-lots\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/totals/declared\") ; dcterms:description Literal(\"The source declares a total of 1000\") ; dcterms:identifier Literal(\"declared-total-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"All 9 lots have a unit entitlement\") ; dcterms:identifier Literal(\"entitlements-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"Every lot has a lot number\") ; dcterms:identifier Literal(\"lot-numbers-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"Every supplied unit entitlement is a single positive whole number\") ; dcterms:identifier Literal(\"entitlements-valid\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"Lot numbers are unique\") ; dcterms:identifier Literal(\"lot-numbers-unique\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:evidence Literal(\"{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}\" = None, datatype=rdf:JSON) ; dcterms:description Literal(\"One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)\") ; dcterms:identifier Literal(\"scheme-identified\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:evidence Literal(\"{\"hrefs\":[\"documents/SP83687-unit-entitlement-schedule.pdf\"]}\" = None, datatype=rdf:JSON) ; dcterms:description Literal(\"Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)\") ; dcterms:identifier Literal(\"document-hrefs-resolvable\") ; earl:outcome earl:untested ; sh:resultSeverity sh:Info ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:target Literal(\"/content/lots/0/entitlement\"), Literal(\"/content/lots/1/entitlement\"), Literal(\"/content/lots/2/entitlement\"), Literal(\"/content/lots/3/entitlement\"), Literal(\"/content/lots/4/entitlement\"), Literal(\"/content/lots/5/entitlement\"), Literal(\"/content/lots/6/entitlement\"), Literal(\"/content/lots/7/entitlement\"), Literal(\"/content/lots/8/entitlement\") ; dcterms:description Literal(\"9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)\") ; dcterms:identifier Literal(\"entitlement-source-datatype\") ; earl:outcome earl:failed ; sh:resultSeverity sh:Info ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete> ; cr:reportType Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; cr:statusSummary [ cr:checkCount Literal(\"18\", datatype=xsd:integer) ; cr:failedErrors Literal(\"0\", datatype=xsd:integer) ; cr:failedWarnings Literal(\"0\", datatype=xsd:integer) ; cr:unevaluatedErrors Literal(\"0\", datatype=xsd:integer) ] ; dcterms:references [ cr:role Literal(\"wa-survey-documentation-type:unitEntitlementSchedule\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/supportingDocuments/3\") ; cr:sourceDataset Literal(\"SP-83687-1-1-0.00\") ] ; dcterms:conformsTo Literal(\"wa-approved-form:2021-47738\") ; dcterms:format Literal(\"application/pdf\") ; dcterms:identifier Literal(\"1 schedule\") ; dcterms:title Literal(\"Schedule of Unit Entitlements - SP83687\") ; schema:url Literal(\"documents/SP83687-unit-entitlement-schedule.pdf\") ] ; dcterms:source [ cr:kind Literal(\"dataset\") ; dcterms:conformsTo Literal(\"icsm.profiles.wa.wa-3d\") ; dcterms:date Literal(\"2023-02-06\") ; dcterms:identifier Literal(\"SP-83687-1-1-0.00\") ; rdfs:label Literal(\"SP83687\") ], [ cr:kind Literal(\"vocabulary\") ; dcterms:identifier Literal(\"https://linked.data.gov.au/def/csdm/wa-approved-form\") ; rdfs:label Literal(\"wa-approved-form\") ], [ cr:kind Literal(\"vocabulary\") ; dcterms:identifier Literal(\"https://linked.data.gov.au/def/csdm/wa-locality\") ; rdfs:label Literal(\"WA Localities\") ] ; dcterms:subject [ cr:kind Literal(\"strata-scheme\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/parcels/0/features/1\") ; cr:sourceDataset Literal(\"SP-83687-1-1-0.00\") ; cr:sourceObject Literal(\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\") ] ; rdfs:label Literal(\"Lots 1 to 9 on Plan SP 83687\") ] ; prov:wasGeneratedBy ( [ cr:buildingBlock Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:transform Literal(\"to-strata-entitlement-facts\") ] [ cr:buildingBlock Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:transform Literal(\"complete\") ] [ cr:buildingBlock Literal(\"csdm.reporting.cadastral-report\") ; cr:transform Literal(\"summarise-checks\") ] ) ]\n  \tValue Node: Literal(\"unit-entitlement-schedule\")\n  \tSource Constraint: [ rdf:type sh:SPARQLConstraint ; sh:message Literal(\"documentRef {?value} does not name a document of the report\") ; sh:prefixes cr:Prefixes ; sh:select Literal(\"\n              SELECT $this ?value WHERE {\n                  $this (cr:content|cr:annotation)/(<urn:x-any>|!<urn:x-any>)* ?node .\n                  ?node cr:documentRef ?value .\n                  FILTER NOT EXISTS { $this dcterms:references/dcterms:identifier ?value }\n              }\n          \") ]\n  \tMessage: documentRef unit-entitlement-schedule does not name a document of the report\n  "
             },
@@ -502,17 +502,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N197df83e44b846c4bd5377b390265046"
+                    "_:N3c5ab02ade6d4b9da51774868cdd51c1"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N197df83e44b846c4bd5377b390265046"
+                    "_:N3c5ab02ade6d4b9da51774868cdd51c1"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N197df83e44b846c4bd5377b390265046\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N197df83e44b846c4bd5377b390265046\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N3c5ab02ade6d4b9da51774868cdd51c1\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N3c5ab02ade6d4b9da51774868cdd51c1\n"
             },
             {
               "op": "shacl-report",
@@ -526,9 +526,9 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Nfaf7a792c4b94889be9a761171a57c39",
-                    "_:N14cc726fbbc64bd88aff9ae8d403b2f0",
-                    "_:N736a695745504f3e858938aed2af444f"
+                    "_:N09b0df85271d43489858937ec98ed6f4",
+                    "_:N2438d22232524a34bf7318a4c07ba0e0",
+                    "_:N8eee2bfec00d43938a6025db6ebc4111"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -536,34 +536,34 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N197df83e44b846c4bd5377b390265046"
+                    "_:N3c5ab02ade6d4b9da51774868cdd51c1"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:Ndbb3791a31b943c2a511b4c6ad2acceb",
-                    "_:Na80389d4b7e64b20a1bd7cee6e8b31b4",
-                    "_:Nb70c25e0931a4ad6a9b4985b68c15692",
-                    "_:N8a0462d75e42495cbaafa98e4a114dfe",
-                    "_:N4654961999f94dde91bb017ac72aee3b",
-                    "_:N59e4455a59204326ae3619dd3132ed6f",
-                    "_:Na6c58dfd43784b339820cedecb82fcfb",
-                    "_:N6958fb24c0d24686aa863939830a992c",
-                    "_:N1d7e00911dab49e88062c9082ca50595",
-                    "_:Nff296edd45b54c17bf0be01704cd13f1",
-                    "_:Ncfcaf67cec3e44ddacf2864ea42f984a",
-                    "_:Nb46cfec28a524e1aa98c4a0519317f44",
-                    "_:Ne9557e3a51b6498dabfab71db3ad0cf0",
-                    "_:Nd2dacf92f02b4a668ae8036bd4a14f8b",
-                    "_:Nef4d01ee7d9d40be913213a22e8d7c65",
-                    "_:Nb2e320783d3b489f92570d32e663ef8e",
-                    "_:N98f3463cc19f43f5b8d763cac628e438",
-                    "_:N99183921916646a1b2195ea6aa307da8"
+                    "_:N5ff1d124f4c644b6a792f78b38191437",
+                    "_:N3c09daa005594e1a9f17928076cbf768",
+                    "_:N92e9e01076a9469abade17aa66ce873c",
+                    "_:N0a997ea4491e458199db125fdd3003da",
+                    "_:Nb252d29964474148b9acc616b6622cb3",
+                    "_:Nc4b6283e83964488b7554ed34f3e7f33",
+                    "_:N90eb6a74d5084bc18cc3d984f21ebbbf",
+                    "_:N2279b9aab1a64d8ba3473d1b7601d4fb",
+                    "_:N2fd9e8e468634faca3b063e2e17213b0",
+                    "_:Na530c7b268a64b148b5a33e12f41df8a",
+                    "_:N4bdd41cf8efa4cf79b11255a0c5b47ef",
+                    "_:N211eab309f13434187a6d59cd4a7e07f",
+                    "_:N4ecadff1b74347308fd01b5f5aff3515",
+                    "_:N8331eecfafce46b1badf864169aec0ac",
+                    "_:Nd5841e56e78f4047bcfd0e9a1571b3f7",
+                    "_:Nbbba9c0e6de24b5ba41b6a56fb789515",
+                    "_:N9113152eb6bd481ea82177e460124e2e",
+                    "_:N256497bc0e3149c6979a75ed055f9571"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nfaf7a792c4b94889be9a761171a57c39,_:N14cc726fbbc64bd88aff9ae8d403b2f0,_:N736a695745504f3e858938aed2af444f\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N197df83e44b846c4bd5377b390265046\n - Shape cr:CheckResultShape: _:Ndbb3791a31b943c2a511b4c6ad2acceb,_:Na80389d4b7e64b20a1bd7cee6e8b31b4,_:Nb70c25e0931a4ad6a9b4985b68c15692,_:N8a0462d75e42495cbaafa98e4a114dfe,_:N4654961999f94dde91bb017ac72aee3b,_:N59e4455a59204326ae3619dd3132ed6f,_:Na6c58dfd43784b339820cedecb82fcfb,_:N6958fb24c0d24686aa863939830a992c,_:N1d7e00911dab49e88062c9082ca50595,_:Nff296edd45b54c17bf0be01704cd13f1,_:Ncfcaf67cec3e44ddacf2864ea42f984a,_:Nb46cfec28a524e1aa98c4a0519317f44,_:Ne9557e3a51b6498dabfab71db3ad0cf0,_:Nd2dacf92f02b4a668ae8036bd4a14f8b,_:Nef4d01ee7d9d40be913213a22e8d7c65,_:Nb2e320783d3b489f92570d32e663ef8e,_:N98f3463cc19f43f5b8d763cac628e438,_:N99183921916646a1b2195ea6aa307da8\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N09b0df85271d43489858937ec98ed6f4,_:N2438d22232524a34bf7318a4c07ba0e0,_:N8eee2bfec00d43938a6025db6ebc4111\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N3c5ab02ade6d4b9da51774868cdd51c1\n - Shape cr:CheckResultShape: _:N5ff1d124f4c644b6a792f78b38191437,_:N3c09daa005594e1a9f17928076cbf768,_:N92e9e01076a9469abade17aa66ce873c,_:N0a997ea4491e458199db125fdd3003da,_:Nb252d29964474148b9acc616b6622cb3,_:Nc4b6283e83964488b7554ed34f3e7f33,_:N90eb6a74d5084bc18cc3d984f21ebbbf,_:N2279b9aab1a64d8ba3473d1b7601d4fb,_:N2fd9e8e468634faca3b063e2e17213b0,_:Na530c7b268a64b148b5a33e12f41df8a,_:N4bdd41cf8efa4cf79b11255a0c5b47ef,_:N211eab309f13434187a6d59cd4a7e07f,_:N4ecadff1b74347308fd01b5f5aff3515,_:N8331eecfafce46b1badf864169aec0ac,_:Nd5841e56e78f4047bcfd0e9a1571b3f7,_:Nbbba9c0e6de24b5ba41b6a56fb789515,_:N9113152eb6bd481ea82177e460124e2e,_:N256497bc0e3149c6979a75ed055f9571\n"
             }
           ]
         }
@@ -653,17 +653,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:Ne9e6bc8bea914869a10fb0c804a35dec"
+                    "_:Nfeb7f81c236d41f98e7042aec47cb51b"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:Ne9e6bc8bea914869a10fb0c804a35dec"
+                    "_:Nfeb7f81c236d41f98e7042aec47cb51b"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:Ne9e6bc8bea914869a10fb0c804a35dec\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Ne9e6bc8bea914869a10fb0c804a35dec\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:Nfeb7f81c236d41f98e7042aec47cb51b\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nfeb7f81c236d41f98e7042aec47cb51b\n"
             },
             {
               "op": "shacl-report",
@@ -677,9 +677,9 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N5b52c3a7cc704d3bab05714a758f0686",
-                    "_:N41e7fc3cea894d058032547253e9f0af",
-                    "_:Nef46cef4d170474cba87dccf768d9f77"
+                    "_:Nd15347297f7347b1aa36c8a234c5e0cb",
+                    "_:N4766bf2d3fee456fa47e0a3db7fb9d28",
+                    "_:N028ec7d985b14d29865e7d7754c6fe0b"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -687,34 +687,34 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:Ne9e6bc8bea914869a10fb0c804a35dec"
+                    "_:Nfeb7f81c236d41f98e7042aec47cb51b"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:Nfa91d13f82a44dcd9824916f9c07b48d",
-                    "_:N8cc644798ed1496e8459cf43974f33f8",
-                    "_:Ne0224b9005304a89beef786bf37018c2",
-                    "_:N8a731c1e02d74a7383f79ae184c1a4ba",
-                    "_:N83f63da91c934124a8137dcdf1b3178f",
-                    "_:Nea07a5f89d174503bf94c80f5455c704",
-                    "_:N9f17118571c34a699caabac12236e219",
-                    "_:N5b863e6ccfef4b0b9f2ac523a397b33d",
-                    "_:N64b03c4e35f94f8187d83d7f0e7863c9",
-                    "_:N5c6fefdf51d645cfb1a6579aefd1f2e4",
-                    "_:Nbfd7a42d24cb4c24901abbe2dfec0c70",
-                    "_:N996760a27092439d865ba727834219e0",
-                    "_:N884f90dcc31840f4a53a5aa2fcb2c205",
-                    "_:N0ccea89c38d94466a25393b1d2524816",
-                    "_:N216ceec7368441a0a59bcc08ba8a985c",
-                    "_:N31f4fb59383a465dbcd9af557fb337b7",
-                    "_:Ndc84089b829c478e8bd2d4dc6dbce6c9",
-                    "_:N84d7c87368ca43d5a32a89b0cb366e25"
+                    "_:N49494d12fc184108a0b8b57628adde6e",
+                    "_:Nd7cf80bd9572405ebcb01ef27ccd4a28",
+                    "_:N4e0d6579539048ac97c44743baa9f8d5",
+                    "_:N67aea5d640114a16a3297df8210374fd",
+                    "_:N5c3b41dcd9ec48c899932043121466a0",
+                    "_:N74fafffd6daf432abdf0b94be5455466",
+                    "_:N742b870f0a464f6487ea7ab51eccf681",
+                    "_:Nf9b30bbc8bd64e9b8c79465aee0b2ac2",
+                    "_:N4731c14ec7ea4c3ba52110a2f7630d91",
+                    "_:Nd9db173da94a444b932c60a98e63ea84",
+                    "_:N2116641b07d64cddb20f402f319c040f",
+                    "_:N1be75043e72348459e506e76767a2a2e",
+                    "_:N034c1ad2864642359bb153d1220aeca6",
+                    "_:N53eeeefff5ce4ae4a6a04c89326e7b3e",
+                    "_:N452b76d9cc254f73be6dc722e8bcec14",
+                    "_:N12dcfd89e24f4d74bc6d4c06d70fcc99",
+                    "_:N9298f19ee2cf4edb9d717699f868b66b",
+                    "_:N08e255f1c9b34dae8813628c6ad5d4b1"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N5b52c3a7cc704d3bab05714a758f0686,_:N41e7fc3cea894d058032547253e9f0af,_:Nef46cef4d170474cba87dccf768d9f77\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:Ne9e6bc8bea914869a10fb0c804a35dec\n - Shape cr:CheckResultShape: _:Nfa91d13f82a44dcd9824916f9c07b48d,_:N8cc644798ed1496e8459cf43974f33f8,_:Ne0224b9005304a89beef786bf37018c2,_:N8a731c1e02d74a7383f79ae184c1a4ba,_:N83f63da91c934124a8137dcdf1b3178f,_:Nea07a5f89d174503bf94c80f5455c704,_:N9f17118571c34a699caabac12236e219,_:N5b863e6ccfef4b0b9f2ac523a397b33d,_:N64b03c4e35f94f8187d83d7f0e7863c9,_:N5c6fefdf51d645cfb1a6579aefd1f2e4,_:Nbfd7a42d24cb4c24901abbe2dfec0c70,_:N996760a27092439d865ba727834219e0,_:N884f90dcc31840f4a53a5aa2fcb2c205,_:N0ccea89c38d94466a25393b1d2524816,_:N216ceec7368441a0a59bcc08ba8a985c,_:N31f4fb59383a465dbcd9af557fb337b7,_:Ndc84089b829c478e8bd2d4dc6dbce6c9,_:N84d7c87368ca43d5a32a89b0cb366e25\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nd15347297f7347b1aa36c8a234c5e0cb,_:N4766bf2d3fee456fa47e0a3db7fb9d28,_:N028ec7d985b14d29865e7d7754c6fe0b\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:Nfeb7f81c236d41f98e7042aec47cb51b\n - Shape cr:CheckResultShape: _:N49494d12fc184108a0b8b57628adde6e,_:Nd7cf80bd9572405ebcb01ef27ccd4a28,_:N4e0d6579539048ac97c44743baa9f8d5,_:N67aea5d640114a16a3297df8210374fd,_:N5c3b41dcd9ec48c899932043121466a0,_:N74fafffd6daf432abdf0b94be5455466,_:N742b870f0a464f6487ea7ab51eccf681,_:Nf9b30bbc8bd64e9b8c79465aee0b2ac2,_:N4731c14ec7ea4c3ba52110a2f7630d91,_:Nd9db173da94a444b932c60a98e63ea84,_:N2116641b07d64cddb20f402f319c040f,_:N1be75043e72348459e506e76767a2a2e,_:N034c1ad2864642359bb153d1220aeca6,_:N53eeeefff5ce4ae4a6a04c89326e7b3e,_:N452b76d9cc254f73be6dc722e8bcec14,_:N12dcfd89e24f4d74bc6d4c06d70fcc99,_:N9298f19ee2cf4edb9d717699f868b66b,_:N08e255f1c9b34dae8813628c6ad5d4b1\n"
             }
           ]
         }
@@ -804,17 +804,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:Nd7f044d9205741bf94d7ff9af96a8932"
+                    "_:N3b94604e06dc4dd1b3272cea8ac9b6fc"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:Nd7f044d9205741bf94d7ff9af96a8932"
+                    "_:N3b94604e06dc4dd1b3272cea8ac9b6fc"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:Nd7f044d9205741bf94d7ff9af96a8932\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd7f044d9205741bf94d7ff9af96a8932\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N3b94604e06dc4dd1b3272cea8ac9b6fc\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N3b94604e06dc4dd1b3272cea8ac9b6fc\n"
             },
             {
               "op": "shacl-report",
@@ -828,7 +828,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Nc0a4c32859db4e91b18f62eb67ffd86a"
+                    "_:N06ccbc550ae24ee7b266593f5888951f"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -836,17 +836,17 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:Nd7f044d9205741bf94d7ff9af96a8932"
+                    "_:N3b94604e06dc4dd1b3272cea8ac9b6fc"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N6cb45b70bb724d89b6571223d35d3acc"
+                    "_:N3a95ca2db9d042569c4a9a4784354cdf"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nc0a4c32859db4e91b18f62eb67ffd86a\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:Nd7f044d9205741bf94d7ff9af96a8932\n - Shape cr:CheckResultShape: _:N6cb45b70bb724d89b6571223d35d3acc\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N06ccbc550ae24ee7b266593f5888951f\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N3b94604e06dc4dd1b3272cea8ac9b6fc\n - Shape cr:CheckResultShape: _:N3a95ca2db9d042569c4a9a4784354cdf\n"
             }
           ]
         }
@@ -936,17 +936,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N0a770413879b41c38eb871a1639ef5de"
+                    "_:N557986f9ac2b4d378819055fdf30c14c"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N0a770413879b41c38eb871a1639ef5de"
+                    "_:N557986f9ac2b4d378819055fdf30c14c"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N0a770413879b41c38eb871a1639ef5de\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N0a770413879b41c38eb871a1639ef5de\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N557986f9ac2b4d378819055fdf30c14c\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N557986f9ac2b4d378819055fdf30c14c\n"
             },
             {
               "op": "shacl-report",
@@ -960,7 +960,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N4534b3b110d848a5af9ddf6e115fce37"
+                    "_:N6b02cb2e312f4153a360bd0a5e4143e5"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -968,17 +968,17 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N0a770413879b41c38eb871a1639ef5de"
+                    "_:N557986f9ac2b4d378819055fdf30c14c"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:Ned11d35a82c1432e94132fc99e2168e8"
+                    "_:Nef06a9d16bc842428d6e054a273092f8"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N4534b3b110d848a5af9ddf6e115fce37\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N0a770413879b41c38eb871a1639ef5de\n - Shape cr:CheckResultShape: _:Ned11d35a82c1432e94132fc99e2168e8\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N6b02cb2e312f4153a360bd0a5e4143e5\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N557986f9ac2b4d378819055fdf30c14c\n - Shape cr:CheckResultShape: _:Nef06a9d16bc842428d6e054a273092f8\n"
             }
           ]
         }
@@ -1068,17 +1068,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N1302f3597ad94e87be906172c7796377"
+                    "_:N1434d3a15b524353bbd37181bc9db810"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N1302f3597ad94e87be906172c7796377"
+                    "_:N1434d3a15b524353bbd37181bc9db810"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N1302f3597ad94e87be906172c7796377\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1302f3597ad94e87be906172c7796377\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N1434d3a15b524353bbd37181bc9db810\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1434d3a15b524353bbd37181bc9db810\n"
             },
             {
               "op": "shacl-report",
@@ -1092,7 +1092,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Nadff38558d584a1da2943f238880e742"
+                    "_:N258ff2ebd0d04c50a763292fe9e74b74"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1100,7 +1100,7 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N1302f3597ad94e87be906172c7796377"
+                    "_:N1434d3a15b524353bbd37181bc9db810"
                   ]
                 },
                 "cr:CheckResultShape": {
@@ -1108,7 +1108,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nadff38558d584a1da2943f238880e742\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N1302f3597ad94e87be906172c7796377\n - Shape cr:CheckResultShape: *none*\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N258ff2ebd0d04c50a763292fe9e74b74\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N1434d3a15b524353bbd37181bc9db810\n - Shape cr:CheckResultShape: *none*\n"
             }
           ]
         }
@@ -1201,12 +1201,12 @@
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N567f904bd5604273aa4ce1ebf6023081"
+                    "_:Nd17d7241001a4549a27eae8abf961af5"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N567f904bd5604273aa4ce1ebf6023081\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd17d7241001a4549a27eae8abf961af5\n"
             },
             {
               "op": "shacl-report",
@@ -1220,7 +1220,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Nc4a2e6e6de6b448cae2f7e02a5c9fc0e"
+                    "_:N1eb1dec633bd4c2eb60073329fd099c4"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1228,7 +1228,7 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N567f904bd5604273aa4ce1ebf6023081"
+                    "_:Nd17d7241001a4549a27eae8abf961af5"
                   ]
                 },
                 "cr:CheckResultShape": {
@@ -1236,7 +1236,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nc4a2e6e6de6b448cae2f7e02a5c9fc0e\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N567f904bd5604273aa4ce1ebf6023081\n - Shape cr:CheckResultShape: *none*\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N1eb1dec633bd4c2eb60073329fd099c4\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:Nd17d7241001a4549a27eae8abf961af5\n - Shape cr:CheckResultShape: *none*\n"
             }
           ]
         }
@@ -1326,17 +1326,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N955ecc54716544178a6061cd26e02e19"
+                    "_:N6befb3a5553141a99b75b1f3e83f83da"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N955ecc54716544178a6061cd26e02e19"
+                    "_:N6befb3a5553141a99b75b1f3e83f83da"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N955ecc54716544178a6061cd26e02e19\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N955ecc54716544178a6061cd26e02e19\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N6befb3a5553141a99b75b1f3e83f83da\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N6befb3a5553141a99b75b1f3e83f83da\n"
             },
             {
               "op": "shacl-report",
@@ -1350,7 +1350,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N2647bd7ce1bf43d7b7cf0af7833b9a06"
+                    "_:N2873b576f64e44bfa3086d96e0f4bfe0"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1358,7 +1358,7 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N955ecc54716544178a6061cd26e02e19"
+                    "_:N6befb3a5553141a99b75b1f3e83f83da"
                   ]
                 },
                 "cr:CheckResultShape": {
@@ -1366,7 +1366,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N2647bd7ce1bf43d7b7cf0af7833b9a06\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N955ecc54716544178a6061cd26e02e19\n - Shape cr:CheckResultShape: *none*\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N2873b576f64e44bfa3086d96e0f4bfe0\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N6befb3a5553141a99b75b1f3e83f83da\n - Shape cr:CheckResultShape: *none*\n"
             }
           ]
         }
@@ -1445,7 +1445,7 @@
             {
               "op": "shacl-report",
               "shaclFile": "_sources/cadastral-report/shapes.shacl",
-              "graph": "@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix schema: <https://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ dcterms:references [ dcterms:conformsTo \"wa-approved-form:2021-47738\" ;\n                            dcterms:format \"application/pdf\" ;\n                            dcterms:identifier \"unit-entitlement-schedule\" ;\n                            dcterms:title \"Schedule of Unit Entitlements - SP83687\" ;\n                            cr:role \"wa-survey-documentation-type:unitEntitlementSchedule\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/supportingDocuments/3\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    dcterms:source [ rdfs:label \"WA Localities\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-locality\" ;\n                            cr:kind \"vocabulary\" ],\n                        [ rdfs:label \"wa-approved-form\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-approved-form\" ;\n                            cr:kind \"vocabulary\" ],\n                        [ rdfs:label \"SP83687\" ;\n                            dcterms:conformsTo \"icsm.profiles.wa.wa-3d\" ;\n                            dcterms:date \"2023-02-06\" ;\n                            dcterms:identifier \"SP-83687-1-1-0.00\" ;\n                            cr:kind \"dataset\" ] ;\n                    dcterms:subject [ rdfs:label \"Lots 1 to 9 on Plan SP 83687\" ;\n                            cr:kind \"strata-scheme\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/parcels/0/features/1\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ;\n                                    cr:sourceObject \"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\" ] ] ;\n                    prov:wasGeneratedBy ( [ cr:buildingBlock \"csdm.reporting.adapters.wa-csdm\" ;\n                                cr:transform \"to-strata-entitlement-facts\" ] [ cr:buildingBlock \"csdm.reporting.reports.strata-entitlement\" ;\n                                cr:transform \"complete\" ] [ cr:buildingBlock \"csdm.reporting.cadastral-report\" ;\n                                cr:transform \"summarise-checks\" ] ) ;\n                    cr:annotation [ dcterms:description \"Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.\" ;\n                            dcterms:identifier \"licensed-valuer-certification\" ;\n                            cr:documentRef \"unit-entitlement-schedule\" ;\n                            cr:linkRelation \"via\" ;\n                            cr:role \"wa-annotation-role:licensed-valuer-certification\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/annotations/2\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    cr:check [ dcterms:description \"Every lot has a lot number\" ;\n                            dcterms:identifier \"lot-numbers-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)\" ;\n                            dcterms:identifier \"document-hrefs-resolvable\" ;\n                            earl:outcome earl:untested ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"hrefs\\\":[\\\"documents/SP83687-unit-entitlement-schedule.pdf\\\"]}\"^^rdf:JSON ],\n                        [ dcterms:description \"All 9 references resolve to strata-lot parcels\" ;\n                            dcterms:identifier \"membership-references-resolve\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"Lot numbers are unique\" ;\n                            dcterms:identifier \"lot-numbers-unique\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"The source declares a total of 1000\" ;\n                            dcterms:identifier \"declared-total-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/declared\" ],\n                        [ dcterms:description \"9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)\" ;\n                            dcterms:identifier \"entitlement-source-datatype\" ;\n                            earl:outcome earl:failed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:target \"/content/lots/0/entitlement\",\n                                \"/content/lots/1/entitlement\",\n                                \"/content/lots/2/entitlement\",\n                                \"/content/lots/3/entitlement\",\n                                \"/content/lots/4/entitlement\",\n                                \"/content/lots/5/entitlement\",\n                                \"/content/lots/6/entitlement\",\n                                \"/content/lots/7/entitlement\",\n                                \"/content/lots/8/entitlement\" ],\n                        [ dcterms:description \"All 9 lots have a unit entitlement\" ;\n                            dcterms:identifier \"entitlements-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Calculated total 1000 equals the declared total 1000\" ;\n                            dcterms:identifier \"total-matches-declared\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"calculated\\\":1000,\\\"declared\\\":1000}\"^^rdf:JSON ;\n                            cr:target \"/content/totals/calculated\",\n                                \"/content/totals/declared\" ],\n                        [ dcterms:description \"The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)\" ;\n                            dcterms:identifier \"scheme-number-consistent\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"appellationSurveyNumber\\\":\\\"SP 83687\\\",\\\"csdName\\\":\\\"SP83687\\\",\\\"schemeNumber\\\":\\\"SP83687\\\"}\"^^rdf:JSON ;\n                            cr:target \"/content/scheme/schemeNumber\" ],\n                        [ dcterms:description \"The scheme topology is ParcelAggregate with 9 member reference(s)\" ;\n                            dcterms:identifier \"membership-parcel-aggregate\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"references\\\":9,\\\"topologyType\\\":\\\"ParcelAggregate\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17\" ;\n                            dcterms:identifier \"valuer-certification-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"The certification links to the schedule document\" ;\n                            dcterms:identifier \"certification-linked-to-schedule\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"Every member lot links back to the scheme\" ;\n                            dcterms:identifier \"membership-back-links\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687\" ;\n                            dcterms:identifier \"schedule-document-referenced\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/schedule\" ],\n                        [ dcterms:description \"Every supplied unit entitlement is a single positive whole number\" ;\n                            dcterms:identifier \"entitlements-valid\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"No strata lot claims the scheme without being one of its references\" ;\n                            dcterms:identifier \"membership-unreferenced-claimants\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"The calculated total includes all 9 lots\" ;\n                            dcterms:identifier \"total-covers-all-lots\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/calculated\" ],\n                        [ dcterms:description \"One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)\" ;\n                            dcterms:identifier \"scheme-identified\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"schemeId\\\":\\\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\\\"}\"^^rdf:JSON ] ;\n                    cr:content [ ] ;\n                    cr:reportStatus rstatus:incomplete ;\n                    cr:reportType \"csdm.reporting.reports.strata-entitlement\" ;\n                    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ;\n                    cr:statusSummary [ cr:checkCount 18 ;\n                            cr:failedErrors 0 ;\n                            cr:failedWarnings 0 ;\n                            cr:unevaluatedErrors 0 ] ] ;\n            sh:resultMessage \"Report status https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete does not follow from its check results (expected https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete)\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"Report status {?value} does not follow from its check results (expected {?expected})\" ;\n                    sh:prefixes cr:Prefixes ;\n                    sh:select \"\"\"\n            SELECT $this ?value ?expected WHERE {\n                $this cr:reportStatus ?value .\n                BIND(EXISTS { $this cr:check ?c . ?c earl:outcome earl:failed ; sh:resultSeverity sh:Violation } AS ?invalid)\n                BIND(EXISTS { $this cr:check ?w . ?w earl:outcome earl:failed ; sh:resultSeverity sh:Warning } AS ?warned)\n                BIND(EXISTS { $this cr:check ?u . ?u earl:outcome earl:untested ; sh:resultSeverity sh:Violation } AS ?unevaluated)\n                BIND(IF(?invalid, rstatus:invalid, IF(?warned || ?unevaluated, rstatus:incomplete, rstatus:complete)) AS ?expected)\n                FILTER (?value != ?expected)\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape cr:ReportStatusFollowsFromChecks ;\n            sh:value rstatus:incomplete ] .\n\n",
+              "graph": "@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix schema: <https://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ dcterms:references [ dcterms:conformsTo \"wa-approved-form:2021-47738\" ;\n                            dcterms:format \"application/pdf\" ;\n                            dcterms:identifier \"unit-entitlement-schedule\" ;\n                            dcterms:title \"Schedule of Unit Entitlements - SP83687\" ;\n                            cr:role \"wa-survey-documentation-type:unitEntitlementSchedule\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/supportingDocuments/3\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    dcterms:source [ rdfs:label \"WA Localities\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-locality\" ;\n                            cr:kind \"vocabulary\" ],\n                        [ rdfs:label \"SP83687\" ;\n                            dcterms:conformsTo \"icsm.profiles.wa.wa-3d\" ;\n                            dcterms:date \"2023-02-06\" ;\n                            dcterms:identifier \"SP-83687-1-1-0.00\" ;\n                            cr:kind \"dataset\" ],\n                        [ rdfs:label \"wa-approved-form\" ;\n                            dcterms:identifier \"https://linked.data.gov.au/def/csdm/wa-approved-form\" ;\n                            cr:kind \"vocabulary\" ] ;\n                    dcterms:subject [ rdfs:label \"Lots 1 to 9 on Plan SP 83687\" ;\n                            cr:kind \"strata-scheme\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/parcels/0/features/1\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ;\n                                    cr:sourceObject \"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\" ] ] ;\n                    prov:wasGeneratedBy ( [ cr:buildingBlock \"csdm.reporting.adapters.wa-csdm\" ;\n                                cr:transform \"to-strata-entitlement-facts\" ] [ cr:buildingBlock \"csdm.reporting.reports.strata-entitlement\" ;\n                                cr:transform \"complete\" ] [ cr:buildingBlock \"csdm.reporting.cadastral-report\" ;\n                                cr:transform \"summarise-checks\" ] ) ;\n                    cr:annotation [ dcterms:description \"Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.\" ;\n                            dcterms:identifier \"licensed-valuer-certification\" ;\n                            cr:documentRef \"unit-entitlement-schedule\" ;\n                            cr:linkRelation \"via\" ;\n                            cr:role \"wa-annotation-role:licensed-valuer-certification\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/annotations/2\" ;\n                                    cr:sourceDataset \"SP-83687-1-1-0.00\" ] ;\n                            schema:url \"documents/SP83687-unit-entitlement-schedule.pdf\" ] ;\n                    cr:check [ dcterms:description \"The certification links to the schedule document\" ;\n                            dcterms:identifier \"certification-linked-to-schedule\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)\" ;\n                            dcterms:identifier \"document-hrefs-resolvable\" ;\n                            earl:outcome earl:untested ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"hrefs\\\":[\\\"documents/SP83687-unit-entitlement-schedule.pdf\\\"]}\"^^rdf:JSON ],\n                        [ dcterms:description \"9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)\" ;\n                            dcterms:identifier \"entitlement-source-datatype\" ;\n                            earl:outcome earl:failed ;\n                            sh:resultSeverity sh:Info ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:target \"/content/lots/0/entitlement\",\n                                \"/content/lots/1/entitlement\",\n                                \"/content/lots/2/entitlement\",\n                                \"/content/lots/3/entitlement\",\n                                \"/content/lots/4/entitlement\",\n                                \"/content/lots/5/entitlement\",\n                                \"/content/lots/6/entitlement\",\n                                \"/content/lots/7/entitlement\",\n                                \"/content/lots/8/entitlement\" ],\n                        [ dcterms:description \"The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687\" ;\n                            dcterms:identifier \"schedule-document-referenced\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/schedule\" ],\n                        [ dcterms:description \"Every member lot links back to the scheme\" ;\n                            dcterms:identifier \"membership-back-links\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"Calculated total 1000 equals the declared total 1000\" ;\n                            dcterms:identifier \"total-matches-declared\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:evidence \"{\\\"calculated\\\":1000,\\\"declared\\\":1000}\"^^rdf:JSON ;\n                            cr:target \"/content/totals/calculated\",\n                                \"/content/totals/declared\" ],\n                        [ dcterms:description \"Every lot has a lot number\" ;\n                            dcterms:identifier \"lot-numbers-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17\" ;\n                            dcterms:identifier \"valuer-certification-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/basis/certification\" ],\n                        [ dcterms:description \"Lot numbers are unique\" ;\n                            dcterms:identifier \"lot-numbers-unique\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"Every supplied unit entitlement is a single positive whole number\" ;\n                            dcterms:identifier \"entitlements-valid\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ],\n                        [ dcterms:description \"One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)\" ;\n                            dcterms:identifier \"scheme-identified\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"schemeId\\\":\\\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"No strata lot claims the scheme without being one of its references\" ;\n                            dcterms:identifier \"membership-unreferenced-claimants\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"All 9 references resolve to strata-lot parcels\" ;\n                            dcterms:identifier \"membership-references-resolve\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ],\n                        [ dcterms:description \"The scheme topology is ParcelAggregate with 9 member reference(s)\" ;\n                            dcterms:identifier \"membership-parcel-aggregate\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"references\\\":9,\\\"topologyType\\\":\\\"ParcelAggregate\\\"}\"^^rdf:JSON ],\n                        [ dcterms:description \"The source declares a total of 1000\" ;\n                            dcterms:identifier \"declared-total-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/declared\" ],\n                        [ dcterms:description \"The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)\" ;\n                            dcterms:identifier \"scheme-number-consistent\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.adapters.wa-csdm\" ;\n                            cr:evidence \"{\\\"appellationSurveyNumber\\\":\\\"SP 83687\\\",\\\"csdName\\\":\\\"SP83687\\\",\\\"schemeNumber\\\":\\\"SP83687\\\"}\"^^rdf:JSON ;\n                            cr:target \"/content/scheme/schemeNumber\" ],\n                        [ dcterms:description \"The calculated total includes all 9 lots\" ;\n                            dcterms:identifier \"total-covers-all-lots\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ;\n                            cr:target \"/content/totals/calculated\" ],\n                        [ dcterms:description \"All 9 lots have a unit entitlement\" ;\n                            dcterms:identifier \"entitlements-present\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Warning ;\n                            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;\n                            cr:definedBy \"csdm.reporting.reports.strata-entitlement\" ] ;\n                    cr:content [ ] ;\n                    cr:reportStatus rstatus:incomplete ;\n                    cr:reportType \"csdm.reporting.reports.strata-entitlement\" ;\n                    cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ;\n                    cr:statusSummary [ cr:checkCount 18 ;\n                            cr:failedErrors 0 ;\n                            cr:failedWarnings 0 ;\n                            cr:unevaluatedErrors 0 ] ] ;\n            sh:resultMessage \"Report status https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete does not follow from its check results (expected https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete)\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"Report status {?value} does not follow from its check results (expected {?expected})\" ;\n                    sh:prefixes cr:Prefixes ;\n                    sh:select \"\"\"\n            SELECT $this ?value ?expected WHERE {\n                $this cr:reportStatus ?value .\n                BIND(EXISTS { $this cr:check ?c . ?c earl:outcome earl:failed ; sh:resultSeverity sh:Violation } AS ?invalid)\n                BIND(EXISTS { $this cr:check ?w . ?w earl:outcome earl:failed ; sh:resultSeverity sh:Warning } AS ?warned)\n                BIND(EXISTS { $this cr:check ?u . ?u earl:outcome earl:untested ; sh:resultSeverity sh:Violation } AS ?unevaluated)\n                BIND(IF(?invalid, rstatus:invalid, IF(?warned || ?unevaluated, rstatus:incomplete, rstatus:complete)) AS ?expected)\n                FILTER (?value != ?expected)\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape cr:ReportStatusFollowsFromChecks ;\n            sh:value rstatus:incomplete ] .\n\n",
               "isError": true,
               "message": "Validation result for _sources/cadastral-report/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: cr:ReportStatusFollowsFromChecks\n  \tFocus Node: [ cr:annotation [ cr:documentRef Literal(\"unit-entitlement-schedule\") ; cr:linkRelation Literal(\"via\") ; cr:role Literal(\"wa-annotation-role:licensed-valuer-certification\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/annotations/2\") ; cr:sourceDataset Literal(\"SP-83687-1-1-0.00\") ] ; dcterms:description Literal(\"Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.\") ; dcterms:identifier Literal(\"licensed-valuer-certification\") ; schema:url Literal(\"documents/SP83687-unit-entitlement-schedule.pdf\") ] ; cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:evidence Literal(\"{\"appellationSurveyNumber\":\"SP 83687\",\"csdName\":\"SP83687\",\"schemeNumber\":\"SP83687\"}\" = None, datatype=rdf:JSON) ; cr:target Literal(\"/content/scheme/schemeNumber\") ; dcterms:description Literal(\"The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)\") ; dcterms:identifier Literal(\"scheme-number-consistent\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:evidence Literal(\"{\"references\":9,\"topologyType\":\"ParcelAggregate\"}\" = None, datatype=rdf:JSON) ; dcterms:description Literal(\"The scheme topology is ParcelAggregate with 9 member reference(s)\") ; dcterms:identifier Literal(\"membership-parcel-aggregate\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; dcterms:description Literal(\"All 9 references resolve to strata-lot parcels\") ; dcterms:identifier Literal(\"membership-references-resolve\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; dcterms:description Literal(\"Every member lot links back to the scheme\") ; dcterms:identifier Literal(\"membership-back-links\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; dcterms:description Literal(\"No strata lot claims the scheme without being one of its references\") ; dcterms:identifier Literal(\"membership-unreferenced-claimants\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:evidence Literal(\"{\"calculated\":1000,\"declared\":1000}\" = None, datatype=rdf:JSON) ; cr:target Literal(\"/content/totals/calculated\"), Literal(\"/content/totals/declared\") ; dcterms:description Literal(\"Calculated total 1000 equals the declared total 1000\") ; dcterms:identifier Literal(\"total-matches-declared\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/basis/certification\") ; dcterms:description Literal(\"Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17\") ; dcterms:identifier Literal(\"valuer-certification-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/basis/certification\") ; dcterms:description Literal(\"The certification links to the schedule document\") ; dcterms:identifier Literal(\"certification-linked-to-schedule\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Info ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/basis/schedule\") ; dcterms:description Literal(\"The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687\") ; dcterms:identifier Literal(\"schedule-document-referenced\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/totals/calculated\") ; dcterms:description Literal(\"The calculated total includes all 9 lots\") ; dcterms:identifier Literal(\"total-covers-all-lots\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:target Literal(\"/content/totals/declared\") ; dcterms:description Literal(\"The source declares a total of 1000\") ; dcterms:identifier Literal(\"declared-total-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"All 9 lots have a unit entitlement\") ; dcterms:identifier Literal(\"entitlements-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"Every lot has a lot number\") ; dcterms:identifier Literal(\"lot-numbers-present\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Warning ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"Every supplied unit entitlement is a single positive whole number\") ; dcterms:identifier Literal(\"entitlements-valid\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; dcterms:description Literal(\"Lot numbers are unique\") ; dcterms:identifier Literal(\"lot-numbers-unique\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:evidence Literal(\"{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}\" = None, datatype=rdf:JSON) ; dcterms:description Literal(\"One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)\") ; dcterms:identifier Literal(\"scheme-identified\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:evidence Literal(\"{\"hrefs\":[\"documents/SP83687-unit-entitlement-schedule.pdf\"]}\" = None, datatype=rdf:JSON) ; dcterms:description Literal(\"Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)\") ; dcterms:identifier Literal(\"document-hrefs-resolvable\") ; earl:outcome earl:untested ; sh:resultSeverity sh:Info ], [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/source-conformance> ; cr:definedBy Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:target Literal(\"/content/lots/0/entitlement\"), Literal(\"/content/lots/1/entitlement\"), Literal(\"/content/lots/2/entitlement\"), Literal(\"/content/lots/3/entitlement\"), Literal(\"/content/lots/4/entitlement\"), Literal(\"/content/lots/5/entitlement\"), Literal(\"/content/lots/6/entitlement\"), Literal(\"/content/lots/7/entitlement\"), Literal(\"/content/lots/8/entitlement\") ; dcterms:description Literal(\"9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)\") ; dcterms:identifier Literal(\"entitlement-source-datatype\") ; earl:outcome earl:failed ; sh:resultSeverity sh:Info ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete> ; cr:reportType Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; cr:statusSummary [ cr:checkCount Literal(\"18\", datatype=xsd:integer) ; cr:failedErrors Literal(\"0\", datatype=xsd:integer) ; cr:failedWarnings Literal(\"0\", datatype=xsd:integer) ; cr:unevaluatedErrors Literal(\"0\", datatype=xsd:integer) ] ; dcterms:references [ cr:role Literal(\"wa-survey-documentation-type:unitEntitlementSchedule\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/supportingDocuments/3\") ; cr:sourceDataset Literal(\"SP-83687-1-1-0.00\") ] ; dcterms:conformsTo Literal(\"wa-approved-form:2021-47738\") ; dcterms:format Literal(\"application/pdf\") ; dcterms:identifier Literal(\"unit-entitlement-schedule\") ; dcterms:title Literal(\"Schedule of Unit Entitlements - SP83687\") ; schema:url Literal(\"documents/SP83687-unit-entitlement-schedule.pdf\") ] ; dcterms:source [ cr:kind Literal(\"dataset\") ; dcterms:conformsTo Literal(\"icsm.profiles.wa.wa-3d\") ; dcterms:date Literal(\"2023-02-06\") ; dcterms:identifier Literal(\"SP-83687-1-1-0.00\") ; rdfs:label Literal(\"SP83687\") ], [ cr:kind Literal(\"vocabulary\") ; dcterms:identifier Literal(\"https://linked.data.gov.au/def/csdm/wa-approved-form\") ; rdfs:label Literal(\"wa-approved-form\") ], [ cr:kind Literal(\"vocabulary\") ; dcterms:identifier Literal(\"https://linked.data.gov.au/def/csdm/wa-locality\") ; rdfs:label Literal(\"WA Localities\") ] ; dcterms:subject [ cr:kind Literal(\"strata-scheme\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/parcels/0/features/1\") ; cr:sourceDataset Literal(\"SP-83687-1-1-0.00\") ; cr:sourceObject Literal(\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\") ] ; rdfs:label Literal(\"Lots 1 to 9 on Plan SP 83687\") ] ; prov:wasGeneratedBy ( [ cr:buildingBlock Literal(\"csdm.reporting.adapters.wa-csdm\") ; cr:transform Literal(\"to-strata-entitlement-facts\") ] [ cr:buildingBlock Literal(\"csdm.reporting.reports.strata-entitlement\") ; cr:transform Literal(\"complete\") ] [ cr:buildingBlock Literal(\"csdm.reporting.cadastral-report\") ; cr:transform Literal(\"summarise-checks\") ] ) ]\n  \tValue Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete>\n  \tSource Constraint: [ rdf:type sh:SPARQLConstraint ; sh:message Literal(\"Report status {?value} does not follow from its check results (expected {?expected})\") ; sh:prefixes cr:Prefixes ; sh:select Literal(\"\n              SELECT $this ?value ?expected WHERE {\n                  $this cr:reportStatus ?value .\n                  BIND(EXISTS { $this cr:check ?c . ?c earl:outcome earl:failed ; sh:resultSeverity sh:Violation } AS ?invalid)\n                  BIND(EXISTS { $this cr:check ?w . ?w earl:outcome earl:failed ; sh:resultSeverity sh:Warning } AS ?warned)\n                  BIND(EXISTS { $this cr:check ?u . ?u earl:outcome earl:untested ; sh:resultSeverity sh:Violation } AS ?unevaluated)\n                  BIND(IF(?invalid, rstatus:invalid, IF(?warned || ?unevaluated, rstatus:incomplete, rstatus:complete)) AS ?expected)\n                  FILTER (?value != ?expected)\n              }\n          \") ]\n  \tMessage: Report status https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete does not follow from its check results (expected https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete)\n  "
             },
@@ -1454,17 +1454,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N612b149d13fc4d99b54c6c321bef318d"
+                    "_:N1291b757128d49d497437542a76343c8"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N612b149d13fc4d99b54c6c321bef318d"
+                    "_:N1291b757128d49d497437542a76343c8"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N612b149d13fc4d99b54c6c321bef318d\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N612b149d13fc4d99b54c6c321bef318d\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N1291b757128d49d497437542a76343c8\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1291b757128d49d497437542a76343c8\n"
             },
             {
               "op": "shacl-report",
@@ -1478,9 +1478,9 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N31426f6de44f4ff28e387c0c6cfe5315",
-                    "_:Ncc1d49de79094768ae1e69edee5c36e0",
-                    "_:N3316d58992ca4cd2aa5e3e78dd426df5"
+                    "_:Ncd05f220498b4a16a802521b28bce534",
+                    "_:N5be96c6bf78b44ab84350616d8ad4769",
+                    "_:N62b59877df2b4f94b4ab9b26cf5512d1"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1488,34 +1488,34 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N612b149d13fc4d99b54c6c321bef318d"
+                    "_:N1291b757128d49d497437542a76343c8"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:Nd2f315c26dd94d149c4b682d94e59020",
-                    "_:N76784a118b7e412ba16f866e2d02e53a",
-                    "_:N45045795ca9d4d5286a97309cbeb068f",
-                    "_:N4f482a9840e1454da993c2d75e4d4b65",
-                    "_:N4b755d212f1943aab7618316c2f1a4a6",
-                    "_:Nd8839102567c4ca2a279d035562cae9d",
-                    "_:N52cc6da17926468e8a800c34e45f3ff6",
-                    "_:N2b72522ce7764843a8d953f3a05da339",
-                    "_:N6ebdfff9facc4ad3bf3cc33e0568aca1",
-                    "_:Ndb357de51f6c43878682f6c0b7671c62",
-                    "_:Na622496e7dbe4f20a9d94999787dc736",
-                    "_:Nbbcb493f8d064a8a9f105e243ac55691",
-                    "_:N846998833cad45f589787243b5aee7b9",
-                    "_:N1f2e02e51ef24ee19fa92735b8cf5ef6",
-                    "_:Ne5515aa5fd3e47468eafd68fb948f980",
-                    "_:N857639f91cfc43268af5f1bc42f1d3f7",
-                    "_:Ndafaf997e5e142e994eb9a2446cd79e5",
-                    "_:N09964dfca0084150a66c8dcb52a10ff2"
+                    "_:Nbe87c1aee24246e4afc01bc0ca553d24",
+                    "_:Na8b3e565e81b4e7896cf35c53b71398b",
+                    "_:N384e106d3ee847a1ba3eca253418bcaa",
+                    "_:Ne067a290a06f41fea37340bd23c21095",
+                    "_:Nb72d4799062f4c20b91da30bffd23ea3",
+                    "_:N0542a6b309854d3891b52db14788f6b9",
+                    "_:N9c9cb45781f543708e96d110680234b9",
+                    "_:Nd88001d65d13453ba87aa9711664548e",
+                    "_:N64fd3f2fe27745c6838904aa41e13ddf",
+                    "_:N22dded00e53943218c567f7429eb21b5",
+                    "_:N6c078396d33843269be863f24b4685b1",
+                    "_:N098f0d37912d4ab7a8d975eb3ffcfc53",
+                    "_:Nd9778c171b6b417499a75f67e0c1c96b",
+                    "_:N3597b5e43a5842b49c739aa79fc089dc",
+                    "_:N070a2865bce5472b9125c283dde4563b",
+                    "_:N76f6d37d149443abad245228b5754f9d",
+                    "_:N46b64b897875482eabe1d8cb02a3d06b",
+                    "_:N7ca46a428cd24dd3a315094b34178a49"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N31426f6de44f4ff28e387c0c6cfe5315,_:Ncc1d49de79094768ae1e69edee5c36e0,_:N3316d58992ca4cd2aa5e3e78dd426df5\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N612b149d13fc4d99b54c6c321bef318d\n - Shape cr:CheckResultShape: _:Nd2f315c26dd94d149c4b682d94e59020,_:N76784a118b7e412ba16f866e2d02e53a,_:N45045795ca9d4d5286a97309cbeb068f,_:N4f482a9840e1454da993c2d75e4d4b65,_:N4b755d212f1943aab7618316c2f1a4a6,_:Nd8839102567c4ca2a279d035562cae9d,_:N52cc6da17926468e8a800c34e45f3ff6,_:N2b72522ce7764843a8d953f3a05da339,_:N6ebdfff9facc4ad3bf3cc33e0568aca1,_:Ndb357de51f6c43878682f6c0b7671c62,_:Na622496e7dbe4f20a9d94999787dc736,_:Nbbcb493f8d064a8a9f105e243ac55691,_:N846998833cad45f589787243b5aee7b9,_:N1f2e02e51ef24ee19fa92735b8cf5ef6,_:Ne5515aa5fd3e47468eafd68fb948f980,_:N857639f91cfc43268af5f1bc42f1d3f7,_:Ndafaf997e5e142e994eb9a2446cd79e5,_:N09964dfca0084150a66c8dcb52a10ff2\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Ncd05f220498b4a16a802521b28bce534,_:N5be96c6bf78b44ab84350616d8ad4769,_:N62b59877df2b4f94b4ab9b26cf5512d1\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N1291b757128d49d497437542a76343c8\n - Shape cr:CheckResultShape: _:Nbe87c1aee24246e4afc01bc0ca553d24,_:Na8b3e565e81b4e7896cf35c53b71398b,_:N384e106d3ee847a1ba3eca253418bcaa,_:Ne067a290a06f41fea37340bd23c21095,_:Nb72d4799062f4c20b91da30bffd23ea3,_:N0542a6b309854d3891b52db14788f6b9,_:N9c9cb45781f543708e96d110680234b9,_:Nd88001d65d13453ba87aa9711664548e,_:N64fd3f2fe27745c6838904aa41e13ddf,_:N22dded00e53943218c567f7429eb21b5,_:N6c078396d33843269be863f24b4685b1,_:N098f0d37912d4ab7a8d975eb3ffcfc53,_:Nd9778c171b6b417499a75f67e0c1c96b,_:N3597b5e43a5842b49c739aa79fc089dc,_:N070a2865bce5472b9125c283dde4563b,_:N76f6d37d149443abad245228b5754f9d,_:N46b64b897875482eabe1d8cb02a3d06b,_:N7ca46a428cd24dd3a315094b34178a49\n"
             }
           ]
         }
@@ -1605,17 +1605,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N1bf5192d6b0542b2a91998aae6ab15aa"
+                    "_:N98500ea610df45ad9e32a04dbef24aa4"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N1bf5192d6b0542b2a91998aae6ab15aa"
+                    "_:N98500ea610df45ad9e32a04dbef24aa4"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N1bf5192d6b0542b2a91998aae6ab15aa\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1bf5192d6b0542b2a91998aae6ab15aa\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N98500ea610df45ad9e32a04dbef24aa4\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N98500ea610df45ad9e32a04dbef24aa4\n"
             },
             {
               "op": "shacl-report",
@@ -1629,9 +1629,9 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N71c99e8dd90647bc99e49a22bc27986d",
-                    "_:N1b92b7b7bf8a4c379147ee7fd6b907a2",
-                    "_:Nb7c90daf77e54eb49fd95c97a7cf7ba6"
+                    "_:N315b0dd459d9444dbebc0f1510719701",
+                    "_:Ndfbead187e3d4a6f8469d8b7b9eacb8e",
+                    "_:N71a6a31fff024b9aac41ce9c6e7eba55"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1639,34 +1639,34 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N1bf5192d6b0542b2a91998aae6ab15aa"
+                    "_:N98500ea610df45ad9e32a04dbef24aa4"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N287e6c77b7ef44a8beaa1cb8dbbf8c1d",
-                    "_:Na3089402e39c413c84ed9a3fa540dd51",
-                    "_:N689c045309144780b2a0af675d47ce75",
-                    "_:N8c3d64f2ee44453e8c1f7bb3b375fbab",
-                    "_:N13fa175bd7d743a98a9474f78e07705e",
-                    "_:Nd243fcdcd2684a7da68ff1b6b4d3f23b",
-                    "_:Nc5d712a3a555466bb6462f913e833bc7",
-                    "_:N604147e9644a44619ff2a9201cfa788c",
-                    "_:Nd8c8d674d1c745f3a3889b43c4f326ca",
-                    "_:Na4720a650df146feb39357f880419020",
-                    "_:N748fabe7e32145b4a8af07cd7c83e359",
-                    "_:N6cd0a83392e54eca8baa015016fe0318",
-                    "_:N6002ff27a94e45ed9e7f8e91f5d2dfbf",
-                    "_:Ne5b6d0b283e3456e8ddc3cd580bd7957",
-                    "_:N0e1b9f0d099a4880a3ffe5598a32e58a",
-                    "_:N95719c40a6824ed6991f8647ff7b3363",
-                    "_:N51108f1c107846e99c28c202858a38ba",
-                    "_:N99b57fcee1a94a42b796e9bc51d48240"
+                    "_:N2eac14aa5f8543d7bcd6472d3bed0ddb",
+                    "_:N41ac1d4a0c2844de9b078e0ea1745a7a",
+                    "_:Nc2a62817662b4a2f8d33295ad18adf2b",
+                    "_:N92bec23a766640c082383d5811614fd5",
+                    "_:N0c0a86605a524a1d8fddc64cacb6113c",
+                    "_:N51a863f211fd4db1b8002d95682319a3",
+                    "_:Nf6a88b88652d4275afd5ee91d40bb118",
+                    "_:Naf2e3d524bc949ea927d74256336b5d7",
+                    "_:N4bb1889e825a414bb3e3c2451be9c57d",
+                    "_:Nee0369fc10634ee1978a4a8aa556ab60",
+                    "_:N80ebbcf8d5184aae8174405ab3140222",
+                    "_:N8039987c785147f4a4e69ab486223d85",
+                    "_:Nb54e388106db4e0896a9a196f7db4340",
+                    "_:Nae116e2780fc4a12888737985408496d",
+                    "_:N232ebab68bf84135879d7d75a4ef4718",
+                    "_:N17586fee3b904b67bbb5de94523e7e64",
+                    "_:N8eee7b97cfed482a93281771e5a6337e",
+                    "_:N41e10cf569774088a7e1f2ed7e65859d"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N71c99e8dd90647bc99e49a22bc27986d,_:N1b92b7b7bf8a4c379147ee7fd6b907a2,_:Nb7c90daf77e54eb49fd95c97a7cf7ba6\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N1bf5192d6b0542b2a91998aae6ab15aa\n - Shape cr:CheckResultShape: _:N287e6c77b7ef44a8beaa1cb8dbbf8c1d,_:Na3089402e39c413c84ed9a3fa540dd51,_:N689c045309144780b2a0af675d47ce75,_:N8c3d64f2ee44453e8c1f7bb3b375fbab,_:N13fa175bd7d743a98a9474f78e07705e,_:Nd243fcdcd2684a7da68ff1b6b4d3f23b,_:Nc5d712a3a555466bb6462f913e833bc7,_:N604147e9644a44619ff2a9201cfa788c,_:Nd8c8d674d1c745f3a3889b43c4f326ca,_:Na4720a650df146feb39357f880419020,_:N748fabe7e32145b4a8af07cd7c83e359,_:N6cd0a83392e54eca8baa015016fe0318,_:N6002ff27a94e45ed9e7f8e91f5d2dfbf,_:Ne5b6d0b283e3456e8ddc3cd580bd7957,_:N0e1b9f0d099a4880a3ffe5598a32e58a,_:N95719c40a6824ed6991f8647ff7b3363,_:N51108f1c107846e99c28c202858a38ba,_:N99b57fcee1a94a42b796e9bc51d48240\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N315b0dd459d9444dbebc0f1510719701,_:Ndfbead187e3d4a6f8469d8b7b9eacb8e,_:N71a6a31fff024b9aac41ce9c6e7eba55\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N98500ea610df45ad9e32a04dbef24aa4\n - Shape cr:CheckResultShape: _:N2eac14aa5f8543d7bcd6472d3bed0ddb,_:N41ac1d4a0c2844de9b078e0ea1745a7a,_:Nc2a62817662b4a2f8d33295ad18adf2b,_:N92bec23a766640c082383d5811614fd5,_:N0c0a86605a524a1d8fddc64cacb6113c,_:N51a863f211fd4db1b8002d95682319a3,_:Nf6a88b88652d4275afd5ee91d40bb118,_:Naf2e3d524bc949ea927d74256336b5d7,_:N4bb1889e825a414bb3e3c2451be9c57d,_:Nee0369fc10634ee1978a4a8aa556ab60,_:N80ebbcf8d5184aae8174405ab3140222,_:N8039987c785147f4a4e69ab486223d85,_:Nb54e388106db4e0896a9a196f7db4340,_:Nae116e2780fc4a12888737985408496d,_:N232ebab68bf84135879d7d75a4ef4718,_:N17586fee3b904b67bbb5de94523e7e64,_:N8eee7b97cfed482a93281771e5a6337e,_:N41e10cf569774088a7e1f2ed7e65859d\n"
             }
           ]
         }
@@ -1759,12 +1759,12 @@
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N9531d9dedecf438088ab1ee7ea20b164"
+                    "_:N73ad9a751b314a68b43e21582ab632f4"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N9531d9dedecf438088ab1ee7ea20b164\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N73ad9a751b314a68b43e21582ab632f4\n"
             },
             {
               "op": "shacl-report",
@@ -1778,7 +1778,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Ndbfbc902fabe4b0b888d23057a6ee526"
+                    "_:N22cba359354f4011b60a183fcb557a8a"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1786,7 +1786,7 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N9531d9dedecf438088ab1ee7ea20b164"
+                    "_:N73ad9a751b314a68b43e21582ab632f4"
                   ]
                 },
                 "cr:CheckResultShape": {
@@ -1794,7 +1794,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Ndbfbc902fabe4b0b888d23057a6ee526\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N9531d9dedecf438088ab1ee7ea20b164\n - Shape cr:CheckResultShape: *none*\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N22cba359354f4011b60a183fcb557a8a\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N73ad9a751b314a68b43e21582ab632f4\n - Shape cr:CheckResultShape: *none*\n"
             }
           ]
         }
@@ -1884,31 +1884,31 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:Nd487b47238004d3581787a8200fbf3d2"
+                    "_:N28663a8aab7849edb1804618e24137dc"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:Nd487b47238004d3581787a8200fbf3d2"
+                    "_:N28663a8aab7849edb1804618e24137dc"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:Nd487b47238004d3581787a8200fbf3d2\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd487b47238004d3581787a8200fbf3d2\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N28663a8aab7849edb1804618e24137dc\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N28663a8aab7849edb1804618e24137dc\n"
             },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/cadastral-report-ontology/shapes.shacl",
-              "graph": "@prefix ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/> .\n@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ dcterms:source [ dcterms:identifier \"example-dataset\" ] ;\n                    dcterms:subject [ cr:kind \"parcel\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/parcels/0/features/0\" ;\n                                    cr:sourceDataset \"example-dataset\" ] ] ;\n                    cr:check [ dcterms:description \"ok\" ;\n                            dcterms:identifier \"subject-identified\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory ccat:generation ;\n                            cr:definedBy \"example.adapter\" ] ;\n                    cr:content [ ] ;\n                    cr:reportStatus rstatus:done ;\n                    cr:reportType \"example.report-type\" ;\n                    cr:stage rstage:complete ] ;\n            sh:resultMessage \"Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:invalid', 'rstatus:incomplete', 'rstatus:complete']\" ;\n            sh:resultPath cr:reportStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:InConstraintComponent ;\n            sh:sourceShape [ sh:in ( rstatus:complete rstatus:incomplete rstatus:invalid ) ;\n                    sh:maxCount 1 ;\n                    sh:path cr:reportStatus ] ;\n            sh:value rstatus:done ] .\n\n",
+              "graph": "@prefix ccat: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/> .\n@prefix cr: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/cadastral-report/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix earl: <http://www.w3.org/ns/earl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rstage: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/> .\n@prefix rstatus: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ dcterms:source [ dcterms:identifier \"example-dataset\" ] ;\n                    dcterms:subject [ cr:kind \"parcel\" ;\n                            cr:sourceRef [ cr:jsonPointer \"/parcels/0/features/0\" ;\n                                    cr:sourceDataset \"example-dataset\" ] ] ;\n                    cr:check [ dcterms:description \"ok\" ;\n                            dcterms:identifier \"subject-identified\" ;\n                            earl:outcome earl:passed ;\n                            sh:resultSeverity sh:Violation ;\n                            cr:checkCategory ccat:generation ;\n                            cr:definedBy \"example.adapter\" ] ;\n                    cr:content [ ] ;\n                    cr:reportStatus rstatus:done ;\n                    cr:reportType \"example.report-type\" ;\n                    cr:stage rstage:complete ] ;\n            sh:resultMessage \"Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:invalid', 'rstatus:complete', 'rstatus:incomplete']\" ;\n            sh:resultPath cr:reportStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:InConstraintComponent ;\n            sh:sourceShape [ sh:in ( rstatus:complete rstatus:incomplete rstatus:invalid ) ;\n                    sh:maxCount 1 ;\n                    sh:path cr:reportStatus ] ;\n            sh:value rstatus:done ] .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/cadastral-report-ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in InConstraintComponent (http://www.w3.org/ns/shacl#InConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:in ( rstatus:complete rstatus:incomplete rstatus:invalid ) ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:path cr:reportStatus ]\n  \tFocus Node: [ cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal(\"example.adapter\") ; dcterms:description Literal(\"ok\") ; dcterms:identifier Literal(\"subject-identified\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> ; cr:reportType Literal(\"example.report-type\") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; dcterms:source [ dcterms:identifier Literal(\"example-dataset\") ] ; dcterms:subject [ cr:kind Literal(\"parcel\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/parcels/0/features/0\") ; cr:sourceDataset Literal(\"example-dataset\") ] ] ]\n  \tValue Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done>\n  \tResult Path: cr:reportStatus\n  \tMessage: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:invalid', 'rstatus:incomplete', 'rstatus:complete']\n  "
+              "message": "Validation result for _sources/cadastral-report-ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in InConstraintComponent (http://www.w3.org/ns/shacl#InConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:in ( rstatus:complete rstatus:incomplete rstatus:invalid ) ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:path cr:reportStatus ]\n  \tFocus Node: [ cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal(\"example.adapter\") ; dcterms:description Literal(\"ok\") ; dcterms:identifier Literal(\"subject-identified\") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> ; cr:reportType Literal(\"example.report-type\") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; dcterms:source [ dcterms:identifier Literal(\"example-dataset\") ] ; dcterms:subject [ cr:kind Literal(\"parcel\") ; cr:sourceRef [ cr:jsonPointer Literal(\"/parcels/0/features/0\") ; cr:sourceDataset Literal(\"example-dataset\") ] ] ]\n  \tValue Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done>\n  \tResult Path: cr:reportStatus\n  \tMessage: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:invalid', 'rstatus:complete', 'rstatus:incomplete']\n  "
             },
             {
               "shaclFile": "_sources/cadastral-report-ontology/shapes.shacl",
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N7ffac7187c7a4226a7ca610a7c44c610"
+                    "_:N0c919f9738db4b8e8281950035e92f2a"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -1916,17 +1916,17 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:Nd487b47238004d3581787a8200fbf3d2"
+                    "_:N28663a8aab7849edb1804618e24137dc"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:Ndc5ec086957f422f9a6cef8fb4ac9f0a"
+                    "_:N4f063f0a58154a32943926cbadde67a4"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N7ffac7187c7a4226a7ca610a7c44c610\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:Nd487b47238004d3581787a8200fbf3d2\n - Shape cr:CheckResultShape: _:Ndc5ec086957f422f9a6cef8fb4ac9f0a\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N0c919f9738db4b8e8281950035e92f2a\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N28663a8aab7849edb1804618e24137dc\n - Shape cr:CheckResultShape: _:N4f063f0a58154a32943926cbadde67a4\n"
             }
           ]
         }
@@ -2005,17 +2005,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N4ee21a641b1b4d29ad933b94fed8482f"
+                    "_:N71935035742a4fdfad12abe4d1efcdba"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N4ee21a641b1b4d29ad933b94fed8482f"
+                    "_:N71935035742a4fdfad12abe4d1efcdba"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N4ee21a641b1b4d29ad933b94fed8482f\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N4ee21a641b1b4d29ad933b94fed8482f\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N71935035742a4fdfad12abe4d1efcdba\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N71935035742a4fdfad12abe4d1efcdba\n"
             },
             {
               "op": "shacl-report",
@@ -2029,7 +2029,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N1ef4987e60824688b06ac3661aa619e4"
+                    "_:Nc5f42cde426f4ba48528b4ad34d584c7"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -2037,18 +2037,18 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N4ee21a641b1b4d29ad933b94fed8482f"
+                    "_:N71935035742a4fdfad12abe4d1efcdba"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N55fdf74ca70c4efa9f573937c58aa5d8",
-                    "_:Nd0ef756b341643248840487c0b692eca"
+                    "_:Nc306c7f53af541b989ad0aac7db4d4ef",
+                    "_:N77829c9f706642ce850dafe141982ef5"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N1ef4987e60824688b06ac3661aa619e4\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N4ee21a641b1b4d29ad933b94fed8482f\n - Shape cr:CheckResultShape: _:N55fdf74ca70c4efa9f573937c58aa5d8,_:Nd0ef756b341643248840487c0b692eca\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nc5f42cde426f4ba48528b4ad34d584c7\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N71935035742a4fdfad12abe4d1efcdba\n - Shape cr:CheckResultShape: _:Nc306c7f53af541b989ad0aac7db4d4ef,_:N77829c9f706642ce850dafe141982ef5\n"
             }
           ]
         }
@@ -2130,12 +2130,12 @@
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N0172e6067f584cac95ab64d4416f4699"
+                    "_:N17538f523f4b4764993d0c279ac210c2"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N0172e6067f584cac95ab64d4416f4699\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: *none*\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N17538f523f4b4764993d0c279ac210c2\n"
             },
             {
               "op": "shacl-report",
@@ -2149,7 +2149,7 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Nbc1cff400b1c418ea94b725f77a276f6"
+                    "_:Nb295d7483ad044e79b2f82b1584516a5"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -2157,7 +2157,7 @@
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N0172e6067f584cac95ab64d4416f4699"
+                    "_:N17538f523f4b4764993d0c279ac210c2"
                   ]
                 },
                 "cr:CheckResultShape": {
@@ -2165,7 +2165,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nbc1cff400b1c418ea94b725f77a276f6\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N0172e6067f584cac95ab64d4416f4699\n - Shape cr:CheckResultShape: *none*\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nb295d7483ad044e79b2f82b1584516a5\n - Shape cr:ReportValueShape: *none*\n - Shape cr:ReportShape: _:N17538f523f4b4764993d0c279ac210c2\n - Shape cr:CheckResultShape: *none*\n"
             }
           ]
         }

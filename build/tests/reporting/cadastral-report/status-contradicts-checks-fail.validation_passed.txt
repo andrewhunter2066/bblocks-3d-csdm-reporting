@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T22:05:44.592556+00:00
+Generated 2026-10-05T17:37:31.415799+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -42,18 +42,18 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   	Message: Report status https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/incomplete does not follow from its check results (expected https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete)
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N612b149d13fc4d99b54c6c321bef318d
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N612b149d13fc4d99b54c6c321bef318d
+ - Shape cr:ReportStatusFollowsFromChecks: _:N1291b757128d49d497437542a76343c8
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1291b757128d49d497437542a76343c8
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N31426f6de44f4ff28e387c0c6cfe5315,_:Ncc1d49de79094768ae1e69edee5c36e0,_:N3316d58992ca4cd2aa5e3e78dd426df5
+ - Shape cr:SourceReferenceShape: _:Ncd05f220498b4a16a802521b28bce534,_:N5be96c6bf78b44ab84350616d8ad4769,_:N62b59877df2b4f94b4ab9b26cf5512d1
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N612b149d13fc4d99b54c6c321bef318d
- - Shape cr:CheckResultShape: _:Nd2f315c26dd94d149c4b682d94e59020,_:N76784a118b7e412ba16f866e2d02e53a,_:N45045795ca9d4d5286a97309cbeb068f,_:N4f482a9840e1454da993c2d75e4d4b65,_:N4b755d212f1943aab7618316c2f1a4a6,_:Nd8839102567c4ca2a279d035562cae9d,_:N52cc6da17926468e8a800c34e45f3ff6,_:N2b72522ce7764843a8d953f3a05da339,_:N6ebdfff9facc4ad3bf3cc33e0568aca1,_:Ndb357de51f6c43878682f6c0b7671c62,_:Na622496e7dbe4f20a9d94999787dc736,_:Nbbcb493f8d064a8a9f105e243ac55691,_:N846998833cad45f589787243b5aee7b9,_:N1f2e02e51ef24ee19fa92735b8cf5ef6,_:Ne5515aa5fd3e47468eafd68fb948f980,_:N857639f91cfc43268af5f1bc42f1d3f7,_:Ndafaf997e5e142e994eb9a2446cd79e5,_:N09964dfca0084150a66c8dcb52a10ff2
+ - Shape cr:ReportShape: _:N1291b757128d49d497437542a76343c8
+ - Shape cr:CheckResultShape: _:Nbe87c1aee24246e4afc01bc0ca553d24,_:Na8b3e565e81b4e7896cf35c53b71398b,_:N384e106d3ee847a1ba3eca253418bcaa,_:Ne067a290a06f41fea37340bd23c21095,_:Nb72d4799062f4c20b91da30bffd23ea3,_:N0542a6b309854d3891b52db14788f6b9,_:N9c9cb45781f543708e96d110680234b9,_:Nd88001d65d13453ba87aa9711664548e,_:N64fd3f2fe27745c6838904aa41e13ddf,_:N22dded00e53943218c567f7429eb21b5,_:N6c078396d33843269be863f24b4685b1,_:N098f0d37912d4ab7a8d975eb3ffcfc53,_:Nd9778c171b6b417499a75f67e0c1c96b,_:N3597b5e43a5842b49c739aa79fc089dc,_:N070a2865bce5472b9125c283dde4563b,_:N76f6d37d149443abad245228b5754f9d,_:N46b64b897875482eabe1d8cb02a3d06b,_:N7ca46a428cd24dd3a315094b34178a49
 
 === End SHACL ===
 
