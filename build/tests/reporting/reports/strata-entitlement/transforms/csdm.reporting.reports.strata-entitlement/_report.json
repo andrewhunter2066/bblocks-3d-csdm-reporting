@@ -2,7 +2,7 @@
   "title": "Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report",
   "bblockName": "Strata Scheme Entitlement Report",
   "bblockId": "csdm.reporting.reports.strata-entitlement",
-  "generated": "2026-10-02T22:05:57.602260+00:00",
+  "generated": "2026-10-05T17:37:47.082491+00:00",
   "result": true,
   "items": [
     {
@@ -77,17 +77,17 @@
               "focusNodes": {
                 "se:LotCountIsTheNumberOfLots": {
                   "nodes": [
-                    "_:N55746f368b6f48a593c80f30773b5055"
+                    "_:Nca05feb107d14122a52622c06195b82f"
                   ]
                 },
                 "se:CalculatedTotalIsTheSumOfTheLots": {
                   "nodes": [
-                    "_:N55746f368b6f48a593c80f30773b5055"
+                    "_:Nca05feb107d14122a52622c06195b82f"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:\n - Shape se:LotCountIsTheNumberOfLots: _:N55746f368b6f48a593c80f30773b5055\n - Shape se:CalculatedTotalIsTheSumOfTheLots: _:N55746f368b6f48a593c80f30773b5055\n"
+              "message": "Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:\n - Shape se:LotCountIsTheNumberOfLots: _:Nca05feb107d14122a52622c06195b82f\n - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Nca05feb107d14122a52622c06195b82f\n"
             },
             {
               "op": "shacl-report",
@@ -101,17 +101,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N79fe0af6a72641f9a35c58cf1e0524df"
+                    "_:N623d79814deb4003af55379a8b154b40"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N79fe0af6a72641f9a35c58cf1e0524df"
+                    "_:N623d79814deb4003af55379a8b154b40"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N79fe0af6a72641f9a35c58cf1e0524df\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N79fe0af6a72641f9a35c58cf1e0524df\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N623d79814deb4003af55379a8b154b40\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N623d79814deb4003af55379a8b154b40\n"
             },
             {
               "op": "shacl-report",
@@ -125,120 +125,120 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:N888afe2ba2ed4cacb54b8fb6035e635f",
-                    "_:Neb08efd27a21488b87c4a9ab3849a397",
-                    "_:N9291fecc49f042028f34a310c1b240dd",
-                    "_:N9e4e301ed86045ad8ad7f3cd92ac62bb",
-                    "_:N1b1b6a63c2c147ee96ac01ae0d88076f",
-                    "_:N789b64f21bec4757b7ac2505444fd1fe",
-                    "_:Nd160700060f741d5894faa278787d8d8",
-                    "_:Nb78f2c5c0c3246d3999c85f51a4b549b",
-                    "_:N5ff233835c1f4d1fb884b01c5952b5ae",
-                    "_:N421714e34f554f59b7a2ecd978378274",
-                    "_:Nf2df54f77acf4b79afa295f5193526b5",
-                    "_:N1027704de0c44045a983aa6f63f3dd53",
-                    "_:Nc30cccf5b16c45b3b0533998d0e39b27",
-                    "_:N43b885a0c107439280da6d9c1209eefa",
-                    "_:Nc8884aad0e674a5dac78ba92d6b71ed6",
-                    "_:N6c67342ef1c049bbb2e56383311eefb5",
-                    "_:N7c34e828786d41afbe458ca16983d7bf",
-                    "_:N2e1f5e0837724913a6b7b1ea9c733e08",
-                    "_:N25d3fad8e50241a397e380114b3c0b34",
-                    "_:Nb5e0cf7d4e2c4f8da87ce575a5468495",
-                    "_:N2846b78a1f1f456ba748594bc0811731",
-                    "_:Nf01f83ce730849db8ffee4889af951a7",
-                    "_:N2cd716d5f2f64863a89bc30d24993bde",
-                    "_:N4e89e78308a94f5290933ba7e9b257d5",
-                    "_:Ncfbfd40256f944498cc4630a401c40e9",
-                    "_:Neae5e120b71a49ed89cfbfc6e1052236",
-                    "_:N0375aa5f0749443ebe058dcfac7c62fa",
-                    "_:N249a8384ee494b6191be181261624601",
-                    "_:Ndbb1ec2dd689400d87bcd1ac28b8dbe4",
-                    "_:N571dac091669407f9889549dc66f8f04",
-                    "_:N1717a73f21754c33963604cf2a003600",
-                    "_:Nd6f43cab845442bd94376ee74c3c90ea",
-                    "_:Nc1278fa3495d475d8e5b56b4839fe4db",
-                    "_:N11307c576570415dbca1a16824a447d3",
-                    "_:N85733c5ebf9a4e9bb837545bbcabbd9e",
-                    "_:Ncff64f8e00f84f90bd36292d7f6db957",
-                    "_:Na214cff0c6d042029c4d11bfe4dc5b03",
-                    "_:Nefe056a39bb0414c893c5b0369987009",
-                    "_:Naf95df2095424ca6b326846914f730bc",
-                    "_:N4d68f1a76a7b40189a3facaa33d86823",
-                    "_:N536a025eb8ae47089293febbd031aae7",
-                    "_:N09e7af5dc27c4a648914b5dce45cde06",
-                    "_:N291318a834b74e2187475e0668ca2e8d",
-                    "_:N8514fc9652ea4ff58c002307a9728358"
+                    "_:N2d0d69ce4ee942cbb07cad55ece3b655",
+                    "_:N4ff4ebb1fed3463b977f6cc37f2c2483",
+                    "_:Nfa82839ef5394ffab71daa2b5b21188d",
+                    "_:N43df5916105c4b6cb11a64fb2fde057f",
+                    "_:N155fe8dc5ef04869910092bc05577f20",
+                    "_:Nc65f06a2ca09404cb1e14f0a7f523aa7",
+                    "_:N4210ebe611d34a7c8fd22c200c6bc33b",
+                    "_:N1df7d900f91e475089a500f9695571fe",
+                    "_:Nfff055b5c5a444859ad8c36901b541b3",
+                    "_:N4a63716b6eeb4b848ee75c17c42a2d44",
+                    "_:N5077ddb3b1b34a0cbd598b4cb68b9de0",
+                    "_:N2bd0ae4aae9542059686dd10c7d1ee54",
+                    "_:Naa9c757fca8f46cebf37e4f508367b52",
+                    "_:N9a665511fc9e49e8b7978c8c05c12ff3",
+                    "_:Nee75181e03a1482a8b185a700a89057e",
+                    "_:Nc42a9f25c3c542078b31f11e2cd2a2ea",
+                    "_:N6b87e66830d0418da7bbd611dfd61dda",
+                    "_:Nd8e44b84823a40929ce2e68de3df426d",
+                    "_:Na78d1336e8974c6ba5d98fb4402c057c",
+                    "_:Nd3b53a3c08cc441e823a647ff9c73de9",
+                    "_:N07a5ac0b5f6a46c6b6723848dfae633c",
+                    "_:Nfe7eea2b750b4a8b856b0835e09be61d",
+                    "_:N9d2891e4df70479cb45dcc13c0df01ba",
+                    "_:Na3bf4964298946b7a2901b45a7daeaa5",
+                    "_:N2f7a7bb498e84839bfc47de39ccee094",
+                    "_:N9ff511d8e70a43fea4c9b2c09d843cb1",
+                    "_:N4b12fa786adc45bf9423889d7cedc6a2",
+                    "_:N8969e0dd815d4b02b3efa403c0914929",
+                    "_:N7387b7e9c836448f8db6c24df992a7a7",
+                    "_:Nbb2e33a524f34331ba2eb09e3767ed5f",
+                    "_:N40ef680fa12b48adb2f25c9e85666ed0",
+                    "_:Na7e315db144646b6b97f8585e42a4eeb",
+                    "_:N70e258b0fdb54be799101030452e6b15",
+                    "_:N5c137633969943d386547c4661f7aa40",
+                    "_:N40ce17f393c74040af7a80fc2773f8fa",
+                    "_:Na2540c7c1bfe429c955f26121d46d520",
+                    "_:N747fb55ac938406fbd11b30528e6bd37",
+                    "_:Ndc114bb9e457483f9a5ba287e095c111",
+                    "_:N9cea8d089d6749f7a1598afd4b1d46ec",
+                    "_:N981cce4e4e7b41c497a6fe901c6d348a",
+                    "_:N41f4c2acb3d44958bd506985023a4b40",
+                    "_:N2f1c6f50d1a945a6bcc70471e97d1e1d",
+                    "_:Nde8bf5147d714eb58fb1bdf3e4f1c665",
+                    "_:N6d7dab58b0d64cc48e1772c8b9a41e7e"
                   ]
                 },
                 "cr:ReportValueShape": {
                   "nodes": [
-                    "_:N1547e89be7c442a68af862f8533cb493",
-                    "_:N81ee8781e70143ddb9696b40d22ff1a9",
-                    "_:N11c9a9738e6d4189b5dd559348c17d74",
-                    "_:Na6e93078f301428a8b01757a15fd0b2b",
-                    "_:N86e97355854e4369b2e5604a938ca58d",
-                    "_:N6dacf7432337445da794a7c802fb255e",
-                    "_:Ndba4c927aed444929ce1097e4013faa8",
-                    "_:Nd11a87d9aba14765ae967bb7410283cc",
-                    "_:N8c20fabe43d04dc7b3f859956f29da1d",
-                    "_:Nbd41735ad38341359ed1b59fbd31cd1e",
-                    "_:Nedf8e43719ea41488fb06cff7b444659",
-                    "_:N5be85c44ef3746ae92e55cd2d2b32c4a",
-                    "_:Nd46374c734cc4866a1bf6267c5a6a676",
-                    "_:N82bc83c0bcb946b8a15a6fe3acb5e843",
-                    "_:Nb50af04bf090464ca272ea785975dbaa",
-                    "_:N0844c74ca5c04a2ebafc05d9270a8705",
-                    "_:Neb2455f101434877b354afcd18ab1d6b",
-                    "_:Nc313e6e7c2fb44478f7f96f4b4da55ec",
-                    "_:Nc1b3a4afacaf4451821634fbca117e90",
-                    "_:N5148089ddd2145cd8a41376bba2272e2",
-                    "_:N2dea92b41723445e9d01b7904cddb1f8",
-                    "_:N7e6af2f37e734df090a6b1e2eed045ad",
-                    "_:N8b588cb03a444afd93c72fade9fcc991",
-                    "_:Nd8e809d0cd184b319f85a5c9409a4824",
-                    "_:N11af2f3b5e514b96aa79c2d85a282c3e",
-                    "_:N0b066e55d8db4981959617894e19b34c",
-                    "_:N8eafccc036264ce7a030c3b1d8cd5290",
-                    "_:N29d865e7a6964b4988ce0f545bba745d",
-                    "_:N63b161fe6b444833bbdffc2c9a7a881f",
-                    "_:Nf5079fc2183c410fad1b9adc633b42f3",
-                    "_:N453ad50478d54820be9f852daea3253e",
-                    "_:N8ec63b91a4754fa693d71830561d438d",
-                    "_:N5868070517644544aefa12676d0b4709",
-                    "_:Na216704e8d7e48d79732c4b0a2dbfc15"
+                    "_:N46b7248a234c4a07832268471629c123",
+                    "_:N0462eb74c1314cf78f75f814b57b0d2b",
+                    "_:N33f75262269247c49df4acf588c38b77",
+                    "_:Na1f3147ba8094da49827ac1c6164b477",
+                    "_:N95f68076325146c6b581922b66d26f7b",
+                    "_:Nf9450f55bed84a71a778b452924e2e30",
+                    "_:Ne47ba0e3ae2d4fa19944b8a01decaeeb",
+                    "_:N7f89e2c67af1426280806428c2165359",
+                    "_:N9511ed7a837041c782cf5d520cc81185",
+                    "_:N908d20c9ef3248798ae5972237007648",
+                    "_:Nbebe34c0402c48d1af56c001153e9552",
+                    "_:N1d5ff1597f944f5d8dc8b74c47c66474",
+                    "_:N2e8fe74792224d95afe95e95147a810a",
+                    "_:Nb5ddafa053704abdaeafd3047647ce36",
+                    "_:Nd83a6c0e0ee54de59e74397e9be38e9d",
+                    "_:N3f91e7ef630b4dd2961bed3e15577a79",
+                    "_:N22ccbfcffb8e4e5fb6b8a350af6f142a",
+                    "_:Nbfe5c5e637524035bac2343e34b6b813",
+                    "_:Nc48da3b0a7044f019441b51a6a4d350d",
+                    "_:N6e32fc26f0044724aa494e60739d7488",
+                    "_:N2149d4b04cca4118a779248503fcb168",
+                    "_:N617f0009b4914d898e67d286dead5819",
+                    "_:N7c48ec582f4e462ca10d9a21ec0c0f3a",
+                    "_:N38fc08c6e9884c899b13b44303e66887",
+                    "_:N98dc7968dad742e7a99f783613160e2e",
+                    "_:N947dfc751b444e5883143fe5798d1c2c",
+                    "_:N142488c81a3e4fba933b4e8c9859ad42",
+                    "_:Nc44f481709074fc5b03956523b97bdf5",
+                    "_:Nf9c8b2c172a1424485ccebb7a5bcc37f",
+                    "_:Ne5613a38d59945e5bf596968007a3932",
+                    "_:N18dd341285944976ad7a9541e9b05f9a",
+                    "_:N2dcfe184f53b461daf5545974b18ee4c",
+                    "_:N1e6cd7a4ccd641b7934e4fcce422ccb5",
+                    "_:N4a5c8dd0613048d8b34fb315ecfa344b"
                   ]
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N79fe0af6a72641f9a35c58cf1e0524df"
+                    "_:N623d79814deb4003af55379a8b154b40"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N4555c25b9e91441bb4d3818440681cc8",
-                    "_:Na260af0e16f046919ffb6ad58e742b88",
-                    "_:N36d588c8b1e64f86ba5bc44cb1295e8b",
-                    "_:Nbef6d89d521f42a8869dd603dc758cc2",
-                    "_:Ne998f95436bb4230a64eb4525d0471c4",
-                    "_:N784eabee677b4a13bc11e8739c763e69",
-                    "_:N8d2ca64358854dd6a6c3d4c01b9ebe10",
-                    "_:Ncce6d53cb4cd45f19cb2d88dd06bb94c",
-                    "_:Nb595a7d814134ec196e1b6a82c37aac1",
-                    "_:N283b80befece428a9bd3a23e0037100c",
-                    "_:N2cf16a7a61fc4a57946d297124423c66",
-                    "_:Ndf651983390f44efbd166bf3225f4c63",
-                    "_:N7f305f00858447aabf0a4b161b468b82",
-                    "_:N2e156f7ebd5d4a30800bc452ab2c96a5",
-                    "_:N72493c5be5f04e84887999c0499bb62f",
-                    "_:Neb41246509b74a9b847b676f66b7f433",
-                    "_:N6016114035e541be8b150d29ee413452",
-                    "_:Nefb4bb55f21d49a2acabea9dfeafe70a"
+                    "_:Nde28d7b4fe0844e3aa84e169a63fde50",
+                    "_:Ncd69186e06ba44d1861bf6187e4daea8",
+                    "_:N3b2e0d1f70b24e9cbb3a38a019c7a2b3",
+                    "_:N8d0df84611bf4ae79e9be5b9d66770d8",
+                    "_:Nc1d306eee03540e18f1b7beee2381b68",
+                    "_:N10aba8ef1cd4463d96ee72e7c33b2dca",
+                    "_:N226c732f3bd7436ea938fd7cfb7ffcfe",
+                    "_:Na4929493261041af946380d98d2531ad",
+                    "_:Nd7865260d9614dd1819e4a4a49a733e5",
+                    "_:N7d91e14ddbca4686a1fb0e8ed12e0e01",
+                    "_:Nac706194befe4de380a2d11517534a28",
+                    "_:Ne5a602b7de914c0993c19294e7e9bd89",
+                    "_:Ne64cbc38f85e414bb5e252ac6a208127",
+                    "_:Ne1a59a87ca3b420790fe9f6c4a1a62fa",
+                    "_:N279d015b2656483dbc4a3e7e11fc9e93",
+                    "_:Nc14482ffc6d04619a35a0f3c5b157e59",
+                    "_:N8f196cc4061a44cf8692919fb6cea2ce",
+                    "_:Na20dcd2f2cca4abeb45da9010896c5db"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N888afe2ba2ed4cacb54b8fb6035e635f,_:Neb08efd27a21488b87c4a9ab3849a397,_:N9291fecc49f042028f34a310c1b240dd,_:N9e4e301ed86045ad8ad7f3cd92ac62bb,_:N1b1b6a63c2c147ee96ac01ae0d88076f,_:N789b64f21bec4757b7ac2505444fd1fe,_:Nd160700060f741d5894faa278787d8d8,_:Nb78f2c5c0c3246d3999c85f51a4b549b,_:N5ff233835c1f4d1fb884b01c5952b5ae,_:N421714e34f554f59b7a2ecd978378274,_:Nf2df54f77acf4b79afa295f5193526b5,_:N1027704de0c44045a983aa6f63f3dd53,_:Nc30cccf5b16c45b3b0533998d0e39b27,_:N43b885a0c107439280da6d9c1209eefa,_:Nc8884aad0e674a5dac78ba92d6b71ed6,_:N6c67342ef1c049bbb2e56383311eefb5,_:N7c34e828786d41afbe458ca16983d7bf,_:N2e1f5e0837724913a6b7b1ea9c733e08,_:N25d3fad8e50241a397e380114b3c0b34,_:Nb5e0cf7d4e2c4f8da87ce575a5468495,_:N2846b78a1f1f456ba748594bc0811731,_:Nf01f83ce730849db8ffee4889af951a7,_:N2cd716d5f2f64863a89bc30d24993bde,_:N4e89e78308a94f5290933ba7e9b257d5,_:Ncfbfd40256f944498cc4630a401c40e9,_:Neae5e120b71a49ed89cfbfc6e1052236,_:N0375aa5f0749443ebe058dcfac7c62fa,_:N249a8384ee494b6191be181261624601,_:Ndbb1ec2dd689400d87bcd1ac28b8dbe4,_:N571dac091669407f9889549dc66f8f04,_:N1717a73f21754c33963604cf2a003600,_:Nd6f43cab845442bd94376ee74c3c90ea,_:Nc1278fa3495d475d8e5b56b4839fe4db,_:N11307c576570415dbca1a16824a447d3,_:N85733c5ebf9a4e9bb837545bbcabbd9e,_:Ncff64f8e00f84f90bd36292d7f6db957,_:Na214cff0c6d042029c4d11bfe4dc5b03,_:Nefe056a39bb0414c893c5b0369987009,_:Naf95df2095424ca6b326846914f730bc,_:N4d68f1a76a7b40189a3facaa33d86823,_:N536a025eb8ae47089293febbd031aae7,_:N09e7af5dc27c4a648914b5dce45cde06,_:N291318a834b74e2187475e0668ca2e8d,_:N8514fc9652ea4ff58c002307a9728358\n - Shape cr:ReportValueShape: _:N1547e89be7c442a68af862f8533cb493,_:N81ee8781e70143ddb9696b40d22ff1a9,_:N11c9a9738e6d4189b5dd559348c17d74,_:Na6e93078f301428a8b01757a15fd0b2b,_:N86e97355854e4369b2e5604a938ca58d,_:N6dacf7432337445da794a7c802fb255e,_:Ndba4c927aed444929ce1097e4013faa8,_:Nd11a87d9aba14765ae967bb7410283cc,_:N8c20fabe43d04dc7b3f859956f29da1d,_:Nbd41735ad38341359ed1b59fbd31cd1e,_:Nedf8e43719ea41488fb06cff7b444659,_:N5be85c44ef3746ae92e55cd2d2b32c4a,_:Nd46374c734cc4866a1bf6267c5a6a676,_:N82bc83c0bcb946b8a15a6fe3acb5e843,_:Nb50af04bf090464ca272ea785975dbaa,_:N0844c74ca5c04a2ebafc05d9270a8705,_:Neb2455f101434877b354afcd18ab1d6b,_:Nc313e6e7c2fb44478f7f96f4b4da55ec,_:Nc1b3a4afacaf4451821634fbca117e90,_:N5148089ddd2145cd8a41376bba2272e2,_:N2dea92b41723445e9d01b7904cddb1f8,_:N7e6af2f37e734df090a6b1e2eed045ad,_:N8b588cb03a444afd93c72fade9fcc991,_:Nd8e809d0cd184b319f85a5c9409a4824,_:N11af2f3b5e514b96aa79c2d85a282c3e,_:N0b066e55d8db4981959617894e19b34c,_:N8eafccc036264ce7a030c3b1d8cd5290,_:N29d865e7a6964b4988ce0f545bba745d,_:N63b161fe6b444833bbdffc2c9a7a881f,_:Nf5079fc2183c410fad1b9adc633b42f3,_:N453ad50478d54820be9f852daea3253e,_:N8ec63b91a4754fa693d71830561d438d,_:N5868070517644544aefa12676d0b4709,_:Na216704e8d7e48d79732c4b0a2dbfc15\n - Shape cr:ReportShape: _:N79fe0af6a72641f9a35c58cf1e0524df\n - Shape cr:CheckResultShape: _:N4555c25b9e91441bb4d3818440681cc8,_:Na260af0e16f046919ffb6ad58e742b88,_:N36d588c8b1e64f86ba5bc44cb1295e8b,_:Nbef6d89d521f42a8869dd603dc758cc2,_:Ne998f95436bb4230a64eb4525d0471c4,_:N784eabee677b4a13bc11e8739c763e69,_:N8d2ca64358854dd6a6c3d4c01b9ebe10,_:Ncce6d53cb4cd45f19cb2d88dd06bb94c,_:Nb595a7d814134ec196e1b6a82c37aac1,_:N283b80befece428a9bd3a23e0037100c,_:N2cf16a7a61fc4a57946d297124423c66,_:Ndf651983390f44efbd166bf3225f4c63,_:N7f305f00858447aabf0a4b161b468b82,_:N2e156f7ebd5d4a30800bc452ab2c96a5,_:N72493c5be5f04e84887999c0499bb62f,_:Neb41246509b74a9b847b676f66b7f433,_:N6016114035e541be8b150d29ee413452,_:Nefb4bb55f21d49a2acabea9dfeafe70a\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:N2d0d69ce4ee942cbb07cad55ece3b655,_:N4ff4ebb1fed3463b977f6cc37f2c2483,_:Nfa82839ef5394ffab71daa2b5b21188d,_:N43df5916105c4b6cb11a64fb2fde057f,_:N155fe8dc5ef04869910092bc05577f20,_:Nc65f06a2ca09404cb1e14f0a7f523aa7,_:N4210ebe611d34a7c8fd22c200c6bc33b,_:N1df7d900f91e475089a500f9695571fe,_:Nfff055b5c5a444859ad8c36901b541b3,_:N4a63716b6eeb4b848ee75c17c42a2d44,_:N5077ddb3b1b34a0cbd598b4cb68b9de0,_:N2bd0ae4aae9542059686dd10c7d1ee54,_:Naa9c757fca8f46cebf37e4f508367b52,_:N9a665511fc9e49e8b7978c8c05c12ff3,_:Nee75181e03a1482a8b185a700a89057e,_:Nc42a9f25c3c542078b31f11e2cd2a2ea,_:N6b87e66830d0418da7bbd611dfd61dda,_:Nd8e44b84823a40929ce2e68de3df426d,_:Na78d1336e8974c6ba5d98fb4402c057c,_:Nd3b53a3c08cc441e823a647ff9c73de9,_:N07a5ac0b5f6a46c6b6723848dfae633c,_:Nfe7eea2b750b4a8b856b0835e09be61d,_:N9d2891e4df70479cb45dcc13c0df01ba,_:Na3bf4964298946b7a2901b45a7daeaa5,_:N2f7a7bb498e84839bfc47de39ccee094,_:N9ff511d8e70a43fea4c9b2c09d843cb1,_:N4b12fa786adc45bf9423889d7cedc6a2,_:N8969e0dd815d4b02b3efa403c0914929,_:N7387b7e9c836448f8db6c24df992a7a7,_:Nbb2e33a524f34331ba2eb09e3767ed5f,_:N40ef680fa12b48adb2f25c9e85666ed0,_:Na7e315db144646b6b97f8585e42a4eeb,_:N70e258b0fdb54be799101030452e6b15,_:N5c137633969943d386547c4661f7aa40,_:N40ce17f393c74040af7a80fc2773f8fa,_:Na2540c7c1bfe429c955f26121d46d520,_:N747fb55ac938406fbd11b30528e6bd37,_:Ndc114bb9e457483f9a5ba287e095c111,_:N9cea8d089d6749f7a1598afd4b1d46ec,_:N981cce4e4e7b41c497a6fe901c6d348a,_:N41f4c2acb3d44958bd506985023a4b40,_:N2f1c6f50d1a945a6bcc70471e97d1e1d,_:Nde8bf5147d714eb58fb1bdf3e4f1c665,_:N6d7dab58b0d64cc48e1772c8b9a41e7e\n - Shape cr:ReportValueShape: _:N46b7248a234c4a07832268471629c123,_:N0462eb74c1314cf78f75f814b57b0d2b,_:N33f75262269247c49df4acf588c38b77,_:Na1f3147ba8094da49827ac1c6164b477,_:N95f68076325146c6b581922b66d26f7b,_:Nf9450f55bed84a71a778b452924e2e30,_:Ne47ba0e3ae2d4fa19944b8a01decaeeb,_:N7f89e2c67af1426280806428c2165359,_:N9511ed7a837041c782cf5d520cc81185,_:N908d20c9ef3248798ae5972237007648,_:Nbebe34c0402c48d1af56c001153e9552,_:N1d5ff1597f944f5d8dc8b74c47c66474,_:N2e8fe74792224d95afe95e95147a810a,_:Nb5ddafa053704abdaeafd3047647ce36,_:Nd83a6c0e0ee54de59e74397e9be38e9d,_:N3f91e7ef630b4dd2961bed3e15577a79,_:N22ccbfcffb8e4e5fb6b8a350af6f142a,_:Nbfe5c5e637524035bac2343e34b6b813,_:Nc48da3b0a7044f019441b51a6a4d350d,_:N6e32fc26f0044724aa494e60739d7488,_:N2149d4b04cca4118a779248503fcb168,_:N617f0009b4914d898e67d286dead5819,_:N7c48ec582f4e462ca10d9a21ec0c0f3a,_:N38fc08c6e9884c899b13b44303e66887,_:N98dc7968dad742e7a99f783613160e2e,_:N947dfc751b444e5883143fe5798d1c2c,_:N142488c81a3e4fba933b4e8c9859ad42,_:Nc44f481709074fc5b03956523b97bdf5,_:Nf9c8b2c172a1424485ccebb7a5bcc37f,_:Ne5613a38d59945e5bf596968007a3932,_:N18dd341285944976ad7a9541e9b05f9a,_:N2dcfe184f53b461daf5545974b18ee4c,_:N1e6cd7a4ccd641b7934e4fcce422ccb5,_:N4a5c8dd0613048d8b34fb315ecfa344b\n - Shape cr:ReportShape: _:N623d79814deb4003af55379a8b154b40\n - Shape cr:CheckResultShape: _:Nde28d7b4fe0844e3aa84e169a63fde50,_:Ncd69186e06ba44d1861bf6187e4daea8,_:N3b2e0d1f70b24e9cbb3a38a019c7a2b3,_:N8d0df84611bf4ae79e9be5b9d66770d8,_:Nc1d306eee03540e18f1b7beee2381b68,_:N10aba8ef1cd4463d96ee72e7c33b2dca,_:N226c732f3bd7436ea938fd7cfb7ffcfe,_:Na4929493261041af946380d98d2531ad,_:Nd7865260d9614dd1819e4a4a49a733e5,_:N7d91e14ddbca4686a1fb0e8ed12e0e01,_:Nac706194befe4de380a2d11517534a28,_:Ne5a602b7de914c0993c19294e7e9bd89,_:Ne64cbc38f85e414bb5e252ac6a208127,_:Ne1a59a87ca3b420790fe9f6c4a1a62fa,_:N279d015b2656483dbc4a3e7e11fc9e93,_:Nc14482ffc6d04619a35a0f3c5b157e59,_:N8f196cc4061a44cf8692919fb6cea2ce,_:Na20dcd2f2cca4abeb45da9010896c5db\n"
             }
           ]
         }
@@ -316,17 +316,17 @@
               "focusNodes": {
                 "se:LotCountIsTheNumberOfLots": {
                   "nodes": [
-                    "_:Nff4fd5a165c4486182aeea9f151166e4"
+                    "_:N74fb9ac4ea2d4e34970d44acbe40ddbd"
                   ]
                 },
                 "se:CalculatedTotalIsTheSumOfTheLots": {
                   "nodes": [
-                    "_:Nff4fd5a165c4486182aeea9f151166e4"
+                    "_:N74fb9ac4ea2d4e34970d44acbe40ddbd"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:\n - Shape se:LotCountIsTheNumberOfLots: _:Nff4fd5a165c4486182aeea9f151166e4\n - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Nff4fd5a165c4486182aeea9f151166e4\n"
+              "message": "Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:\n - Shape se:LotCountIsTheNumberOfLots: _:N74fb9ac4ea2d4e34970d44acbe40ddbd\n - Shape se:CalculatedTotalIsTheSumOfTheLots: _:N74fb9ac4ea2d4e34970d44acbe40ddbd\n"
             },
             {
               "op": "shacl-report",
@@ -340,17 +340,17 @@
               "focusNodes": {
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N26fb4bfbc7ad49c3b330ddd9a674c1bb"
+                    "_:N4f20500562f74dc8bb9d3b8ec286360f"
                   ]
                 },
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N26fb4bfbc7ad49c3b330ddd9a674c1bb"
+                    "_:N4f20500562f74dc8bb9d3b8ec286360f"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N26fb4bfbc7ad49c3b330ddd9a674c1bb\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N26fb4bfbc7ad49c3b330ddd9a674c1bb\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:ReportStatusFollowsFromChecks: _:N4f20500562f74dc8bb9d3b8ec286360f\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N4f20500562f74dc8bb9d3b8ec286360f\n"
             },
             {
               "op": "shacl-report",
@@ -364,120 +364,120 @@
               "focusNodes": {
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Ne1138e1855d7472a9a9641b36c2eb6c4",
-                    "_:N3ec535be494b4814a2363f9092e33614",
-                    "_:N1c8fd40b213743cdae5e0a31ff6ab1da",
-                    "_:Nbae502e1c27f4effbf8a3894cede8f1e",
-                    "_:Nab34ec25b15d47b6ab37cd48a800bd91",
-                    "_:Nee383e14501b43c19b4ae019e6b7e9d3",
-                    "_:N9ab693aa0ffd41e8834717f92a247de7",
-                    "_:N894c19e876d74b2f94cc61b978077cb0",
-                    "_:N73b381203f3e4f8c94a8699b44803237",
-                    "_:Ndfa4430bd46a415d8c62c109d970b289",
-                    "_:N48d4c8f9b79c4ab8b49128f6a1258b73",
-                    "_:N2d5c88b536b14c648bf46c48b4bd42f8",
-                    "_:N12c3668e7e3241919ecfb5fdcccc2887",
-                    "_:Nf1fb38cb095242f09d0af8c1df70413b",
-                    "_:N375c06dea09843ad8c81b9d6d4eda891",
-                    "_:N39c3c60b78974129a6cf7104cfa419a1",
-                    "_:N1a5853c350684c5698f5031ba2acba69",
-                    "_:N37445142bdf1444893019b02e0a55039",
-                    "_:Nbcfa34f3cb364c8d96a085fedcfcdaec",
-                    "_:N14ab199db09645dcbf5c971b8b8878d4",
-                    "_:N413aba29e6bb40b7b27295e089f0814e",
-                    "_:N8ffd107ae43442fdb75d022fd1bef683",
-                    "_:N837a240793a94fe49480981bf5e9e9bd",
-                    "_:Ncb49aa70cee9459bad729c320f8605ee",
-                    "_:Nbcf23e679e6544eab7f1e0f482f9409f",
-                    "_:N115b4b7920b44bb1b7029943a66cf768",
-                    "_:Nc2395cd51ef449ea843ba5dde2251a35",
-                    "_:N0630ef2aa1be49208626c1f4622e6dde",
-                    "_:N3a7da136b7c44c91b3c3e08410e1d92a",
-                    "_:Nd7597711b0ed4d889b1aad5f42e90341",
-                    "_:N5ba16298aa9c4df6a73677e03e5522fe",
-                    "_:N7145997f31284e5e80ae7840db716a0a",
-                    "_:N684db5c94c4f47758e3604df8d85cc9a",
-                    "_:N713c99ce5ec6471281f7c5fbd30da778",
-                    "_:Na3cc8684145f442f84e991b5588c4476",
-                    "_:N6b70be37ab7241b0aa2a720b85fe27c6",
-                    "_:N069d625c93b14b15bfff0e9580e5fd97",
-                    "_:N21d62ad545ef4d43af6c91f4788c5cf4",
-                    "_:Nf36d51a6001e4da5b29f0fb0eb6575b9",
-                    "_:Na61b697d69934d9ca11525fad9f69e2f",
-                    "_:Nf690e78b7eb04b538f27a2466afd422e",
-                    "_:N9b2fc617dd404dce8690c6b39f412d65",
-                    "_:N479e0e8611914b078b2460d165f77e65",
-                    "_:Nf5d9f4ce3be548978e5b3d8ae91c5da0"
+                    "_:Nd3b8cde1b3194363856449d3a37ce2ec",
+                    "_:Ne63f40f1ba4442b8ac334b9a30faec12",
+                    "_:N1936d6ae90264865b837a5fd1c33411b",
+                    "_:N2da15dc164e74e8087b61577b138c3cb",
+                    "_:N1e5e8b108fb9474ca390bdad4f0b7f70",
+                    "_:Ne211edd75a564dedb7a0d4c547d0d100",
+                    "_:N25f0922ce37c4bceaeab22797b4e8679",
+                    "_:Nc4b4bded4e5b4e40a5022e93cea5aede",
+                    "_:N7e041920bb49444290a45bde615c95e1",
+                    "_:N0d4f838a79f84031879f0a63789fc735",
+                    "_:N4ce0f7f837b1422794ba569c5c0707dc",
+                    "_:N0ccd223b495a4e9198b7ff2450737d64",
+                    "_:N4be0286e6a8a40e999985ef8a5239de6",
+                    "_:N79ba0dcda4db46aa9c86f4167ea12dfb",
+                    "_:N1621bab8112e436b804aa7a192e655ad",
+                    "_:N8d80ca813e384cb0b76e751c6794cbe9",
+                    "_:Nd6b2ea73ec8144c2a41472426ef9152a",
+                    "_:N41486fc83f744fa6879c91361e299e9c",
+                    "_:N064b54dede7f4b079f8c25275d33030e",
+                    "_:Nae81579c8d9b407db1c341304aad7eee",
+                    "_:N786425dffe47463cb2f0bbbe8190fbb5",
+                    "_:N701cb3c41bb64f3e87b5024ee5190fbb",
+                    "_:N10d870bda7104f979a184c8e2d829e21",
+                    "_:Nc54c509e38dc4a6d9e161c3596acc1fa",
+                    "_:Nacad7fc39cfc418bbfc22be1420446bd",
+                    "_:Na3c76250ab1b4cd48c31c621e55bc522",
+                    "_:Ncd904fcafc6d4ea789a61467386d9e6e",
+                    "_:N7ce90a4f96194d37b08dceceb8161c53",
+                    "_:N656db5c0e9f244c7a0f414f86bdb9446",
+                    "_:N9131973658b242c7b3ff5179ab023547",
+                    "_:N6a6bcb99cfd94e15a5fecaa449783f7f",
+                    "_:N93d52a25970c4b0e817359e91ec231c5",
+                    "_:N31d1d186178344c8b31662b3e03efa52",
+                    "_:Nbcc1f17b48d646eebf962fc265b094a2",
+                    "_:N9c03769f038c42a5886972c5aa72e91f",
+                    "_:Ne08cede6a159409a98699f86b8524938",
+                    "_:N8f92b452160145aa91de09e98b71f316",
+                    "_:N0bcacdf70d1542f2bba334ef133f7972",
+                    "_:N6102290b220a46c6ba27644420277a73",
+                    "_:Ne2dd401c62874296963d577ab84580a0",
+                    "_:N09be54a72038406c9e16581f3fa08a57",
+                    "_:Na202fbfd79814cbb8a5fc78ed58eb6b1",
+                    "_:Nd676ce862d8148bcae9b35aa48db0c5a",
+                    "_:N074f837fbfdb4dc9900d85860c9cffbc"
                   ]
                 },
                 "cr:ReportValueShape": {
                   "nodes": [
-                    "_:N5a09520c0f194509812b9b9f4101fc25",
-                    "_:Neae21c14eca84722ac04f215e71c8b94",
-                    "_:N1423d95c60eb4cf5a1518b49a6e4a040",
-                    "_:N4ca3cd80af1d4cbe8851e8a665c8e512",
-                    "_:N16ac5ecd33ae4fd7857aa814263af786",
-                    "_:N466c62a2cf1e4538a6eca0b59531726c",
-                    "_:N0e78d3d2f4974759a9ff759dc0bfe116",
-                    "_:N2855fb01bce04e26a27140034504c38c",
-                    "_:N314c4e35ca2c4d0aa23ec6961c7b1e2c",
-                    "_:N3fb55d6c513d45808acd49b047755fa8",
-                    "_:N9924d05a3a3447dfac2c7b8aadeee199",
-                    "_:N992d8ad3cc04492393fa47363398b95f",
-                    "_:N1c21929783db4cb0a644fb3760d76531",
-                    "_:Nf06594862d184aed8af0a41b021935aa",
-                    "_:Na865283dd60e4c60b459d1546578b104",
-                    "_:N3cc58b75733547f58ee01e2538728bb7",
-                    "_:N3ca8543a165546098ff140925d8e591c",
-                    "_:Ne13c45d61b8f44739c43a20fd973433e",
-                    "_:Nc30c66350efb42c1a1e57eec2c0ee465",
-                    "_:N70acb810057b4749ae66a85ddc4a3a20",
-                    "_:Naedabd8d0a1a43dea53fdd32f1437791",
-                    "_:N37a5af9cdc574367bc59f15c05631374",
-                    "_:Nf378eeafced94d9f97e82ea7c506f4f4",
-                    "_:N140e758b8e90434abaca00dc8bcd2c76",
-                    "_:N9886c35cd71941c6b65743ac4f07cd6f",
-                    "_:Na810526fc3744d0abed3de7e918689da",
-                    "_:Ne50df80ac5f84001b60fd0ffccc48ede",
-                    "_:Na387a393292e4c7997f85c9212e705fc",
-                    "_:Ne7602410c85c43c4b69594eeb91b84e3",
-                    "_:Nb7ca8654a94741d79d24ce75a54dc195",
-                    "_:Nb2faeff85e524964a23eeaaaef0646ad",
-                    "_:Naed1e03ffbb8471692649a40d7b076b0",
-                    "_:N0a7e529875124f2f81066525377c740e",
-                    "_:Neee1eb0d6cee43efb32c2b1b682ef795"
+                    "_:N608b5892619e4ece9b0dcd4ec093ac45",
+                    "_:N46f805485e8f4189a45f0fdc797a17aa",
+                    "_:N936e14218a31453b9b94f1076b4f9d69",
+                    "_:Nb3fa4c8120934476bbaa29f8f7f4044c",
+                    "_:Ne0f67bf11b1d46e6ba0a204e27b23698",
+                    "_:N40ad62688eea49f686f20a47b28329a0",
+                    "_:Nbef56077a6ab46978bff724f3f76b71f",
+                    "_:N711ec6c1469e4cf3aa0bef096ea381df",
+                    "_:Nedeb021ff8c743ca81a5e9243d6b7c6d",
+                    "_:N132f691d593245108a7088da841e291b",
+                    "_:N0190a65315fd4d4da891862eccf9745a",
+                    "_:Ne40ba310ffd64518a470c10f88295571",
+                    "_:N6652d7baa9c94209a5405d80069dad12",
+                    "_:N86ef35c9a6474aa9b5c7edde3013e8c7",
+                    "_:N8b8ba3af362d4880bcd32a0a7d9e2b8e",
+                    "_:N2b6c9b2405214b77b09159a472d339df",
+                    "_:Nc80cddd9dd0f472abf70088c6779e255",
+                    "_:Nf151baf252d941508738f9c1f025ae4e",
+                    "_:Nd338055ffc1a44bbbf1e3997fe8cb1b2",
+                    "_:N11a98c85bec5432cab8b997ce32385ee",
+                    "_:N711028a92c864bbb98ed047e1adbe85b",
+                    "_:Nd43ee780fd604748a72c4170e239af8a",
+                    "_:Nf429e93bc44f483990c6264ba74bcdca",
+                    "_:Nb6f0eb76d0084d5ab75a02134858413d",
+                    "_:Nb5c5ab044f384c9e89a53130be6d90e0",
+                    "_:N3e4b4875d7fa4521ad1b3e0ef567ff75",
+                    "_:N4902a646aa6f4478a0abcf590f3eacf5",
+                    "_:Naaacab680f1f49d0a06db0d531133c14",
+                    "_:N305af13863cd4602ab946ab558f720fd",
+                    "_:N0bbcfd976c26462c8c3f7b40a37b33b2",
+                    "_:N9afeea27fbbf4eadb07236971b672b20",
+                    "_:Nb52025c2ebf94a23bd261174d1b4806d",
+                    "_:N8261aa099a944834a43ad719b85d61fc",
+                    "_:N6244706bd2fc462fa03b6db541c317de"
                   ]
                 },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N26fb4bfbc7ad49c3b330ddd9a674c1bb"
+                    "_:N4f20500562f74dc8bb9d3b8ec286360f"
                   ]
                 },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:N57103c1c86b941648f81ce3466ea474c",
-                    "_:N216ee77da76b4537bafd6f951dbb9ad9",
-                    "_:N20263e75167748d2b5acc2e57d6633ae",
-                    "_:N57aa7ae05bc244cda909a4bf2f14cee0",
-                    "_:Nc9e8012309024e6881f9e27ad3429e68",
-                    "_:Ne8b0372f974146fa954159507aa47f54",
-                    "_:N480afbb5a4114687b8370ecd11854449",
-                    "_:N88d0347b2c284aa8a838bd5f14a06c5f",
-                    "_:Ncadb864e57824afca37eb5a657d25417",
-                    "_:N084e7cc17bc04de8a6a07c668e79db38",
-                    "_:N19eebc3bf19649f2be0cc998ee1e225b",
-                    "_:Ndb93b0a76541415a93696a0d6e6bdb47",
-                    "_:N178369400f444592b388325321ad9ec7",
-                    "_:N377de41830784ab5bf584066db773ba9",
-                    "_:N5099e77b401e4825a53ed47b484eb2b4",
-                    "_:N4ee45c3b56634ed5be6b26de0b332a21",
-                    "_:Nd6412871de7a484caa824a397916e6db",
-                    "_:N79c7d2908f0d410cb3831eb94595f693"
+                    "_:N659256fa05c84d29856d47fc21da8059",
+                    "_:Na33984b39893447eada11dca7430671e",
+                    "_:N3cfeaa8caf334df28e6400af87285242",
+                    "_:N0d9ef3cb1d55422786f7660b45f1fe47",
+                    "_:N3eaf3b023d4f4e1a8307d4791ce2386d",
+                    "_:N6eea8cf189b24c94b85e524af23eb83a",
+                    "_:N2d33dd96c6f24c0b83bf24a3ec6dc9a2",
+                    "_:N3e80933ed85f40b189f55b634f9740cb",
+                    "_:Ndc78c6c002e4408d99f596e31872ecf8",
+                    "_:Nd219bad22c06495a84cd321a047797c6",
+                    "_:N0e6fadc6b6804c5da4492df8b81fe1cb",
+                    "_:Na77f4fb3da124433abdf37780bd89bff",
+                    "_:Nd63b8fd1624146b49d31cc1621202362",
+                    "_:Nd9a094e705394ef48b00ba6f5b0e4762",
+                    "_:Na1853427fc084e48bcc0561ab99e515a",
+                    "_:Nedb19ae99b554060b5f87ae5aabc48bb",
+                    "_:Na5e6bbf3a8ae424eaa50a3e41bb0e3dd",
+                    "_:N34fc4d6193964320b1c38690f3595a61"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Ne1138e1855d7472a9a9641b36c2eb6c4,_:N3ec535be494b4814a2363f9092e33614,_:N1c8fd40b213743cdae5e0a31ff6ab1da,_:Nbae502e1c27f4effbf8a3894cede8f1e,_:Nab34ec25b15d47b6ab37cd48a800bd91,_:Nee383e14501b43c19b4ae019e6b7e9d3,_:N9ab693aa0ffd41e8834717f92a247de7,_:N894c19e876d74b2f94cc61b978077cb0,_:N73b381203f3e4f8c94a8699b44803237,_:Ndfa4430bd46a415d8c62c109d970b289,_:N48d4c8f9b79c4ab8b49128f6a1258b73,_:N2d5c88b536b14c648bf46c48b4bd42f8,_:N12c3668e7e3241919ecfb5fdcccc2887,_:Nf1fb38cb095242f09d0af8c1df70413b,_:N375c06dea09843ad8c81b9d6d4eda891,_:N39c3c60b78974129a6cf7104cfa419a1,_:N1a5853c350684c5698f5031ba2acba69,_:N37445142bdf1444893019b02e0a55039,_:Nbcfa34f3cb364c8d96a085fedcfcdaec,_:N14ab199db09645dcbf5c971b8b8878d4,_:N413aba29e6bb40b7b27295e089f0814e,_:N8ffd107ae43442fdb75d022fd1bef683,_:N837a240793a94fe49480981bf5e9e9bd,_:Ncb49aa70cee9459bad729c320f8605ee,_:Nbcf23e679e6544eab7f1e0f482f9409f,_:N115b4b7920b44bb1b7029943a66cf768,_:Nc2395cd51ef449ea843ba5dde2251a35,_:N0630ef2aa1be49208626c1f4622e6dde,_:N3a7da136b7c44c91b3c3e08410e1d92a,_:Nd7597711b0ed4d889b1aad5f42e90341,_:N5ba16298aa9c4df6a73677e03e5522fe,_:N7145997f31284e5e80ae7840db716a0a,_:N684db5c94c4f47758e3604df8d85cc9a,_:N713c99ce5ec6471281f7c5fbd30da778,_:Na3cc8684145f442f84e991b5588c4476,_:N6b70be37ab7241b0aa2a720b85fe27c6,_:N069d625c93b14b15bfff0e9580e5fd97,_:N21d62ad545ef4d43af6c91f4788c5cf4,_:Nf36d51a6001e4da5b29f0fb0eb6575b9,_:Na61b697d69934d9ca11525fad9f69e2f,_:Nf690e78b7eb04b538f27a2466afd422e,_:N9b2fc617dd404dce8690c6b39f412d65,_:N479e0e8611914b078b2460d165f77e65,_:Nf5d9f4ce3be548978e5b3d8ae91c5da0\n - Shape cr:ReportValueShape: _:N5a09520c0f194509812b9b9f4101fc25,_:Neae21c14eca84722ac04f215e71c8b94,_:N1423d95c60eb4cf5a1518b49a6e4a040,_:N4ca3cd80af1d4cbe8851e8a665c8e512,_:N16ac5ecd33ae4fd7857aa814263af786,_:N466c62a2cf1e4538a6eca0b59531726c,_:N0e78d3d2f4974759a9ff759dc0bfe116,_:N2855fb01bce04e26a27140034504c38c,_:N314c4e35ca2c4d0aa23ec6961c7b1e2c,_:N3fb55d6c513d45808acd49b047755fa8,_:N9924d05a3a3447dfac2c7b8aadeee199,_:N992d8ad3cc04492393fa47363398b95f,_:N1c21929783db4cb0a644fb3760d76531,_:Nf06594862d184aed8af0a41b021935aa,_:Na865283dd60e4c60b459d1546578b104,_:N3cc58b75733547f58ee01e2538728bb7,_:N3ca8543a165546098ff140925d8e591c,_:Ne13c45d61b8f44739c43a20fd973433e,_:Nc30c66350efb42c1a1e57eec2c0ee465,_:N70acb810057b4749ae66a85ddc4a3a20,_:Naedabd8d0a1a43dea53fdd32f1437791,_:N37a5af9cdc574367bc59f15c05631374,_:Nf378eeafced94d9f97e82ea7c506f4f4,_:N140e758b8e90434abaca00dc8bcd2c76,_:N9886c35cd71941c6b65743ac4f07cd6f,_:Na810526fc3744d0abed3de7e918689da,_:Ne50df80ac5f84001b60fd0ffccc48ede,_:Na387a393292e4c7997f85c9212e705fc,_:Ne7602410c85c43c4b69594eeb91b84e3,_:Nb7ca8654a94741d79d24ce75a54dc195,_:Nb2faeff85e524964a23eeaaaef0646ad,_:Naed1e03ffbb8471692649a40d7b076b0,_:N0a7e529875124f2f81066525377c740e,_:Neee1eb0d6cee43efb32c2b1b682ef795\n - Shape cr:ReportShape: _:N26fb4bfbc7ad49c3b330ddd9a674c1bb\n - Shape cr:CheckResultShape: _:N57103c1c86b941648f81ce3466ea474c,_:N216ee77da76b4537bafd6f951dbb9ad9,_:N20263e75167748d2b5acc2e57d6633ae,_:N57aa7ae05bc244cda909a4bf2f14cee0,_:Nc9e8012309024e6881f9e27ad3429e68,_:Ne8b0372f974146fa954159507aa47f54,_:N480afbb5a4114687b8370ecd11854449,_:N88d0347b2c284aa8a838bd5f14a06c5f,_:Ncadb864e57824afca37eb5a657d25417,_:N084e7cc17bc04de8a6a07c668e79db38,_:N19eebc3bf19649f2be0cc998ee1e225b,_:Ndb93b0a76541415a93696a0d6e6bdb47,_:N178369400f444592b388325321ad9ec7,_:N377de41830784ab5bf584066db773ba9,_:N5099e77b401e4825a53ed47b484eb2b4,_:N4ee45c3b56634ed5be6b26de0b332a21,_:Nd6412871de7a484caa824a397916e6db,_:N79c7d2908f0d410cb3831eb94595f693\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:SourceReferenceShape: _:Nd3b8cde1b3194363856449d3a37ce2ec,_:Ne63f40f1ba4442b8ac334b9a30faec12,_:N1936d6ae90264865b837a5fd1c33411b,_:N2da15dc164e74e8087b61577b138c3cb,_:N1e5e8b108fb9474ca390bdad4f0b7f70,_:Ne211edd75a564dedb7a0d4c547d0d100,_:N25f0922ce37c4bceaeab22797b4e8679,_:Nc4b4bded4e5b4e40a5022e93cea5aede,_:N7e041920bb49444290a45bde615c95e1,_:N0d4f838a79f84031879f0a63789fc735,_:N4ce0f7f837b1422794ba569c5c0707dc,_:N0ccd223b495a4e9198b7ff2450737d64,_:N4be0286e6a8a40e999985ef8a5239de6,_:N79ba0dcda4db46aa9c86f4167ea12dfb,_:N1621bab8112e436b804aa7a192e655ad,_:N8d80ca813e384cb0b76e751c6794cbe9,_:Nd6b2ea73ec8144c2a41472426ef9152a,_:N41486fc83f744fa6879c91361e299e9c,_:N064b54dede7f4b079f8c25275d33030e,_:Nae81579c8d9b407db1c341304aad7eee,_:N786425dffe47463cb2f0bbbe8190fbb5,_:N701cb3c41bb64f3e87b5024ee5190fbb,_:N10d870bda7104f979a184c8e2d829e21,_:Nc54c509e38dc4a6d9e161c3596acc1fa,_:Nacad7fc39cfc418bbfc22be1420446bd,_:Na3c76250ab1b4cd48c31c621e55bc522,_:Ncd904fcafc6d4ea789a61467386d9e6e,_:N7ce90a4f96194d37b08dceceb8161c53,_:N656db5c0e9f244c7a0f414f86bdb9446,_:N9131973658b242c7b3ff5179ab023547,_:N6a6bcb99cfd94e15a5fecaa449783f7f,_:N93d52a25970c4b0e817359e91ec231c5,_:N31d1d186178344c8b31662b3e03efa52,_:Nbcc1f17b48d646eebf962fc265b094a2,_:N9c03769f038c42a5886972c5aa72e91f,_:Ne08cede6a159409a98699f86b8524938,_:N8f92b452160145aa91de09e98b71f316,_:N0bcacdf70d1542f2bba334ef133f7972,_:N6102290b220a46c6ba27644420277a73,_:Ne2dd401c62874296963d577ab84580a0,_:N09be54a72038406c9e16581f3fa08a57,_:Na202fbfd79814cbb8a5fc78ed58eb6b1,_:Nd676ce862d8148bcae9b35aa48db0c5a,_:N074f837fbfdb4dc9900d85860c9cffbc\n - Shape cr:ReportValueShape: _:N608b5892619e4ece9b0dcd4ec093ac45,_:N46f805485e8f4189a45f0fdc797a17aa,_:N936e14218a31453b9b94f1076b4f9d69,_:Nb3fa4c8120934476bbaa29f8f7f4044c,_:Ne0f67bf11b1d46e6ba0a204e27b23698,_:N40ad62688eea49f686f20a47b28329a0,_:Nbef56077a6ab46978bff724f3f76b71f,_:N711ec6c1469e4cf3aa0bef096ea381df,_:Nedeb021ff8c743ca81a5e9243d6b7c6d,_:N132f691d593245108a7088da841e291b,_:N0190a65315fd4d4da891862eccf9745a,_:Ne40ba310ffd64518a470c10f88295571,_:N6652d7baa9c94209a5405d80069dad12,_:N86ef35c9a6474aa9b5c7edde3013e8c7,_:N8b8ba3af362d4880bcd32a0a7d9e2b8e,_:N2b6c9b2405214b77b09159a472d339df,_:Nc80cddd9dd0f472abf70088c6779e255,_:Nf151baf252d941508738f9c1f025ae4e,_:Nd338055ffc1a44bbbf1e3997fe8cb1b2,_:N11a98c85bec5432cab8b997ce32385ee,_:N711028a92c864bbb98ed047e1adbe85b,_:Nd43ee780fd604748a72c4170e239af8a,_:Nf429e93bc44f483990c6264ba74bcdca,_:Nb6f0eb76d0084d5ab75a02134858413d,_:Nb5c5ab044f384c9e89a53130be6d90e0,_:N3e4b4875d7fa4521ad1b3e0ef567ff75,_:N4902a646aa6f4478a0abcf590f3eacf5,_:Naaacab680f1f49d0a06db0d531133c14,_:N305af13863cd4602ab946ab558f720fd,_:N0bbcfd976c26462c8c3f7b40a37b33b2,_:N9afeea27fbbf4eadb07236971b672b20,_:Nb52025c2ebf94a23bd261174d1b4806d,_:N8261aa099a944834a43ad719b85d61fc,_:N6244706bd2fc462fa03b6db541c317de\n - Shape cr:ReportShape: _:N4f20500562f74dc8bb9d3b8ec286360f\n - Shape cr:CheckResultShape: _:N659256fa05c84d29856d47fc21da8059,_:Na33984b39893447eada11dca7430671e,_:N3cfeaa8caf334df28e6400af87285242,_:N0d9ef3cb1d55422786f7660b45f1fe47,_:N3eaf3b023d4f4e1a8307d4791ce2386d,_:N6eea8cf189b24c94b85e524af23eb83a,_:N2d33dd96c6f24c0b83bf24a3ec6dc9a2,_:N3e80933ed85f40b189f55b634f9740cb,_:Ndc78c6c002e4408d99f596e31872ecf8,_:Nd219bad22c06495a84cd321a047797c6,_:N0e6fadc6b6804c5da4492df8b81fe1cb,_:Na77f4fb3da124433abdf37780bd89bff,_:Nd63b8fd1624146b49d31cc1621202362,_:Nd9a094e705394ef48b00ba6f5b0e4762,_:Na1853427fc084e48bcc0561ab99e515a,_:Nedb19ae99b554060b5f87ae5aabc48bb,_:Na5e6bbf3a8ae424eaa50a3e41bb0e3dd,_:N34fc4d6193964320b1c38690f3595a61\n"
             }
           ]
         }

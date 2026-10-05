@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T22:05:44.785420+00:00
+Generated 2026-10-05T17:37:31.648669+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -59,8 +59,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   	Message: Report status https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done does not follow from its check results (expected https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/complete)
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:Nd487b47238004d3581787a8200fbf3d2
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd487b47238004d3581787a8200fbf3d2
+ - Shape cr:ReportStatusFollowsFromChecks: _:N28663a8aab7849edb1804618e24137dc
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N28663a8aab7849edb1804618e24137dc
 
 
 ** Validation error **
@@ -74,13 +74,13 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Focus Node: [ cr:check [ cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ; cr:definedBy Literal("example.adapter") ; dcterms:description Literal("ok") ; dcterms:identifier Literal("subject-identified") ; earl:outcome earl:passed ; sh:resultSeverity sh:Violation ] ; cr:content [ ] ; cr:reportStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> ; cr:reportType Literal("example.report-type") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/complete> ; dcterms:source [ dcterms:identifier Literal("example-dataset") ] ; dcterms:subject [ cr:kind Literal("parcel") ; cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/0") ; cr:sourceDataset Literal("example-dataset") ] ] ]
   	Value Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done>
   	Result Path: cr:reportStatus
-  	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:invalid', 'rstatus:incomplete', 'rstatus:complete']
+  	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-status/done> not in list ['rstatus:invalid', 'rstatus:complete', 'rstatus:incomplete']
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N7ffac7187c7a4226a7ca610a7c44c610
+ - Shape cr:SourceReferenceShape: _:N0c919f9738db4b8e8281950035e92f2a
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:Nd487b47238004d3581787a8200fbf3d2
- - Shape cr:CheckResultShape: _:Ndc5ec086957f422f9a6cef8fb4ac9f0a
+ - Shape cr:ReportShape: _:N28663a8aab7849edb1804618e24137dc
+ - Shape cr:CheckResultShape: _:N4f063f0a58154a32943926cbadde67a4
 
 === End SHACL ===
 

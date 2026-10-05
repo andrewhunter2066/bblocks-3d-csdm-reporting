@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-02T22:05:44.498533+00:00
+Generated 2026-10-05T17:37:31.303583+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -36,17 +36,17 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N955ecc54716544178a6061cd26e02e19
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N955ecc54716544178a6061cd26e02e19
+ - Shape cr:ReportStatusFollowsFromChecks: _:N6befb3a5553141a99b75b1f3e83f83da
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N6befb3a5553141a99b75b1f3e83f83da
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N2647bd7ce1bf43d7b7cf0af7833b9a06
+ - Shape cr:SourceReferenceShape: _:N2873b576f64e44bfa3086d96e0f4bfe0
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N955ecc54716544178a6061cd26e02e19
+ - Shape cr:ReportShape: _:N6befb3a5553141a99b75b1f3e83f83da
  - Shape cr:CheckResultShape: *none*
 
 === End SHACL ===
