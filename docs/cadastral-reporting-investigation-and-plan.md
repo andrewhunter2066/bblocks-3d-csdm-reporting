@@ -23,6 +23,8 @@ No transform plugin is needed.
   HTML comes first, rendered from the validated structured report.
   CSV is a sibling transform.
   PDF is deferred and downstream of HTML.
+- **Reports are also RDF.**
+  Uplift through JSON-LD lets SHACL check cross-field rules JSON Schema can't express, and ties report values to LADM and standard provenance vocabularies (section 4, "Why reports are also RDF").
 
 The supplied example already shows why this matters:
 
@@ -33,7 +35,7 @@ The supplied example already shows why this matters:
   The `interestLink` that the LADM parcel schema requires was added on 2026-10-01.
 - Valuer details are now structured (certifier, dateCertified) on the certification annotation.
 
-Decisions D1–D17 were recorded on 2026-10-01 (section 9).
+Decisions D1–D17 were recorded on 2026-10-01, and D18 on 2026-10-05 (section 9).
 Stage 0 can start.
 
 Platform facts checked in [`ghcr.io/opengeospatial/bblocks-postprocess:latest`](https://github.com/opengeospatial/bblocks-postprocess) (Python 3.10):
@@ -46,7 +48,7 @@ Platform facts checked in [`ghcr.io/opengeospatial/bblocks-postprocess:latest`](
 ## 1. Requirements analysis
 
 The PDF is a one-page WA approved form (2021-47738).
-Its semantic core is small: one scheme, nine lot/entitlement pairs, one stated total and one valuer certification.
+Its semantic core is small: one scheme, nine lot/entitlement pairs, one stated total, and one valuer certification.
 Most of the rest is fixed form text or layout.
 
 ### What the PDF contains
@@ -74,7 +76,7 @@ Most of the rest is fixed form text or layout.
 - **Derived facts:** calculated total (Σ entitlements = 1000), lot count (9), and per-lot proportion of total (optional; not on the PDF but cheap to derive).
 - **Validation/check results:** scheme identified, members resolved and consistent, all lots have a valid entitlement, calculated total = declared total, and references to the schedule document and certification resolve.
   None of these are visible on the PDF; the form assumes them.
-- **Presentation concerns:** column split, ordering by lot number, the form header, logos, the signature block, pagination and the QR code.
+- **Presentation concerns:** column split, ordering by lot number, the form header, logos, the signature block, pagination, and the QR code.
   The certificate wording is legal boilerplate.
   Treat it as a property of the report *type* (configured), not as data.
 
@@ -131,8 +133,8 @@ Report paths refer to the conceptual model in section 4.
 | 17 | Certificate wording, signature, QR code | Not in source | n/a | Not reproduced (D6) | none | No | None |
 | 18 | Locality / LGA, former tenure | `adminUnit[]`, the former-tenure parcel | Not needed for this report | None | none (reachable via `sources`) | No | None |
 
-The extraction rules for #2, #6, #7 and #9 are WA-CSDM specific: vocabulary IRIs and appellation structure.
-Rows #11, #12 and all checks are source-independent.
+The extraction rules for #2, #6, #7, and #9 are WA-CSDM specific: vocabulary IRIs and appellation structure.
+Rows #11, #12, and all checks are source-independent.
 That line sets the adapter/builder boundary in section 3.
 
 ## 3. Proposed architecture
@@ -205,7 +207,7 @@ A separate presentation block isn't justified: presentation transforms belong to
 
 ## 4. Proposed information models
 
-The generic model is justified: the envelope, provenance-bearing values, checks and document references recur in every report type listed.
+The generic model is justified: the envelope, provenance-bearing values, checks, and document references recur in every report type listed.
 The entitlement model adds only `scheme`, `lots`, `totals` and `basis`.
 These are conceptual structures, not final schemas.
 
@@ -293,9 +295,35 @@ StrataEntitlementReport (extends CadastralReport; reportType = strata-entitlemen
     legislativeBasis: [ ReportValue<{label, href}> ]     # reported from wa-approved-form scopeNote
 ```
 
-What's deliberately absent: geometry, solids, survey observations, former tenure, admin units, by-laws and approval provenance.
+What's deliberately absent: geometry, solids, survey observations, former tenure, admin units, by-laws, and approval provenance.
 The report links to these through `sources` and `subject.ref`.
 It doesn't copy them, which keeps duplication of the source model to the minimum the report needs.
+
+### Why reports are also RDF
+
+The JSON report is the primary output: the transforms, the HTML, and the CSV all work from it.
+Every report also uplifts to RDF through the blocks' [JSON-LD](https://www.w3.org/TR/json-ld11/) contexts (D18), for four reasons.
+
+1. **Cross-field rules.**
+   JSON Schema checks each part of a report on its own, but it can't relate one part to another.
+   Several rules a report must meet are such relations: the report status is the one its checks imply, the calculated total is the sum of the lots, the lot count is the number of lots, and every `documentRef` names a document the report carries.
+   [SHACL](https://www.w3.org/TR/shacl/) expresses them as constraints on the uplifted graph.
+   The transforms already compute these values, but the rules check the result independently of the code that produced it, so they also hold for a report from another adapter, a hand-edited report, or a regression in `complete`.
+   The must-fail tests `status-contradicts-checks`, `calculated-total-not-the-sum`, `lot-count-not-the-number-of-lots`, `document-ref-unresolved` and `member-parcel-count-not-the-number-of-members` are valid JSON that only these rules reject.
+2. **What a source value means, not just where it was.**
+   A JSON Pointer locates a value in one source format.
+   The RDF also names the source's own property IRI (`cr:sourceProperty`), and `se:unitEntitlement` is a close match of [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology)'s `entitlementPortion`.
+   A consumer can therefore tell that an entitlement is an LADM entitlement portion without knowing CSDM paths, which ties the report to the model the WA CSDM profiles (Summary).
+3. **Provenance and check results in standard vocabularies.**
+   Report values, checks, and the pipeline map to [PROV-O](https://www.w3.org/TR/prov-o/), [EARL](https://www.w3.org/TR/EARL10-Schema/), SHACL result severities, and Dublin Core.
+   Tools that understand those vocabularies can read a report's provenance and check results without knowing this register's JSON.
+4. **Shared, resolvable codelists.**
+   Report stage, report status, value status, and check category are [SKOS](https://www.w3.org/TR/skos-reference/) concepts in `cadastral-report-ontology`, and each concept's `skos:notation` is the value used in the JSON.
+   Every report type uses the same concepts, and they resolve once the register is published.
+
+The RDF adds no structure to the JSON.
+The contexts map the existing properties, and the vocabularies mint only the terms existing vocabularies don't provide.
+A consumer that only needs the JSON, HTML, or CSV can ignore it.
 
 ## 5. Transform pipeline
 
@@ -343,16 +371,18 @@ Signing and form-authentic layout are out of scope (D6).
 
 ## 6. Validation strategy
 
-Validation runs at four layers.
+Validation runs at five layers.
 Only the generation layer can stop a report from being produced.
+The two report-model layers catch faults in the pipeline at build time.
 The other layers produce findings, recorded inside the report as `checks` (or, for source conformance, in a separate report).
-Updated 2026-10-02 to the checks implemented through Stage 5.
+Updated 2026-10-02 to the checks implemented through Stage 5, and 2026-10-05 with the SHACL layer added in Stage 7.
 
 | Layer | What is validated | Mechanism | Where | On failure |
 | --- | --- | --- | --- | --- |
 | Source-data conformance | The CSDM against its profile ([`icsm.profiles.wa.wa-3d`](https://surroundaustralia.github.io/3d-csdm-profile-wa/bblock/icsm.profiles.wa.wa-3d); `wa-built-strata` once published) | `scripts/check_source_conformance.sh`: the WA profile's [JSON Schema](https://github.com/json-schema-org/json-schema-spec) (every error listed), [JSON-LD](https://www.w3.org/TR/json-ld11/) uplift and [SHACL](https://www.w3.org/TR/shacl/) shapes; plus the adapter's `entitlement-source-datatype` check in the report | Findings in `adapters/wa-csdm/description.md`; one check in the report | Recorded, never blocks |
 | Report-generation requirements | Exactly one strata scheme parcel (a `scheme-id` parameter is planned for multi-scheme CSDs) | Adapter code; `scheme-identified` check | `to-strata-entitlement-facts` | 0 or more than 1 scheme: the transform raises. Everything else continues |
 | Report-model conformance | Both stages against the report schema: `ReportValue` status rules (e.g. `derived` needs `derivation`), derived totals forbidden at `facts` and required at `complete`, `status` and `checks` required at `complete` and `status` forbidden at `facts` | [JSON Schema](https://github.com/json-schema-org/json-schema-spec) | `outputs.profiles` on every transform; examples; 25 must-fail tests | Build test failure: a bug in a transform or schema |
+| Report-model cross-field rules | Relations between parts of a report, after JSON-LD uplift: the status follows from the checks (`cr:ReportStatusFollowsFromChecks`), every `documentRef` and `annotationRef` resolves (`cr:DocumentAndAnnotationReferencesResolve`), the calculated total is the sum of the lots (`se:CalculatedTotalIsTheSumOfTheLots`), the lot count is the number of lots (`se:LotCountIsTheNumberOfLots`), the member count is the number of members (`sc:MemberParcelCountIsTheNumberOfMembers`); plus codelist membership and cardinalities of the `cr:` terms | [SHACL](https://www.w3.org/TR/shacl/) shapes in `cadastral-report`, `cadastral-report-ontology` and each report block, inherited by report-type blocks | `outputs.profiles` on every transform; examples; 5 must-fail tests that are valid JSON | Build test failure: a bug in a transform, or a report that contradicts itself |
 | Business / domain validation | Membership, lot numbers, entitlements, totals, documents | `Check` objects from the adapter (source-specific) and `complete` (report-level); the generic `summarise-checks` sets `status` | `to-strata-entitlement-facts`, `complete` | Recorded in the report; `status` becomes `incomplete` or `invalid`; the report is still produced |
 
 ### Report status
@@ -389,7 +419,7 @@ The generic `summarise-checks` transform (`cadastral-report`) sets `status` from
 | `certification-linked-to-schedule` | report | domain | info | the certification links to a different document (not applicable when either is missing) | pass |
 
 Result: SP83687 is `complete` (18 checks, 0 failed errors, 0 failed warnings, 0 unevaluated errors).
-Gaps in the basis of the schedule are warnings, so they make a report `incomplete`: a missing schedule document, a missing certification, or one without the valuer's name, licence number or date.
+Gaps in the basis of the schedule are warnings, so they make a report `incomplete`: a missing schedule document, a missing certification, or one without the valuer's name, licence number, or date.
 
 Missing data is never silent, and it is kept separate from wrong data:
 
@@ -466,7 +496,7 @@ Notes on placement:
   `.py` files are referenced with `ref:` so they stay readable and lintable.
   The postprocessor inlines them into `register.json`.
 - **Examples** use a trimmed CSDM fixture, not the 820 KB original.
-  The original's solids, faces and points aren't read by the entitlement report and would slow every build.
+  The original's solids, faces, and points aren't read by the entitlement report and would slow every build.
   Synthetic variants are examples rather than `tests/`, because only examples are run through transforms.
 - **Templates** for HTML are strings in `transforms.yaml` `metadata` or inside the `.py`.
   They are not loose files, so `get_transformer()` consumers outside the build still get them.
@@ -488,7 +518,7 @@ Every stage completes with `./build.sh` (or `--steps transforms,tests` with `--f
      Record source conformance by validating the full example against `icsm.profiles.wa.wa-3d`.
      This confirms or refutes the expected datatype failures.
    - Tests: the postprocessor runs with no local errors; the WA import resolves.
-   - Done when: the build is green, the conformance findings are noted in `adapters/wa-csdm/description.md`, and the vocabulary sources for D8, D11 and row 14 are located (icsm-vocabs LandParcels, WA `*_supplement.ttl`, WA proposal CSVs).
+   - Done when: the build is green, the conformance findings are noted in `adapters/wa-csdm/description.md`, and the vocabulary sources for D8, D11, and row 14 are located (icsm-vocabs LandParcels, WA `*_supplement.ttl`, WA proposal CSVs).
 1. **Vertical slice**
    - Files: `cadastral-report/{bblock.json,schema.yaml}` (minimal envelope: `reportType`, `subject`, `sources`, `content`), `reports/strata-entitlement/{bblock.json,schema.yaml,examples.yaml,transforms.yaml}`, `adapters/wa-csdm/{bblock.json,examples.yaml,transforms.yaml,transforms/strata_entitlement_facts.py}`.
    - Behaviour: one adapter transform produces a report with scheme number, lots (number + entitlement as plain values) and calculated total.
@@ -505,8 +535,8 @@ Every stage completes with `./build.sh` (or `--steps transforms,tests` with `--f
    - Tests: a facts-stage example and a complete-stage example in the report block; a `-fail` test for `stage: complete` without totals.
    - Done when: no calculation code remains in the adapter, and outputs are identical to Stage 1 apart from `stage`.
 3. **Provenance and explicit status**
-   - Files: `ReportValue` in the envelope, `data.ttl` value-status codelist, adapter and `complete` updated.
-   - Behaviour: every lot number, entitlement and total is a `ReportValue` with a status and JSON Pointer.
+   - Files: `ReportValue` in the envelope, `data.ttl` value-status codelist, adapter, and `complete` updated.
+   - Behaviour: every lot number, entitlement, and total is a `ReportValue` with a status and JSON Pointer.
      `derived` values carry inputs.
      Coercion keeps `lexicalValue`.
    - Tests: `examples/missing-entitlement.json` (adapter) yields `not-supplied`, not an exception; a `-fail` test for `derived` without `derivation`.
@@ -516,7 +546,7 @@ Every stage completes with `./build.sh` (or `--steps transforms,tests` with `--f
    - Behaviour: all checks in section 6, with report `status` set by the generic `summarise-checks`.
    - Tests: `total-mismatch.json` gives `invalid`; SP83687 gives a membership warning; `no-scheme.json` documents the raised error.
    - Done when: every row of the section 6 check table appears in the SP83687 report with the stated outcome.
-5. **Scheme context, documents and basis**
+5. **Scheme context, documents, and basis**
    - Files: `DocumentReference`/`AnnotationReference` in the envelope, adapter extraction of `schemeName`, address parts, schedule document and certification annotation; `legislativeBasis` as `configured`.
    - Behaviour: the report carries everything in the section 2 mapping.
      Address formatting follows D8.
@@ -524,7 +554,7 @@ Every stage completes with `./build.sh` (or `--steps transforms,tests` with `--f
    - Done when: every mapping row marked Yes/Opt. is populated or explicitly statused.
 6. **Generic presentation**
    - Files: `cadastral-report/transforms/render_html.py` (Jinja2), `reports/strata-entitlement/transforms/{to_html.py,to_csv.py}`.
-   - Behaviour: shared header, status badge, provenance markers, checks and documents.
+   - Behaviour: shared header, status badge, provenance markers, checks, and documents.
      Entitlement body comes from a template in metadata.
      CSV output.
    - Tests: HTML output for SP83687 and missing-entitlement; CSV with 9 rows.
@@ -613,7 +643,7 @@ Dataset fixes made on 2026-10-01:
 Lots 3–9 still have empty `AggregateSolid` references.
 This doesn't matter for entitlements, but it does for a future composition report.
 
-One implementation note for Stage 5: vocabulary lookups (locality, form validity and scopeNote) need the `.ttl` sources at transform time.
+One implementation note for Stage 5: vocabulary lookups (locality, form validity, and scopeNote) need the `.ttl` sources at transform time.
 The Python transform can fetch published vocabularies when available.
 Until then it can read a small label table carried in the adapter's transform `metadata`, generated from the local `.ttl` files.
 Values found that way are `reported` with the concept IRI as their source.
