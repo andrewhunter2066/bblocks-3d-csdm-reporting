@@ -18,17 +18,17 @@
             cr:sourceRef [ cr:jsonPointer "/supportingDocuments/3" ;
                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
             schema:url "documents/SP83687-unit-entitlement-schedule.pdf" ] ;
-    dcterms:source [ rdfs:label "wa-approved-form" ;
+    dcterms:source [ rdfs:label "WA Localities" ;
+            dcterms:identifier "https://linked.data.gov.au/def/csdm/wa-locality" ;
+            cr:kind "vocabulary" ],
+        [ rdfs:label "wa-approved-form" ;
             dcterms:identifier "https://linked.data.gov.au/def/csdm/wa-approved-form" ;
             cr:kind "vocabulary" ],
         [ rdfs:label "SP83687" ;
             dcterms:conformsTo "icsm.profiles.wa.wa-3d" ;
             dcterms:date "2023-02-06" ;
             dcterms:identifier "SP-83687-1-1-0.00" ;
-            cr:kind "dataset" ],
-        [ rdfs:label "WA Localities" ;
-            dcterms:identifier "https://linked.data.gov.au/def/csdm/wa-locality" ;
-            cr:kind "vocabulary" ] ;
+            cr:kind "dataset" ] ;
     dcterms:subject [ rdfs:label "Lots 1 to 9 on Plan SP 83687" ;
             cr:kind "strata-scheme" ;
             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/1" ;
@@ -46,32 +46,31 @@
             cr:sourceRef [ cr:jsonPointer "/annotations/2" ;
                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
             schema:url "documents/SP83687-unit-entitlement-schedule.pdf" ] ;
-    cr:check [ dcterms:description "Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17" ;
-            dcterms:identifier "valuer-certification-present" ;
+    cr:check [ dcterms:description "Lot numbers are unique" ;
+            dcterms:identifier "lot-numbers-unique" ;
             earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
-            cr:target "/content/basis/certification" ],
-        [ dcterms:description "Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)" ;
-            dcterms:identifier "document-hrefs-resolvable" ;
-            earl:outcome earl:untested ;
-            sh:resultSeverity sh:Info ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
-            cr:evidence "{\"hrefs\":[\"documents/SP83687-unit-entitlement-schedule.pdf\"]}"^^rdf:JSON ],
-        [ dcterms:description "All 9 lots have a unit entitlement" ;
-            dcterms:identifier "entitlements-present" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
+            sh:resultSeverity sh:Violation ;
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
+        [ dcterms:description "One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)" ;
+            dcterms:identifier "scheme-identified" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}"^^rdf:JSON ],
         [ dcterms:description "No strata lot claims the scheme without being one of its references" ;
             dcterms:identifier "membership-unreferenced-claimants" ;
             earl:outcome earl:passed ;
             sh:resultSeverity sh:Warning ;
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+        [ dcterms:description "Every supplied unit entitlement is a single positive whole number" ;
+            dcterms:identifier "entitlements-valid" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
         [ dcterms:description "Calculated total 1000 equals the declared total 1000" ;
             dcterms:identifier "total-matches-declared" ;
             earl:outcome earl:passed ;
@@ -81,59 +80,6 @@
             cr:evidence "{\"calculated\":1000,\"declared\":1000}"^^rdf:JSON ;
             cr:target "/content/totals/calculated",
                 "/content/totals/declared" ],
-        [ dcterms:description "Every member lot links back to the scheme" ;
-            dcterms:identifier "membership-back-links" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
-        [ dcterms:description "The scheme topology is ParcelAggregate with 9 member reference(s)" ;
-            dcterms:identifier "membership-parcel-aggregate" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Violation ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
-            cr:evidence "{\"references\":9,\"topologyType\":\"ParcelAggregate\"}"^^rdf:JSON ],
-        [ dcterms:description "The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687" ;
-            dcterms:identifier "schedule-document-referenced" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
-            cr:target "/content/basis/schedule" ],
-        [ dcterms:description "Every lot has a lot number" ;
-            dcterms:identifier "lot-numbers-present" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
-        [ dcterms:description "The calculated total includes all 9 lots" ;
-            dcterms:identifier "total-covers-all-lots" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
-            cr:target "/content/totals/calculated" ],
-        [ dcterms:description "Lot numbers are unique" ;
-            dcterms:identifier "lot-numbers-unique" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Violation ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
-        [ dcterms:description "The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)" ;
-            dcterms:identifier "scheme-number-consistent" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Warning ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
-            cr:evidence "{\"appellationSurveyNumber\":\"SP 83687\",\"csdName\":\"SP83687\",\"schemeNumber\":\"SP83687\"}"^^rdf:JSON ;
-            cr:target "/content/scheme/schemeNumber" ],
-        [ dcterms:description "All 9 references resolve to strata-lot parcels" ;
-            dcterms:identifier "membership-references-resolve" ;
-            earl:outcome earl:passed ;
-            sh:resultSeverity sh:Violation ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
         [ dcterms:description "9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)" ;
             dcterms:identifier "entitlement-source-datatype" ;
             earl:outcome earl:failed ;
@@ -149,13 +95,13 @@
                 "/content/lots/6/entitlement",
                 "/content/lots/7/entitlement",
                 "/content/lots/8/entitlement" ],
-        [ dcterms:description "One strata scheme parcel identified (uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e)" ;
-            dcterms:identifier "scheme-identified" ;
+        [ dcterms:description "Certified by licensed valuer Jordan Example (No. 00000) on 2022-05-17" ;
+            dcterms:identifier "valuer-certification-present" ;
             earl:outcome earl:passed ;
-            sh:resultSeverity sh:Violation ;
-            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
-            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
-            cr:evidence "{\"schemeId\":\"uuid:76177f2a-1b7f-47cb-8a02-9e0d501b6a6e\"}"^^rdf:JSON ],
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/basis/certification" ],
         [ dcterms:description "The certification links to the schedule document" ;
             dcterms:identifier "certification-linked-to-schedule" ;
             earl:outcome earl:passed ;
@@ -163,6 +109,40 @@
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
             cr:target "/content/basis/certification" ],
+        [ dcterms:description "All 9 lots have a unit entitlement" ;
+            dcterms:identifier "entitlements-present" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
+        [ dcterms:description "The calculated total includes all 9 lots" ;
+            dcterms:identifier "total-covers-all-lots" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/totals/calculated" ],
+        [ dcterms:description "The scheme number agrees with csdName and appellationSurveyNumber (ignoring spaces)" ;
+            dcterms:identifier "scheme-number-consistent" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"appellationSurveyNumber\":\"SP 83687\",\"csdName\":\"SP83687\",\"schemeNumber\":\"SP83687\"}"^^rdf:JSON ;
+            cr:target "/content/scheme/schemeNumber" ],
+        [ dcterms:description "Not evaluated: document links are not resolved while the report is generated, and relative links have no defined base (D12)" ;
+            dcterms:identifier "document-hrefs-resolvable" ;
+            earl:outcome earl:untested ;
+            sh:resultSeverity sh:Info ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/generation> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:evidence "{\"hrefs\":[\"documents/SP83687-unit-entitlement-schedule.pdf\"]}"^^rdf:JSON ],
+        [ dcterms:description "Every lot has a lot number" ;
+            dcterms:identifier "lot-numbers-present" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ],
         [ dcterms:description "The source declares a total of 1000" ;
             dcterms:identifier "declared-total-present" ;
             earl:outcome earl:passed ;
@@ -170,12 +150,32 @@
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
             cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
             cr:target "/content/totals/declared" ],
-        [ dcterms:description "Every supplied unit entitlement is a single positive whole number" ;
-            dcterms:identifier "entitlements-valid" ;
+        [ dcterms:description "The schedule of unit entitlements is referenced: Schedule of Unit Entitlements - SP83687" ;
+            dcterms:identifier "schedule-document-referenced" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.reports.strata-entitlement" ;
+            cr:target "/content/basis/schedule" ],
+        [ dcterms:description "All 9 references resolve to strata-lot parcels" ;
+            dcterms:identifier "membership-references-resolve" ;
             earl:outcome earl:passed ;
             sh:resultSeverity sh:Violation ;
             cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
-            cr:definedBy "csdm.reporting.reports.strata-entitlement" ] ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+        [ dcterms:description "Every member lot links back to the scheme" ;
+            dcterms:identifier "membership-back-links" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Warning ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ],
+        [ dcterms:description "The scheme topology is ParcelAggregate with 9 member reference(s)" ;
+            dcterms:identifier "membership-parcel-aggregate" ;
+            earl:outcome earl:passed ;
+            sh:resultSeverity sh:Violation ;
+            cr:checkCategory <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/check-category/domain> ;
+            cr:definedBy "csdm.reporting.adapters.wa-csdm" ;
+            cr:evidence "{\"references\":9,\"topologyType\":\"ParcelAggregate\"}"^^rdf:JSON ] ;
     cr:content [ se:basis [ se:approvedForm [ dcterms:identifier "wa-approved-form:2021-47738" ;
                             se:formLabel [ rdf:value "Approved Schedule of Unit Entitlements Form number 2021-47738" ;
                                     cr:sourceRef [ cr:jsonPointer "" ;
@@ -218,49 +218,7 @@
                             cr:sourceDataset "https://linked.data.gov.au/def/csdm/wa-approved-form" ;
                             cr:sourceObject "https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738" ] ;
                     cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-            se:lot [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512" ] ;
-                    se:lotNumber [ rdf:value "3" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    se:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    se:unitEntitlement [ rdf:value 113 ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties/interests/0/entitlementPortion" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5" ] ;
-                    se:lotNumber [ rdf:value "8" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    se:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    se:unitEntitlement [ rdf:value 108 ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties/interests/0/entitlementPortion" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078" ] ;
-                    se:lotNumber [ rdf:value "6" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    se:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    se:unitEntitlement [ rdf:value 113 ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties/interests/0/entitlementPortion" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/6" ;
+            se:lot [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/6" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
                             cr:sourceObject "uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3" ] ;
                     se:lotNumber [ rdf:value "5" ;
@@ -274,34 +232,6 @@
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/6/properties/interests/0/entitlementPortion" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9" ] ;
-                    se:lotNumber [ rdf:value "2" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    se:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    se:unitEntitlement [ rdf:value 108 ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3/properties/interests/0/entitlementPortion" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
-                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2" ;
-                            cr:sourceDataset "SP-83687-1-1-0.00" ;
-                            cr:sourceObject "uuid:e62621ed-1334-4890-964f-608ff68f7a17" ] ;
-                    se:lotNumber [ rdf:value "1" ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/appellation/hasPart/3/label" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
-                    se:membershipEvidence "containingPrimaryParcel",
-                        "references",
-                        "schemeRef" ;
-                    se:unitEntitlement [ rdf:value 117 ;
-                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/interests/0/entitlementPortion" ;
-                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
-                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
                 [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/10" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
                             cr:sourceObject "uuid:79015221-adeb-482f-988b-ed47e57bc2a4" ] ;
@@ -330,6 +260,62 @@
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/8/properties/interests/0/entitlementPortion" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078" ] ;
+                    se:lotNumber [ rdf:value "6" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    se:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    se:unitEntitlement [ rdf:value 113 ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/7/properties/interests/0/entitlementPortion" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:e62621ed-1334-4890-964f-608ff68f7a17" ] ;
+                    se:lotNumber [ rdf:value "1" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    se:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    se:unitEntitlement [ rdf:value 117 ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/2/properties/interests/0/entitlementPortion" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/not-supplied> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5" ] ;
+                    se:lotNumber [ rdf:value "8" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    se:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    se:unitEntitlement [ rdf:value 108 ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/9/properties/interests/0/entitlementPortion" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9" ] ;
+                    se:lotNumber [ rdf:value "2" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    se:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    se:unitEntitlement [ rdf:value 108 ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/3/properties/interests/0/entitlementPortion" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
                 [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/5" ;
                             cr:sourceDataset "SP-83687-1-1-0.00" ;
                             cr:sourceObject "uuid:5e2823d1-2473-4417-8045-1089d2e86e64" ] ;
@@ -342,6 +328,20 @@
                         "schemeRef" ;
                     se:unitEntitlement [ rdf:value 108 ;
                             cr:sourceRef [ cr:jsonPointer "/parcels/0/features/5/properties/interests/0/entitlementPortion" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ],
+                [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4" ;
+                            cr:sourceDataset "SP-83687-1-1-0.00" ;
+                            cr:sourceObject "uuid:85da01f8-9625-4b1e-9f4d-a34c11313512" ] ;
+                    se:lotNumber [ rdf:value "3" ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties/appellation/hasPart/3/label" ;
+                                    cr:sourceDataset "SP-83687-1-1-0.00" ] ;
+                            cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ;
+                    se:membershipEvidence "containingPrimaryParcel",
+                        "references",
+                        "schemeRef" ;
+                    se:unitEntitlement [ rdf:value 113 ;
+                            cr:sourceRef [ cr:jsonPointer "/parcels/0/features/4/properties/interests/0/entitlementPortion" ;
                                     cr:sourceDataset "SP-83687-1-1-0.00" ] ;
                             cr:valueStatus <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/value-status/reported> ] ] ;
             se:scheme [ cr:sourceRef [ cr:jsonPointer "/parcels/0/features/1" ;

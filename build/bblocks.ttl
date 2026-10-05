@@ -21,10 +21,10 @@
     rdfs:label "WA 3D CSDM reporting adapter" ;
     dct:abstract "Interprets cadastral survey datasets that follow the WA profile of the 3D CSDM (built strata) and extracts the source facts needed by cadastral reports. This is the only reporting block that knows CSDM paths and WA vocabularies."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/adapters/wa-csdm/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.adapters.wa-csdm> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/adapters/wa-csdm/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/adapters/wa-csdm/index.json> ] ;
     dct:hasVersion "0.1" ;
@@ -44,74 +44,13 @@
         "reporting" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.featureCollection> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.sosa.properties.execution> ;
-            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature-collection> ;
-            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
-                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-arc> ;
-            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
-                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
-            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://icsm.csdm.features.SurveyObservations> ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://icsm.profiles.wa.wa-core> ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-profile-wa/profiles/wa-pointnames-shacl.ttl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report> ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.bbr.utils.compoundName> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://icsm.profiles.wa.datatypes.miscellaneousTenure> ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-profile-wa/_sources/datatypes/miscellaneousTenure/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://icsm.profiles.common> ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-observation-properties.shacl>,
-                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-parcel-codetypes-shacl.ttl>,
-                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-point-codetypes-shacl.ttl>,
-                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-references-shacl.ttl>,
-                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-survey-metadata-shacl.ttl> ;
+            rdfs:seeAlso <bblocks://csdm.reporting.reports.scheme-composition> ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -120,8 +59,8 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://csdm.reporting.reports.scheme-composition> ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.execution> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -138,8 +77,69 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://icsm.profiles.wa.datatypes.miscellaneousTenure> ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-profile-wa/_sources/datatypes/miscellaneousTenure/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://icsm.profiles.wa.wa-core> ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-profile-wa/profiles/wa-pointnames-shacl.ttl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-arc> ;
+            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
+                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://icsm.profiles.common> ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-observation-properties.shacl>,
+                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-parcel-codetypes-shacl.ttl>,
+                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-point-codetypes-shacl.ttl>,
+                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-references-shacl.ttl>,
+                <https://surroundaustralia.github.io/3d-csdm-profile-icsm/profiles/icsm-survey-metadata-shacl.ttl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://icsm.csdm.features.SurveyObservations> ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report> ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
             prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature-collection> ;
+            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
+                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.featureCollection> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl> ;
             prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://csdm.reporting.reports.scheme-composition>,
         <bblocks://csdm.reporting.reports.strata-entitlement>,
@@ -149,18 +149,18 @@
 
 <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Neaf23c544d474926b6362614d366a18a ;
+    prov:wasAttributedTo _:Na5a46cc5d48746e3ad8afb125a97f019 ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-05T17:37:52.515013"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-05T17:37:52.289366"^^xsd:dateTime ;
+            prov:endedAtTime "2026-10-05T17:40:48.428165"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-05T17:40:48.185746"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
-                [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:f72c84ccf760b8f4279859d200d9d025d3ea7ae2" ;
-                    rdfs:seeAlso <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/register.json> ] ;
-            prov:wasAssociatedWith _:Neaf23c544d474926b6362614d366a18a ] .
+                    dct:hasVersion "git:93b39f95c86df4fb4104b99b275646a2a8acdd7c" ;
+                    rdfs:seeAlso <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:Na5a46cc5d48746e3ad8afb125a97f019 ] .
 
 <https://github.com/ogcincubator/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report> rdfs:label "csdm.reporting.cadastral-report schema (definitions of the owned elements)" .
 
@@ -190,10 +190,10 @@
     dct:created "2026-10-02T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/reports/scheme-composition/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/reports/scheme-composition/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.reports.scheme-composition> ] ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.reports.scheme-composition> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/reports/scheme-composition/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
@@ -207,37 +207,37 @@
         "reporting",
         "scheme composition",
         "strata" ;
-    prof:hasResource [ dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/ontology.ttl> ;
-            prof:hasRole role:specification ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report> ;
             prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://csdm.reporting.reports.scheme-composition> ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/_sources/reports/scheme-composition/shapes.shacl> ;
-            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/scheme-composition/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            rdfs:seeAlso <bblocks://csdm.reporting.reports.scheme-composition> ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/_sources/reports/scheme-composition/shapes.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://csdm.reporting.cadastral-report> ;
     bblocks:hasSourceJsonLdContext <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/scheme-composition/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -250,10 +250,10 @@
     rdfs:label "Strata Scheme Entitlement Report" ;
     dct:abstract "Structured report of the unit entitlement of every lot in a strata scheme, with the calculated total. Independent of the source data format: source adapters produce it, and its own transforms present it."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.reports.strata-entitlement> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/reports/strata-entitlement/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.reports.strata-entitlement> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/reports/strata-entitlement/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -268,8 +268,8 @@
         "strata",
         "unit entitlement" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -285,19 +285,19 @@
             rdfs:seeAlso <bblocks://csdm.reporting.reports.strata-entitlement> ;
             prof:hasArtifact <https://andrewhunter2066.github.io/_sources/reports/strata-entitlement/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
             prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/reports/strata-entitlement/ontology.ttl> ;
-            prof:hasRole role:specification ] ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://csdm.reporting.cadastral-report> ;
     bblocks:hasSourceJsonLdContext <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/reports/strata-entitlement/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -312,10 +312,10 @@
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/cadastral-report/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/cadastral-report/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.cadastral-report> ] ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.cadastral-report> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/cadastral-report/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
@@ -328,21 +328,21 @@
         "reporting" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report> ;
             prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/_sources/cadastral-report-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -360,12 +360,12 @@
     rdfs:label "Cadastral reporting vocabulary" ;
     dct:abstract "RDF vocabulary for cadastral reports: the classes and properties a generic cadastral report needs that existing vocabularies do not provide, and the SKOS codelists for report stage, report status, value status and check category. Reused terms (RDF, RDFS, Dublin Core, PROV-O, EARL, SHACL, schema.org) are not redefined."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-02T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/cadastral-report-ontology/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/bblock/csdm.reporting.cadastral-report-ontology> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/cadastral-report-ontology/index.json> ] ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/json-full/reporting/cadastral-report-ontology/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/generateddocs/markdown/reporting/cadastral-report-ontology/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
@@ -385,18 +385,18 @@
         "ontology",
         "provenance",
         "reporting" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report-ontology/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://csdm.reporting.cadastral-report-ontology> ;
             prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:format "text/turtle" ;
             prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/_sources/cadastral-report-ontology/data.ttl> ;
-            prof:hasRole <https://andrewhunter2066.github.io/data> ],
-        [ dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/annotated/reporting/cadastral-report-ontology/ontology.ttl> ;
-            prof:hasRole role:specification ] ;
+            prof:hasRole <https://andrewhunter2066.github.io/data> ] ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
@@ -414,7 +414,7 @@ See `docs/cadastral-reporting-investigation-and-plan.md` in the repository for t
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
-    dct:modified "2026-10-05T17:37:26.700927"^^xsd:dateTime ;
+    dct:modified "2026-10-05T17:40:26.669959"^^xsd:dateTime ;
     owl:imports <https://opengeospatial.github.io/bblocks/register.json>,
         <https://surroundaustralia.github.io/3d-csdm-profile-wa/build/register.json> ;
     skos:hasTopConcept <bblocks://csdm.reporting.adapters.wa-csdm>,
@@ -423,22 +423,22 @@ See `docs/cadastral-reporting-investigation-and-plan.md` in the repository for t
         <bblocks://csdm.reporting.reports.scheme-composition>,
         <bblocks://csdm.reporting.reports.strata-entitlement> ;
     skos:prefLabel "Building Blocks - Cadastral Reporting Building Blocks" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/register.json> ],
-        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
-            dct:type "text/turtle" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/bblocks.ttl> ] ;
+            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/register.json> ] ;
     foaf:homepage <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/> ;
     bblocks:hasValidationReport <https://andrewhunter2066.github.io/bblocks-3d-csdm-reporting/build/tests/report.html> .
 
-_:Neaf23c544d474926b6362614d366a18a a prov:Agent,
+_:Na5a46cc5d48746e3ad8afb125a97f019 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.35.dev2+g67607e7aa" ;

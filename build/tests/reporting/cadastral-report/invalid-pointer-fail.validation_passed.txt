@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-05T17:37:31.149354+00:00
+Generated 2026-10-05T17:40:31.506078+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -35,8 +35,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N1434d3a15b524353bbd37181bc9db810
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1434d3a15b524353bbd37181bc9db810
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nff3dcd9a70674339a101153a7945fd0e
+ - Shape cr:ReportStatusFollowsFromChecks: _:Nff3dcd9a70674339a101153a7945fd0e
 
 
 ** Validation error **
@@ -53,10 +53,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Message: Value does not match pattern '^(/([^/~]|~[01])*)*$'
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N258ff2ebd0d04c50a763292fe9e74b74
- - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N1434d3a15b524353bbd37181bc9db810
  - Shape cr:CheckResultShape: *none*
+ - Shape cr:SourceReferenceShape: _:Na8abf0c20ae24de48f03645032d816f5
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:Nff3dcd9a70674339a101153a7945fd0e
 
 === End SHACL ===
 

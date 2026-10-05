@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report-ontology - Cadastral reporting vocabulary
-Generated 2026-10-05T17:37:30.425240+00:00
+Generated 2026-10-05T17:40:30.925403+00:00
 === Files ===
 Using example_1_1.ttl from examples
 Output Turtle example_1_1.ttl created
@@ -13,10 +13,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:n0cc5774492cc403b9d58b42da5fe0bd3b5
- - Shape cr:ReportValueShape: _:n0cc5774492cc403b9d58b42da5fe0bd3b4
- - Shape cr:ReportShape: _:n0cc5774492cc403b9d58b42da5fe0bd3b1
- - Shape cr:CheckResultShape: _:n0cc5774492cc403b9d58b42da5fe0bd3b6
+ - Shape cr:CheckResultShape: _:n445709beba7f40ce938de6eb0a20e4efb6
+ - Shape cr:SourceReferenceShape: _:n445709beba7f40ce938de6eb0a20e4efb5
+ - Shape cr:ReportValueShape: _:n445709beba7f40ce938de6eb0a20e4efb4
+ - Shape cr:ReportShape: _:n445709beba7f40ce938de6eb0a20e4efb1
 
 === End SHACL ===
 

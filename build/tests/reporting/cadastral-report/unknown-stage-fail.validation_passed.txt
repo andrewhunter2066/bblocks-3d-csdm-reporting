@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-05T17:37:31.538149+00:00
+Generated 2026-10-05T17:40:31.802345+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -39,8 +39,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N5a413185bb2f41bd80d5f408fc96bba4
  - Shape cr:ReportStatusFollowsFromChecks: *none*
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N73ad9a751b314a68b43e21582ab632f4
 
 
 ** Validation error **
@@ -57,10 +57,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/draft> not in list ['rstage:facts', 'rstage:complete']
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N22cba359354f4011b60a183fcb557a8a
- - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N73ad9a751b314a68b43e21582ab632f4
  - Shape cr:CheckResultShape: *none*
+ - Shape cr:SourceReferenceShape: _:N7850b2f8a98a457dabb08334527e8eea
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N5a413185bb2f41bd80d5f408fc96bba4
 
 === End SHACL ===
 

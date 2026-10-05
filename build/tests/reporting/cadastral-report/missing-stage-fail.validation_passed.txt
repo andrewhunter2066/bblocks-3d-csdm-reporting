@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-05T17:37:31.253689+00:00
+Generated 2026-10-05T17:40:31.594139+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -719,8 +719,8 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N41d3195e252e436d8ee18845ab4d65fb
  - Shape cr:ReportStatusFollowsFromChecks: *none*
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd17d7241001a4549a27eae8abf961af5
 
 
 ** Validation error **
@@ -736,10 +736,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Message: Less than 1 values on [ cr:content [ ] ; cr:reportType Literal("example.report-type") ; dcterms:source [ dcterms:identifier Literal("example-dataset") ] ; dcterms:subject [ cr:kind Literal("parcel") ; cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/0") ; cr:sourceDataset Literal("example-dataset") ] ] ]->cr:stage
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:SourceReferenceShape: _:N1eb1dec633bd4c2eb60073329fd099c4
- - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:Nd17d7241001a4549a27eae8abf961af5
  - Shape cr:CheckResultShape: *none*
+ - Shape cr:SourceReferenceShape: _:N5c918d0011fd47ba9077baa27565b339
+ - Shape cr:ReportValueShape: *none*
+ - Shape cr:ReportShape: _:N41d3195e252e436d8ee18845ab4d65fb
 
 === End SHACL ===
 
