@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-05T17:40:31.932753+00:00
+Generated 2026-10-05T18:28:11.418446+00:00
 === Files ===
 Using example_1_1.json from examples
 JSON-LD context is present - uplifting
@@ -19,18 +19,18 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N31434b214aba4fd1b8eb5377e3ec8d21
- - Shape cr:ReportStatusFollowsFromChecks: _:N31434b214aba4fd1b8eb5377e3ec8d21
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Ne240508db41746b092e5ee9fa2460ed5
+ - Shape cr:ReportStatusFollowsFromChecks: _:Ne240508db41746b092e5ee9fa2460ed5
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:Na1fcd0e26a7c4e90b711a3de5584dbbd,_:N92aaa69f566f4f0d93f13d2e9f859e06
- - Shape cr:SourceReferenceShape: _:N01d1b05455f84d0caa063b7bc29bc1b1
+ - Shape cr:CheckResultShape: _:N412c7be2a5104f1aa379f66676c4b6d7,_:Ncdc1209e74b04c74962ffc3e11288787
+ - Shape cr:ReportShape: _:Ne240508db41746b092e5ee9fa2460ed5
+ - Shape cr:SourceReferenceShape: _:Nfd877b53ecc54873a85c800e13cb07d0
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N31434b214aba4fd1b8eb5377e3ec8d21
 
 === End SHACL ===
 

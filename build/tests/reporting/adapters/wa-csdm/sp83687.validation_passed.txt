@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.adapters.wa-csdm - WA 3D CSDM reporting adapter
-Generated 2026-10-05T17:40:41.504915+00:00
+Generated 2026-10-05T18:28:21.507210+00:00
 === Files ===
 Using examples/sp83687-entitlement.json from examples
 === End Files ===

@@ -84,13 +84,13 @@ A completed report must have `status` and `checks`; a facts-stage report may car
 
 ## Semantics (RDF)
 
-Reports uplift to RDF with this block's `context.jsonld`.
+Reports uplift to [RDF](https://www.w3.org/TR/rdf11-concepts/) with this block's `context.jsonld`.
 It reuses standard terms where they fit and uses the cadastral reporting vocabulary (`csdm.reporting.cadastral-report-ontology`, prefix `cr:`) for the rest:
 
 | JSON | RDF |
 |---|---|
 | `reportType`, `stage`, `status` | `cr:reportType`; `cr:stage` and `cr:reportStatus` (codelist concepts) |
-| `checks[]` | `cr:check`: [`earl:outcome`](https://www.w3.org/TR/EARL10-Schema/) (`earl:passed`, `failed`, `untested`, `inapplicable`), `sh:resultSeverity` (`sh:Violation`, `Warning`, `Info`), `cr:checkCategory`, `dcterms:description` |
+| `checks[]` | `cr:check`: [`earl:outcome`](https://www.w3.org/TR/EARL10-Schema/) (`earl:passed`, `failed`, `untested`, `inapplicable`), [`sh:resultSeverity`](https://www.w3.org/TR/shacl/#results-severity) (`sh:Violation`, `Warning`, `Info`), `cr:checkCategory`, [`dcterms:description`](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) |
 | a `ReportValue` | `rdf:value`, `cr:valueStatus` (codelist concept), `cr:sourceRef`, `cr:derivation`, `cr:lexicalValue`, `rdfs:comment` |
 | `SourceRef` | `cr:sourceDataset`, `cr:jsonPointer`, `cr:sourceObject`, `cr:sourceProperty` |
 | `sources`, `documents`, `annotations`, `generatedBy` | `dcterms:source`, `dcterms:references`, `cr:annotation`, [`prov:wasGeneratedBy`](https://www.w3.org/TR/prov-o/) |

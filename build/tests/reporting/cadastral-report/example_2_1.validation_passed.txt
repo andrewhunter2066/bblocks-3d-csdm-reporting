@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-05T17:40:31.955185+00:00
+Generated 2026-10-05T18:28:11.447207+00:00
 === Files ===
 Using example_2_1.json from examples
 JSON-LD context is present - uplifting
@@ -19,7 +19,7 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N4061267771c6468aa81cd43af7abe51a
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N38420d004bfd43e799c5e53e75820f9a
  - Shape cr:ReportStatusFollowsFromChecks: *none*
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
@@ -28,9 +28,9 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
  - Shape cr:CheckResultShape: *none*
- - Shape cr:SourceReferenceShape: _:Ne29733c4a7674db4bc707713cc057e99
+ - Shape cr:ReportShape: _:N38420d004bfd43e799c5e53e75820f9a
+ - Shape cr:SourceReferenceShape: _:N46a02973f3fd488cb2c88750ae093e4c
  - Shape cr:ReportValueShape: *none*
- - Shape cr:ReportShape: _:N4061267771c6468aa81cd43af7abe51a
 
 === End SHACL ===
 

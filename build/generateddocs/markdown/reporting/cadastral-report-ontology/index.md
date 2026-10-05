@@ -11,7 +11,7 @@ RDF vocabulary for cadastral reports: the classes and properties a generic cadas
 
 # Cadastral reporting vocabulary
 
-The RDF vocabulary behind cadastral reports.
+The [RDF](https://www.w3.org/TR/rdf11-concepts/) vocabulary behind cadastral reports.
 It defines only what existing vocabularies do not provide; the [JSON-LD](https://www.w3.org/TR/json-ld11/) context of `csdm.reporting.cadastral-report` maps everything else to reused terms.
 
 | Report element | RDF |
@@ -19,8 +19,8 @@ It defines only what existing vocabularies do not provide; the [JSON-LD](https:/
 | Report | `cr:CadastralReport` (a [`prov:Entity`](https://www.w3.org/TR/prov-o/)); `cr:reportType`, `cr:stage`, `cr:reportStatus`, `cr:content` |
 | Report value | `cr:ReportValue`: `rdf:value`, `cr:valueStatus`, `cr:sourceRef`, `cr:derivation`, `cr:lexicalValue`, `rdfs:comment` |
 | Source reference | `cr:SourceReference`: `cr:sourceDataset`, `cr:jsonPointer`, `cr:sourceObject`, `cr:sourceProperty` (the source's own property IRI, e.g. [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology) `entitlementPortion`) |
-| Check result | `cr:CheckResult` (close to [`earl:Assertion`](https://www.w3.org/TR/EARL10-Schema/)): `earl:outcome` (`earl:passed`, `failed`, `untested`, `inapplicable`), `sh:resultSeverity` (`sh:Violation`, `Warning`, `Info`), `cr:checkCategory`, `dcterms:description` |
-| Documents, annotations | `dcterms:references` → `cr:DocumentReference` (`dcterms:title`, `schema:url`, `dcterms:format`, `dcterms:conformsTo`); `cr:annotation` → `cr:AnnotationReference` |
+| Check result | `cr:CheckResult` (close to [`earl:Assertion`](https://www.w3.org/TR/EARL10-Schema/)): `earl:outcome` (`earl:passed`, `failed`, `untested`, `inapplicable`), [`sh:resultSeverity`](https://www.w3.org/TR/shacl/#results-severity) (`sh:Violation`, `Warning`, `Info`), `cr:checkCategory`, [`dcterms:description`](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) |
+| Documents, annotations | `dcterms:references` → `cr:DocumentReference` (`dcterms:title`, [`schema:url`](https://schema.org/url), `dcterms:format`, `dcterms:conformsTo`); `cr:annotation` → `cr:AnnotationReference` |
 | Sources, pipeline | `dcterms:source`; `prov:wasGeneratedBy` → `cr:PipelineStep` (`cr:buildingBlock`, `cr:transform`) |
 
 Codelists (`data.ttl`, [SKOS](https://www.w3.org/TR/skos-reference/)): report stage, report status, report value status, check category.
@@ -73,7 +73,7 @@ property it was read from. The check outcome and severity reuse EARL and SHACL t
 
 ## Sources
 
-* [csdm.reporting.cadastral-report schema (definitions of the owned elements)](https://github.com/ogcincubator/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report)
+* [csdm.reporting.cadastral-report schema (definitions of the owned elements)](https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report)
 * [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
 * [Evaluation and Report Language (EARL) 1.0 Schema](https://www.w3.org/TR/EARL10-Schema/)
 * [Shapes Constraint Language (SHACL), validation results and severities](https://www.w3.org/TR/shacl/#results-validation-result)
