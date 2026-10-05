@@ -9,7 +9,7 @@
   "tags": ["cadastre", "reporting", "ontology", "provenance", "SKOS"],
   "shaclShapes": ["shapes.shacl"],
   "sources": [
-    {"title": "csdm.reporting.cadastral-report schema (definitions of the owned elements)", "link": "https://github.com/ogcincubator/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report"},
+    {"title": "csdm.reporting.cadastral-report schema (definitions of the owned elements)", "link": "https://github.com/andrewhunter2066/bblocks-3d-csdm-reporting/tree/master/_sources/cadastral-report"},
     {"title": "PROV-O: The PROV Ontology", "link": "https://www.w3.org/TR/prov-o/"},
     {"title": "Evaluation and Report Language (EARL) 1.0 Schema", "link": "https://www.w3.org/TR/EARL10-Schema/"},
     {"title": "Shapes Constraint Language (SHACL), validation results and severities", "link": "https://www.w3.org/TR/shacl/#results-validation-result"},

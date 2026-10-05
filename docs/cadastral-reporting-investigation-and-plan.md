@@ -9,7 +9,7 @@ Use only standard `python` transforms composed with `get_transformer()`.
 No transform plugin is needed.
 
 - **Don't add a separate normalised cadastral-data model yet.**
-  The WA CSDM is already a profile of the [OGC LADM land-parcels](https://ogcincubator.github.io/bblocks-land-parcels/) block (`entitlementPortion` is inherited from [`ogc.ladm.land-parcels.parcel`](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.parcel)).
+  The [WA profile](https://surroundaustralia.github.io/3d-csdm-profile-wa/) of the [ICSM 3D CSDM](https://surroundaustralia.github.io/3d-csdm-profile-icsm/) is already a profile of the [OGC LADM land-parcels](https://ogcincubator.github.io/bblocks-land-parcels/) block (`entitlementPortion` is inherited from [`ogc.ladm.land-parcels.parcel`](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.parcel)).
   A second normalised model would duplicate it with no proven reuse.
   The source/semantics boundary comes from a **facts-stage report**: the same report schema, holding source facts only.
   The adapter produces it and a source-independent builder completes it.
@@ -23,13 +23,13 @@ No transform plugin is needed.
   HTML comes first, rendered from the validated structured report.
   CSV is a sibling transform.
   PDF is deferred and downstream of HTML.
-- **Reports are also RDF.**
-  Uplift through JSON-LD lets SHACL check cross-field rules JSON Schema can't express, and ties report values to LADM and standard provenance vocabularies (section 4, "Why reports are also RDF").
+- **Reports are also [RDF](https://www.w3.org/TR/rdf11-concepts/).**
+  Uplift through [JSON-LD](https://www.w3.org/TR/json-ld11/) lets [SHACL](https://www.w3.org/TR/shacl/) check cross-field rules [JSON Schema](https://json-schema.org/draft/2020-12) can't express, and ties report values to [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology) and standard provenance vocabularies (section 4, "Why reports are also RDF").
 
 The supplied example already shows why this matters:
 
 - Scheme membership is recorded three ways (forward `references`, `containingPrimaryParcel` and `schemeRef`).
-  After the 2026-10-01 dataset update all three list 9 lots, and the scheme's ParcelAggregate references are authoritative (D4).
+  After the 2026-10-01 dataset update all three list 9 lots, and the scheme's [`ParcelAggregate`](https://ogcincubator.github.io/topo-feature/bblock/ogc.geo.topo.datatypes.topology) references are authoritative (D4).
   The other two links are consistency checks.
 - The lot `interests` carry `entitlementPortion` as an integer where the schema says string.
   The `interestLink` that the LADM parcel schema requires was added on 2026-10-01.
@@ -41,7 +41,7 @@ Stage 0 can start.
 Platform facts checked in [`ghcr.io/opengeospatial/bblocks-postprocess:latest`](https://github.com/opengeospatial/bblocks-postprocess) (Python 3.10):
 
 - Transforms run only on the **declaring block's own examples**.
-- `outputs.profiles` validates outputs with [[JSON Schema](https://github.com/json-schema-org/json-schema-spec), [JSON-LD](https://www.w3.org/TR/json-ld11/) and [SHACL](https://www.w3.org/TR/shacl/).
+- `outputs.profiles` validates outputs with [JSON Schema](https://json-schema.org/draft/2020-12), [JSON-LD](https://www.w3.org/TR/json-ld11/) and [SHACL](https://www.w3.org/TR/shacl/).
 - Snippets can override their validation schema with `schema-ref`.
 - `get_transformer()` reaches local and imported blocks, and passes `extra_metadata` through.
 
@@ -196,7 +196,7 @@ An LADM adapter would map almost one-to-one into the same facts stage.
 | Block | Responsibility | Input | Output | Depends on | Why separate |
 | --- | --- | --- | --- | --- | --- |
 | `cadastral-report` (generic) | Report envelope, `ReportValue` with provenance and status, `Check`, `DocumentReference`, `ParcelReference`. Generic transforms: `summarise-checks`, `render-html`. Stage 7: JSON-LD context mapping the envelope to `cr:` and reused terms, and the cross-field SHACL rules every report must meet | Any report JSON | Validated report; HTML; RDF | `cadastral-report-ontology` (Stage 7) | Shared by every report type; knows nothing about strata or WA |
-| `cadastral-report-ontology` (Stage 7) | The `cr:` vocabulary (only terms that PROV-O, EARL, SHACL, Dublin Core and SKOS don't provide), the SKOS codelists for report stage, report status, value status and check category, and shapes for its own terms | n/a | Ontology and codelists (Turtle) | none: reused vocabularies and LADM are referenced by IRI | A reusable vocabulary, kept apart from the JSON-LD mapping that binds it to the schema (section 4, "Why reports are also RDF") |
+| `cadastral-report-ontology` (Stage 7) | The `cr:` vocabulary (only terms that [PROV-O](https://www.w3.org/TR/prov-o/), [EARL](https://www.w3.org/TR/EARL10-Schema/), SHACL, [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) and [SKOS](https://www.w3.org/TR/skos-reference/) don't provide), the SKOS codelists for report stage, report status, value status and check category, and shapes for its own terms | n/a | Ontology and codelists ([Turtle](https://www.w3.org/TR/turtle/)) | none: reused vocabularies and LADM are referenced by IRI | A reusable vocabulary, kept apart from the JSON-LD mapping that binds it to the schema (section 4, "Why reports are also RDF") |
 | `reports/strata-entitlement` | Entitlement report content schema (extends the envelope). Transforms: `complete` (calculations and domain checks), `to-html` (template + generic renderer), `to-csv`. Stage 7: JSON-LD context, `se:` vocabulary and SHACL rules for totals and lot count | Facts-stage entitlement report | Complete entitlement report; HTML; CSV; RDF | `cadastral-report` | Report semantics, independent of any source format |
 | `reports/scheme-composition` (Stage 8) | Scheme Composition Report content schema (extends the envelope). Transforms: `complete`, `to-html` (template only). JSON-LD context, `sc:` vocabulary and one SHACL rule | Facts-stage composition report | Complete composition report; HTML; RDF | `cadastral-report` | Second report type: tests that the generic block serves more than one report |
 | `adapters/wa-csdm` | WA-CSDM interpretation: find the scheme, resolve members, read appellations, interests, documents and annotations. One extraction transform per report type, plus composed end-to-end transforms | WA 3D CSDM CSD (JSON) | Facts-stage report (per report type) | WA profile register (`icsm.profiles.wa.*`), report blocks | The only block that knows CSDM paths and WA vocabularies. Transforms run on the declaring block's examples, so CSDM examples must live here |
@@ -361,7 +361,7 @@ Platform constraints that shape this design:
   Pass anything else explicitly.
   Use `_nested_transform` to keep a sub-transform's output quiet.
 - **Output profiles do the model validation.**
-  `outputs.profiles: [bblocks://…reports.strata-entitlement]` validates each output ([JSON Schema](https://github.com/json-schema-org/json-schema-spec) + [JSON-LD](https://www.w3.org/TR/json-ld11/) + [SHACL](https://www.w3.org/TR/shacl/)) into `build/tests/…/transforms/`.
+  `outputs.profiles: [bblocks://…reports.strata-entitlement]` validates each output ([JSON Schema](https://json-schema.org/draft/2020-12) + [JSON-LD](https://www.w3.org/TR/json-ld11/) + [SHACL](https://www.w3.org/TR/shacl/)) into `build/tests/…/transforms/`.
 - **Python 3.10** in the current image.
   Avoid 3.11+ syntax.
 - **Minor caveat:** the `get_transformer` registry lists `jsonld-frame` while the declared type is `json-ld-frame`, so [JSON-LD](https://www.w3.org/TR/json-ld11/) frame transforms may not be callable as composition targets.
@@ -381,9 +381,9 @@ Updated 2026-10-02 to the checks implemented through Stage 5, and 2026-10-05 wit
 
 | Layer | What is validated | Mechanism | Where | On failure |
 | --- | --- | --- | --- | --- |
-| Source-data conformance | The CSDM against its profile ([`icsm.profiles.wa.wa-3d`](https://surroundaustralia.github.io/3d-csdm-profile-wa/bblock/icsm.profiles.wa.wa-3d); `wa-built-strata` once published) | `scripts/check_source_conformance.sh`: the WA profile's [JSON Schema](https://github.com/json-schema-org/json-schema-spec) (every error listed), [JSON-LD](https://www.w3.org/TR/json-ld11/) uplift and [SHACL](https://www.w3.org/TR/shacl/) shapes; plus the adapter's `entitlement-source-datatype` check in the report | Findings in `adapters/wa-csdm/description.md`; one check in the report | Recorded, never blocks |
+| Source-data conformance | The CSDM against its profile ([`icsm.profiles.wa.wa-3d`](https://surroundaustralia.github.io/3d-csdm-profile-wa/bblock/icsm.profiles.wa.wa-3d); `wa-built-strata` once published) | `scripts/check_source_conformance.sh`: the WA profile's [JSON Schema](https://json-schema.org/draft/2020-12) (every error listed), [JSON-LD](https://www.w3.org/TR/json-ld11/) uplift and [SHACL](https://www.w3.org/TR/shacl/) shapes; plus the adapter's `entitlement-source-datatype` check in the report | Findings in `adapters/wa-csdm/description.md`; one check in the report | Recorded, never blocks |
 | Report-generation requirements | Exactly one strata scheme parcel (a `scheme-id` parameter is planned for multi-scheme CSDs) | Adapter code; `scheme-identified` check | `to-strata-entitlement-facts` | 0 or more than 1 scheme: the transform raises. Everything else continues |
-| Report-model conformance | Both stages against the report schema: `ReportValue` status rules (e.g. `derived` needs `derivation`), derived totals forbidden at `facts` and required at `complete`, `status` and `checks` required at `complete` and `status` forbidden at `facts` | [JSON Schema](https://github.com/json-schema-org/json-schema-spec) | `outputs.profiles` on every transform; examples; 25 must-fail tests | Build test failure: a bug in a transform or schema |
+| Report-model conformance | Both stages against the report schema: `ReportValue` status rules (e.g. `derived` needs `derivation`), derived totals forbidden at `facts` and required at `complete`, `status` and `checks` required at `complete` and `status` forbidden at `facts` | [JSON Schema](https://json-schema.org/draft/2020-12) | `outputs.profiles` on every transform; examples; 25 must-fail tests | Build test failure: a bug in a transform or schema |
 | Report-model cross-field rules | Relations between parts of a report, after JSON-LD uplift: the status follows from the checks (`cr:ReportStatusFollowsFromChecks`), every `documentRef` and `annotationRef` resolves (`cr:DocumentAndAnnotationReferencesResolve`), the calculated total is the sum of the lots (`se:CalculatedTotalIsTheSumOfTheLots`), the lot count is the number of lots (`se:LotCountIsTheNumberOfLots`), the member count is the number of members (`sc:MemberParcelCountIsTheNumberOfMembers`); plus codelist membership and cardinalities of the `cr:` terms | [SHACL](https://www.w3.org/TR/shacl/) shapes in `cadastral-report`, `cadastral-report-ontology` and each report block, inherited by report-type blocks | `outputs.profiles` on every transform; examples; 5 must-fail tests that are valid JSON | Build test failure: a bug in a transform, or a report that contradicts itself |
 | Business / domain validation | Membership, lot numbers, entitlements, totals, documents | `Check` objects from the adapter (source-specific) and `complete` (report-level); the generic `summarise-checks` sets `status` | `to-strata-entitlement-facts`, `complete` | Recorded in the report; `status` becomes `incomplete` or `invalid`; the report is still produced |
 

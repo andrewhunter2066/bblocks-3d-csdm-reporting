@@ -1,6 +1,6 @@
 # WA 3D CSDM reporting adapter
 
-This block interprets cadastral survey datasets (CSDs) that follow the [WA profile of the 3D CSDM](https://surroundaustralia.github.io/3d-csdm-profile-wa/) and extracts the source facts that cadastral reports need.
+This block interprets cadastral survey datasets (CSDs) that follow the [WA profile](https://surroundaustralia.github.io/3d-csdm-profile-wa/) of the [ICSM 3D CSDM](https://surroundaustralia.github.io/3d-csdm-profile-icsm/) and extracts the source facts that cadastral reports need.
 It is the only block in this register that knows CSDM paths and WA vocabularies.
 Report semantics (calculations, domain checks) and presentation live in the report blocks, so another source format only needs another adapter.
 
@@ -96,7 +96,7 @@ python3 scripts/trim_csdm_fixture.py data/examples/json/built-strata-example-1.j
 ## Source conformance findings (2026-10-01)
 
 Produced by `scripts/check_source_conformance.sh`.
-The script validates the full SP83687 dataset against `icsm.profiles.wa.wa-3d` with the [OGC Building Blocks postprocessor](https://github.com/opengeospatial/bblocks-postprocess) (JSON Schema, [JSON-LD](https://www.w3.org/TR/json-ld11/) uplift with the profile context, inherited [SHACL](https://www.w3.org/TR/shacl/) shapes) and lists every JSON Schema error.
+The script validates the full SP83687 dataset against `icsm.profiles.wa.wa-3d` with the [OGC Building Blocks postprocessor](https://github.com/opengeospatial/bblocks-postprocess) ([JSON Schema](https://json-schema.org/draft/2020-12), [JSON-LD](https://www.w3.org/TR/json-ld11/) uplift with the profile context, inherited [SHACL](https://www.w3.org/TR/shacl/) shapes) and lists every JSON Schema error.
 Result: **does not conform**.
 Under decision D3 this is recorded, not enforced.
 The report pipeline must tolerate it.

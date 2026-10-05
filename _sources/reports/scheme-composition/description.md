@@ -38,7 +38,7 @@ That is an accurate picture of the dataset.
 
 ## Semantics
 
-`context.jsonld` maps the content to `ontology.ttl` (prefix `sc:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/`); the list-valued summaries are RDF lists.
+`context.jsonld` maps the content to `ontology.ttl` (prefix `sc:` = `https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/scheme-composition/`); the list-valued summaries are [RDF lists](https://www.w3.org/TR/rdf11-mt/#rdf-collections).
 `shapes.shacl` adds `sc:MemberParcelCountIsTheNumberOfMembers`.
 
 ## Transforms
