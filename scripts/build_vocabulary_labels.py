@@ -8,8 +8,9 @@ other transforms read through get_transformer(). Re-run this script when the voc
 once they are published, the adapter can look them up instead.
 
 The parser reads the regular Turtle layout these vocabularies are generated in (one `:concept` block per
-concept, closed by a line holding only `.`). It is not a general Turtle parser: it fails loudly if a
-vocabulary does not have the expected number of concepts.
+concept, closed by a line holding only `.`), taking each wanted property's value from a quoted literal or
+an `<IRI>`. It is not a general Turtle parser: it fails loudly if a vocabulary does not have the expected
+number of concepts.
 
 Usage (from the repository root):
     python3 scripts/build_vocabulary_labels.py [--icsm-vocabs ../icsm-vocabs] [--wa-profile ../3d-csdm-profile-wa]
@@ -44,9 +45,10 @@ def parse(path: Path, wanted):
             continue
         concept = {}
         for key in wanted:
-            match = re.search(rf'{re.escape(PROPERTIES[key])} "((?:[^"\\]|\\.)*)"', body)
+            # A literal ("...") or an IRI (<...>); dcterms:source, for example, is an IRI.
+            match = re.search(rf'{re.escape(PROPERTIES[key])} (?:"((?:[^"\\]|\\.)*)"|<([^<>"\s]*)>)', body)
             if match:
-                concept[key] = match.group(1)
+                concept[key] = match.group(1) if match.group(1) is not None else match.group(2)
         concepts[name] = concept
     declared = len(re.findall(r'^:\S+\n', text, flags=re.M))
     if len(concepts) != declared:

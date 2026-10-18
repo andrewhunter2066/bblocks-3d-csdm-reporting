@@ -11,13 +11,13 @@ VOCABULARIES = {
     'wa-approved-form': {
         'namespace': 'https://linked.data.gov.au/def/csdm/wa-approved-form/',
         'scheme': 'https://linked.data.gov.au/def/csdm/wa-approved-form',
-        'title': None,
+        'title': 'WA Approved Form',
         'file': '3d-csdm-profile-wa/profiles/wa-approved-form-supplement.ttl',
         'concepts': {
-            '15c': {'definition': 'Strata endorsement certificate provided by planning or local government approval/endorsement.', 'prefLabel': 'Strata endorsement certificate: 15C', 'valid': '1980-05-06/..'},
+            '15c': {'definition': 'The approved form of the certificate of unconditional approval and endorsement of a built-strata or survey-strata plan under section 15(4) of the Strata Titles Act 1985, issued by the Western Australian Planning Commission (WAPC) or its authorised delegate.', 'prefLabel': 'Strata Plan Endorsement Certificate Form 15C', 'scopeNote': 'Strata subdivision approval under section 15 may first be granted subject to conditions. Development approval and building certification are separate decisions, commonly made by the local government.', 'valid': '1980-05-06/..'},
             '2020-27588-v3': {'definition': 'The approved Record of Strata Title Scheme: Limitations, Interests, Encumbrances and Notifications form.', 'prefLabel': 'Approved Record of Strata Title Scheme: 2020-27588-v3', 'valid': '2020-07-01/..'},
-            '2021-47738': {'definition': 'The approved Schedule of Unit Entitlements form.', 'prefLabel': 'Approved Schedule of Unit Entitlements Form number 2021-47738', 'scopeNote': 'Approved under section 37, Schedule 2A clause 21T(1)(d) and Schedule 2A clause 31E(1)(c) of the Strata Titles Act 1985.', 'source': 'wa-leg:mrdoc_48587.pdf', 'valid': '2021-07-07/..'},
-            'BA14': {'definition': 'The approved Building Approval Certificate form.', 'prefLabel': 'Approved Building Approval Certificate form B14', 'scopeNote': 'Approved under section 51, 52, 61, of the Building Act 2011 and Regulation 4 of the Building Regulations 2012.', 'source': 'wa-leg:mrdoc_49441.pdf', 'valid': '2020-03-09/..'},
+            '2021-47738': {'definition': 'The approved Schedule of Unit Entitlements form.', 'prefLabel': 'Approved Schedule of Unit Entitlements Form number 2021-47738', 'scopeNote': 'Approved under section 37, Schedule 2A clause 21T(1)(d) and Schedule 2A clause 31E(1)(c) of the Strata Titles Act 1985.', 'source': 'https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/mrdoc_48587.pdf', 'valid': '2021-07-07/..'},
+            'BA14': {'definition': 'The approved Building Approval Certificate form.', 'prefLabel': 'Approved Building Approval Certificate form BA14', 'scopeNote': 'Approved under section 51, 52, 61, of the Building Act 2011 and Regulation 4 of the Building Regulations 2012.', 'source': 'https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/mrdoc_49441.pdf', 'valid': '2020-03-09/..'},
         },
     },
     'wa-locality': {

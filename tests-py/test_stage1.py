@@ -31,12 +31,11 @@ def to_report(csd) -> dict:
 
 
 def lot(lot_id, number, entitlement=None, purpose='wa-parcel-purpose:strata-lot', **props):
-    interests = [] if entitlement is None else [
-        {'interestLink': f'x:{lot_id}', 'interestType': 'wa-interest-type:strata-lot',
-         'entitlementPortion': entitlement}]
+    if entitlement is not None:
+        props['entitlementPortion'] = entitlement  # a parcel property, not an interest
     appellation = {'label': f'Lot {number}', 'hasPart': [{'type': 'lotNumber', 'label': number}]}
     return {'id': lot_id, 'type': 'Feature', 'properties': {
-        'appellation': appellation, 'parcelPurpose': purpose, 'interests': interests, **props}}
+        'appellation': appellation, 'parcelPurpose': purpose, **props}}
 
 
 def csd(*features, members=None, extra_schemes=0):
@@ -125,8 +124,7 @@ def test_zero_or_several_schemes_is_a_generation_error(extra_schemes):
 ])
 def test_entitlement_coercion(raw, expected):
     feature = lot('a', '1')
-    feature['properties']['interests'] = [{'interestType': 'wa-interest-type:strata-lot',
-                                           'entitlementPortion': raw}]
+    feature['properties']['entitlementPortion'] = raw
     assert to_report(csd(feature))['content']['lots'][0]['entitlement'] == expected
 
 

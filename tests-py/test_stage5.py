@@ -51,12 +51,12 @@ def address_part(csd, part_type):
 
 
 def certification_annotation(csd):
-    return next(a for a in csd['annotations'] if a['role'] == 'wa-annotation-role:licensed-valuer-certification')
+    return next(a for a in csd['annotations'] if a['role'] == 'wa-annotation:licensed-valuer-certification')
 
 
 def schedule_document(csd):
     return next(d for d in csd['supportingDocuments']
-                if d['role'] == 'wa-survey-documentation-type:unitEntitlementSchedule')
+                if d['role'] == 'wa-survey-documentation-type:scheme-ue')
 
 
 @pytest.fixture
@@ -240,6 +240,21 @@ def test_scheme_number_that_disagrees_is_a_warning(csd):
     assert report['status'] == 'incomplete'
 
 
+def test_certification_role_may_use_the_wa_annotation_role_alias(csd):
+    # The wa-core context keeps wa-annotation-role as an alias for the wa-annotation namespace.
+    certification_annotation(csd)['role'] = 'wa-annotation-role:licensed-valuer-certification'
+    report = to_report(csd)
+    assert report['content']['basis']['certification']['annotationRef'] == 'licensed-valuer-certification'
+    assert outcome(report, 'valuer-certification-present') == 'pass'
+
+
+def test_retired_schedule_role_is_not_recognised(csd):
+    schedule_document(csd)['role'] = 'wa-survey-documentation-type:unitEntitlementSchedule'
+    report = to_report(csd)
+    assert 'schedule' not in report['content']['basis']
+    assert outcome(report, 'schedule-document-referenced') == 'fail'
+
+
 # --- Vocabulary label table --------------------------------------------------------------------------
 
 def nested_labels():
@@ -253,6 +268,14 @@ def test_label_table_is_only_output_when_called_by_another_transform():
     assert set(table) == {'wa-locality', 'wa-approved-form'}
     assert table['wa-locality']['concepts']['cloverdale'] == {'prefLabel': 'Cloverdale'}
     assert table['wa-approved-form']['concepts']['2021-47738']['valid'] == '2021-07-07/..'
+
+
+def test_label_table_keeps_iri_values():
+    # dcterms:source is an IRI in the supplement, not a literal
+    forms = nested_labels()['wa-approved-form']['concepts']
+    assert forms['2021-47738']['source'] == ('https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/'
+                                             'FileURL/$FILE/mrdoc_48587.pdf')
+    assert forms['BA14']['source'].endswith('/mrdoc_49441.pdf')
 
 
 def test_label_table_matches_the_local_vocabularies():

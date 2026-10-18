@@ -149,7 +149,7 @@ def test_csv_has_one_row_per_lot_with_statuses():
     assert [(r['lot_number'], r['unit_entitlement']) for r in rows] == LODGED
     assert {r['scheme_number'] for r in rows} == {'SP83687'}
     assert {r['unit_entitlement_status'] for r in rows} == {'reported'}
-    assert rows[0]['unit_entitlement_source'] == '/parcels/0/features/2/properties/interests/0/entitlementPortion'
+    assert rows[0]['unit_entitlement_source'] == '/parcels/0/features/2/properties/entitlementPortion'
     assert rows[0]['parcel_id'] == 'uuid:e62621ed-1334-4890-964f-608ff68f7a17'
 
 
