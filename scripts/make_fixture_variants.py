@@ -15,7 +15,6 @@ REPO = Path(__file__).resolve().parent.parent
 EXAMPLES = REPO / '_sources/adapters/wa-csdm/examples'
 TEST_FIXTURES = REPO / 'tests-py/fixtures'
 BASE = EXAMPLES / 'sp83687-entitlement.json'
-LOT_INTEREST_TYPE = 'wa-interest-type:strata-lot'
 
 
 def lot_feature(csd, lot_number):
@@ -30,10 +29,8 @@ def lot_feature(csd, lot_number):
 
 
 def missing_entitlement(csd):
-    """Lot 4 has its strata-lot interest but no entitlementPortion."""
-    for interest in lot_feature(csd, '4')['properties']['interests']:
-        if interest.get('interestType') == LOT_INTEREST_TYPE:
-            del interest['entitlementPortion']
+    """Lot 4's parcel has no entitlementPortion."""
+    del lot_feature(csd, '4')['properties']['entitlementPortion']
     return csd
 
 
@@ -42,9 +39,7 @@ def total_mismatch(csd):
     for collection in csd['parcels']:
         for feature in collection['features']:
             if feature['properties'].get('parcelPurpose') == 'wa-parcel-purpose:strata-scheme':
-                for interest in feature['properties']['interests']:
-                    if interest.get('interestType') == 'wa-interest-type:strata-scheme':
-                        interest['entitlementTotal'] = 1100
+                feature['properties']['entitlementTotal'] = 1100
     return csd
 
 

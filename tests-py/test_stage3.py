@@ -67,18 +67,18 @@ def to_report(data, transform='to-strata-entitlement-report'):
     return json.loads(run_transform(ADAPTER, transform, text))
 
 
-def csd_with_lot_interests(interests, lot_extra=None):
+def csd_with_lot(lot_props):
     lot = {'id': 'lot-1', 'properties': {
         'parcelPurpose': 'wa-parcel-purpose:strata-lot',
-        'appellation': {'hasPart': [{'type': 'lotNumber', 'label': '1'}]},
-        'interests': interests, **(lot_extra or {})}}
+        'appellation': {'hasPart': [{'type': 'lotNumber', 'label': '1'}]}, **lot_props}}
     scheme = {'id': 'scheme', 'topology': {'type': 'ParcelAggregate', 'references': ['lot-1']},
               'properties': {'parcelPurpose': 'wa-parcel-purpose:strata-scheme', 'schemeNumber': 'SP1'}}
     return {'id': 'csd-1', 'parcels': [{'features': [scheme, lot]}]}
 
 
-def lot_interest(value):
-    return {'interestType': 'wa-interest-type:strata-lot', 'entitlementPortion': value}
+def entitled(value):
+    """Lot properties holding `value` as the lot's entitlementPortion (a parcel property)."""
+    return {'entitlementPortion': value}
 
 
 # --- Provenance resolves ----------------------------------------------------------------------------
@@ -122,7 +122,7 @@ def test_missing_entitlement_is_reported_as_not_supplied_not_an_error():
     lot4 = report['content']['lots'][3]
     assert lot4['lotNumber']['value'] == '4'
     assert lot4['entitlement']['status'] == 'not-supplied' and lot4['entitlement']['value'] is None
-    assert lot4['entitlement']['sourceRefs'][0]['pointer'].endswith('/properties/interests')
+    assert lot4['entitlement']['sourceRefs'][0]['pointer'].endswith('/properties')
     calculated = report['content']['totals']['calculated']
     assert calculated['value'] == 892
     assert '/content/lots/3/entitlement' not in calculated['derivation']['inputs']
@@ -153,29 +153,43 @@ def test_missing_entitlement_html_marks_the_gap():
     ('abc', 'invalid', None, 'abc'),
 ])
 def test_entitlement_status_and_lexical_value(raw, status, value, lexical):
-    entitlement = to_report(csd_with_lot_interests([lot_interest(raw)]))['content']['lots'][0]['entitlement']
+    entitlement = to_report(csd_with_lot(entitled(raw)))['content']['lots'][0]['entitlement']
     assert (entitlement['status'], entitlement['value'], entitlement.get('lexicalValue')) == (status, value, lexical)
     assert_status_rules(entitlement)
 
 
-@pytest.mark.parametrize('interests', [[], [{'interestType': 'wa-interest-type:ct'}], [lot_interest(None)]],
-                         ids=['no interests', 'other interest only', 'null entitlementPortion'])
-def test_absent_entitlement_is_not_supplied(interests):
-    entitlement = to_report(csd_with_lot_interests(interests))['content']['lots'][0]['entitlement']
+@pytest.mark.parametrize('lot_props', [{}, {'interests': [{'interestType': 'wa-interest-type:ct'}]},
+                                       entitled(None)],
+                         ids=['no entitlement', 'other interest only', 'null entitlementPortion'])
+def test_absent_entitlement_is_not_supplied(lot_props):
+    entitlement = to_report(csd_with_lot(lot_props))['content']['lots'][0]['entitlement']
     assert entitlement['status'] == 'not-supplied' and entitlement['value'] is None
+    assert [ref['pointer'] for ref in entitlement['sourceRefs']] == ['/parcels/0/features/1/properties']
+    assert entitlement['note'] == 'The parcel has no entitlementPortion'
 
 
-def test_disagreeing_interests_are_conflicting_and_agreeing_ones_are_not():
-    conflicting = to_report(csd_with_lot_interests([lot_interest(10), lot_interest(12)]))
-    entitlement = conflicting['content']['lots'][0]['entitlement']
-    assert entitlement['status'] == 'conflicting' and len(entitlement['sourceRefs']) == 2
-    assert conflicting['content']['totals']['calculated']['value'] == 0
-    agreeing = to_report(csd_with_lot_interests([lot_interest(10), lot_interest(10)]))
-    assert agreeing['content']['lots'][0]['entitlement']['status'] == 'reported'
+def test_entitlement_in_a_retired_interest_is_not_read_but_pointed_at():
+    retired = {'interestType': 'wa-interest-type:strata-lot', 'entitlementPortion': 117}
+    report = to_report(csd_with_lot({'interests': [{'interestType': 'wa-interest-type:ct'}, retired]}))
+    entitlement = report['content']['lots'][0]['entitlement']
+    assert entitlement['status'] == 'not-supplied' and entitlement['value'] is None
+    assert [ref['pointer'] for ref in entitlement['sourceRefs']] == [
+        '/parcels/0/features/1/properties', '/parcels/0/features/1/properties/interests/1']
+    assert entitlement['note'] == ('The parcel has no entitlementPortion; a wa-interest-type:strata-lot interest '
+                                   'holds one, but entitlementPortion is a parcel property, not an interest '
+                                   '(WA vocabulary review D7)')
+    assert report['content']['totals']['calculated']['value'] == 0
+
+
+def test_parcel_property_wins_over_a_retired_interest():
+    retired = {'interestType': 'wa-interest-type:strata-lot', 'entitlementPortion': 99}
+    entitlement = to_report(csd_with_lot({**entitled(117), 'interests': [retired]}))['content']['lots'][0]['entitlement']
+    assert (entitlement['status'], entitlement['value']) == ('reported', 117)
+    assert entitlement['sourceRefs'][0]['pointer'] == '/parcels/0/features/1/properties/entitlementPortion'
 
 
 def test_unresolved_member_points_at_the_reference():
-    data = csd_with_lot_interests([lot_interest(10)])
+    data = csd_with_lot(entitled(10))
     data['parcels'][0]['features'][0]['topology']['references'].append('lot-missing')
     report = to_report(data)
     lot = report['content']['lots'][1]
@@ -185,7 +199,7 @@ def test_unresolved_member_points_at_the_reference():
 
 
 def test_missing_lot_number_and_scheme_number_are_not_supplied():
-    data = csd_with_lot_interests([lot_interest(10)])
+    data = csd_with_lot(entitled(10))
     data['parcels'][0]['features'][1]['properties']['appellation']['hasPart'] = []
     del data['parcels'][0]['features'][0]['properties']['schemeNumber']
     report = to_report(data)
@@ -216,7 +230,7 @@ def test_html_marks_every_value_with_its_status():
     assert html.count('<sup class="status status-') == len(statuses) - address_part_labels + legend_entries
     assert html.count('data-status="reported"') == statuses.count('reported') - address_part_labels
     assert html.count('data-status="derived"') == statuses.count('derived') == 3  # two totals and the address
-    assert 'source: /parcels/0/features/2/properties/interests/0/entitlementPortion' in html
+    assert 'source: /parcels/0/features/2/properties/entitlementPortion' in html
     assert 'sum of 9 value(s)' in html
 
 

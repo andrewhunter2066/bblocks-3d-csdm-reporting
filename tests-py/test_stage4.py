@@ -25,7 +25,7 @@ SECTION_6 = {
     'membership-references-resolve': (ADAPTER, 'domain', 'error', 'pass'),
     'membership-back-links': (ADAPTER, 'domain', 'warning', 'pass'),
     'membership-unreferenced-claimants': (ADAPTER, 'domain', 'warning', 'pass'),
-    'entitlement-source-datatype': (ADAPTER, 'source-conformance', 'info', 'fail'),
+    'entitlement-source-datatype': (ADAPTER, 'source-conformance', 'info', 'pass'),
     'lot-numbers-present': (REPORT, 'domain', 'warning', 'pass'),
     'lot-numbers-unique': (REPORT, 'domain', 'error', 'pass'),
     'entitlements-present': (REPORT, 'domain', 'warning', 'pass'),
@@ -116,7 +116,7 @@ def test_facts_stage_carries_only_the_adapter_checks_and_no_status():
     assert facts['content']['totals'] == {'declared': {
         'value': 1000, 'status': 'reported',
         'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                        'pointer': '/parcels/0/features/1/properties/interests/0/entitlementTotal'}]}}
+                        'pointer': '/parcels/0/features/1/properties/entitlementTotal'}]}}
 
 
 def test_membership_evidence_records_all_three_links(sp83687):
@@ -236,7 +236,7 @@ def test_duplicate_lot_numbers_are_invalid(csd):
 
 
 def test_invalid_entitlement_is_invalid(csd):
-    lot_of(csd, '5')['properties']['interests'][0]['entitlementPortion'] = '12.5'
+    lot_of(csd, '5')['properties']['entitlementPortion'] = '12.5'
     report = to_report(csd)
     assert outcome(report, 'entitlements-valid') == 'fail'
     assert outcome(report, 'entitlements-present') == 'pass'
@@ -244,7 +244,7 @@ def test_invalid_entitlement_is_invalid(csd):
 
 
 def test_missing_declared_total_is_incomplete(csd):
-    scheme_of(csd)['properties']['interests'] = []
+    del scheme_of(csd)['properties']['entitlementTotal']
     report = to_report(csd)
     assert report['content']['totals']['declared']['status'] == 'not-supplied'
     assert outcome(report, 'declared-total-present') == 'fail'
@@ -252,13 +252,16 @@ def test_missing_declared_total_is_incomplete(csd):
     assert report['status'] == 'incomplete'
 
 
-def test_string_entitlements_pass_the_source_datatype_check(csd):
-    for number in map(str, range(1, 10)):
-        interest = lot_of(csd, number)['properties']['interests'][0]
-        interest['entitlementPortion'] = str(interest['entitlementPortion'])
+def test_string_entitlements_fail_the_source_datatype_check(csd):
+    for number in ('2', '7'):
+        props = lot_of(csd, number)['properties']
+        props['entitlementPortion'] = str(props['entitlementPortion'])
     report = to_report(csd)
-    assert outcome(report, 'entitlement-source-datatype') == 'pass'
-    assert report['content']['totals']['calculated']['value'] == 1000
+    check = checks_by_id(report)['entitlement-source-datatype']
+    assert check['outcome'] == 'fail' and check['targets'] == ['/content/lots/1/entitlement',
+                                                                '/content/lots/6/entitlement']
+    assert check['message'].startswith('2 entitlementPortion value(s) are strings')
+    assert report['content']['totals']['calculated']['value'] == 1000  # still converted and summed
 
 
 # --- Generic status roll-up (summarise-checks) --------------------------------------------------------

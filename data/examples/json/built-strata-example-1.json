@@ -31955,13 +31955,7 @@
         }
        ]
       },
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687",
-        "interestType": "wa-interest-type:strata-scheme",
-        "entitlementTotal": 1000
-       }
-      ],
+      "entitlementTotal": 1000,
       "floors": [
        1,
        2
@@ -31998,13 +31992,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-1",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 117
-       }
-      ],
+      "entitlementPortion": 117,
       "zMin": 20.424501,
       "zMax": 27.386423,
       "floors": [
@@ -32061,13 +32049,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-2",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 108
-       }
-      ],
+      "entitlementPortion": 108,
       "zMin": 20.57451,
       "zMax": 27.536458,
       "floors": [
@@ -32125,13 +32107,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-3",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 113
-       }
-      ],
+      "entitlementPortion": 113,
       "zMin": 20.424501,
       "zMax": 27.386423,
       "floors": [
@@ -32183,13 +32159,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-4",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 108
-       }
-      ],
+      "entitlementPortion": 108,
       "zMin": 20.57451,
       "zMax": 27.536458,
       "floors": [
@@ -32241,13 +32211,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-5",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 108
-       }
-      ],
+      "entitlementPortion": 108,
       "zMin": 20.424501,
       "zMax": 27.386423,
       "floors": [
@@ -32299,13 +32263,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-6",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 113
-       }
-      ],
+      "entitlementPortion": 113,
       "zMin": 20.57451,
       "zMax": 27.536458,
       "floors": [
@@ -32357,13 +32315,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-7",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 108
-       }
-      ],
+      "entitlementPortion": 108,
       "zMin": 20.424501,
       "zMax": 27.386423,
       "floors": [
@@ -32415,13 +32367,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-8",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 108
-       }
-      ],
+      "entitlementPortion": 108,
       "zMin": 20.57451,
       "zMax": 27.536458,
       "floors": [
@@ -32473,13 +32419,7 @@
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestLink": "wa-interest:SP83687-lot-9",
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 117
-       }
-      ],
+      "entitlementPortion": 117,
       "zMin": 20.424501,
       "zMax": 27.386423,
       "floors": [
@@ -32684,7 +32624,7 @@
   {
    "href": "documents/SP83687-unit-entitlement-schedule.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+   "role": "wa-survey-documentation-type:scheme-ue",
    "type": "application/pdf",
    "title": "Schedule of Unit Entitlements - SP83687",
    "conformsTo": "wa-approved-form:2021-47738"
@@ -32746,7 +32686,7 @@
    "role": "wa-annotation-role:boundary-definition-statement"
   },
   {
-   "role": "wa-annotation-role:licensed-valuer-certification",
+   "role": "wa-annotation:licensed-valuer-certification",
    "description": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
    "href": "documents/SP83687-unit-entitlement-schedule.pdf",
    "rel": "via",

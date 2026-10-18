@@ -14,14 +14,17 @@
 #
 # Interpretation rules (see this block's description.md):
 # - scheme and members: from the shared `resolve-scheme` transform (D4, D5)
-# - entitlement: interests[interestType = wa-interest-type:strata-lot].entitlementPortion (D7)
-# - declared total: the scheme's interests[interestType = wa-interest-type:strata-scheme].entitlementTotal (D10)
+# - entitlement: the lot parcel's properties.entitlementPortion, coerced to a positive integer (D7)
+# - declared total: the scheme parcel's properties.entitlementTotal (D10)
+#   Both are parcel properties, not interests (WA vocabulary review decision D7): the
+#   wa-interest-type:strata-lot and strata-scheme interest types are retired. A value found only in such
+#   an interest is not read; the not-supplied value's note says where it is.
 # - address: schemeAddress.hasPart; road label from the apt:road value's `label`, locality label from the
 #   wa-locality vocabulary (D8)
-# - schedule: supportingDocuments[role = wa-survey-documentation-type:unitEntitlementSchedule]; its
+# - schedule: supportingDocuments[role = wa-survey-documentation-type:scheme-ue]; its
 #   conformsTo names the approved form, whose label, validity, source and legislation (scope note) come
 #   from the wa-approved-form vocabulary
-# - certification: annotations[role = wa-annotation-role:licensed-valuer-certification] (D9)
+# - certification: annotations[role = wa-annotation:licensed-valuer-certification] (D9)
 #
 # Vocabulary labels come from this block's `vocabulary-labels` transform; a value found there is
 # `reported` with the vocabulary concept as its source.
@@ -34,14 +37,21 @@ import re
 
 ADAPTER_BBLOCK = 'csdm.reporting.adapters.wa-csdm'
 REPORT_TYPE = 'csdm.reporting.reports.strata-entitlement'
-SOURCE_PROFILE = 'icsm.profiles.wa.wa-3d'
-LOT_INTEREST_TYPE = 'wa-interest-type:strata-lot'
-SCHEME_INTEREST_TYPE = 'wa-interest-type:strata-scheme'
-SCHEDULE_ROLE = 'wa-survey-documentation-type:unitEntitlementSchedule'
-# Source property IRIs, from the source profile's JSON-LD context (only those it defines). The WA profile
-# maps interests[].entitlementPortion to the LADM land-parcels term it inherits.
+# Interest types that held entitlements before WA vocabulary review D7; read only to explain a gap.
+RETIRED_LOT_INTEREST_TYPE = 'wa-interest-type:strata-lot'
+RETIRED_SCHEME_INTEREST_TYPE = 'wa-interest-type:strata-scheme'
+# The published Schedule of Unit Entitlements document type; the draft unitEntitlementSchedule was merged into
+# it (WA vocabulary review crosswalk).
+SCHEDULE_ROLE = 'wa-survey-documentation-type:scheme-ue'
+# Source property IRIs, from the source profile's JSON-LD context. The WA profile maps
+# interests[].entitlementPortion to the LADM land-parcels term it inherits; the same term is used for the
+# lot parcel's entitlementPortion, which the context does not map yet (built-strata decision register
+# items 9 and 10).
 SOURCE_PROPERTIES = {'entitlementPortion': 'https://w3id.org/ogc/ladm/parcels/entitlementPortion'}
-CERTIFICATION_ROLE = 'wa-annotation-role:licensed-valuer-certification'
+# wa-annotation is the current prefix; the wa-core context keeps wa-annotation-role as an alias for the same
+# namespace, so both name the same concept.
+CERTIFICATION_ROLES = ('wa-annotation:licensed-valuer-certification',
+                       'wa-annotation-role:licensed-valuer-certification')
 
 
 def _pointer(*parts):
@@ -85,26 +95,25 @@ def _positive_integer(raw):
     return None
 
 
-def _interest_number(ptr, feature, interest_type, key):
-    """A positive whole number held by the feature's interests of `interest_type` under `key`."""
-    candidates = []
-    for i, interest in enumerate((feature.get('properties') or {}).get('interests') or []):
-        if interest.get('interestType') == interest_type and interest.get(key) is not None:
-            candidates.append((ptr + _pointer('properties', 'interests', i, key), interest[key]))
-    if not candidates:
-        return _value('not-supplied', refs=[_ref(ptr + _pointer('properties', 'interests'))],
-                      note=f'No {interest_type} interest with {key}')
+def _parcel_number(ptr, feature, key, retired_interest_type):
+    """A positive whole number held by the parcel's own property `key`."""
+    props = feature.get('properties') or {}
+    raw = props.get(key)
+    if raw is None:
+        refs, note = [_ref(ptr + _pointer('properties'))], f'The parcel has no {key}'
+        retired = [i for i, interest in enumerate(props.get('interests') or [])
+                   if isinstance(interest, dict) and interest.get('interestType') == retired_interest_type
+                   and interest.get(key) is not None]
+        if retired:
+            refs += [_ref(ptr + _pointer('properties', 'interests', i)) for i in retired]
+            note += (f'; a {retired_interest_type} interest holds one, but {key} is a parcel property, '
+                     'not an interest (WA vocabulary review D7)')
+        return _value('not-supplied', refs=refs, note=note)
 
-    usable = {_positive_integer(raw) for _, raw in candidates} - {None}
-    if len(candidates) > 1 and len({_lexical(raw) for _, raw in candidates}) > 1:
-        return _value('conflicting', refs=[_ref(p) for p, _ in candidates],
-                      note=f'{len(candidates)} {interest_type} interests give different values of {key}')
-
-    pointer, raw = candidates[0]
-    if not usable:
-        return _value('invalid', refs=[_ref(pointer)], lexical=_lexical(raw),
-                      note='Not a positive whole number')
-    value = usable.pop()
+    pointer = ptr + _pointer('properties', key)
+    value = _positive_integer(raw)
+    if value is None:
+        return _value('invalid', refs=[_ref(pointer)], lexical=_lexical(raw), note='Not a positive whole number')
     lexical = None if isinstance(raw, int) and not isinstance(raw, bool) else _lexical(raw)
     return _value('reported', value, [_ref(pointer)], lexical=lexical)
 
@@ -231,22 +240,22 @@ for member in resolution['members']:
     if member['pointer'] is None:
         entitlement = _value('unresolved', refs=[member['ref']], note=member['note'])
     else:
-        entitlement = _interest_number(member['pointer'], _resolve(csd, member['pointer']),
-                                       LOT_INTEREST_TYPE, 'entitlementPortion')
+        entitlement = _parcel_number(member['pointer'], _resolve(csd, member['pointer']),
+                                     'entitlementPortion', RETIRED_LOT_INTEREST_TYPE)
     lots.append({'lotNumber': member['lotNumber'], 'entitlement': entitlement, 'ref': member['ref'],
                  'membershipEvidence': member['membershipEvidence']})
 position = {member['id']: i for i, member in enumerate(resolution['members'])}
 
 # --- Source-specific checks ---------------------------------------------------------------------------
 checks = [_targeted(check, position) for check in resolution['checks']]
-non_strings = [f'/content/lots/{i}/entitlement' for i, lot in enumerate(lots)
-               if lot['entitlement']['status'] == 'reported' and 'lexicalValue' not in lot['entitlement']]
+non_integers = [f'/content/lots/{i}/entitlement' for i, lot in enumerate(lots)
+                if lot['entitlement']['status'] == 'reported' and 'lexicalValue' in lot['entitlement']]
 checks.insert(-1, _check(  # before scheme-number-consistent, which resolve-scheme reports last
-    'entitlement-source-datatype', 'source-conformance', 'info', not non_strings,
-    f'Every entitlementPortion is a string, as {SOURCE_PROFILE} requires' if not non_strings
-    else f'{len(non_strings)} entitlementPortion value(s) are numbers; {SOURCE_PROFILE} types them as strings '
-         '(converted to integers here)',
-    targets=non_strings))
+    'entitlement-source-datatype', 'source-conformance', 'info', not non_integers,
+    'Every entitlementPortion is an integer, as the WA built-strata scope note requires' if not non_integers
+    else f'{len(non_integers)} entitlementPortion value(s) are strings; the WA built-strata scope note types '
+         'them as integers (converted to integers here)',
+    targets=non_integers))
 
 # --- Basis of the schedule: schedule document, approved form, certification, legislation ---------------
 documents, annotations, basis, legislative_basis = [], [], {}, []
@@ -272,7 +281,7 @@ if schedule_index is not None:
         legislative_basis.append(_vocabulary_value(form, 'scopeNote', form_ptr, 'legislation (scope note)'))
 
 annotation_index = next((i for i, a in enumerate(csd.get('annotations') or [])
-                         if isinstance(a, dict) and a.get('role') == CERTIFICATION_ROLE), None)
+                         if isinstance(a, dict) and a.get('role') in CERTIFICATION_ROLES), None)
 if annotation_index is not None:
     annotation = csd['annotations'][annotation_index]
     annotation_ptr = _pointer('annotations', annotation_index)
@@ -330,7 +339,7 @@ report = {
         'basis': basis,
         'legislativeBasis': legislative_basis,
         'totals': {
-            'declared': _interest_number(scheme_ptr, scheme, SCHEME_INTEREST_TYPE, 'entitlementTotal'),
+            'declared': _parcel_number(scheme_ptr, scheme, 'entitlementTotal', RETIRED_SCHEME_INTEREST_TYPE),
         },
     },
     'checks': checks,
