@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
-Generated 2026-10-05T18:28:14.758595+00:00
+Generated 2026-10-18T17:53:08.504778+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -14,7 +14,7 @@ Output Turtle facts-with-derived-totals-fail.ttl created
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: {'declared': {'value': 1000, 'status': 'reported', 'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00', 'pointer': '/parcels/0/features/1/properties/interests/0/entitlementTotal'}]}, 'calculated': {'value': 1000, 'status': 'derived', 'derivation': {'method': 'sum', 'inputs': ['/content/lots/0/entitlement', '/content/lots/1/entitlement', '/content/lots/2/entitlement', '/content/lots/3/entitlement', '/content/lots/4/entitlement', '/content/lots/5/entitlement', '/content/lots/6/entitlement', '/content/lots/7/entitlement', '/content/lots/8/entitlement']}}, 'lotCount': {'value': 9, 'status': 'derived', 'derivation': {'method': 'count', 'inputs': ['/content/lots']}}} should not be valid under {'anyOf': [{'required': ['calculated']}, {'required': ['lotCount']}]}
+ValidationError: {'declared': {'value': 1000, 'status': 'reported', 'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00', 'pointer': '/parcels/0/features/1/properties/entitlementTotal'}]}, 'calculated': {'value': 1000, 'status': 'derived', 'derivation': {'method': 'sum', 'inputs': ['/content/lots/0/entitlement', '/content/lots/1/entitlement', '/content/lots/2/entitlement', '/content/lots/3/entitlement', '/content/lots/4/entitlement', '/content/lots/5/entitlement', '/content/lots/6/entitlement', '/content/lots/7/entitlement', '/content/lots/8/entitlement']}}, 'lotCount': {'value': 9, 'status': 'derived', 'derivation': {'method': 'count', 'inputs': ['/content/lots']}}} should not be valid under {'anyOf': [{'required': ['calculated']}, {'required': ['lotCount']}]}
 
 Failed validating 'not' in schema['allOf'][2]['else']['properties']['content']['properties']['totals']:
     {'not': {'anyOf': [{'required': ['calculated']},
@@ -35,7 +35,7 @@ On instance['content']['totals']:
                     'status': 'derived',
                     'value': 1000},
      'declared': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                  'pointer': '/parcels/0/features/1/properties/interests/0/entitlementTotal'}],
+                                  'pointer': '/parcels/0/features/1/properties/entitlementTotal'}],
                   'status': 'reported',
                   'value': 1000},
      'lotCount': {'derivation': {'inputs': ['/content/lots'],
@@ -53,15 +53,15 @@ Validation result for _sources/reports/strata-entitlement/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/reports/strata-entitlement/shapes.shacl:
- - Shape se:LotCountIsTheNumberOfLots: _:Na10ba0da1d4f4665bfb16607a814dc75
- - Shape se:CalculatedTotalIsTheSumOfTheLots: _:Na10ba0da1d4f4665bfb16607a814dc75
+ - Shape se:LotCountIsTheNumberOfLots: _:N963df9189f1f4c9f940e6ddf4f20331b
+ - Shape se:CalculatedTotalIsTheSumOfTheLots: _:N963df9189f1f4c9f940e6ddf4f20331b
 
 Validation result for _sources/cadastral-report/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N46f345ae25be4717889b770fcb9685ee
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Na764c6258b4a40f38898ab4782934e19
  - Shape cr:ReportStatusFollowsFromChecks: *none*
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
@@ -69,10 +69,10 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:Nc09b3efd9d954fe2a0fbffaa721188e7,_:N8bcae337d0c04411b323e1d6a5f89121,_:Nbc86380a4f1042258b4adc2ad09b6e35,_:N42b745dfd92a4bf7bd9fc070c8877a2f,_:N19c6acd8ce0b48668fb4c0fb944989cb,_:N883857e69762434abf097c667abacacf,_:Nd3c2aea9f4b144039d50eca864ec64ab
- - Shape cr:ReportShape: _:N46f345ae25be4717889b770fcb9685ee
- - Shape cr:SourceReferenceShape: _:Nf489ecd4870e465faca1a837bd1b0914,_:N432cfd32eb5f49968a1380e9363fd238,_:Ncbee3c733f064bcca4e73a798093cba4,_:N468228284af24b6cbe5859541f480a51,_:N62e3ceb0213943bd8ab4064a8dfea60e,_:N4fe1fd0c625d4775a93a8d2d76033a8e,_:N5e0a573f5dbf42b8a9a5a4ce324b1d25,_:Nb14c897add5143219138ddc5579273b5,_:N14ac7bf329924549b0323bec691e237e,_:N66dbbd130ba147e8b3cd4cf6378fbe41,_:Na160cb8d30f046cfa1091a4170f3da1f,_:N58163ee2cfed4d358c5ee99b9e88fb12,_:N3229f6ca2bd949db976c82e47711a0c4,_:N8c4e818247014457a1b4e53c7296cac6,_:N0277aa902dc041faa66645a1fa1063e3,_:N009d460491e24ef7838f3753a00129c3,_:N975f7f4593ee4646a115f0f7d343b358,_:Nc8d12501678d4de3b1e680ee70427b1a,_:N1a675c91aa3d446b907d39fa917bff46,_:N649dddf8a22549f0ad55e620d7910c1d,_:N8d417ba8e7ca490c8293cff3d58362ad,_:N3aad50261a974f208d0b8097fde81bc7,_:Nab32d168e4204a78bdc392920dabd62e,_:Na3d673ced5254580bfe96f67725577d0,_:Nb1a3eb93bdbf4b4e8c5f8fb522d3606c,_:N69de8197f8a54f76a28b5fb778c199ce,_:N6c4facae373b415f8864dc820bb71e1d,_:Ndccfa8e77ce543e9b7c928dabea33631,_:N45670f5e9cfc4ba0b6eeeef88a4070b6,_:Nae0801e03bc24fb7b47a9e6ebf12ebf8,_:Nbe0fe2fd787d4171a1f00cdc00a2c8b5,_:N7e96b6d8957a4d4abadc3430342567bc,_:N6310a7415db547f3ab901dbcbd33a096,_:Nd665f1d2af194ae8a34d9723aad5f2b0,_:Ne0bda93ddd6241838674c55130c45723,_:N536ca40266a5453d968264ffdc7b61c9,_:N94e7192d5dad44569713ef56cfbf6aa3,_:N6bb5defd29ed4b439139c5182bf7d770,_:Na8063458e687415ebe0bfeb76d523534,_:Ne7f80a34bdd4496483f5ccc2ae9b41b5,_:N656fcec83bc648688b1df8bee3d6ed13,_:N21c40abcf1b24568a2f4e72643f2ef43,_:N7812a1be8bc2458b9c15ad8813cd206a,_:N82098a030b6c4db9b319478675894808
- - Shape cr:ReportValueShape: _:N3122dba4965447069c2386fe2df8a988,_:Nd7daaf761e244cc0ab20320714a84dd4,_:N2221ffe1b99e46fe97a69393c756518b,_:N7a220ca85fc0422dab07591cad753558,_:N876551c305ef456093bb2972d0b26722,_:N08bd605421b34d4a8fe26e7ee50bc130,_:Nfdc406c33eae42d9a5e7ccc29e65473f,_:N0af4692a0bb54a64a096a332f854f12b,_:N58433c4d80f44c08b93b7f7577f9fc7d,_:N855d37b914c846eb8ac91dee501ea2c1,_:N617403b5c97a41a9ae12882a91c0a9b3,_:Neaac90073cb54345afad416e80350222,_:N014b30bdd4b1443090deed0cbbd334ef,_:Nb58f5b7319644d62a5da92b92ffc4fd3,_:N9e7c3f654f214736855b92301494d781,_:N1e61040342c24d16b4258be11670ec78,_:N9e18420f3ee34254a65d5ea3d702bf80,_:N8f0f3bee8f9040539b8949c662f94fc3,_:N02826f53a3834a369b2b54b1b5520049,_:Nae6525c5bce843858cbf1fe9ff68a0ca,_:Nfa96942f16dd49328dd81113c1fe8305,_:Nf6e82eeeda3844c7a515e4319b45c166,_:N359b12803df3466ab5e60115b50c1dbb,_:N2105e919995e4b5a9b1da3f95b839cbc,_:N59c4b8078a3342d383e13df55a1a081f,_:N361f6780e84f470794c26acc4e2ea5ed,_:Ncf83ec8357254a2e880dfa32122b3046,_:N2508c056e74041f3afe7184f91afd97d,_:N8bf212e05aa342d6badc8adcd44b4860,_:N9a81eb459f97412e92760868443035a0,_:Ne0d1c27b470649ec8f7faf2902f199fd,_:Ne5475f0e2a9b416da4f646c68b3f1612,_:Ncf1af7de8a4445fd91a26b1a97b29b3d,_:N446418a73b9941aebf24bfa33b9a9e41
+ - Shape cr:ReportShape: _:Na764c6258b4a40f38898ab4782934e19
+ - Shape cr:CheckResultShape: _:N3b698853eb4b4330a643ea9d2aaa46b5,_:Nde778ab11a6f4c7ba563155e0d9e6b8a,_:N3f7b93a5653f44b9addb75bb831eabd1,_:N8a6762519ce24fed803b3feec7b45a5c,_:N89558931c9364395a86ef7f7c4016f79,_:Na3c0762e52524173b82a98d5f1fbbb5e,_:N782eddc3d63645209ea8fadf088a6869
+ - Shape cr:SourceReferenceShape: _:N61384ad66c7841ceb590c93ae0453819,_:Ne61171b67aea47ba960f45dc0da98265,_:N048273a293e8459b96f4b380b3db6b87,_:N6f53c437ece946739e34f9cab13d1c6f,_:N3254315ef95a445990b459a1c0dc0125,_:N1b7a8266d0984be0a2826a580abd2e40,_:Nfc0392f2c4f2418f852c5228bb4deed0,_:N3d52595a5dfc4076b48bd443d9680f93,_:Ne41278bd462045858d5cbe8583706d91,_:Ne3ddc5c2e10d4b89b5d206087df62049,_:N147d5b10288d4cb78155571c1719991d,_:N66eb3078761942449eb5a645bcb3331b,_:Nc490194ca2c44c8f8fe65ff911fa383d,_:N3eb3587f64a34ba9ba8480688d7ffa36,_:N6ead8e774abb4f099e206f7b8864738b,_:N97cb46b5de5b4088b2c23b2e742ace96,_:Nb48ae7304c7346fc9a159e8deaf94559,_:Nadefd7fc081641f7ae9eda8cdd99722c,_:Nf029c7b95c90478b8acb6e2208e75d04,_:Nf1536af42a534192b5f3e369edadd101,_:Nec67c20d8c664ba0bf7bd2d6233a40ae,_:Nb42d58e19b264d2790fc4b45bb7a5948,_:N810aa9d1b885468b827c4c880a488179,_:N97f8a841497749f6b0a97866aaa479a6,_:N0fc5a9fcbe27451184f18520c914c3b5,_:N4f70e95616074060863b11dae0528f7b,_:Nab5912d37cf346e089a1a130908a03bb,_:Nea140cebaa8f4f6ab0049a0c953cbcc2,_:N0bae6d7368fd4d04aaaebc9a3059e8e1,_:N879b0385f0c040d4a311a1cba86c431e,_:Nf797c797ffc147e6aa1b77833083bc0b,_:Nae87b56edf674d2586ea0d091cec6065,_:N6d6ff6d80d394578bb35ceae1343c9cb,_:N31a76adec6de449fa2b8bc4aa0646d44,_:Nb3f907e696ce45d0aae31ce2597c62aa,_:N5d7ce7a7848747fbbf07db2df7f26176,_:Nf35f9da5aed44a3e8af5b94b8449f6de,_:N75b845f46d274e908184d6ef10974031,_:N71c3917e7e9b4262b2041768c32787a4,_:N0bc6d679026e45baa5cdc6b1c5cb8b65,_:Nf7f2a410d9a049219acdf3b978b714e4,_:N601dc335cc8b44499146ed489793e955,_:N1e1481e1be8540b2911eb6b6e7d1cdbe,_:N6cfc475d54a74016bea6637fcbcfcb6e
+ - Shape cr:ReportValueShape: _:N939ac37050cf41b380271a99d94417e4,_:Nffee900aae7f4e7c8f42d857aae8ddb4,_:Na5f1eab32ea4430db13d9924da37e1d9,_:N1b4d50224b294e36be94225321d9a1bb,_:N39a3153e889e4aa4b6bb6abc58b35f69,_:N5546876ce7644bbe882e10d16fbee021,_:N2fc50193a3c34572adf74159b801c90c,_:N5c71c4ce39bd4a28bb23bb4fd279e6e1,_:N97b57029021049679a7593465e26897e,_:Nf38b718cf186451d91a2b67e39e35df8,_:N08e26e33928c4a2c89ec3a4fb584e3ed,_:Nff1d229c16a94068a31b30f4201273e9,_:Nf3b80377863843a7b3a66483742e0db1,_:N345d875450f94a67ab4726e2ee380e58,_:N321c380cf6f44b3a9f431dfde419fa54,_:N50194b8ee7774601a33cb12aa1660e02,_:Ndf721c976f944fd8b70395378334bbfa,_:N1eeaa33d1dfe4e60b5591231f1a7388b,_:N7eebebb486c0446ea5bae8cc9038173d,_:N108b95b8638c43e48fff5fb6dc027781,_:N514b4250e40d4a44a8e73e28ec729d85,_:N473e6ccfc7b543f5bb1341f5eea95352,_:Nb2a5840d408349ebab7ca23e67c986b6,_:N48224de471314a5381e98d63c8cb293a,_:Ndb36402c58014a469fdbe9924a70bee4,_:N6bdb3e85b11b4fb4887fe6cb80066786,_:Ne99ee81f9b8f402785bdf9f7b43f7d11,_:N5f88155424d04d379bd7d09ba2897ff9,_:Na4a1024a79b04f08aa1e273d5ab3e564,_:N7b2c8dcfdf8b417ead0fbb4f5eb691f5,_:Nc2b1023a28294dfcb6bb7a23942cd752,_:Ne99157838e5f46e28a1b00d29e452dcd,_:Ndf284cc421bb46abbea61ab296126455,_:N8aa9190f1ef64e969a64652bc3a9b29a
 
 === End SHACL ===
 

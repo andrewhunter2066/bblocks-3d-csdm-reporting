@@ -59,7 +59,7 @@ property it was read from. The check outcome and severity reuse EARL and SHACL t
        cr:valueStatus vs:reported ;
        cr:sourceRef [
            cr:sourceDataset "SP-83687-1-1-0.00" ;
-           cr:jsonPointer "/parcels/0/features/2/properties/interests/0/entitlementPortion" ;
+           cr:jsonPointer "/parcels/0/features/2/properties/entitlementPortion" ;
            cr:sourceProperty <https://w3id.org/ogc/ladm/parcels/entitlementPortion> ] ] ] ] ;
    cr:check [
        dcterms:identifier "total-matches-declared" ;

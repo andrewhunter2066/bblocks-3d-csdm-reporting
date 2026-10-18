@@ -23,16 +23,17 @@ The block has no schema (decision D3); its examples are CSDM datasets that drive
 The adapter only interprets the source.
 It calculates nothing: derived values come from the report block's `complete` transform, so every source adapter produces the same totals.
 
-Each extracted value is a `ReportValue` whose `sourceRefs` give the [JSON Pointer](https://www.rfc-editor.org/rfc/rfc6901) of the exact source property (e.g. `/parcels/0/features/2/properties/interests/0/entitlementPortion`).
+Each extracted value is a `ReportValue` whose `sourceRefs` give the [JSON Pointer](https://www.rfc-editor.org/rfc/rfc6901) of the exact source property (e.g. `/parcels/0/features/2/properties/entitlementPortion`).
 Where the source profile defines that property's IRI, the reference also names it in `property`: today that is only `entitlementPortion`, which the WA profile maps to [LADM](https://ogcincubator.github.io/bblocks-land-parcels/bblock/ogc.ladm.land-parcels.ontology)'s `https://w3id.org/ogc/ladm/parcels/entitlementPortion`.
+The profile's context maps it inside `interests[]`; the adapter uses the same term for the lot parcel's `entitlementPortion`, which the context does not map yet (built-strata decision register items 9 and 10).
 No IRI is invented for the other source properties.
 
 | Source situation | Status |
 |---|---|
 | Value present and usable | `reported` (`lexicalValue` keeps the original when it was converted, e.g. `"117"`) |
-| No strata-lot interest, or no `entitlementPortion` | `not-supplied` (pointer to where it was looked for) |
+| No `entitlementPortion` on the lot parcel | `not-supplied` (pointer to the parcel's `properties`) |
+| No `entitlementPortion` on the lot parcel, but a retired `wa-interest-type:strata-lot` interest holds one | `not-supplied`, with a second pointer to that interest and a note; the interest's value is not read |
 | `entitlementPortion` is not a positive whole number | `invalid` (original kept as `lexicalValue`) |
-| Two strata-lot interests give different entitlements | `conflicting` (both pointers) |
 | A scheme reference that is not a feature of the dataset | `unresolved` (pointer to the reference) |
 
 ## Shared scheme resolution (`resolve-scheme`)
@@ -62,11 +63,11 @@ It is a test fixture, not an example: its transform is expected to raise, and a 
 | `membership-references-resolve` | domain | error | a reference is not a strata-lot parcel of the dataset |
 | `membership-back-links` | domain | warning | a member lot's `containingPrimaryParcel` is missing or another parcel, or its `schemeRef` names another parcel (a missing `schemeRef` is acceptable) |
 | `membership-unreferenced-claimants` | domain | warning | a strata lot links to the scheme but is not in its references (it is reported, not added) |
-| `entitlement-source-datatype` | source-conformance | info | an `entitlementPortion` is a number, while [`icsm.profiles.wa.wa-3d`](https://surroundaustralia.github.io/3d-csdm-profile-wa/bblock/icsm.profiles.wa.wa-3d) types it as a string |
+| `entitlement-source-datatype` | source-conformance | info | an `entitlementPortion` is a string, while the [WA built-strata scope note](https://github.com/surroundaustralia/3d-csdm-profile-wa/blob/vocab-cleanup/content/proposals/development/built-strata/built-strata-bblock-scope-note.md) types it as an integer (it is still converted) |
 | `scheme-number-consistent` | domain | warning | the `schemeNumber` differs (ignoring spaces) from the CSD `name` or the scheme appellation's `surveyNumber` |
 
 Each member lot's `membershipEvidence` lists `references` (authoritative, D4) and, when they point at the scheme, `containingPrimaryParcel` and `schemeRef`.
-The declared total is read from the scheme's `wa-interest-type:strata-scheme` interest (`entitlementTotal`, D10).
+The declared total is the scheme parcel's `entitlementTotal` property (D10).
 
 | Transform | Output | Notes |
 |---|---|---|
@@ -137,10 +138,10 @@ After rows 2 and 3 were fixed, the only remaining JSON Schema finding is row 1.
 |---|---|
 | Scheme name | the scheme parcel's `schemeName` |
 | Address parts | `schemeAddress.hasPart`. The road label is the `label` on the `apt:road` value; the locality label comes from `wa-locality`. The formatted address ("281 Belmont Avenue, Cloverdale") is derived here because it interprets these parts |
-| Schedule document | `supportingDocuments[role = wa-survey-documentation-type:unitEntitlementSchedule]` |
+| Schedule document | `supportingDocuments[role = wa-survey-documentation-type:scheme-ue]` (the published type; the draft `unitEntitlementSchedule` was merged into it and is not recognised) |
 | Approved form | the schedule's `conformsTo`; label, validity (`dcterms:valid`, whose start is `validFrom`) and source from `wa-approved-form` |
 | Legislative basis | the approved form's `skos:scopeNote` in `wa-approved-form` |
-| Certification | `annotations[role = wa-annotation-role:licensed-valuer-certification]`: `certifier`, `dateCertified`, `description` (verbatim), and the document its `href` matches |
+| Certification | `annotations[role = wa-annotation:licensed-valuer-certification]` (or the `wa-annotation-role:` alias the `wa-core` context keeps for the same namespace): `certifier`, `dateCertified`, `description` (verbatim), and the document its `href` matches |
 
 Only the schedule document (and any other document the certification links to) and the certification annotation are copied into the report; the dataset's other documents and annotations are not.
 
@@ -173,8 +174,9 @@ Once the vocabularies are published, the adapter can look them up instead of car
 - **Members:** the scheme's `topology.references`, where `topology.type` = `ParcelAggregate`.
   These are authoritative for `wa-built-strata` (D4).
   Each lot's `containingPrimaryParcel` and `schemeRef` are consistency checks only.
-- **Entitlements:** `interests[interestType = wa-interest-type:strata-lot].entitlementPortion` per lot.
-  The declared total is `interests[interestType = wa-interest-type:strata-scheme].entitlementTotal` on the scheme (D10).
+- **Entitlements:** each lot parcel's `properties.entitlementPortion`.
+  The declared total is the scheme parcel's `properties.entitlementTotal` (D10).
+  Both are parcel properties, not interests ([WA vocabulary review decision D7](https://github.com/surroundaustralia/3d-csdm-profile-wa/blob/vocab-cleanup/content/proposals/development/vocabularies/vocab-review.md#decision-d7)); the `wa-interest-type:strata-lot` and `strata-scheme` interest types are retired.
 
 ## Examples
 
@@ -1150,13 +1152,7 @@ the source conformance findings above.
                 }
               ]
             },
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687",
-                "interestType": "wa-interest-type:strata-scheme",
-                "entitlementTotal": 1000
-              }
-            ],
+            "entitlementTotal": 1000,
             "floors": [
               1,
               2
@@ -1193,13 +1189,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-1",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 117
-              }
-            ],
+            "entitlementPortion": 117,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -1256,13 +1246,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-2",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -1320,13 +1304,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-3",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 113
-              }
-            ],
+            "entitlementPortion": 113,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -1378,13 +1356,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-4",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -1436,13 +1408,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-5",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -1494,13 +1460,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-6",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 113
-              }
-            ],
+            "entitlementPortion": 113,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -1552,13 +1512,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-7",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -1610,13 +1564,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-8",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -1668,13 +1616,7 @@ the source conformance findings above.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-9",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 117
-              }
-            ],
+            "entitlementPortion": 117,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -1728,7 +1670,7 @@ the source conformance findings above.
     {
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "role": "wa-survey-documentation-type:scheme-ue",
       "type": "application/pdf",
       "title": "Schedule of Unit Entitlements - SP83687",
       "conformsTo": "wa-approved-form:2021-47738"
@@ -1790,7 +1732,7 @@ the source conformance findings above.
       "role": "wa-annotation-role:boundary-definition-statement"
     },
     {
-      "role": "wa-annotation-role:licensed-valuer-certification",
+      "role": "wa-annotation:licensed-valuer-certification",
       "description": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "via",
@@ -1862,7 +1804,7 @@ the source conformance findings above.
 
 
 ### SP83687 with a missing unit entitlement (synthetic)
-The SP83687 example with one deliberate change: Lot 4's strata-lot interest has no
+The SP83687 example with one deliberate change: Lot 4's parcel has no
 `entitlementPortion` (generated by `scripts/make_fixture_variants.py`; not lodged data). The report is
 still produced: Lot 4's entitlement is `not-supplied`, with a source reference to where it was looked
 for, and the calculated total (892) says it sums 8 of 9 lots. The `entitlements-present` and
@@ -2834,13 +2776,7 @@ report status is `incomplete`.
                 }
               ]
             },
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687",
-                "interestType": "wa-interest-type:strata-scheme",
-                "entitlementTotal": 1000
-              }
-            ],
+            "entitlementTotal": 1000,
             "floors": [
               1,
               2
@@ -2877,13 +2813,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-1",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 117
-              }
-            ],
+            "entitlementPortion": 117,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -2940,13 +2870,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-2",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -3004,13 +2928,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-3",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 113
-              }
-            ],
+            "entitlementPortion": 113,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -3062,12 +2980,6 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-4",
-                "interestType": "wa-interest-type:strata-lot"
-              }
-            ],
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -3119,13 +3031,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-5",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -3177,13 +3083,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-6",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 113
-              }
-            ],
+            "entitlementPortion": 113,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -3235,13 +3135,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-7",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -3293,13 +3187,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-8",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -3351,13 +3239,7 @@ report status is `incomplete`.
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-9",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 117
-              }
-            ],
+            "entitlementPortion": 117,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -3411,7 +3293,7 @@ report status is `incomplete`.
     {
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "role": "wa-survey-documentation-type:scheme-ue",
       "type": "application/pdf",
       "title": "Schedule of Unit Entitlements - SP83687",
       "conformsTo": "wa-approved-form:2021-47738"
@@ -3473,7 +3355,7 @@ report status is `incomplete`.
       "role": "wa-annotation-role:boundary-definition-statement"
     },
     {
-      "role": "wa-annotation-role:licensed-valuer-certification",
+      "role": "wa-annotation:licensed-valuer-certification",
       "description": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "via",
@@ -4515,13 +4397,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
                 }
               ]
             },
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687",
-                "interestType": "wa-interest-type:strata-scheme",
-                "entitlementTotal": 1100
-              }
-            ],
+            "entitlementTotal": 1100,
             "floors": [
               1,
               2
@@ -4558,13 +4434,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-1",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 117
-              }
-            ],
+            "entitlementPortion": 117,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -4621,13 +4491,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-2",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -4685,13 +4549,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-3",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 113
-              }
-            ],
+            "entitlementPortion": 113,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -4743,13 +4601,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-4",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -4801,13 +4653,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-5",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -4859,13 +4705,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-6",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 113
-              }
-            ],
+            "entitlementPortion": 113,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -4917,13 +4757,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-7",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -4975,13 +4809,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-8",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 108
-              }
-            ],
+            "entitlementPortion": 108,
             "zMin": 20.57451,
             "zMax": 27.536458,
             "floors": [
@@ -5033,13 +4861,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelType": "wa-parcel-type:freehold",
             "parcelPurpose": "wa-parcel-purpose:strata-lot",
             "parcelState": "wa-parcel-state:created",
-            "interests": [
-              {
-                "interestLink": "wa-interest:SP83687-lot-9",
-                "interestType": "wa-interest-type:strata-lot",
-                "entitlementPortion": 117
-              }
-            ],
+            "entitlementPortion": 117,
             "zMin": 20.424501,
             "zMax": 27.386423,
             "floors": [
@@ -5093,7 +4915,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
     {
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "role": "wa-survey-documentation-type:scheme-ue",
       "type": "application/pdf",
       "title": "Schedule of Unit Entitlements - SP83687",
       "conformsTo": "wa-approved-form:2021-47738"
@@ -5155,7 +4977,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
       "role": "wa-annotation-role:boundary-definition-statement"
     },
     {
-      "role": "wa-annotation-role:licensed-valuer-certification",
+      "role": "wa-annotation:licensed-valuer-certification",
       "description": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "via",

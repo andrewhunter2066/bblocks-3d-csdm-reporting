@@ -2,7 +2,7 @@
   "title": "Validation report for csdm.reporting.cadastral-report - Cadastral report",
   "bblockName": "Cadastral report",
   "bblockId": "csdm.reporting.cadastral-report",
-  "generated": "2026-10-05T18:28:22.140487+00:00",
+  "generated": "2026-10-18T17:53:15.733867+00:00",
   "result": true,
   "items": [
     {
@@ -77,17 +77,17 @@
               "focusNodes": {
                 "cr:DocumentAndAnnotationReferencesResolve": {
                   "nodes": [
-                    "_:N5afbdd7411f545b3b58a0d8f6fe199cf"
+                    "_:Nd4e41c58fb8b4227b1f64f4332fa0b09"
                   ]
                 },
                 "cr:ReportStatusFollowsFromChecks": {
                   "nodes": [
-                    "_:N5afbdd7411f545b3b58a0d8f6fe199cf"
+                    "_:Nd4e41c58fb8b4227b1f64f4332fa0b09"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:N5afbdd7411f545b3b58a0d8f6fe199cf\n - Shape cr:ReportStatusFollowsFromChecks: _:N5afbdd7411f545b3b58a0d8f6fe199cf\n"
+              "message": "Focus nodes for _sources/cadastral-report/shapes.shacl:\n - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nd4e41c58fb8b4227b1f64f4332fa0b09\n - Shape cr:ReportStatusFollowsFromChecks: _:Nd4e41c58fb8b4227b1f64f4332fa0b09\n"
             },
             {
               "op": "shacl-report",
@@ -99,20 +99,20 @@
             {
               "shaclFile": "_sources/cadastral-report-ontology/shapes.shacl",
               "focusNodes": {
-                "cr:CheckResultShape": {
-                  "nodes": [
-                    "_:N6f597abb613c45629ec1d1f30d893678",
-                    "_:N59a2054d7fc84f2ea07338968083104f"
-                  ]
-                },
                 "cr:ReportShape": {
                   "nodes": [
-                    "_:N5afbdd7411f545b3b58a0d8f6fe199cf"
+                    "_:Nd4e41c58fb8b4227b1f64f4332fa0b09"
+                  ]
+                },
+                "cr:CheckResultShape": {
+                  "nodes": [
+                    "_:N4a3a8f5f36dc47ba9c11e31b4ba1a790",
+                    "_:N7e9f5f8f79d2434db7a5912718c13acc"
                   ]
                 },
                 "cr:SourceReferenceShape": {
                   "nodes": [
-                    "_:Ne2594e55bd11406d901d0f8b295fcb52"
+                    "_:Nc7a0d549fb7b4cb8b77f3e0bb4fb7d1c"
                   ]
                 },
                 "cr:ReportValueShape": {
@@ -120,7 +120,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:CheckResultShape: _:N6f597abb613c45629ec1d1f30d893678,_:N59a2054d7fc84f2ea07338968083104f\n - Shape cr:ReportShape: _:N5afbdd7411f545b3b58a0d8f6fe199cf\n - Shape cr:SourceReferenceShape: _:Ne2594e55bd11406d901d0f8b295fcb52\n - Shape cr:ReportValueShape: *none*\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:ReportShape: _:Nd4e41c58fb8b4227b1f64f4332fa0b09\n - Shape cr:CheckResultShape: _:N4a3a8f5f36dc47ba9c11e31b4ba1a790,_:N7e9f5f8f79d2434db7a5912718c13acc\n - Shape cr:SourceReferenceShape: _:Nc7a0d549fb7b4cb8b77f3e0bb4fb7d1c\n - Shape cr:ReportValueShape: *none*\n"
             }
           ]
         }

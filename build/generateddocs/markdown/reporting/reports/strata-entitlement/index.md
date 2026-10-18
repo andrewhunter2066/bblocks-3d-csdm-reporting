@@ -139,7 +139,7 @@ report in the next example.
     {
       "id": "https://linked.data.gov.au/def/csdm/wa-approved-form",
       "kind": "vocabulary",
-      "name": "wa-approved-form"
+      "name": "WA Approved Form"
     },
     {
       "id": "https://linked.data.gov.au/def/csdm/wa-locality",
@@ -153,7 +153,7 @@ report in the next example.
       "title": "Schedule of Unit Entitlements - SP83687",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "mediaType": "application/pdf",
-      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "role": "wa-survey-documentation-type:scheme-ue",
       "conformsTo": "wa-approved-form:2021-47738",
       "sourceRef": {
         "dataset": "SP-83687-1-1-0.00",
@@ -164,7 +164,7 @@ report in the next example.
   "annotations": [
     {
       "id": "licensed-valuer-certification",
-      "role": "wa-annotation-role:licensed-valuer-certification",
+      "role": "wa-annotation:licensed-valuer-certification",
       "statement": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "via",
@@ -289,7 +289,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/2/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -322,7 +322,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/3/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -355,7 +355,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/4/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/4/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -388,7 +388,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/5/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/5/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -421,7 +421,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/6/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/6/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -454,7 +454,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/7/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/7/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -487,7 +487,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/8/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/8/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -520,7 +520,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/9/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/9/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -553,7 +553,7 @@ report in the next example.
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/10/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/10/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -601,7 +601,7 @@ report in the next example.
           "lexicalValue": "2021-07-07/.."
         },
         "source": {
-          "value": "wa-leg:mrdoc_48587.pdf",
+          "value": "https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/mrdoc_48587.pdf",
           "status": "reported",
           "sourceRefs": [
             {
@@ -679,7 +679,7 @@ report in the next example.
         "sourceRefs": [
           {
             "dataset": "SP-83687-1-1-0.00",
-            "pointer": "/parcels/0/features/1/properties/interests/0/entitlementTotal"
+            "pointer": "/parcels/0/features/1/properties/entitlementTotal"
           }
         ]
       }
@@ -738,19 +738,8 @@ report in the next example.
       "definedBy": "csdm.reporting.adapters.wa-csdm",
       "category": "source-conformance",
       "severity": "info",
-      "outcome": "fail",
-      "message": "9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)",
-      "targets": [
-        "/content/lots/0/entitlement",
-        "/content/lots/1/entitlement",
-        "/content/lots/2/entitlement",
-        "/content/lots/3/entitlement",
-        "/content/lots/4/entitlement",
-        "/content/lots/5/entitlement",
-        "/content/lots/6/entitlement",
-        "/content/lots/7/entitlement",
-        "/content/lots/8/entitlement"
-      ]
+      "outcome": "pass",
+      "message": "Every entitlementPortion is an integer, as the WA built-strata scope note requires"
     },
     {
       "id": "scheme-number-consistent",
@@ -818,7 +807,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
     {
       "id": "https://linked.data.gov.au/def/csdm/wa-approved-form",
       "kind": "vocabulary",
-      "name": "wa-approved-form"
+      "name": "WA Approved Form"
     },
     {
       "id": "https://linked.data.gov.au/def/csdm/wa-locality",
@@ -832,7 +821,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
       "title": "Schedule of Unit Entitlements - SP83687",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "mediaType": "application/pdf",
-      "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+      "role": "wa-survey-documentation-type:scheme-ue",
       "conformsTo": "wa-approved-form:2021-47738",
       "sourceRef": {
         "dataset": "SP-83687-1-1-0.00",
@@ -843,7 +832,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
   "annotations": [
     {
       "id": "licensed-valuer-certification",
-      "role": "wa-annotation-role:licensed-valuer-certification",
+      "role": "wa-annotation:licensed-valuer-certification",
       "statement": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
       "href": "documents/SP83687-unit-entitlement-schedule.pdf",
       "rel": "via",
@@ -968,7 +957,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/2/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1001,7 +990,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/3/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1034,7 +1023,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/4/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/4/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1067,7 +1056,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/5/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/5/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1100,7 +1089,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/6/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/6/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1133,7 +1122,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/7/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/7/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1166,7 +1155,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/8/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/8/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1199,7 +1188,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/9/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/9/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1232,7 +1221,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "sourceRefs": [
             {
               "dataset": "SP-83687-1-1-0.00",
-              "pointer": "/parcels/0/features/10/properties/interests/0/entitlementPortion",
+              "pointer": "/parcels/0/features/10/properties/entitlementPortion",
               "property": "https://w3id.org/ogc/ladm/parcels/entitlementPortion"
             }
           ]
@@ -1280,7 +1269,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
           "lexicalValue": "2021-07-07/.."
         },
         "source": {
-          "value": "wa-leg:mrdoc_48587.pdf",
+          "value": "https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/mrdoc_48587.pdf",
           "status": "reported",
           "sourceRefs": [
             {
@@ -1358,7 +1347,7 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
         "sourceRefs": [
           {
             "dataset": "SP-83687-1-1-0.00",
-            "pointer": "/parcels/0/features/1/properties/interests/0/entitlementTotal"
+            "pointer": "/parcels/0/features/1/properties/entitlementTotal"
           }
         ]
       },
@@ -1445,19 +1434,8 @@ numbers, unit entitlements and total (1000) match the lodged Schedule of Unit En
       "definedBy": "csdm.reporting.adapters.wa-csdm",
       "category": "source-conformance",
       "severity": "info",
-      "outcome": "fail",
-      "message": "9 entitlementPortion value(s) are numbers; icsm.profiles.wa.wa-3d types them as strings (converted to integers here)",
-      "targets": [
-        "/content/lots/0/entitlement",
-        "/content/lots/1/entitlement",
-        "/content/lots/2/entitlement",
-        "/content/lots/3/entitlement",
-        "/content/lots/4/entitlement",
-        "/content/lots/5/entitlement",
-        "/content/lots/6/entitlement",
-        "/content/lots/7/entitlement",
-        "/content/lots/8/entitlement"
-      ]
+      "outcome": "pass",
+      "message": "Every entitlementPortion is an integer, as the WA built-strata scope note requires"
     },
     {
       "id": "scheme-number-consistent",

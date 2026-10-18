@@ -158,7 +158,7 @@ report types define (and map to RDF) their own content.
   "content": {
     "reportedValue": {
       "value": 117, "status": "reported", "lexicalValue": "117",
-      "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion"}]
+      "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/2/properties/entitlementPortion"}]
     },
     "derivedValue": {
       "value": 225, "status": "derived",
@@ -166,12 +166,12 @@ report types define (and map to RDF) their own content.
     },
     "notSuppliedValue": {
       "value": null, "status": "not-supplied",
-      "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/5"}],
-      "note": "No interest with interestType wa-interest-type:strata-lot and an entitlementPortion"
+      "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/5/properties"}],
+      "note": "The parcel has no entitlementPortion"
     },
     "invalidValue": {
       "value": null, "status": "invalid", "lexicalValue": "12.5",
-      "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion"}],
+      "sourceRefs": [{"dataset": "SP-1", "pointer": "/parcels/0/features/3/properties/entitlementPortion"}],
       "note": "Not a positive whole number"
     }
   }

@@ -23,7 +23,7 @@
       "sourceRefs": [
         {
           "dataset": "SP-1",
-          "pointer": "/parcels/0/features/2/properties/interests/0/entitlementPortion"
+          "pointer": "/parcels/0/features/2/properties/entitlementPortion"
         }
       ]
     },
@@ -44,10 +44,10 @@
       "sourceRefs": [
         {
           "dataset": "SP-1",
-          "pointer": "/parcels/0/features/5"
+          "pointer": "/parcels/0/features/5/properties"
         }
       ],
-      "note": "No interest with interestType wa-interest-type:strata-lot and an entitlementPortion"
+      "note": "The parcel has no entitlementPortion"
     },
     "invalidValue": {
       "value": null,
@@ -56,7 +56,7 @@
       "sourceRefs": [
         {
           "dataset": "SP-1",
-          "pointer": "/parcels/0/features/3/properties/interests/0/entitlementPortion"
+          "pointer": "/parcels/0/features/3/properties/entitlementPortion"
         }
       ],
       "note": "Not a positive whole number"

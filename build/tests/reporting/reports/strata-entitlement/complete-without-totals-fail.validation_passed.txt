@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.reports.strata-entitlement - Strata Scheme Entitlement Report
-Generated 2026-10-05T18:28:14.100061+00:00
+Generated 2026-10-18T17:53:08.157619+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -52,7 +52,7 @@ On instance['content']:
                                                    'id': 'https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738',
                                                    'pointer': ''}],
                                    'status': 'reported',
-                                   'value': 'wa-leg:mrdoc_48587.pdf'},
+                                   'value': 'https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/mrdoc_48587.pdf'},
                         'validFrom': {'lexicalValue': '2021-07-07/..',
                                       'sourceRefs': [{'dataset': 'https://linked.data.gov.au/def/csdm/wa-approved-form',
                                                       'id': 'https://linked.data.gov.au/def/csdm/wa-approved-form/2021-47738',
@@ -70,7 +70,7 @@ On instance['content']:
                                     'clause 31E(1)(c) of the Strata Titles '
                                     'Act 1985.'}],
      'lots': [{'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/2/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/2/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 117},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -84,7 +84,7 @@ On instance['content']:
                        'id': 'uuid:e62621ed-1334-4890-964f-608ff68f7a17',
                        'pointer': '/parcels/0/features/2'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/3/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/3/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 108},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -98,7 +98,7 @@ On instance['content']:
                        'id': 'uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9',
                        'pointer': '/parcels/0/features/3'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/4/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/4/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 113},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -112,7 +112,7 @@ On instance['content']:
                        'id': 'uuid:85da01f8-9625-4b1e-9f4d-a34c11313512',
                        'pointer': '/parcels/0/features/4'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/5/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/5/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 108},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -126,7 +126,7 @@ On instance['content']:
                        'id': 'uuid:5e2823d1-2473-4417-8045-1089d2e86e64',
                        'pointer': '/parcels/0/features/5'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/6/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/6/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 108},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -140,7 +140,7 @@ On instance['content']:
                        'id': 'uuid:b46b34d5-03dd-49d2-b677-31042c5ab3f3',
                        'pointer': '/parcels/0/features/6'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/7/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/7/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 113},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -154,7 +154,7 @@ On instance['content']:
                        'id': 'uuid:c1a7f52f-1b21-4266-8167-d5f3169c6078',
                        'pointer': '/parcels/0/features/7'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/8/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/8/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 108},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -168,7 +168,7 @@ On instance['content']:
                        'id': 'uuid:0df5a108-f5fe-433a-9934-b0162115248f',
                        'pointer': '/parcels/0/features/8'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/9/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/9/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 108},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -182,7 +182,7 @@ On instance['content']:
                        'id': 'uuid:15e3af06-3035-4c0a-89c2-57c71b254ad5',
                        'pointer': '/parcels/0/features/9'}},
               {'entitlement': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
-                                               'pointer': '/parcels/0/features/10/properties/interests/0/entitlementPortion'}],
+                                               'pointer': '/parcels/0/features/10/properties/entitlementPortion'}],
                                'status': 'reported',
                                'value': 117},
                'lotNumber': {'sourceRefs': [{'dataset': 'SP-83687-1-1-0.00',
@@ -255,18 +255,18 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N3d5cf0f5f684425c8b9cf58e5dbcd6df
- - Shape cr:ReportStatusFollowsFromChecks: _:N3d5cf0f5f684425c8b9cf58e5dbcd6df
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:N39e695f554674ee9a541939522b1034e
+ - Shape cr:ReportStatusFollowsFromChecks: _:N39e695f554674ee9a541939522b1034e
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:Nc6dee16bfa574fa4a598f11680ae01a9,_:N43d5d8b8f31e4ca9836aa356c68e1b88,_:N393997a64cd243038a183f02e5b8b7b3,_:Nab04fba0853c49cd9af32666c93eda56,_:N021838eaedf44170b03cc65a45238059,_:Nadd6edc7f771414ab47b84bd8a51a81c,_:N4401243565af44d49382fb75446afb9a,_:Nbcbc5868143342d786b1d983b64d24bc,_:N2ec0dd1fec7441abb73536ab32a1874d,_:N539e14bc5f0d4d05a19606ad8a2f99cf,_:Nea45852a963d4f4da34e3ac8ad5508d0,_:Nfa3931f8a87346d3859251d7c97a93fb,_:Nc3c991ddb50b4243bc991baca22b7c8b,_:N60d2cf6dd3fd489e9a582f83cb4fa6cc,_:Nd68a4f24b8de4b8b8111df8e670694c2,_:N0f3f7c7b56b347fb844679d72c8e6c27,_:N570658d6b25c41f5ae0d1a14c293dd56,_:N442b88193c4f4546b59585f59b06720f
- - Shape cr:ReportShape: _:N3d5cf0f5f684425c8b9cf58e5dbcd6df
- - Shape cr:SourceReferenceShape: _:N76d15c9839b84509bdbef0f3eb49dc65,_:N688de10342754f118bab53b64f400fe2,_:N513e7365ec694141af8afc8576408020,_:Ne6c896c093d9432ea379ee2c21c65f44,_:Na0e26a69dc3d4e06963bd3fe57874842,_:N05b34da52cba4d03b862e4c6859a87c0,_:Nef22f991f1dc45c2b630099fbc7af941,_:N92f9adb1f9394ac89184da39b136689b,_:Nf24a5d553239411a81816fea380d5b17,_:N416888431a454b24a1be6d2c76dc1bb3,_:N1798e83405a249c993482de93a7025ce,_:N990a54ae864c4544ae5ca4bb15bf1a84,_:Nfa00024373f5489fb2bb840f66ba252a,_:Nf5678933fccb4a9e87a475381657110c,_:N5b37955ab3a64aef92dea583ff0eb708,_:N20bd54c3e591439fabdb0e7110bdbb1b,_:Nb2565bec12ba4170a40cb0144bf9bf71,_:N614ccd1de27b4570960bb33e806a3be3,_:N750ce24c412c45efbd239f6ea49ac797,_:N4c8f7474e543400f924b9c28b3de62f7,_:N617e2bc81bb544ec8d9867e184c056a2,_:N040812111f514e1abc36f15203889df9,_:N2893cc963bca4db894ccc51e782d5ae9,_:Nedcbbed9d317477c951d25a735c6387c,_:Nd5bd01b77b1846b39e40e03f18de8e3a,_:Ne9878b6368884750b6b6abbe058edfa4,_:Neffa27ca1ce141dfa02b948431059745,_:Nc5631bdf54904c649419526de18b87e5,_:Na21e3dbbcfd245c6a868fb8eb278c7de,_:Nb80dcaf01b884ff3a883556a2bd471bf,_:Nf7a124110ac04604941dd6b68211276c,_:Nba7a993735e8465b810630a78013776f,_:N0636dff467c54f3b8964d5484664f7c7,_:N8ceadd532f394d728d688807a8a21ac4,_:N37ff5c6713b7458eb0cb97e45ef65ccc,_:N31084d0419e74de18ff556d373480391,_:N0f41b06d5aa74e698676ca19ac0565e9,_:N0c0cfbdcc2644b55b9f4fb1771ca078d,_:N448b89d9cbbc4bc69d17d7e532444605,_:Na582c4a99921450cb0e8708a11a62c24,_:N1162e9e013b04bd48d3c1122d2dcb371,_:N9c24a677bac34607b4b8015a49563863,_:N7df1ae8653154846b6abfc29cc9d34d6
- - Shape cr:ReportValueShape: _:N81ebb985d841406cb8e0fe3f9a417ee5,_:Na1e3486f469f4fa189b8baab93964827,_:N4fd4546c47ef4e16b8c2ddbe8d167feb,_:N1ffd1be3020f4df39ef76a83109b72ff,_:N1bedad80af944d1bbd96152f12b7e12d,_:N028525b3bb124049a6f47fdeb03e9a53,_:Na70f119ff7174cbcaad393c933f92238,_:N5c542ee0019741a48ca2f322a8b78f5c,_:N147b4166d98147879893faca328f8192,_:N3672408f1cdf4319a7a3e74ac5ae3213,_:Nc6bed0e7273a4a2bb945362d9146e553,_:N46c474b500e4473d9b73bde7d5c82b4f,_:Ne1b4276761a24149afddc09147add510,_:N77e70c37f4684325925d4d9738339196,_:N72e46c2210454bc2a0fd2a5cc1f43835,_:N8102d450e1bc4cc6832ce1d3b9788281,_:N35a1b9a423b146c7ba68a379c646d411,_:Nb55774c3a32949ff9cad5f1f4150479d,_:Na2284b08daf94194bdfb9897639ecf96,_:N55c95419b5e64331ac051ade8c16f0de,_:N8900122aecdb4ea59c1b4f93b1f6bbd1,_:N6e3554bbaddf4ee4a7325db81ae8145a,_:N345d0ba5f1f64ffea336f1b6b36ddcc5,_:N16179fdf86cc4e7c871e247f6881ff85,_:N84efedcd33234909b989d78a07c6d266,_:N66d5acfbb94646c3baad5f2cba173519,_:N81d293673c4f45c8a6259c800c758698,_:N4dc997c7df764767a8458ca796ecd6b0,_:N644d0d80a531462d97d37419cc1dfdb4,_:Nce9cf00adb914cf7b9dc7aabaacabad0,_:N71683e4b648745d8a1c8fa586ef0d751
+ - Shape cr:ReportShape: _:N39e695f554674ee9a541939522b1034e
+ - Shape cr:CheckResultShape: _:Nbb3bb0d1442a4677bfb172e554051409,_:Nefa158afe1194b6488d7373d125a13e2,_:N271ef0fb65394e63811dde3d34c16fb8,_:N75e43c635d084a27a6a522e940cc454a,_:N7d24e7316e2c497596986c46554db39e,_:N3c6330bfea59443f8af2ea70b98e2a07,_:N6ebc3c446a684a8787c17a1cc011cccd,_:Nbd875ec94e20479f96cbd3d7178531ee,_:N7c52dbfe21574fa5bb8bacdbeab119b1,_:N7043115087a742f9a72db6887e99e5b7,_:N8d3e75f87bbc42bc994ac5fcbc10f07f,_:N74fcd421f6cd47ef9073fac5b9212148,_:N0d95f94dbd82498dbdef19b5a4e44db2,_:Nabf6347d7fd64f499d00e77d750f8d6c,_:N1bdda70c05244091a07e7a852813e344,_:N2bca56e435464c62b2d0feb826ddd0de,_:Nba6021f2104d40228da073f603719efb,_:N6fa13b98230b468f8872b859af174cd3
+ - Shape cr:SourceReferenceShape: _:Nf7c3037b14a842cba37d1829158e2b79,_:Ne0161446e7344c2994ed44b980aa187c,_:Ndf21f36b5cc94722a8bbe0635347b2a2,_:Nf46a8a316d4f4d48afb94413e413e74d,_:Naaa977855d9d40ea882f67b2942d89bc,_:Nca0926b6fdc0450f8983a21ab2167561,_:N3146c655edaf4b47a0bf467c8bdc9a3b,_:N5a92b2b42cad40a097260d8b297b4347,_:N89453574a9be4b9f8a7c2e50b834a0df,_:N983ea55746ca4e11a3df9135686427cb,_:N5feaf140a7d14508b6a5bbc623391f71,_:Ne41f090f62f345f1b516506ddc437525,_:N9ee7386421fd4460900809764a655a8b,_:N2de63d0a11c64a10b533766a96827ee7,_:N4c1193eb12404e62b3a58cdf0eaaecd9,_:N927768f00bf84122ad7572885d8fe797,_:Nf9a4297a266b4297947d2001ca8cb34e,_:N0626c79bcfab4923ae3d480d3ebf427b,_:Nab2e3616b753445c8d016dc2693d47c3,_:N9c743090b3404185a2d69f22d0102e06,_:N6d930e3f6803494f8f09d689c3978049,_:Nafeadf8657394c0795896c5e5b064648,_:N5ace944e8ec44bcda3a97dcf96af21b2,_:Ne0408dbb45e547b99849b1fa9de05c14,_:Nbf6295c3141b48189fe679f439c3d224,_:Nf99ae7af4006449ab33f85e31569ae96,_:Ndc71f2f4874a4165b9e7a5aa07300224,_:N1f69ae9e36564978be71806244f756f8,_:N38e4e90f8cc745129b85cf8ceca68450,_:Nae7f41f6f71d45dfb441d7df98bc26f2,_:N89372b26869f4426a02e6421517bd27d,_:N54a3cd0802c3457095d1d9e2835430c3,_:N81df08314a164a0b80dc924499a45c55,_:N69762d70489f4b5a949118f80cdf0dd4,_:N94fa6586cb594c809ab7e005894853be,_:Na1b044d3711d46cca3908e5f2c2e8282,_:N6d21eb29785248fe8691eb842689c76d,_:N68e8529d15f74af58924cecef3fa44f1,_:Nc140558827de473ba15f8f8da6e2e4e6,_:N2ab638103ee4432cba2308d4e372db78,_:N314175ed83f24381be2a1f645586b1c3,_:N505bd1e09a6b46c989ac56bf9b46288c,_:N380eec329a064cf1abc8d4f88037c399
+ - Shape cr:ReportValueShape: _:Nd1d51b877f2245a1bc2fdc642a14c6ba,_:Nffb85169e6db4e249e676b6dfe098a57,_:N23fc52388a2e445dbe7d4de990a736e9,_:N5e1c47a7908b4b528850b7c83dfecbab,_:Ndc36625627534b37af3a89b6eb52bc33,_:Nbf7da4097d4947ffb9cca82a21a82dd8,_:N6a8df7887e204abdb85b431a64aa2d30,_:Na161e9d529534c479a61e81be2127e16,_:Nd5b5c158f1f24f7db9791c344f089ee1,_:Nea4343a7547441d8bd7a775ca2003f87,_:N3bb0f5182255473c9741ea8ad8cd5152,_:N1feef6c5908e49448d3cf5abcb3b89a0,_:N2be063ebfca643ee890695389ac1caf1,_:Nd60d6a0b7c48493186e47da48537f519,_:Na3c8dfe69bc64e9ba488a7018f72bad1,_:Nbb802f5670394708b44689cc45efd929,_:N76b5746fa5da495cacfa1ed0bc5ce8dd,_:N40c27f1be2ff4dffb0f64f38f8409a90,_:Ne49f0f4dd45b4ebdbd02e84478e9fefe,_:Nc24a5a871a30421698145ed098482a12,_:N42b4007c179d40d7b4f5f761533ca2ca,_:Ndc10c8c434364f9d8d777671b52eddbf,_:N31e86f71ae714c7a84f67c0ad14d38e1,_:N9767128826a7454c9ac3ed1f3315b45d,_:N93ff173c3ee34a0181c9a58206e6cbbd,_:N3c700d04a509437ca6e92d61ebde2064,_:N7202b59f9a174d1796c1f7f0dd03fb4c,_:N59b6600bdc484216a54b9d9f79469189,_:N0838e1733dac49288291728aecb5ba5e,_:N3705f9d27cd3445cac648d023a4d37f4,_:N3abfc056562d4931bf94d706891ab24b
 
 === End SHACL ===
 
