@@ -24,7 +24,7 @@ VOCABULARIES = {
         'namespace': 'https://linked.data.gov.au/def/csdm/wa-locality/',
         'scheme': 'https://linked.data.gov.au/def/csdm/wa-locality',
         'title': 'WA Localities',
-        'file': 'icsm-vocabs/vocabs/LandParcels/CSD-Header/wa-locality.ttl',
+        'file': 'sa-icsm-vocabs/vocabs/LandParcels/CSD-Header/wa-locality.ttl',
         'concepts': {
             'abba-river': {'prefLabel': 'Abba River'},
             'abbey': {'prefLabel': 'Abbey'},

@@ -142,7 +142,7 @@ A value found there is `reported`, with the vocabulary as its source dataset and
 Re-run the script when a vocabulary changes:
 
 ```bash
-python3 scripts/build_vocabulary_labels.py   # defaults: ../icsm-vocabs and ../3d-csdm-profile-wa
+python3 scripts/build_vocabulary_labels.py   # defaults: ../sa-icsm-vocabs (or $ICSM_VOCAB_ROOT) and ../3d-csdm-profile-wa
 ```
 
 Once the vocabularies are published, the adapter can look them up instead of carrying the table.
@@ -151,8 +151,8 @@ Once the vocabularies are published, the adapter can look them up instead of car
 
 | Need | Source |
 |---|---|
-| Approved cadastral vocabularies (e.g. `wa-locality` → "Cloverdale") | `icsm-vocabs/vocabs/LandParcels` ([GitHub](https://github.com/icsm-au/icsm-vocabs/tree/main/vocabs/LandParcels)) |
-| Address part types (`apt:*`) | `icsm-vocabs/vocabs/Addresses/addr-part-types.ttl` (types only; road names come from `label` on the value) |
+| Approved cadastral vocabularies (e.g. `wa-locality` → "Cloverdale") | `sa-icsm-vocabs/vocabs/LandParcels` ([GitHub](https://github.com/surroundaustralia/icsm-vocabs/tree/main/vocabs/LandParcels)), Surround's fork of `icsm-vocabs`, until the WA vocabulary remediation is merged upstream |
+| Address part types (`apt:*`) | `sa-icsm-vocabs/vocabs/Addresses/addr-part-types.ttl` (types only; road names come from `label` on the value) |
 | WA supplements: `wa-approved-form` (form validity, legislation), `wa-annotation`, `wa-survey-documentation`, `wa-interest-type`, `wa-parcel-purpose` | `3d-csdm-profile-wa/profiles/*_supplement.ttl` |
 | Draft vocabularies (CSV) | `3d-csdm-profile-wa/proposals/development/vocabularies` |
 
