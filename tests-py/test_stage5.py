@@ -282,6 +282,8 @@ def test_label_table_keeps_iri_values():
 
 def test_label_table_matches_the_local_vocabularies():
     icsm = Path(os.environ.get('ICSM_VOCAB_ROOT') or REPO_ROOT.parent / 'sa-icsm-vocabs')
+    if icsm.name == 'vocabs' and not (icsm / 'vocabs').is_dir():
+        icsm = icsm.parent  # the workspace sets ICSM_VOCAB_ROOT to the vocabs/ folder
     wa = REPO_ROOT.parent / '3d-csdm-profile-wa'
     if not (icsm.exists() and wa.exists()):
         pytest.skip('sibling vocabulary repositories are not checked out')
