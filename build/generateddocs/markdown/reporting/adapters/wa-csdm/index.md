@@ -1006,32 +1006,32 @@ the source conformance findings above.
             "parcelState": "wa-parcel-state:former-tenure",
             "spatialRepresentationDefinitions": {
               "representationStatus": "representation-status:2d",
-              "geometryLegalStatus": "geometry-legal-status:a2d",
+              "geometryLegalStatus": "geometry-legal-status:authoritative-2d",
               "coordinateRepresentation": {
                 "coordinateDimension": 3,
-                "zValueRole": "coordinate-z-role:oh"
+                "zValueRole": "coordinate-z-role:observation-height"
               },
               "verticalExtent": {
-                "status": "vertical-extent-status:und",
+                "status": "vertical-extent-status:undefined",
                 "lowerBoundary": {
-                  "state": "vertical-boundary-state:und"
+                  "state": "vertical-extent-status:undefined"
                 },
                 "upperBoundary": {
-                  "state": "vertical-boundary-state:und"
+                  "state": "vertical-extent-status:undefined"
                 }
               },
-              "computabilityStatus": "computability-status:nc",
+              "computabilityStatus": "computability-status:not-computable",
               "referenceSurfaces": [
                 {
                   "id": "surface-ground-1",
-                  "surfaceType": "height-reference:gl",
-                  "geometryLegalStatus": "geometry-legal-status:obs",
+                  "surfaceType": "height-reference:ground-level",
+                  "geometryLegalStatus": "geometry-legal-status:observed",
                   "ref": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
                   "boundedByFootprint": true
                 }
               ],
               "derivedGeometry": {
-                "status": "icsm-derived-geometry-status:not-generated"
+                "status": "derived-geometry-status:not-generated"
               }
             },
             "interests": [
@@ -1652,7 +1652,7 @@ the source conformance findings above.
     {
       "title": "SP 83687",
       "href": "https://wa.gov.au/deposited-plans/SP83687.pdf",
-      "role": "wa-survey-documentation-type:built-strata-plan",
+      "role": "wa-survey-documentation-type:2d-plan",
       "rel": "related"
     },
     {
@@ -1678,7 +1678,7 @@ the source conformance findings above.
     {
       "href": "documents/SP83687-building-approval-certificate.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:buildingApprovalCertificate",
+      "role": "wa-survey-documentation-type:building-approval-certificate",
       "type": "application/pdf",
       "title": "Building Approval Certificate BA14 - Certificate 545/2022",
       "conformsTo": "wa-approved-form:BA14"
@@ -1686,7 +1686,7 @@ the source conformance findings above.
     {
       "href": "documents/SP83687-endorsement-certificate.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:strataPlanEndorsementCertificate",
+      "role": "wa-survey-documentation-type:strata-plan-endorsement-certificate",
       "type": "application/pdf",
       "title": "Endorsement Certificate - LG Ref 467/2022 - SP83687",
       "conformsTo": "wa-approved-form:15c"
@@ -1694,7 +1694,7 @@ the source conformance findings above.
     {
       "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:recordOfStrataTitlesScheme",
+      "role": "wa-survey-documentation-type:scheme-record-form",
       "type": "application/pdf",
       "title": "Record of Strata Titles Scheme - SP83687",
       "conformsTo": "wa-approved-form:2020-27588-v3"
@@ -1702,14 +1702,14 @@ the source conformance findings above.
     {
       "href": "documents/P361938-scheme-by-laws.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:schemeByLaws",
+      "role": "wa-survey-documentation-type:scheme-by-laws",
       "type": "application/pdf",
       "title": "Scheme By-Laws - P361938"
     },
     {
       "href": "documents/P361939-scheme-notices.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:schemeNotices",
+      "role": "wa-survey-documentation-type:scheme-notice",
       "type": "application/pdf",
       "title": "Scheme Notices - P361939"
     }
@@ -1721,7 +1721,7 @@ the source conformance findings above.
       "rel": "related",
       "type": "application/pdf",
       "title": "Section 54 Certification - SP83687",
-      "role": "wa-annotation-role:r-54"
+      "role": "wa-annotation:r-54"
     },
     {
       "description": "THE BOUNDARIES OF THE PARTS OF LOTS WHICH ARE COURTYARDS SHOWN ON THE STRATA PLAN ARE TO THE OUTER SURFACE OF THE BUILDING WALL, THE INNER SURFACE OF ALL OTHER WALLS OR PIERS OR WHERE SHOWN DESIGNATED DIMENSIONS, THE UPPER SURFACE OF THEIR FLOOR AND THE PROLONGATION OF THE UNDER SURFACE OF THE CEILING OF THE RESPECTIVE BUILDING PART LOT EXCEPT WHERE COVERED. UNDER SCHEDULE 2A, CLAUSE 3AB OF THE STRATA TITLES ACT 1985, THE BOUNDARIES OF THE LOTS OR PART LOTS WHICH ARE BUILDINGS SHOWN ON THE STRATA PLAN ARE THE EXTERNAL SURFACES OF THOSE BUILDINGS. WHERE 2 LOTS HAVE A COMMON OR PARTY WALL OR HAVE BUILDINGS ON THEM WHICH ARE JOINED, THE CENTRE PLANE OF THAT WALL, OR THE PLANE AT WHICH THEY ARE JOINED, IS THE BOUNDARY. DISTANCES ARE FROM BOUNDARIES OR EXTERNAL FACES OF WALLS UNLESS SHOWN OTHERWISE. ALL ANGLES ARE 90 DEGREES UNLESS SHOWN OTHERWISE",
@@ -1729,7 +1729,7 @@ the source conformance findings above.
       "rel": "related",
       "type": "application/pdf",
       "title": "Boundary Definition Statement - SP83687",
-      "role": "wa-annotation-role:boundary-definition-statement"
+      "role": "wa-annotation:boundary-definition-statement"
     },
     {
       "role": "wa-annotation:licensed-valuer-certification",
@@ -1746,7 +1746,7 @@ the source conformance findings above.
       "dateCertified": "2022-05-17"
     },
     {
-      "role": "wa-annotation-role:building-approval-certification",
+      "role": "wa-annotation:building-approval-certification",
       "description": "Building Approval Certificate 545/2022; whole of building; grouped dwellings and garages; Building Act 2011 section 52; indefinite validity; issued by Casey Example, Building Surveying Coordinator, City of Belmont, 9 December 2022.",
       "href": "documents/SP83687-building-approval-certificate.pdf",
       "rel": "via",
@@ -1765,7 +1765,7 @@ the source conformance findings above.
       }
     },
     {
-      "role": "wa-annotation-role:strata-plan-endorsement",
+      "role": "wa-annotation:strata-plan-endorsement",
       "description": "LG Ref 467/2022; approval pursuant to section 15(4) of the Strata Titles Act 1985; endorsed 2 February 2023.",
       "href": "documents/SP83687-endorsement-certificate.pdf",
       "rel": "via",
@@ -1784,7 +1784,7 @@ the source conformance findings above.
       }
     },
     {
-      "role": "wa-annotation-role:record-of-strata-titles-scheme",
+      "role": "wa-annotation:record-of-strata-titles-scheme",
       "description": "Annex A, Strata Plan 83687 Scheme Bylaws (P361938) and Scheme Notice (P361939) endorsed 23 February 2023 by R. Example, Registrar of Titles.",
       "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
       "rel": "via",
@@ -2630,32 +2630,32 @@ report status is `incomplete`.
             "parcelState": "wa-parcel-state:former-tenure",
             "spatialRepresentationDefinitions": {
               "representationStatus": "representation-status:2d",
-              "geometryLegalStatus": "geometry-legal-status:a2d",
+              "geometryLegalStatus": "geometry-legal-status:authoritative-2d",
               "coordinateRepresentation": {
                 "coordinateDimension": 3,
-                "zValueRole": "coordinate-z-role:oh"
+                "zValueRole": "coordinate-z-role:observation-height"
               },
               "verticalExtent": {
-                "status": "vertical-extent-status:und",
+                "status": "vertical-extent-status:undefined",
                 "lowerBoundary": {
-                  "state": "vertical-boundary-state:und"
+                  "state": "vertical-extent-status:undefined"
                 },
                 "upperBoundary": {
-                  "state": "vertical-boundary-state:und"
+                  "state": "vertical-extent-status:undefined"
                 }
               },
-              "computabilityStatus": "computability-status:nc",
+              "computabilityStatus": "computability-status:not-computable",
               "referenceSurfaces": [
                 {
                   "id": "surface-ground-1",
-                  "surfaceType": "height-reference:gl",
-                  "geometryLegalStatus": "geometry-legal-status:obs",
+                  "surfaceType": "height-reference:ground-level",
+                  "geometryLegalStatus": "geometry-legal-status:observed",
                   "ref": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
                   "boundedByFootprint": true
                 }
               ],
               "derivedGeometry": {
-                "status": "icsm-derived-geometry-status:not-generated"
+                "status": "derived-geometry-status:not-generated"
               }
             },
             "interests": [
@@ -3275,7 +3275,7 @@ report status is `incomplete`.
     {
       "title": "SP 83687",
       "href": "https://wa.gov.au/deposited-plans/SP83687.pdf",
-      "role": "wa-survey-documentation-type:built-strata-plan",
+      "role": "wa-survey-documentation-type:2d-plan",
       "rel": "related"
     },
     {
@@ -3301,7 +3301,7 @@ report status is `incomplete`.
     {
       "href": "documents/SP83687-building-approval-certificate.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:buildingApprovalCertificate",
+      "role": "wa-survey-documentation-type:building-approval-certificate",
       "type": "application/pdf",
       "title": "Building Approval Certificate BA14 - Certificate 545/2022",
       "conformsTo": "wa-approved-form:BA14"
@@ -3309,7 +3309,7 @@ report status is `incomplete`.
     {
       "href": "documents/SP83687-endorsement-certificate.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:strataPlanEndorsementCertificate",
+      "role": "wa-survey-documentation-type:strata-plan-endorsement-certificate",
       "type": "application/pdf",
       "title": "Endorsement Certificate - LG Ref 467/2022 - SP83687",
       "conformsTo": "wa-approved-form:15c"
@@ -3317,7 +3317,7 @@ report status is `incomplete`.
     {
       "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:recordOfStrataTitlesScheme",
+      "role": "wa-survey-documentation-type:scheme-record-form",
       "type": "application/pdf",
       "title": "Record of Strata Titles Scheme - SP83687",
       "conformsTo": "wa-approved-form:2020-27588-v3"
@@ -3325,14 +3325,14 @@ report status is `incomplete`.
     {
       "href": "documents/P361938-scheme-by-laws.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:schemeByLaws",
+      "role": "wa-survey-documentation-type:scheme-by-laws",
       "type": "application/pdf",
       "title": "Scheme By-Laws - P361938"
     },
     {
       "href": "documents/P361939-scheme-notices.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:schemeNotices",
+      "role": "wa-survey-documentation-type:scheme-notice",
       "type": "application/pdf",
       "title": "Scheme Notices - P361939"
     }
@@ -3344,7 +3344,7 @@ report status is `incomplete`.
       "rel": "related",
       "type": "application/pdf",
       "title": "Section 54 Certification - SP83687",
-      "role": "wa-annotation-role:r-54"
+      "role": "wa-annotation:r-54"
     },
     {
       "description": "THE BOUNDARIES OF THE PARTS OF LOTS WHICH ARE COURTYARDS SHOWN ON THE STRATA PLAN ARE TO THE OUTER SURFACE OF THE BUILDING WALL, THE INNER SURFACE OF ALL OTHER WALLS OR PIERS OR WHERE SHOWN DESIGNATED DIMENSIONS, THE UPPER SURFACE OF THEIR FLOOR AND THE PROLONGATION OF THE UNDER SURFACE OF THE CEILING OF THE RESPECTIVE BUILDING PART LOT EXCEPT WHERE COVERED. UNDER SCHEDULE 2A, CLAUSE 3AB OF THE STRATA TITLES ACT 1985, THE BOUNDARIES OF THE LOTS OR PART LOTS WHICH ARE BUILDINGS SHOWN ON THE STRATA PLAN ARE THE EXTERNAL SURFACES OF THOSE BUILDINGS. WHERE 2 LOTS HAVE A COMMON OR PARTY WALL OR HAVE BUILDINGS ON THEM WHICH ARE JOINED, THE CENTRE PLANE OF THAT WALL, OR THE PLANE AT WHICH THEY ARE JOINED, IS THE BOUNDARY. DISTANCES ARE FROM BOUNDARIES OR EXTERNAL FACES OF WALLS UNLESS SHOWN OTHERWISE. ALL ANGLES ARE 90 DEGREES UNLESS SHOWN OTHERWISE",
@@ -3352,7 +3352,7 @@ report status is `incomplete`.
       "rel": "related",
       "type": "application/pdf",
       "title": "Boundary Definition Statement - SP83687",
-      "role": "wa-annotation-role:boundary-definition-statement"
+      "role": "wa-annotation:boundary-definition-statement"
     },
     {
       "role": "wa-annotation:licensed-valuer-certification",
@@ -3369,7 +3369,7 @@ report status is `incomplete`.
       "dateCertified": "2022-05-17"
     },
     {
-      "role": "wa-annotation-role:building-approval-certification",
+      "role": "wa-annotation:building-approval-certification",
       "description": "Building Approval Certificate 545/2022; whole of building; grouped dwellings and garages; Building Act 2011 section 52; indefinite validity; issued by Casey Example, Building Surveying Coordinator, City of Belmont, 9 December 2022.",
       "href": "documents/SP83687-building-approval-certificate.pdf",
       "rel": "via",
@@ -3388,7 +3388,7 @@ report status is `incomplete`.
       }
     },
     {
-      "role": "wa-annotation-role:strata-plan-endorsement",
+      "role": "wa-annotation:strata-plan-endorsement",
       "description": "LG Ref 467/2022; approval pursuant to section 15(4) of the Strata Titles Act 1985; endorsed 2 February 2023.",
       "href": "documents/SP83687-endorsement-certificate.pdf",
       "rel": "via",
@@ -3407,7 +3407,7 @@ report status is `incomplete`.
       }
     },
     {
-      "role": "wa-annotation-role:record-of-strata-titles-scheme",
+      "role": "wa-annotation:record-of-strata-titles-scheme",
       "description": "Annex A, Strata Plan 83687 Scheme Bylaws (P361938) and Scheme Notice (P361939) endorsed 23 February 2023 by R. Example, Registrar of Titles.",
       "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
       "rel": "via",
@@ -4251,32 +4251,32 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
             "parcelState": "wa-parcel-state:former-tenure",
             "spatialRepresentationDefinitions": {
               "representationStatus": "representation-status:2d",
-              "geometryLegalStatus": "geometry-legal-status:a2d",
+              "geometryLegalStatus": "geometry-legal-status:authoritative-2d",
               "coordinateRepresentation": {
                 "coordinateDimension": 3,
-                "zValueRole": "coordinate-z-role:oh"
+                "zValueRole": "coordinate-z-role:observation-height"
               },
               "verticalExtent": {
-                "status": "vertical-extent-status:und",
+                "status": "vertical-extent-status:undefined",
                 "lowerBoundary": {
-                  "state": "vertical-boundary-state:und"
+                  "state": "vertical-extent-status:undefined"
                 },
                 "upperBoundary": {
-                  "state": "vertical-boundary-state:und"
+                  "state": "vertical-extent-status:undefined"
                 }
               },
-              "computabilityStatus": "computability-status:nc",
+              "computabilityStatus": "computability-status:not-computable",
               "referenceSurfaces": [
                 {
                   "id": "surface-ground-1",
-                  "surfaceType": "height-reference:gl",
-                  "geometryLegalStatus": "geometry-legal-status:obs",
+                  "surfaceType": "height-reference:ground-level",
+                  "geometryLegalStatus": "geometry-legal-status:observed",
                   "ref": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
                   "boundedByFootprint": true
                 }
               ],
               "derivedGeometry": {
-                "status": "icsm-derived-geometry-status:not-generated"
+                "status": "derived-geometry-status:not-generated"
               }
             },
             "interests": [
@@ -4897,7 +4897,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
     {
       "title": "SP 83687",
       "href": "https://wa.gov.au/deposited-plans/SP83687.pdf",
-      "role": "wa-survey-documentation-type:built-strata-plan",
+      "role": "wa-survey-documentation-type:2d-plan",
       "rel": "related"
     },
     {
@@ -4923,7 +4923,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
     {
       "href": "documents/SP83687-building-approval-certificate.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:buildingApprovalCertificate",
+      "role": "wa-survey-documentation-type:building-approval-certificate",
       "type": "application/pdf",
       "title": "Building Approval Certificate BA14 - Certificate 545/2022",
       "conformsTo": "wa-approved-form:BA14"
@@ -4931,7 +4931,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
     {
       "href": "documents/SP83687-endorsement-certificate.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:strataPlanEndorsementCertificate",
+      "role": "wa-survey-documentation-type:strata-plan-endorsement-certificate",
       "type": "application/pdf",
       "title": "Endorsement Certificate - LG Ref 467/2022 - SP83687",
       "conformsTo": "wa-approved-form:15c"
@@ -4939,7 +4939,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
     {
       "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:recordOfStrataTitlesScheme",
+      "role": "wa-survey-documentation-type:scheme-record-form",
       "type": "application/pdf",
       "title": "Record of Strata Titles Scheme - SP83687",
       "conformsTo": "wa-approved-form:2020-27588-v3"
@@ -4947,14 +4947,14 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
     {
       "href": "documents/P361938-scheme-by-laws.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:schemeByLaws",
+      "role": "wa-survey-documentation-type:scheme-by-laws",
       "type": "application/pdf",
       "title": "Scheme By-Laws - P361938"
     },
     {
       "href": "documents/P361939-scheme-notices.pdf",
       "rel": "related",
-      "role": "wa-survey-documentation-type:schemeNotices",
+      "role": "wa-survey-documentation-type:scheme-notice",
       "type": "application/pdf",
       "title": "Scheme Notices - P361939"
     }
@@ -4966,7 +4966,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
       "rel": "related",
       "type": "application/pdf",
       "title": "Section 54 Certification - SP83687",
-      "role": "wa-annotation-role:r-54"
+      "role": "wa-annotation:r-54"
     },
     {
       "description": "THE BOUNDARIES OF THE PARTS OF LOTS WHICH ARE COURTYARDS SHOWN ON THE STRATA PLAN ARE TO THE OUTER SURFACE OF THE BUILDING WALL, THE INNER SURFACE OF ALL OTHER WALLS OR PIERS OR WHERE SHOWN DESIGNATED DIMENSIONS, THE UPPER SURFACE OF THEIR FLOOR AND THE PROLONGATION OF THE UNDER SURFACE OF THE CEILING OF THE RESPECTIVE BUILDING PART LOT EXCEPT WHERE COVERED. UNDER SCHEDULE 2A, CLAUSE 3AB OF THE STRATA TITLES ACT 1985, THE BOUNDARIES OF THE LOTS OR PART LOTS WHICH ARE BUILDINGS SHOWN ON THE STRATA PLAN ARE THE EXTERNAL SURFACES OF THOSE BUILDINGS. WHERE 2 LOTS HAVE A COMMON OR PARTY WALL OR HAVE BUILDINGS ON THEM WHICH ARE JOINED, THE CENTRE PLANE OF THAT WALL, OR THE PLANE AT WHICH THEY ARE JOINED, IS THE BOUNDARY. DISTANCES ARE FROM BOUNDARIES OR EXTERNAL FACES OF WALLS UNLESS SHOWN OTHERWISE. ALL ANGLES ARE 90 DEGREES UNLESS SHOWN OTHERWISE",
@@ -4974,7 +4974,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
       "rel": "related",
       "type": "application/pdf",
       "title": "Boundary Definition Statement - SP83687",
-      "role": "wa-annotation-role:boundary-definition-statement"
+      "role": "wa-annotation:boundary-definition-statement"
     },
     {
       "role": "wa-annotation:licensed-valuer-certification",
@@ -4991,7 +4991,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
       "dateCertified": "2022-05-17"
     },
     {
-      "role": "wa-annotation-role:building-approval-certification",
+      "role": "wa-annotation:building-approval-certification",
       "description": "Building Approval Certificate 545/2022; whole of building; grouped dwellings and garages; Building Act 2011 section 52; indefinite validity; issued by Casey Example, Building Surveying Coordinator, City of Belmont, 9 December 2022.",
       "href": "documents/SP83687-building-approval-certificate.pdf",
       "rel": "via",
@@ -5010,7 +5010,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
       }
     },
     {
-      "role": "wa-annotation-role:strata-plan-endorsement",
+      "role": "wa-annotation:strata-plan-endorsement",
       "description": "LG Ref 467/2022; approval pursuant to section 15(4) of the Strata Titles Act 1985; endorsed 2 February 2023.",
       "href": "documents/SP83687-endorsement-certificate.pdf",
       "rel": "via",
@@ -5029,7 +5029,7 @@ data). The `total-matches-declared` check fails with severity `error`, so the re
       }
     },
     {
-      "role": "wa-annotation-role:record-of-strata-titles-scheme",
+      "role": "wa-annotation:record-of-strata-titles-scheme",
       "description": "Annex A, Strata Plan 83687 Scheme Bylaws (P361938) and Scheme Notice (P361939) endorsed 23 February 2023 by R. Example, Registrar of Titles.",
       "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
       "rel": "via",

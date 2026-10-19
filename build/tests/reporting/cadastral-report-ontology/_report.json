@@ -2,7 +2,7 @@
   "title": "Validation report for csdm.reporting.cadastral-report-ontology - Cadastral reporting vocabulary",
   "bblockName": "Cadastral reporting vocabulary",
   "bblockId": "csdm.reporting.cadastral-report-ontology",
-  "generated": "2026-10-18T17:53:05.996682+00:00",
+  "generated": "2026-10-19T04:16:50.352876+00:00",
   "result": true,
   "items": [
     {
@@ -53,29 +53,29 @@
             {
               "shaclFile": "_sources/cadastral-report-ontology/shapes.shacl",
               "focusNodes": {
-                "cr:ReportShape": {
-                  "nodes": [
-                    "_:n552e504b6f874c408881d65159a9b8a8b1"
-                  ]
-                },
                 "cr:CheckResultShape": {
                   "nodes": [
-                    "_:n552e504b6f874c408881d65159a9b8a8b6"
+                    "_:n1e9e4f9c0ad94615a8f8fd3cce154582b6"
                   ]
                 },
-                "cr:SourceReferenceShape": {
+                "cr:ReportShape": {
                   "nodes": [
-                    "_:n552e504b6f874c408881d65159a9b8a8b5"
+                    "_:n1e9e4f9c0ad94615a8f8fd3cce154582b1"
                   ]
                 },
                 "cr:ReportValueShape": {
                   "nodes": [
-                    "_:n552e504b6f874c408881d65159a9b8a8b4"
+                    "_:n1e9e4f9c0ad94615a8f8fd3cce154582b4"
+                  ]
+                },
+                "cr:SourceReferenceShape": {
+                  "nodes": [
+                    "_:n1e9e4f9c0ad94615a8f8fd3cce154582b5"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:ReportShape: _:n552e504b6f874c408881d65159a9b8a8b1\n - Shape cr:CheckResultShape: _:n552e504b6f874c408881d65159a9b8a8b6\n - Shape cr:SourceReferenceShape: _:n552e504b6f874c408881d65159a9b8a8b5\n - Shape cr:ReportValueShape: _:n552e504b6f874c408881d65159a9b8a8b4\n"
+              "message": "Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:\n - Shape cr:CheckResultShape: _:n1e9e4f9c0ad94615a8f8fd3cce154582b6\n - Shape cr:ReportShape: _:n1e9e4f9c0ad94615a8f8fd3cce154582b1\n - Shape cr:ReportValueShape: _:n1e9e4f9c0ad94615a8f8fd3cce154582b4\n - Shape cr:SourceReferenceShape: _:n1e9e4f9c0ad94615a8f8fd3cce154582b5\n"
             }
           ]
         }
