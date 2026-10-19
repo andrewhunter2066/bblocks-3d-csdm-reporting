@@ -13,7 +13,8 @@ an `<IRI>`. It is not a general Turtle parser: it fails loudly if a vocabulary d
 number of concepts.
 
 ICSM vocabularies come from Surround's fork, sa-icsm-vocabs, until the WA vocabulary remediation is merged
-upstream into icsm-vocabs; set ICSM_VOCAB_ROOT or pass --icsm-vocabs to read another checkout.
+upstream into icsm-vocabs; set ICSM_VOCAB_ROOT or pass --icsm-vocabs to read another checkout. Either may name the
+checkout or its vocabs/ folder (the workspace sets ICSM_VOCAB_ROOT to the vocabs/ folder).
 
 Usage (from the repository root):
     python3 scripts/build_vocabulary_labels.py [--icsm-vocabs ../sa-icsm-vocabs] [--wa-profile ../3d-csdm-profile-wa]
@@ -36,6 +37,11 @@ VOCABULARIES = [
 ]
 PROPERTIES = {'prefLabel': 'skos:prefLabel', 'definition': 'skos:definition', 'scopeNote': 'skos:scopeNote',
               'valid': 'dcterms:valid', 'source': 'dcterms:source'}
+
+
+def icsm_checkout(path: Path) -> Path:
+    """The ICSM vocabularies checkout, given the checkout or its vocabs/ folder."""
+    return path.parent if path.name == 'vocabs' and not (path / 'vocabs').is_dir() else path
 
 
 def parse(path: Path, wanted):
@@ -83,7 +89,7 @@ def main():
     parser.add_argument('--icsm-vocabs', default=str(ICSM_VOCABS))
     parser.add_argument('--wa-profile', default=str(REPO.parent / '3d-csdm-profile-wa'))
     args = parser.parse_args()
-    roots = {'icsm_vocabs': Path(args.icsm_vocabs), 'wa_profile': Path(args.wa_profile)}
+    roots = {'icsm_vocabs': icsm_checkout(Path(args.icsm_vocabs)), 'wa_profile': Path(args.wa_profile)}
 
     table = {}
     for prefix, relative, root, wanted in VOCABULARIES:
