@@ -3,9 +3,11 @@
 Run from the repository root:  python3 -m pytest tests-py
 """
 import json
+import os
 import re
 import subprocess
 import sys
+from pathlib import Path
 
 import pytest
 
@@ -279,7 +281,8 @@ def test_label_table_keeps_iri_values():
 
 
 def test_label_table_matches_the_local_vocabularies():
-    icsm, wa = REPO_ROOT.parent / 'icsm-vocabs', REPO_ROOT.parent / '3d-csdm-profile-wa'
+    icsm = Path(os.environ.get('ICSM_VOCAB_ROOT') or REPO_ROOT.parent / 'sa-icsm-vocabs')
+    wa = REPO_ROOT.parent / '3d-csdm-profile-wa'
     if not (icsm.exists() and wa.exists()):
         pytest.skip('sibling vocabulary repositories are not checked out')
     current = LABELS.read_text(encoding='utf-8')

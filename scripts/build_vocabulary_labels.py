@@ -12,14 +12,19 @@ concept, closed by a line holding only `.`), taking each wanted property's value
 an `<IRI>`. It is not a general Turtle parser: it fails loudly if a vocabulary does not have the expected
 number of concepts.
 
+ICSM vocabularies come from Surround's fork, sa-icsm-vocabs, until the WA vocabulary remediation is merged
+upstream into icsm-vocabs; set ICSM_VOCAB_ROOT or pass --icsm-vocabs to read another checkout.
+
 Usage (from the repository root):
-    python3 scripts/build_vocabulary_labels.py [--icsm-vocabs ../icsm-vocabs] [--wa-profile ../3d-csdm-profile-wa]
+    python3 scripts/build_vocabulary_labels.py [--icsm-vocabs ../sa-icsm-vocabs] [--wa-profile ../3d-csdm-profile-wa]
 """
 import argparse
+import os
 import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+ICSM_VOCABS = Path(os.environ.get('ICSM_VOCAB_ROOT') or REPO.parent / 'sa-icsm-vocabs')
 OUTPUT = REPO / '_sources/adapters/wa-csdm/transforms/vocabulary_labels.py'
 
 # (CURIE prefix used in the data, path relative to its repository, repository option, wanted properties)
@@ -75,7 +80,7 @@ def _python_literal(table):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    parser.add_argument('--icsm-vocabs', default=str(REPO.parent / 'icsm-vocabs'))
+    parser.add_argument('--icsm-vocabs', default=str(ICSM_VOCABS))
     parser.add_argument('--wa-profile', default=str(REPO.parent / '3d-csdm-profile-wa'))
     args = parser.parse_args()
     roots = {'icsm_vocabs': Path(args.icsm_vocabs), 'wa_profile': Path(args.wa_profile)}
