@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-19T04:16:51.028916+00:00
+Generated 2026-10-19T22:54:30.594563+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -40,7 +40,7 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
  - Shape cr:ReportStatusFollowsFromChecks: *none*
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N06030d5763c444c6b27f90f233297265
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Na58a32fdc8824367a83143b70107710f
 
 
 ** Validation error **
@@ -54,13 +54,13 @@ Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   	Focus Node: [ cr:content [ ] ; cr:reportType Literal("example.report-type") ; cr:stage <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/draft> ; dcterms:source [ dcterms:identifier Literal("example-dataset") ] ; dcterms:subject [ cr:kind Literal("parcel") ; cr:sourceRef [ cr:jsonPointer Literal("/parcels/0/features/0") ; cr:sourceDataset Literal("example-dataset") ] ] ]
   	Value Node: <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/draft>
   	Result Path: cr:stage
-  	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/draft> not in list ['rstage:facts', 'rstage:complete']
+  	Message: Value <https://ogcincubator.github.io/bblocks-3d-csdm-reporting/def/report-stage/draft> not in list ['rstage:complete', 'rstage:facts']
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
+ - Shape cr:ReportShape: _:Na58a32fdc8824367a83143b70107710f
  - Shape cr:CheckResultShape: *none*
- - Shape cr:ReportShape: _:N06030d5763c444c6b27f90f233297265
+ - Shape cr:SourceReferenceShape: _:Ne0961a4d22fb4357a07c80b9b40d4c7a
  - Shape cr:ReportValueShape: *none*
- - Shape cr:SourceReferenceShape: _:Nf7900f890dbd4b2695bfb45e5ae7576e
 
 === End SHACL ===
 

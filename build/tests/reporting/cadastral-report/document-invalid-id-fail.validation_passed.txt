@@ -1,5 +1,5 @@
 Validation report for csdm.reporting.cadastral-report - Cadastral report
-Generated 2026-10-19T04:16:50.617871+00:00
+Generated 2026-10-19T22:54:30.042835+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -51,18 +51,18 @@ Validation result for _sources/cadastral-report/shapes.shacl:
   	Message: documentRef unit-entitlement-schedule does not name a document of the report
   
 Focus nodes for _sources/cadastral-report/shapes.shacl:
- - Shape cr:ReportStatusFollowsFromChecks: _:N1490fcae74134165890583b3392805c7
- - Shape cr:DocumentAndAnnotationReferencesResolve: _:N1490fcae74134165890583b3392805c7
+ - Shape cr:ReportStatusFollowsFromChecks: _:Nc78731822fd3495a9e55ea7ee004f1e2
+ - Shape cr:DocumentAndAnnotationReferencesResolve: _:Nc78731822fd3495a9e55ea7ee004f1e2
 
 Validation result for _sources/cadastral-report-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/cadastral-report-ontology/shapes.shacl:
- - Shape cr:CheckResultShape: _:N09de55aed9e844a59d9388102e83f389,_:N42a1a28548144d158df0bc026a450f17,_:N6615101236524454b7cc8ee4789be29f,_:N19dc765a28e04cefa3210bc9877bee2e,_:N734664fa87b54c80874948ac76f802c0,_:Nd9b0a89709ac4ab3a74d190eb6c2718f,_:N5a29e33568b144f6810b8032da0b1d39,_:Nd7ce6abf0a284450a4f7108217ef56a4,_:N9765cf5e5ede4649a80588e4bf3d162c,_:N776d8b26a0b34c4e95e740e646c53c09,_:N16bd514d8a1449659c0fb152c48f397a,_:N47b12dab932c4d2fab7c71d6c61c041c,_:N9e67e6c5c84745039590603c912ea2ed,_:Nc92aa60fe1c74942920d9dd986998a1c,_:N331772c009ab4ec991860ff8ab894a68,_:N825fc4769b224560984c9390bbd9843a,_:N49a61533a76643a7bbc6b67f25e106ca,_:Nf8c7b5cccdd447349f515b7e9af78e6b
- - Shape cr:ReportShape: _:N1490fcae74134165890583b3392805c7
+ - Shape cr:ReportShape: _:Nc78731822fd3495a9e55ea7ee004f1e2
+ - Shape cr:CheckResultShape: _:N370abc3a420842f9866c8556838f93a4,_:Ndc91485b52d94520a1fd9d443a1ed66c,_:Nc21a1acf731f477782115516bea317cc,_:N6a31a525e6cd4cff91342c99e039d9ea,_:Naaaf9b3b5a2d4042b818e054465e8247,_:N43fb688d5df744068aefc67c2836c8d9,_:N2822ef86e4eb4551aa4691ec80bca80f,_:N1ab7f3691ae348f2958aaac285afb7c1,_:Nc36e0db89d9d4b19bcf3cff9c648672c,_:Nfbbaf4305a174a34939c450e6f90bfab,_:Nfeb31f26b8214127898d410975408f66,_:N44f0f3a4ea574187b06b2b807b751b6f,_:Ne496a2963c814986a9bc151e5824c9b8,_:Nd22b45c8f12e4b2eb735b7a29188929a,_:Nc2172fdc212a4e19aba7ba401bcfc9fb,_:N73ad4c9a3c094f27918bcda5bae77f91,_:N1e49f4f8382840b5a056b90ac359c882,_:N2258285ae4ed4035ae75008edd2b8b30
+ - Shape cr:SourceReferenceShape: _:Nde5d3d0a34d24e1c9f8d1d32e6f51baf,_:Nade27adfebe1449dbc7011bfff3ec8bc,_:Neec463861d8f43caab4e72362de405f8
  - Shape cr:ReportValueShape: *none*
- - Shape cr:SourceReferenceShape: _:Na2f64733d10545e584415429c3dd8614,_:Na5edb647a0f74c82bafbe25be3aa508b,_:Ne01427066b9f44389060be6b149d72dc
 
 === End SHACL ===
 
